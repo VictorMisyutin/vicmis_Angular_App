@@ -1,8 +1,11 @@
 footer {
+    position: relative;
+    bottom: 0;
+    height: 3.5rem;
     text-align: center;
     font-family: 'Times New Roman';
     font-size: large;
     padding: 15px;
-    background-color: #333;
+    background-color: hsl(0, 0%, 20%);
     color: #fff;
 }

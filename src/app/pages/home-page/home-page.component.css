@@ -5,7 +5,7 @@ body {
 
 .hero {
     text-align: center;
-    padding: 50px 0;
+    padding: 20px 0;
     font-size: large;
     background-color: #f2f2f2;
 }
@@ -13,18 +13,11 @@ body {
 .features {
     display: flex;
     justify-content: space-around;
-    padding: 40px 0;
 }
 
 .feature {
     text-align: center;
-    padding-left: 150px;
-    padding-right: 150px;
-}
-
-.feature img {
-    width: 100px;
-    height: 100px;
+    padding: 0 7%;
 }
 
 .documentation,

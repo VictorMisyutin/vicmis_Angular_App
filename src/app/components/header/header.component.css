@@ -1,5 +1,5 @@
 * {
-    font-family: 'Times New Roman';
+    font-family: 'Times New Roman', Times, serif;
 }
 
 a {
@@ -21,6 +21,12 @@ header {
     font-weight: bold;
 }
 
+.main-menu{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 .menu{
     margin-left: 80px;
 }
@@ -32,4 +38,5 @@ nav ul {
 nav ul li {
     display: inline;
     margin-right: 20px;
+    font-size: 18px;
 }
