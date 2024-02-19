@@ -1,0 +1,35 @@
+* {
+    font-family: 'Times New Roman';
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    background-color: #49484d;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu{
+    margin-left: 80px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}

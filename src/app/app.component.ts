@@ -3,6 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DocsPageComponent } from './pages/docs-page/docs-page.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 @Component({
   selector: 'app-root',

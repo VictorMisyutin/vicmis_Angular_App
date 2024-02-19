@@ -4,46 +4,8 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
 body {
     font-family: Arial, sans-serif;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    color: white;
-    background-color: #49484d;
-}
-
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.menu{
-    margin-left: 95px;
-}
-
-nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
 }
 
 .hero {
@@ -75,11 +37,4 @@ nav ul li a {
 .contact {
     text-align: center;
     padding: 50px 0;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
 }
