@@ -1,12 +1,15 @@
 .hero {
-    text-align: center;
+    /* text-align: center;
     padding: 20px 0;
     font-size: large;
-    background-color: #f2f2f2;
+    background-color: #436850;
+    color: #e0e0d1;
+    border-radius: 30px; */
+    text-align: center;
+    font-size:x-large;
 }
 
 .features {
-    display: flex;
     justify-content: space-around;
 }
 

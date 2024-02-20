@@ -8,6 +8,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    height: 85%;
 }
 
 main {
@@ -15,43 +16,45 @@ main {
 }
 
 .sidebar {
-    background-color: #999999;
+    margin-left: 5px;
+    margin-top: 5px;
+    background-color: #acc298;
     width: 250px;
-    height: 78%;
+    height: 78.65%;
     position: absolute;
     overflow-y: auto;
     min-width: 130px;
     display: flex;
+    border-radius: 10px;
 }
 
 .sidebar ul {
-    margin: 0;
+    margin: 10px 0 0 20px;
     padding: 0; /* Remove default padding */
 }
 .sidebar ul li {
-    text-align: center;
+    position: relative;
+    margin: 4px 0;
+    font-size: 16px;
+
+    /* text-align: center;
     font-size: 18px;
-    background-color: #8d8d8d;
+    background-color: #436850;
     position: relative;
     width: 250px; 
-    text-decoration: none;
     padding: 20px 20px; 
     border-radius: 10px;
     border-width: 1px;
     border-style: solid;
-    box-sizing: border-box; 
+    border-color: transparent;
+    margin-top: 3px;
+    box-sizing: border-box;  */
 }
 
 .content {
     position: absolute;
     margin-left: 250px; /* Adjust according to the width of the sidebar */
     padding: 0px 60px;
-}
-
-body::after {
-    content: "";
-    flex-grow: 1;
-    display: block;
 }
 
 nav ul {
