@@ -11,4 +11,16 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class ContactPageComponent {
 
+  // submitForm() {
+  //   firstName: string = '';
+  //   lastName: string = '';
+  //   email: string = '';
+  //   message: string = '';
+  //   // Here you can handle form submission logic
+  //   console.log('Form submitted!');
+  //   console.log('First Name:', this.firstName);
+  //   console.log('Last Name:', this.lastName);
+  //   console.log('Email:', this.email);
+  //   console.log('Message:', this.message);
+  // }
 }
