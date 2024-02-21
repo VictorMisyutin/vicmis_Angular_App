@@ -51,7 +51,7 @@ main{
 .left {
     /* border: 2px red solid; */
     grid-column: 1;
-    padding: 0 5%;
+    padding: 2% 7%;
     border-radius: 30px;
     background-color: #afc29a;
 }
@@ -60,7 +60,7 @@ main{
     background-color: #afc29a;
     border-radius: 30px;
     grid-column: 2;
-    padding: 2% 5%;
+    padding: 3% 7%;
 }
 
 .right .CF-text{
