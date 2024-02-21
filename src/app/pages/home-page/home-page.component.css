@@ -1,14 +1,10 @@
+body{
+    margin: 0 150px;
+}
 .hero {
-    /* text-align: center;
-    padding: 20px 0;
-    font-size: large;
-    background-color: #436850;
-    color: #e0e0d1;
-    border-radius: 30px; */
     text-align: center;
     font-size:x-large;
 }
-
 .features {
     justify-content: space-around;
 }
@@ -18,6 +14,10 @@
     padding: 0 7%;
 }
 
+.feature p{
+    font-size: large;
+    margin-bottom: 50px;
+}
 .documentation,
 .pricing,
 .contact {

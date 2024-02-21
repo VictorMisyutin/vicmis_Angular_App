@@ -8,7 +8,6 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    height: 85%;
 }
 .hero h1 {
     margin-left: 10%;
@@ -25,8 +24,10 @@ body {
     margin-left: 5px;
     margin-top: 5px;
     background-color: #acc298;
-    width: 12%;
-    height: 78.65%;
+    width: 230px;
+    /* height: 83%; */
+    top: 98px;
+    bottom: -90px;
     position: absolute;
     overflow-y: auto;
     min-width: 130px;
@@ -43,23 +44,26 @@ body {
     margin: 5px 0;
     font-size: 17px;
 }
+
+.sidebar ul li:hover {
+    color:green;
+}
+
 .main-content{
-    margin-top: -2.5%;
+    margin-top: -4%;
     padding: 0 2%;
     /* border: 2px red solid */
 }
 .main-content h2{
-    margin-top: 2.7%;
+    margin-top: 4%;
 }
 .main-content p{
     font-size: 18px;
     padding: 0 2%;
+    padding-bottom: 0px;
 }
 .content {
-    /* border: 2px red solid; */
-    width: 81.5%;
-    height: 79%;
-    margin-left: 12.5%; /* Adjust according to the width of the sidebar */
+    margin-left: 230px; /* Adjust according to the width of the sidebar */
     padding: 0px 60px;
     display: flex;
     flex-direction: column; /* Stack items vertically */
