@@ -14,15 +14,28 @@ main{
 }
 .social{
     text-align: center;
-    font-size: larger;
+    font-size: x-large;
     margin-top: -20px;
     margin-bottom: 40px;
+}
+.social a{
+    text-decoration: none;
+    color:black;
+}
+.social a:hover{
+    color:#466b23;
 }
 .icon{
     text-align: center;
     font-size: 50px;
-    margin-top: 60px;
+    margin-top: 30px;
     padding: 0;
+}
+.icon a{
+    color: black;
+}
+.icon a:hover{
+    color:#466b23;
 }
 #subtitle{
     text-align: center;
@@ -107,5 +120,5 @@ main{
     /* text-align: center; */
 }
 .form-group .submit-btn:hover {
-    background-color: #375817;
+    background-color: #466b23;
 }

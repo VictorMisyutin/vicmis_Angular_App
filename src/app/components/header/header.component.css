@@ -49,6 +49,7 @@ nav ul li {
 }
 nav ul li:hover {
     background-color: #2c4635;
+    cursor: pointer;
 }
 
 @media (max-width: 1250px) {
