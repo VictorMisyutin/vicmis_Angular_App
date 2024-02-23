@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DocsPgaComponent } from './docs-pga.component';
+import { DocsCbbComponent } from './docs-cbb.component';
 
-describe('DocsPgaComponent', () => {
-  let component: DocsPgaComponent;
-  let fixture: ComponentFixture<DocsPgaComponent>;
+describe('DocsCbbComponent', () => {
+  let component: DocsCbbComponent;
+  let fixture: ComponentFixture<DocsCbbComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DocsPgaComponent]
+      declarations: [DocsCbbComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DocsPgaComponent);
+    fixture = TestBed.createComponent(DocsCbbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

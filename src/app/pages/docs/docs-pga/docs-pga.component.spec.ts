@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DocsSoccerComponent } from './docs-soccer.component';
+import { DocsPgaComponent } from './docs-pga.component';
 
-describe('DocsSoccerComponent', () => {
-  let component: DocsSoccerComponent;
-  let fixture: ComponentFixture<DocsSoccerComponent>;
+describe('DocsPgaComponent', () => {
+  let component: DocsPgaComponent;
+  let fixture: ComponentFixture<DocsPgaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DocsSoccerComponent]
+      declarations: [DocsPgaComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DocsSoccerComponent);
+    fixture = TestBed.createComponent(DocsPgaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

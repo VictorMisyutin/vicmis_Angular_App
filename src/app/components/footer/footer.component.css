@@ -1,17 +1,12 @@
 footer {
     position: relative;
     bottom: 0;
-    /* height: 4rem; */
     height: 80px;
     text-align: center;
     font-family: 'Times New Roman';
     font-size: 17px;
     padding: 15px;
     background-color: black;
-    /* background-color: hsl(0, 0%, 20%); */
-    /* background: linear-gradient(to top, #12372A 0%, #1c5541 100%); */
-    /* color: #FFFDD0; */
     color: white;
     margin: auto;
-    /* border-radius: 10px; */
 }

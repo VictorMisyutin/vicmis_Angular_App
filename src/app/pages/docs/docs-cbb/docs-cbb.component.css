@@ -34,7 +34,6 @@ a{
 .row{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* height: 150px; */
     gap: 100px;
     margin-bottom: 40px;
 }

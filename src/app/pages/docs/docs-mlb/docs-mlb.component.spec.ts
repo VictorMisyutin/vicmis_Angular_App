@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DocsPageComponent } from './docs-page.component';
+import { DocsMlbComponent } from './docs-mlb.component';
 
-describe('DocsPageComponent', () => {
-  let component: DocsPageComponent;
-  let fixture: ComponentFixture<DocsPageComponent>;
+describe('DocsMlbComponent', () => {
+  let component: DocsMlbComponent;
+  let fixture: ComponentFixture<DocsMlbComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DocsPageComponent]
+      declarations: [DocsMlbComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DocsPageComponent);
+    fixture = TestBed.createComponent(DocsMlbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
