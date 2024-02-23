@@ -13,6 +13,8 @@ import { DocsPageComponent } from './pages/docs/docs-page/docs-page.component';
 import { DocsPgaComponent } from './pages/docs/docs-pga/docs-pga.component';
 import { DocsSoccerComponent } from './pages/docs/docs-soccer/docs-soccer.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ProjectPageComponent } from './pages/projects/project-page/project-page.component';
+import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     DocsPageComponent,
     DocsPgaComponent,
     DocsSoccerComponent,
-    ContactComponent
+    ContactComponent,
+    ProjectPageComponent,
+    SudokuComponent
   ],
   imports: [
     BrowserModule,

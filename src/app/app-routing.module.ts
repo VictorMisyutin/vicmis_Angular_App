@@ -8,7 +8,8 @@ import { DocsPageComponent } from './pages/docs/docs-page/docs-page.component';
 import { DocsPgaComponent } from './pages/docs/docs-pga/docs-pga.component';
 import { DocsSoccerComponent } from './pages/docs/docs-soccer/docs-soccer.component';
 import { ContactComponent } from './pages/contact/contact.component';
-
+import { ProjectPageComponent } from './pages/projects/project-page/project-page.component';
+import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -18,7 +19,10 @@ const routes: Routes = [
   {path: 'docs/cbb', component: DocsCbbComponent, title: 'CBB Documentation'},
   {path: 'docs/mlb', component: DocsMlbComponent, title: 'MLB Documentation'},
   {path: 'docs/pga', component: DocsPgaComponent, title: 'PGA Documentation'},
-  {path: 'docs/soccer', component: DocsSoccerComponent, title: 'SOCCER Documentation'}
+  {path: 'docs/soccer', component: DocsSoccerComponent, title: 'Soccer Documentation'},
+  {path: 'projects', component: ProjectPageComponent, title: 'Projects'},
+  {path: 'projects/sudoku', component: SudokuComponent, title: 'Sudoku'}
+
 ];
 
 @NgModule({
