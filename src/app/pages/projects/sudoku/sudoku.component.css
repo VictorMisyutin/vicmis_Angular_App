@@ -26,16 +26,40 @@ h1{
 .grid .row:nth-child(3n){
     border-bottom: 3px solid #000;
 }
-.cell {
+.cell{
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #000;
     font-size: 33px;
 }
+.gray-cell{
+    background-color: rgb(180, 180, 180);
+    pointer-events: none; 
+    cursor: not-allowed;
+}
+.green-cell{
+    background-color: green;
+    pointer-events: none; 
+    cursor: not-allowed;
+}
+.red-cell{
+    background-color: rgb(199, 48, 48);
+}
 
 .cell:nth-child(3n){
     border-right: 3px solid #000;
+}
+
+.cell input{
+    border: none;
+    width: 52px;
+    height: 52px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 30px;
+    background-color: transparent;
 }
 
 button{

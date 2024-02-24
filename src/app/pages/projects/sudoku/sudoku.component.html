@@ -1,21 +1,23 @@
 <app-header></app-header>
 <body>
-    <h1>sudoku</h1>
+    <h1 if="title">Sudoku</h1>
 
     <div class="container">
-        <div class="grid" id="grid">
-            <div *ngFor="let row of sudokuData" class="row">
-                <div *ngFor="let cell of row" class="cell">
-                  <span *ngIf="cell !== 0">{{ cell }}</span>
-                </div>
+      <div class="grid" id="grid">
+          <div *ngFor="let row of displayedSudokuData; let i = index" class="row">
+              <div *ngFor="let cell of row; let j = index" class="cell"
+                  [ngClass]="{'gray-cell': cell.initialVal , 'green-cell': !cell.initialVal && cell.correctSpot, 
+                  'red-cell': !cell.correctSpot && cell.checked && cell.value !== 0}">
+                  <input type="text" *ngIf="cell.correctSpot" [value]="cell.value" readonly>
+                  <input type="text" *ngIf="!cell.correctSpot" [value]="" maxlength="1" (input)="handleInput($event, i, j)">
               </div>
-            <!-- dynamically creates grid -->
-        </div>
-    </div>
-    
-    <button (click)="resetSudokuGrid()">reset</button>
-    <button (click)="generateStarterSudokuGrid()">generate</button>
-    <button (click)="solveSudokuGridMyAlgo()">solve</button>
+          </div>
+      </div>
+  </div>
+  <button (click)="resetSudokuGrid()">reset</button>
+  <button (click)="generateStarterSudokuGrid()">generate</button>
+  <button (click)="displaySolvedBoard()">solve</button>
+  <button (click)="checkGrid()">check</button>
 
 </body>
 <app-footer></app-footer>
