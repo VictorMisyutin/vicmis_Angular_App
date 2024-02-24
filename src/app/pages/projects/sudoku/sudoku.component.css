@@ -61,10 +61,12 @@ h1{
     font-size: 30px;
     background-color: transparent;
 }
-
-button{
+.buttons-row{
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+button{
+    margin: 0 10px;
     padding: 5px 0;
     width: 150px;
     font-size: 20px;
@@ -77,3 +79,22 @@ button:hover{
     cursor: pointer;
     background-color: #2e4436;
 }
+
+@media screen and (max-width: 750px) {
+    h1{
+        margin-bottom: 40px;
+    }
+    .grid {
+        width: 300px;
+        height: 300px;
+    }
+    .cell input{
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+    button{
+        width: 100px;
+        font-size: 15px;
+    }
+} 

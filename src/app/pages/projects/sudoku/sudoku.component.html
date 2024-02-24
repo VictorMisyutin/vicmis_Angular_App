@@ -1,21 +1,28 @@
+<app-header></app-header>
 <body>
     <h1 if="title">Sudoku</h1>
 
     <div class="container">
-      <div class="grid" id="grid">
-          <div *ngFor="let row of displayedSudokuData; let i = index" class="row">
-              <div *ngFor="let cell of row; let j = index" class="cell"
-                  [ngClass]="{'gray-cell': cell.initialVal , 'green-cell': !cell.initialVal && cell.correctSpot, 
-                  'red-cell': !cell.correctSpot && cell.checked && cell.value !== 0}">
-                  <input type="text" *ngIf="cell.correctSpot" [value]="cell.value" readonly>
-                  <input type="text" *ngIf="!cell.correctSpot" [value]="" maxlength="1" (input)="handleInput($event, i, j)">
-              </div>
-          </div>
-      </div>
-  </div>
-  <button (click)="resetSudokuGrid()">reset</button>
-  <button (click)="generateStarterSudokuGrid()">generate</button>
-  <button (click)="displaySolvedBoard()">solve</button>
-  <button (click)="checkGrid()">check</button>
+        <div class="grid" id="grid">
+            <div *ngFor="let row of displayedSudokuData; let i = index" class="row">
+                <div *ngFor="let cell of row; let j = index" class="cell"
+                    [ngClass]="{'gray-cell': cell.initialVal , 'green-cell': !cell.initialVal && cell.correctSpot, 
+                    'red-cell': !cell.correctSpot && cell.checked && cell.value !== 0}">
+                    <input type="text" *ngIf="cell.correctSpot" [value]="cell.value" readonly>
+                    <input type="text" *ngIf="!cell.correctSpot" [value]="" maxlength="1" (input)="handleInput($event, i, j)">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="buttons-row">
+        <button (click)="resetSudokuGrid()" >reset</button>
+        <button (click)="generateStarterSudokuGrid()">generate</button>
+    </div>
+    <div class="buttons-row">
+        <button (click)="displaySolvedBoard()">solve</button>
+        <button (click)="checkGrid()">check</button>
+    </div>
 
 </body>
+<app-footer></app-footer>

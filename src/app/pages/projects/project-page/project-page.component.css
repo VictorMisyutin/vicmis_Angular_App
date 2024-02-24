@@ -1,5 +1,5 @@
 main{
-    margin: 0 10px;
+    margin: 0 10%;
 }
 
 h1{
@@ -17,7 +17,6 @@ h1{
     width: 450px;
     min-height: 150px;
     height:max-content;
-    border: 2px red solid;
     margin: auto;
     overflow-wrap: anywhere;
     background-color: #588a78;
@@ -44,7 +43,7 @@ h1{
     text-align: center;
 }
 
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1300px) {
     body{
         margin: 0 10px;
     }
