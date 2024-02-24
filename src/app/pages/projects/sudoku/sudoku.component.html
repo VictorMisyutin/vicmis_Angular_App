@@ -8,8 +8,8 @@
                 <div *ngFor="let cell of row; let j = index" class="cell"
                     [ngClass]="{'gray-cell': cell.initialVal , 'green-cell': !cell.initialVal && cell.correctSpot, 
                     'red-cell': !cell.correctSpot && cell.checked && cell.value !== 0}">
-                    <input type="text" *ngIf="cell.correctSpot" [value]="cell.value" readonly>
-                    <input type="text" *ngIf="!cell.correctSpot" [value]="" maxlength="1" (input)="handleInput($event, i, j)">
+                    <input type="number" *ngIf="cell.correctSpot" [value]="cell.value" readonly>
+                    <input type="number" *ngIf="!cell.correctSpot" [value]="" maxlength="1" (input)="handleInput($event, i, j)">
                 </div>
             </div>
         </div>
