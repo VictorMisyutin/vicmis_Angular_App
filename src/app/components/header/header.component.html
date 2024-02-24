@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
     <div class="logo" id="logo"><a href="">vicmis</a></div>
     <nav class="menu" id="menu">
         <ul>
@@ -14,4 +14,20 @@
             <li><a href="https://github.com/VictorMisyutin" target="_blank">GitHub</a></li>
         </ul>
     </nav>
-</header>
+</header> -->
+<div class="header">
+    <a href="/" class="logo">vicmis</a>
+    <div class="header-right">
+        <a class="nav-link" [routerLink]="['/projects']" [routerLinkActive]="['active']">projects</a>
+        <a class="nav-link" [routerLink]="['/docs']" [routerLinkActive]="['active']">documentation</a>
+        <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="['active']">contact</a>
+    </div>
+  </div>
+
+
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a class="nav-link" [routerLink]="['/']" [routerLinkActive]="['active']">Home</a>
+        <a class="nav-link" [routerLink]="['/projects']" [routerLinkActive]="['active']">Links</a>
+        <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="['active']">Search</a>
+    </nav> -->
+
