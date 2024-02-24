@@ -46,7 +46,9 @@ export class SudokuComponent implements OnInit {
   
   handleInput(event: Event, row: number, col: number) {
     const target = event.target as HTMLInputElement;
-    this.updateMatrix(row, col, parseInt(target.value));
+    let num = 0;
+    if(target.value != '') num = parseInt(target.value);   
+    this.updateMatrix(row, col, num);
   }
   
   updateMatrix(row: number, col: number, value: number) {
