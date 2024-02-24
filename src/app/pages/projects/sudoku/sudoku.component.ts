@@ -168,7 +168,7 @@ export class SudokuComponent implements OnInit {
                 return [row, col]; // Found an empty cell
             }
         }
-    }
+      }
     }
     return null; // No empty cells found
   }
@@ -182,7 +182,7 @@ export class SudokuComponent implements OnInit {
   }
 
   usedInRow(row: number, num: number): boolean {
-    if(!this.isValidPlacement){
+    if(!this.userGeneratedBoard){
       for (let i = 0; i < 9; i++) {
         if (this.sudokuData[row][i].value === num) {
           return true;
