@@ -26,7 +26,7 @@ body {
     width: 230px;
     /* height: 83%; */
     top: 89px;
-    bottom: -90px;
+    bottom: -150px;
     position: absolute;
     overflow-y: auto;
     min-width: 130px;
@@ -72,7 +72,7 @@ nav ul {
     list-style-type: none;
 }
 
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 820px) {
     .sidebar {
       display: none; 
     }

@@ -19,9 +19,9 @@ background-color: #2c4635; */
 }
 
 .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
+    float: left;
     margin-left: 3%;
+    font-size: 23px;
 }
 
 .header a:hover {

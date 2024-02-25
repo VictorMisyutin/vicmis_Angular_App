@@ -24,3 +24,9 @@ body{
     text-align: center;
     padding: 50px 0;
 }
+
+@media screen and (max-width:750px) {
+    body{
+        margin: 10px;
+    }
+}
