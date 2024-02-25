@@ -71,12 +71,47 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
+.difficulty-container{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.difficulty-container p{
+    color: gray;
+    font-size: 18px;
+}
+.difficulty-button{
+    padding: 2px 5px;
+    border: none;
+    border-radius: 10px;
+    margin: 0 10px;
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    background: none;
+    color: gray;
+    cursor: pointer;
+}
+.difficulty-button:hover{
+    background-color: #d4d4c4;
+}
+.active-difficulty{
+    padding: 2px 5px;
+    border: none;
+    border-radius: 10px;
+    margin: 0 10px;
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    background: none;
+    cursor: pointer;
+    color: black;
+}
 .buttons-row{
     margin: 0 auto;
     margin-bottom: 20px;
 }
-button{
+.buttons-row button{
     margin: 0 10px;
     padding: 5px 0;
     width: 150px;
@@ -86,7 +121,7 @@ button{
     background-color: #4d7a5d;
 }
 
-button:hover{
+.buttons-row button:hover{
     cursor: pointer;
     background-color: #2e4436;
 }
@@ -94,6 +129,17 @@ button:hover{
 @media screen and (max-width: 750px) {
     h1{
         margin-bottom: 40px;
+    }
+    .difficulty-container{
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    .difficulty-container p{
+        font-size: 12px;
+    }
+    .difficulty-button{
+        margin: 0 1px;
+        font-size: 14px;
     }
     .grid {
         width: 300px;

@@ -1,6 +1,15 @@
 <app-header></app-header>
 <body>
     <h1 if="title">Sudoku</h1>
+    
+    <div class="difficulty-container">
+        <p>Difficulty: </p>
+        <button class="difficulty-button" (click)="changeDifficulty(0)" id="easy-button">easy</button>
+        <button class="difficulty-button" (click)="changeDifficulty(1)" id="medium-button">medium</button>
+        <button class="difficulty-button" (click)="changeDifficulty(2)" id="hard-button">hard</button>
+        <button class="difficulty-button" (click)="changeDifficulty(3)" id="extreme-button">extreme</button>
+
+    </div>
 
     <div class="container">
         <div class="grid" id="grid">
@@ -9,7 +18,7 @@
                     [ngClass]="{'gray-cell': cell.initialVal , 'green-cell': !cell.initialVal && cell.correctSpot, 
                     'red-cell': !cell.correctSpot && cell.checked && cell.value !== 0}">
                     <input type="number" *ngIf="cell.correctSpot" [value]="cell.value" readonly>
-                    <input type="number" *ngIf="!cell.correctSpot" [value]="" maxlength="1" (input)="handleInput($event, i, j)">
+                    <input type="number" *ngIf="!cell.correctSpot" [value]="" pattern="\d*" min="1" max="9" maxlength="1" (input)="handleInput($event, i, j)">
                 </div>
             </div>
         </div>
@@ -17,7 +26,7 @@
     
     <div class="buttons-row">
         <button (click)="resetSudokuGrid()" >reset</button>
-        <button (click)="generateStarterSudokuGrid()">generate</button>
+        <button (click)="generateSudokuGrid()">generate</button>
     </div>
     <div class="buttons-row">
         <button (click)="displaySolvedBoard()">solve</button>

@@ -1,23 +1,48 @@
 import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 
+// enum difficulty {easy, medium, hard, extreme}
+
 @Component({
   selector: 'app-sudoku',
   templateUrl: './sudoku.component.html',
   styleUrls: ['./sudoku.component.css'],
   encapsulation: ViewEncapsulation.None // Disable encapsulation
 })
+
+
 export class SudokuComponent implements OnInit {
+  
   displayedSudokuData: { value: number, correctSpot: boolean, initialVal: boolean, checked: boolean }[][] = [];
   sudokuData: { value: number, correctSpot: boolean, initialVal:boolean }[][] = [];
   userGeneratedBoard: boolean = false;
   cellsFilled: number = 0;
-
+  difficulty: number = 1;
+  
   constructor() { }
   
   ngOnInit(): void {
+    // let a = difficulty.easy;
+    this.changeDifficulty(1);
     this.userGeneratedBoard = true;
-    // this.generateStarterSudokuGrid();
+    // this.generateSudokuGrid();
     this.resetSudokuGrid();
+  }
+
+  changeDifficulty(diff: number){
+    this.difficulty = diff;
+
+    document.getElementById('easy-button')?.classList.remove('active-difficulty');
+    document.getElementById('medium-button')?.classList.remove('active-difficulty');
+    document.getElementById('hard-button')?.classList.remove('active-difficulty');
+    document.getElementById('extreme-button')?.classList.remove('active-difficulty');
+
+    switch(this.difficulty){
+      case 0: { document.getElementById('easy-button')?.classList.add('active-difficulty'); break;}
+      case 1: { document.getElementById('medium-button')?.classList.add('active-difficulty'); break;}
+      case 2: { document.getElementById('hard-button')?.classList.add('active-difficulty'); break;}
+      case 3: { document.getElementById('extreme-button')?.classList.add('active-difficulty'); break;}
+    }
+    this.generateSudokuGrid();
   }
   
   resetSudokuGrid(): void {
@@ -59,7 +84,7 @@ export class SudokuComponent implements OnInit {
     }
   }
 
-  generateStarterSudokuGrid(): void{
+  generateSudokuGrid(): void{
     this.resetSudokuGrid();
     this.userGeneratedBoard = false;
     // randomize start
@@ -71,7 +96,9 @@ export class SudokuComponent implements OnInit {
     // solve the grid
     this.solveSudokuGridMyAlgo();
     // remove some random cells
-    let starterCellCount = Math.floor(Math.random() * 8) + 26; 
+    let deviation = -7 * (this.difficulty-5) + 10;
+    console.log(deviation);
+    let starterCellCount = Math.floor(Math.random() * 10) + deviation; 
 
     for(let i = 0; i < 9; i++){
       for(let j = 0; j < 9;j++){
@@ -80,11 +107,14 @@ export class SudokuComponent implements OnInit {
       }
     }
     
+    this.cellsFilled = 81
     while (this.cellsFilled > starterCellCount) {
       const row = Math.floor(Math.random() * 9);
       const col = Math.floor(Math.random() * 9);
-      this.displayedSudokuData[row][col] = {value:0, correctSpot:false, initialVal: false, checked:false} ;  
-      this.cellsFilled--;
+      if(this.displayedSudokuData[row][col].value !== 0){
+        this.displayedSudokuData[row][col] = {value:0, correctSpot:false, initialVal: false, checked:false} ;  
+        this.cellsFilled--; 
+      }
     }
   }
   
@@ -101,7 +131,6 @@ export class SudokuComponent implements OnInit {
       for (let num = 1; num <= 9; num++) {
         if (this.isValidPlacement(row, col, num)) {
           this.sudokuData[row][col] = {value: num, correctSpot: true, initialVal: true};
-          this.cellsFilled++;
           
           if (this.solveSudokuGridMyAlgo()) {
               return true; // Sudoku grid solved
@@ -109,7 +138,6 @@ export class SudokuComponent implements OnInit {
 
           // If the current placement doesn't lead to a solution, backtrack
           this.sudokuData[row][col] = {value: 0, correctSpot: false, initialVal: false};
-          this.cellsFilled--;
         }
       }
     }
@@ -125,7 +153,6 @@ export class SudokuComponent implements OnInit {
       for (let num = 1; num <= 9; num++) {
         if (this.isValidPlacement(row, col, num)) {
           this.displayedSudokuData[row][col] = {value: num, correctSpot: true, initialVal: false, checked: true};
-          this.cellsFilled++;
           
           if (this.solveSudokuGridMyAlgo()) {
               return true; // Sudoku grid solved
@@ -133,7 +160,6 @@ export class SudokuComponent implements OnInit {
 
           // If the current placement doesn't lead to a solution, backtrack
           this.displayedSudokuData[row][col] = {value: 0, correctSpot: false, initialVal: false, checked: false};
-          this.cellsFilled--;
         }
       }
     }
