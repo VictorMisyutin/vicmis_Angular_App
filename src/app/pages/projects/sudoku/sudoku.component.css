@@ -130,6 +130,17 @@ input[type=number] {
     h1{
         margin-bottom: 40px;
     }
+    .difficulty-container{
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    .difficulty-container p{
+        font-size: 12px;
+    }
+    .difficulty-button{
+        margin: 0 1px;
+        font-size: 14px;
+    }
     .grid {
         width: 300px;
         height: 300px;
