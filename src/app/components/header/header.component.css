@@ -3,19 +3,19 @@ background-color: #436850;
 background-color: #2c4635; */
 .header {
     overflow: hidden;
-    background-color: #93c493;
-    padding: 20px 10px;
+    padding: 10px 10px 0 10px;
 }
 
 .header a {
     float: left;
-    color: black;
     text-align: center;
     padding: 12px;
     text-decoration: none;
     font-size: 18px; 
     line-height: 25px;
     border-radius: 4px;
+    color: #757575;
+    
 }
 
 .header a.logo {
@@ -25,13 +25,12 @@ background-color: #2c4635; */
 }
 
 .header a:hover {
-    background-color: #70af70;
-    color: black;
+    /* background-color: #70af70; */
+    color: #cacaca;
 }
 
 .header .active{
-    background-color: rgb(41, 116, 22);
-    color: #e0e0d1;
+    color: #cacaca;
 }
 
 .header-right {
@@ -39,16 +38,21 @@ background-color: #2c4635; */
 }
 
 @media screen and (max-width: 750px) {
+    
+    .header{
+        flex-direction: column;
+        display: flex;
+    }
 
     .header a {
+        display:block;
         float: none;
-        display: block;
         text-align: left;
     }
     .header a.logo {
         text-align: center;
         font-size: 35px;
-        margin-left: 0;
+        margin: 0;
         margin-bottom: 10px;
     }
     .header-right {

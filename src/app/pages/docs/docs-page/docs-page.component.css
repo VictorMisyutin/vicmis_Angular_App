@@ -1,6 +1,6 @@
 a {
     text-decoration: none;
-    color: black;
+    color: #757575;
 }
 
 body {
@@ -9,29 +9,28 @@ body {
     display: flex;
     flex-direction: column;
 }
+.hero{
+    margin-bottom: 30px;
+}
 .hero h1 {
     margin-left: 10%;
 }
-.hero h1 hr{
-    background-color: black; 
-    color: black;
-    height: 2px; 
+.hero hr{
+    display: block;
+    height: 1px;
     border: 0;
-    margin-left: -10.5%;
+    border-top: 2px solid #555555;
 }
 
 .sidebar {
-    /* margin-left: 5px; */
-    background-color: #a8c58c;
+    /* background-color: #585858; */
     width: 230px;
-    /* height: 83%; */
     top: 89px;
     bottom: -150px;
     position: absolute;
     overflow-y: auto;
     min-width: 130px;
     display: flex;
-    /* border-radius: 10px; */
 }
 
 .sidebar ul {
@@ -45,7 +44,7 @@ body {
 }
 
 .sidebar ul li:hover {
-    color:green;
+    color:#cacaca;
 }
 
 .main-content{
@@ -79,6 +78,10 @@ nav ul {
 }
 
 @media screen and (max-width: 800px) {
+    .hero h1 {
+        text-align: center;
+        margin-left: 0;
+    }
     .sidebar {
       display: none; /* Hide the nav for smaller screens */
     }

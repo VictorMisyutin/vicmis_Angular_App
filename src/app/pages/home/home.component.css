@@ -1,23 +1,45 @@
 body{
-    margin: 0 150px;
+    margin: 0 12%;
 }
 .hero {
     text-align: center;
-    font-size:x-large;
-}
-.features {
-    justify-content: space-around;
-}
-
-.feature {
-    text-align: center;
-    padding: 0 7%;
-}
-
-.feature p{
     font-size: large;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
+.hero hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #555555;
+}
+
+.feature-left {
+    float: left;
+    margin-bottom: 50px;
+    padding: 0;
+}
+.feature-right {
+    float: right;
+    margin-bottom: 50px;
+    padding: 0;
+}
+.feature-left h3{
+    text-align: left;
+    margin-left: 80px;
+}
+.feature-left p{
+    text-align: left;
+    font-size: large;
+}
+.feature-right h3{
+    text-align: right;
+    margin-right: 80px;
+}
+.feature-right p{
+    text-align: right;
+    font-size: large;
+}
+
 .documentation,
 .pricing,
 .contact {
@@ -27,6 +49,23 @@ body{
 
 @media screen and (max-width:750px) {
     body{
-        margin: 10px;
+        margin: 0px 60px;
+    }
+    .hero{
+        margin-bottom: 30px;
+    }
+    .feature-left h3{
+        text-align: center;
+        margin: 0;
+    }
+    .feature-right h3{
+        text-align: center;
+        margin: 0;
+    }
+    .feature-left p{
+        text-align: center;
+    }
+    .feature-right p{
+        text-align: center;
     }
 }

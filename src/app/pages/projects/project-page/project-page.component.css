@@ -19,7 +19,7 @@ h1{
     height:max-content;
     margin: auto;
     overflow-wrap: anywhere;
-    background-color: #588a78;
+    background-color: #414443;
     border-radius: 20px;
     padding: 30px 20px;
 }
@@ -29,11 +29,16 @@ h1{
     display: grid;
     text-align: center;
     border: 1px solid;
-    background-color:#056642;
-    color: #e0e0d1;
+    background-color:#2e2e2e;
+    color: #979797;
     border-radius: 15px;
     padding: 10px 20px;
     margin: auto;
+}
+.section a:hover{
+    /* color:rgb(206, 206, 206); */
+    box-shadow: 0px 0px 20px rgb(116, 116, 116);
+
 }
 
 .section .link-desc{
