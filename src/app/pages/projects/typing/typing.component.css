@@ -1,0 +1,18 @@
+.main-text {
+    margin: 15% auto;
+    width: 65%;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.main-text .letter {
+    font-size: x-large;
+}
+
+.main-text .letter-correct{
+    color: aquamarine;
+}
+
+.main-text .letter-incorrect{
+    color: red;
+}

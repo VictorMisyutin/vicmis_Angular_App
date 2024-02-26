@@ -1,0 +1,12 @@
+<app-header></app-header>
+<body>
+
+    <!-- (input)="handleInput($event, i, j)" -->
+    <div class="main-text">
+        <span *ngFor="let letter of textArray;" class="letter" [ngClass]="{'letter-correct' : letter.status == 1, 'letter-incorrect': letter.status == 2}">{{letter.character}}</span>
+    </div>
+    
+
+    
+</body>
+<app-footer></app-footer>

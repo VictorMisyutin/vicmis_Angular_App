@@ -15,6 +15,7 @@ import { DocsSoccerComponent } from './pages/docs/docs-soccer/docs-soccer.compon
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProjectPageComponent } from './pages/projects/project-page/project-page.component';
 import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
+import { TypingComponent } from './pages/projects/typing/typing.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
     DocsSoccerComponent,
     ContactComponent,
     ProjectPageComponent,
-    SudokuComponent
+    SudokuComponent,
+    TypingComponent
   ],
   imports: [
     BrowserModule,
