@@ -1,18 +1,29 @@
-.main-text {
+.container{
     margin: 15% auto;
     width: 65%;
-    display: inline-block;
-    line-height: 40px;
-}
-
-.main-text .letter {
     font-size: x-large;
+    text-align: left;
+}
+.timer{
+    /* margin: 0; */
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.container .main-text {
+    line-height: 40px;
+    outline: 0px solid transparent; 
+    caret-color: yellow;
+    caret-shape: block;
 }
 
-.main-text .letter-correct{
-    color: aquamarine;
+.container .main-text .letter {
+    color: #757575;
 }
 
-.main-text .letter-incorrect{
-    color: red;
+.container .main-text .letter-correct{
+    color: #cacaca;
+}
+
+.container .main-text .letter-incorrect{
+    color: rgb(168, 49, 49);
 }

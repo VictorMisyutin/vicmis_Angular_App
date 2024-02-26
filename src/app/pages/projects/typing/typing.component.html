@@ -1,12 +1,12 @@
 <app-header></app-header>
 <body>
+    <div class="container">
 
-    <!-- (input)="handleInput($event, i, j)" -->
-    <div class="main-text">
-        <span *ngFor="let letter of textArray;" class="letter" [ngClass]="{'letter-correct' : letter.status == 1, 'letter-incorrect': letter.status == 2}">{{letter.character}}</span>
+
+        <p class="timer">{{timer | number : '.1-1'}}</p>
+        <div class="main-text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false"contenteditable="true" id="main-text" (click)="textClicked()" (keyup)="onKeyUp($event)" (keydown)="onKeyDown($event)" autofocus="autofocus" >
+            <span *ngFor="let letter of textArray;" [ngClass]="{'letter': letter.status == 0, 'letter-correct': letter.status == 1, 'letter-incorrect': letter.status == 2}">{{letter.character}}</span>
+        </div>
     </div>
-    
-
-    
 </body>
 <app-footer></app-footer>
