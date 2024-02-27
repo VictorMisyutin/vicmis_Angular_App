@@ -1,11 +1,28 @@
 <app-header></app-header>
 <body>
     <div class="container">
+        <div class="menu">
+            <span class="label">timed: </span>
+            <button class="select" (click)="setTime(15)" id="15-seconds">15</button>
+            <button class="select" (click)="setTime(30)" id="30-seconds">30</button>
+            <button class="select" (click)="setTime(60)" id="60-seconds">60</button>
+            <button class="select" (click)="setTime(120)" id="120-seconds">120</button>
+            <span class="break">|</span>
+            <span class="label">words: </span>
+            <button class="select" (click)="setWords(10)" id="10-words">10</button>
+            <button class="select" (click)="setWords(25)" id="25-words">25</button>
+            <button class="select" (click)="setWords(50)" id="50-words">50</button>
+            <button class="select" (click)="setWords(100)" id="100-words">100</button>
+        </div>
 
-
-        <p class="timer">{{timer | number : '.1-1'}}</p>
+        <p class="timer" id="timer">{{timer | number : '.1-1'}}</p>
         <div class="main-text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false"contenteditable="true" id="main-text" (click)="textClicked()" (keyup)="onKeyUp($event)" (keydown)="onKeyDown($event)" autofocus="autofocus" >
             <span *ngFor="let letter of textArray;" [ngClass]="{'letter': letter.status == 0, 'letter-correct': letter.status == 1, 'letter-incorrect': letter.status == 2}">{{letter.character}}</span>
+        </div>
+        
+        <div class="analysis-hide" id="analysis">
+            <div>wpm: {{WPM | number : '.2-2'}} | accuracy: {{accuracy | number : '.2-2'}}</div>
+            <button class="restart-button" (click)="restart()">restart</button>
         </div>
     </div>
 </body>

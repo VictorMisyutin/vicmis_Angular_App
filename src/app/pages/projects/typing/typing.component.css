@@ -1,29 +1,98 @@
 .container{
-    margin: 15% auto;
-    width: 65%;
+    margin: 5% auto;
+    width: 60%;
     font-size: x-large;
-    text-align: left;
+}
+.menu{
+    background-color: #3a3a3a;
+    margin: auto;
+    width: 430px;
+    border-radius: 5px;
+    margin-bottom: 10%;
+    text-align: center;
+}
+.break{
+    height: 2px;
+    padding: 2px;
+    font-size: 23px;
+}
+.label{
+    font-size: 17px;
+}
+.select{
+    border: none;
+    font-size: 15px;
+    background: none;
+    color: gray;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+.select:hover{
+    color: #cacaca;
+}
+.active-select{
+    color: #cacaca;
 }
 .timer{
-    /* margin: 0; */
-    margin-left: 20px;
+    margin-left: 10%;
     margin-bottom: 5px;
 }
-.container .main-text {
+.timer-hide{
+    display: none;
+}
+.main-text {
+    margin: 0 5%;
     line-height: 40px;
     outline: 0px solid transparent; 
     caret-color: yellow;
     caret-shape: block;
 }
-
-.container .main-text .letter {
+.main-text-hide{
+    display: none;
+}
+.letter {
     color: #757575;
 }
 
-.container .main-text .letter-correct{
+.letter-correct{
     color: #cacaca;
 }
 
-.container .main-text .letter-incorrect{
+.letter-incorrect{
     color: rgb(168, 49, 49);
+}
+
+.analysis-hide{
+    display: none;
+}
+
+.analysis{
+    text-align: center;
+}
+.restart-button{
+    background-color: #252424;
+    border: none;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #757575;
+}
+.restart-button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width:650px){
+    .menu{
+        width: 220px;
+    }
+    .break{
+        display: none;
+    }
+    .container .timer{
+        margin: 0;
+        text-align: center;
+    }
+    .container .main-text {
+        text-align: center;
+    }
 }
