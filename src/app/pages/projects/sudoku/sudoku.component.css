@@ -96,7 +96,7 @@ input[type=number] {
     cursor: pointer;
 }
 .difficulty-button:hover{
-    color: #cacaca;
+    color: #C75696;
 }
 .active-difficulty{
     padding: 2px 5px;
@@ -108,7 +108,7 @@ input[type=number] {
     font-size: 20px;
     background: none;
     cursor: pointer;
-    color: #cacaca;
+    color: #9D3978;
 }
 .buttons-row{
     margin: 0 auto;
@@ -121,7 +121,7 @@ input[type=number] {
     font-size: 20px;
     color: #e0e0d1;
     border-radius: 10px;
-    background-color: #636363;
+    background-color: #732a58;
 }
 
 .buttons-row button:hover{
