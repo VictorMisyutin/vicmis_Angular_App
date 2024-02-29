@@ -1,0 +1,38 @@
+<app-header></app-header>
+<body>
+    <div class="menu">
+        <div>
+            <p>tablesize (mod value)</p>
+            <input type="text" (input)="changeTableSize($event)" id="tableSize" > 
+            <p>max. 100</p>
+        </div>
+        <div>
+            <p>enter a key (integer)</p>
+            <input type="text" id="enterKeyInput">
+            <p>max. 100</p>
+            <button (click)="enterKey()">enter</button>
+        </div>
+        <div>
+            <p>Collision Resolution Technique:</p>
+            <select [(ngModel)]="selectedCollisionTechnique" name="collisionTechnique" id="collisionTechnique">
+                <option value="linear">Linear Probing</option>
+                <option value="quadratic">Quadratic Probing</option>
+                <option value="double">Double Hash Probing</option>
+            </select>
+        </div>
+        <div>
+            <p>Collisions: {{numCollisions}}</p>
+            <p></p>
+        </div>
+    </div>
+    <div class="display">
+        <div *ngFor="let item of hashTableKeys; let i=index" class="list"> 
+        <!-- <span class="hash"><p>{{item}}</p> <p>{{hashTableValues[i]}}</p></span> -->
+        <span class="hash"><p class="key">{{item}}</p><p class="index">{{i}}</p></span>
+
+        </div>
+    </div>
+    <!-- <button (click)="::"></button> -->
+    
+</body>
+<app-footer></app-footer>

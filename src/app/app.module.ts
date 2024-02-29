@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProjectPageComponent } from './pages/projects/project-page/project-page.component';
 import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
 import { TypingComponent } from './pages/projects/typing/typing.component';
+import { CollisionResolutionComponent } from './pages/projects/collision-resolution/collision-resolution.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { TypingComponent } from './pages/projects/typing/typing.component';
     ContactComponent,
     ProjectPageComponent,
     SudokuComponent,
-    TypingComponent
+    TypingComponent,
+    CollisionResolutionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

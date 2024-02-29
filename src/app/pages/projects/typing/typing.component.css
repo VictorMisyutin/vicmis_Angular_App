@@ -31,7 +31,7 @@
     color: #cacaca;
 }
 .active-select{
-    color: #cacaca;
+    color: #bb08bb;
 }
 .timer{
     margin-left: 10%;
@@ -44,7 +44,7 @@
     margin: 0 5%;
     line-height: 40px;
     outline: 0px solid transparent; 
-    caret-color: yellow;
+    caret-color: #bb08bb;
     caret-shape: block;
 }
 .main-text-hide{

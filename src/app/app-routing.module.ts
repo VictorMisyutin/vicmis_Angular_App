@@ -11,6 +11,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProjectPageComponent } from './pages/projects/project-page/project-page.component';
 import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
 import { TypingComponent } from './pages/projects/typing/typing.component';
+import { CollisionResolutionComponent } from './pages/projects/collision-resolution/collision-resolution.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'docs/soccer', component: DocsSoccerComponent, title: 'Soccer Documentation'},
   {path: 'projects', component: ProjectPageComponent, title: 'Projects'},
   {path: 'projects/sudoku', component: SudokuComponent, title: 'Sudoku'},
-  {path: 'projects/typing', component: TypingComponent, title: 'Typing Game'}
+  {path: 'projects/typing', component: TypingComponent, title: 'Typing Game'},
+  {path: 'projects/collision', component: CollisionResolutionComponent, title: 'Collision Resolution'}
 
 ];
 
