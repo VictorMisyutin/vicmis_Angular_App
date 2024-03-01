@@ -18,6 +18,10 @@ body{
 select{
     margin-left: 5px;
 }
+.collision-inserted p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .display{
     width: 70%;
     margin: 0 auto;

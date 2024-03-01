@@ -4,12 +4,12 @@
         <div>
             <p>tablesize (mod value)</p>
             <input type="text" (input)="changeTableSize($event)" id="tableSize" > 
-            <p>max. 100</p>
+            <p>(5 - 100)</p>
         </div>
         <div>
-            <p>enter a key (integer)</p>
+            <p>enter a key (positive integer)</p>
             <input type="text" id="enterKeyInput">
-            <p>max. 100</p>
+            <p>(max. 100)</p>
             <button (click)="enterKey()">enter</button>
         </div>
         <div>
@@ -20,19 +20,76 @@
                 <option value="double">Double Hash Probing</option>
             </select>
         </div>
+        <div class="collision-inserted">
+            <p>Collisions: {{numCollisions}} </p>
+            <p>Inserted Items: {{insertedItems}}</p>
+        </div>
         <div>
-            <p>Collisions: {{numCollisions}}</p>
-            <p></p>
+            <p id="insertion-display"></p>
         </div>
     </div>
     <div class="display">
         <div *ngFor="let item of hashTableKeys; let i=index" class="list"> 
-        <!-- <span class="hash"><p>{{item}}</p> <p>{{hashTableValues[i]}}</p></span> -->
         <span class="hash"><p class="key">{{item}}</p><p class="index">{{i}}</p></span>
 
         </div>
     </div>
-    <!-- <button (click)="::"></button> -->
+    <div class="description">
+        <hr>
+        <div class="section">
+            <h3 class="title">Hashing</h3>
+            <p>The hashing algorithm that we are using here is <strong> index = key % table_size</strong></p>
+        </div>
+        <div class="section">
+            <h3 class="title">Hashing Collisions</h3>
+            <p>
+                A collision occurs when two different keys/values map to the same index. For example, if you have a table of size 11
+                and add the keys 2, 6, 12. The indexes that are occupied are 1 (12 % 11 = 1), 2 (2 % 11 = 2), and 6 (6 % 11 = 6). Now
+                what happend if we add the key 13? Well, 13 % 11 = 2, but 2 is already occupied. So, you must find a 
+                new open index to place this key. The process of finding an open index to place this key is called collision resolution and
+                there are three main collision resolution techniques, Linear Probing, Quadratic Probing, and Double Hash Probing.
+            </p>
+            <p>current table: 0 12 2 0 0 0 6 0 0 0 0</p>
+        </div>
+        <div class="section">
+            <h3 class="title">Linear Probing</h3>
+            <p>
+                The linear probing technique involves moving over one spot and checking if that index is available. Essentially,
+                you calculate the index using the original hashing algorithm, if that spot is taken then you do <strong>index
+                = (index + 1) % table_size</strong>. Repeat this process until you find a free slot, once you do, insert the key. 
+                Note that every spot you check that is not available counts as a collision. In the example above, when inserting 13,
+                since index 2 is taken you move over one index, to index 3, since that is available you place 13 at index 3.
+            </p>
+            <p>current table: 0 12 2 13 0 0 6 0 0 0 0</p>
+        </div>
+        <div class="section">
+            <h3 class="title">Quadratic Probing</h3>
+            <p>
+                The quadratic probing technique involves stepping over an amount of indexes each time a spot is filled. Each time you check
+                a spot that is unavailable you increase the step size. The algorithm looks like this, <strong>index = (original_index + i * i) % table_size</strong>
+                where original_index is the index you receieved from the original hash function, and "i" increases by one each time a collision occurs (for that key).
+                Again, You repeat this process until you find a free slot, once you do, insert the key. Continuing the example above,
+                lets say you wanted to add 24. The original hash would give you 2 (24 % 11 = 2). However, 2 is taken, so now we commence our quadratic probing technique,
+                new_index = (2 + 1*1) % 11 = 3. But, index 3 is taken by key 13 (placed during the linear probing technique) so we count this as another collision
+                and move on. new_index = (2 + 2*2) % 11 = 6, index 6 is also taken by key 6, we are now at two collisions. Continuing, new_index = (2 + 3*3) % 11 = 0.
+                0 is available so we insert 24 into index 0, this process took 3 iteration of quadratic probing, and 3 collisions. 
+            </p>
+            <p>current table: 24 12 2 13 0 0 6 0 0 0 0</p>
+        </div>
+        <div class="section">
+            <h3 class="title">Double Hash Probing</h3>
+            <p>
+                The double hash probing technique involves performing a secondary hash algorithm if there is a collision. In this 
+                technique, you take the original hash and add it to the secondary hash. Essentially, <strong>new_index = [original_index + i * hash2(key)] % table_size</strong>
+                where i increases once for every collision. A common secondary hash function, which is used in this simulation is, <strong>new_hash = double_factor - key % double_factor</strong>
+                where the double factor is the nearest prime number below the size of table. In this exampleour table size is 11, so our 
+                double factor is 7. lets say we wanted to add 17. 17 % 11 = 6 but six is taken, therefore we have a collision and must use
+                our probing technique. So, here we do new_index = [7 + 1 * (7 - 17 % 7)] % 11 = 0, another collision, so we continue,
+                new_index = [7 + 2 * (7 - 17 % 7)] % 11 = 4, index 4 is available so we insery key 17 into index 4.
+            </p>
+            <p>current table: 24 12 2 13 4 0 6 0 0 0 0</p>
+        </div>
+    </div>
     
 </body>
 <app-footer></app-footer>
