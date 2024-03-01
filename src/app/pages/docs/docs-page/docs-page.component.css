@@ -71,7 +71,7 @@ nav ul {
     list-style-type: none;
 }
 
-@media screen and (max-height: 820px) {
+@media screen and (max-height: 420px) {
     .sidebar {
       display: none; 
     }
