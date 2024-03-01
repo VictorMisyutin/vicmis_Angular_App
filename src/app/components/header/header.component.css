@@ -14,7 +14,7 @@ background-color: #2c4635; */
     font-size: 18px; 
     line-height: 25px;
     border-radius: 4px;
-    color: #757575;
+    color: white;
     
 }
 
@@ -22,19 +22,17 @@ background-color: #2c4635; */
     float: left;
     margin-left: 3%;
     font-size: 23px;
-    color: rgb(217, 217, 217);
-}
-.header a.logo:hover {
     color: white;
 }
-
 .header a:hover {
-    /* background-color: #70af70; */
-    color: #bb08bb;
+    /* color: black; */
+    text-shadow: 0 0 15px white;
+
 }
 
 .header .active{
-    color: #bb08bb;
+    /* color: black; */
+    text-shadow: 0 0 15px white;
 }
 
 .header-right {

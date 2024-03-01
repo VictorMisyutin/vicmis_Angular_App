@@ -1,6 +1,7 @@
 body{
     margin: 0 150px;
 }
+
 main{
     margin: 0 10px;
 }
@@ -17,13 +18,15 @@ a{
     display: grid;
     text-align: center;
     border: 1px solid;
-    background-color:#056642;
+    background-color:#800080;
     color: white;
     border-radius: 15px;
     padding: 10px 20px;
     margin: auto;
 }
-
+a:hover{
+    box-shadow: 0 0 20px #800080;
+}
 .link-desc{
     margin: 30px auto;
     font-size: 19px;
@@ -40,6 +43,6 @@ a{
 }
 .section {
     padding: 30px;
-    background-color: #588a78;
-    border-radius: 20px;
+    border-radius: 10px;
+    border: 2px black solid;
 }

@@ -1,6 +1,6 @@
 a {
     text-decoration: none;
-    color: #757575;
+    color: #bfbfbf;
 }
 
 body {
@@ -41,10 +41,11 @@ body {
     position: relative;
     margin: 5px 0;
     font-size: 17px;
+    color: white;
 }
 
 .sidebar ul li:hover {
-    color:#cacaca;
+    text-shadow: 0 0 10px white;
 }
 
 .main-content{
