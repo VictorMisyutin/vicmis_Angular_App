@@ -49,7 +49,7 @@
                 new open index to place this key. The process of finding an open index to place this key is called collision resolution and
                 there are three main collision resolution techniques, Linear Probing, Quadratic Probing, and Double Hash Probing.
             </p>
-            <p>current table: 0 12 2 0 0 0 6 0 0 0 0</p>
+            <p class="current-table">current table: 0 12 2 0 0 0 6 0 0 0 0</p>
         </div>
         <div class="section">
             <h3 class="title">Linear Probing</h3>
@@ -60,7 +60,7 @@
                 Note that every spot you check that is not available counts as a collision. In the example above, when inserting 13,
                 since index 2 is taken you move over one index, to index 3, since that is available you place 13 at index 3.
             </p>
-            <p>current table: 0 12 2 13 0 0 6 0 0 0 0</p>
+            <p class="current-table">current table: 0 12 2 13 0 0 6 0 0 0 0</p>
         </div>
         <div class="section">
             <h3 class="title">Quadratic Probing</h3>
@@ -74,7 +74,7 @@
                 and move on. new_index = (2 + 2*2) % 11 = 6, index 6 is also taken by key 6, we are now at two collisions. Continuing, new_index = (2 + 3*3) % 11 = 0.
                 0 is available so we insert 24 into index 0, this process took 3 iteration of quadratic probing, and 3 collisions. 
             </p>
-            <p>current table: 24 12 2 13 0 0 6 0 0 0 0</p>
+            <p class="current-table">current table: 24 12 2 13 0 0 6 0 0 0 0</p>
         </div>
         <div class="section">
             <h3 class="title">Double Hash Probing</h3>
@@ -87,7 +87,7 @@
                 our probing technique. So, here we do new_index = [7 + 1 * (7 - 17 % 7)] % 11 = 0, another collision, so we continue,
                 new_index = [7 + 2 * (7 - 17 % 7)] % 11 = 4, index 4 is available so we insery key 17 into index 4.
             </p>
-            <p>current table: 24 12 2 13 4 0 6 0 0 0 0</p>
+            <p class="current-table">current table: 24 12 2 13 4 0 6 0 0 0 0</p>
         </div>
     </div>
     
