@@ -23,7 +23,17 @@ select{
     margin-right: 10px;
 }
 .current-table{
-    color: rgb(201, 180, 212);
+    /* color: rgb(201, 180, 212); */
+    font-size: larger;
+    font-weight: 700;
+}
+.section hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid white;
+    margin: 1em 20%;
+    padding: 0;
 }
 .display{
     width: 70%;
