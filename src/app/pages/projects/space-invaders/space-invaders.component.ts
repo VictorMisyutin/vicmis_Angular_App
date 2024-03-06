@@ -9,9 +9,9 @@ export class SpaceInvadersComponent implements OnInit{
   ngOnInit() {
     //@ts-ignore
     createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "/assets/yourProjectName/Build/yourProjectName.data",
-      frameworkUrl: "/assets/yourProjectName/Build/yourProjectName.framework.js",
-      codeUrl: "/assets/yourProjectName/Build/yourProjectName.wasm",
+      dataUrl: "/assets/Build/assets.data.br",
+      frameworkUrl: "/assets/Build/assets.framework.js",
+      codeUrl: "/assets/Build/assets.wasm.br",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "YourCompagny",
       productName: "yourProjectName",
