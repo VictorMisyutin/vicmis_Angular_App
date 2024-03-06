@@ -18,7 +18,7 @@ import { ProjectPageComponent } from './pages/projects/project-page/project-page
 import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
 import { TypingComponent } from './pages/projects/typing/typing.component';
 import { CollisionResolutionComponent } from './pages/projects/collision-resolution/collision-resolution.component';
-
+import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-invaders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +35,8 @@ import { CollisionResolutionComponent } from './pages/projects/collision-resolut
     ProjectPageComponent,
     SudokuComponent,
     TypingComponent,
-    CollisionResolutionComponent
+    CollisionResolutionComponent,
+    
   ],
   imports: [
     BrowserModule,
