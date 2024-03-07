@@ -178,8 +178,8 @@ export class TypingComponent implements OnInit{
     document.getElementById('analysis')?.classList.add('analysis-hide');
     document.getElementById('main-text')?.focus();
     if(this.timed)
-      this.generateText(this.numWords);
-    else
       this.generateText(2*this.timeLength);
-    }
+    else
+      this.generateText(this.numWords);
+}
 }
