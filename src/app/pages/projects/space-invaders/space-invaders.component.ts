@@ -9,13 +9,13 @@ export class SpaceInvadersComponent implements OnInit{
   ngOnInit() {
     //@ts-ignore
     createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "/assets/Build/assets.data.br",
-      frameworkUrl: "/assets/Build/assets.framework.js",
-      codeUrl: "/assets/Build/assets.wasm.br",
+      dataUrl: "/src/assets/Build/assets.data",
+      frameworkUrl: "/src/assets/Build/assets.framework.js",
+      codeUrl: "/src/assets/Build/assets.wasm",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "YourCompagny",
       productName: "yourProjectName",
       productVersion: "1.0"
     });
-  } 
+} 
 }
