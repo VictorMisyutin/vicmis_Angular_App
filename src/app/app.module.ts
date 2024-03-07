@@ -36,7 +36,7 @@ import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-in
     SudokuComponent,
     TypingComponent,
     CollisionResolutionComponent,
-    
+    SpaceInvadersComponent
   ],
   imports: [
     BrowserModule,
