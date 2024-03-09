@@ -98,7 +98,6 @@ export class TypingComponent implements OnInit{
   }
   onKeyDown(event:KeyboardEvent){
     const key = event.keyCode || event.charCode;
-    console.log(key);
     if(key === 27 || key === 9) { // escape || tab
       return false;
     }
@@ -106,10 +105,14 @@ export class TypingComponent implements OnInit{
       return false;
     }
     else if (key === 8 || key === 46) { //backspace or delete
-      this.textArray[this.position-1].status = 0;
-      if(this.position > 0) this.position--;
+      // go back to last character with status that is not 0
+      if(this.textArray[this.position-1].status != 0){
+        this.textArray[this.position-1].status = 0;
+        if(this.position > 0) this.position--;
+      }
+
     }
-    else{
+    else{ // normal key press
       if(this.position === 0) this.startTime = Date.now();
       if(this.position ===0){
         this.timerRef = setInterval(() => {
@@ -118,8 +121,18 @@ export class TypingComponent implements OnInit{
       }
       if(this.textArray[this.position].character === event.key)
         this.textArray[this.position].status = 1;
-      else
+      else{ // incorrect key
         this.textArray[this.position].status = 2;
+        if(key === 32){ // skip to next space
+          for(let i = this.position; i < this.textArray.length; i++){
+            if(this.textArray[i].character == ' '){
+              this.position = i;
+              this.textArray[this.position].status = 1;
+              break;
+            }
+          }
+        }
+      }
     
       this.position++;
     }
