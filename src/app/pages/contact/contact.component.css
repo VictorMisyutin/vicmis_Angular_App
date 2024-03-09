@@ -20,10 +20,10 @@ main{
 }
 .social a{
     text-decoration: none;
-    color:#757575;
+    color:#845e96;
 }
 .social a:hover{
-    color:#949494;
+    color:#7b2e9e;
 }
 .icon{
     text-align: center;
@@ -52,14 +52,16 @@ main{
     grid-column: 1;
     padding: 2% 7%;
     border-radius: 30px;
-    background-color: #414443;
+    background-color: #9c9c9c;
+    color: #2e2e2e;
 }
 
 .right{
-    background-color: #414443;
+    background-color: #9c9c9c;
     border-radius: 30px;
     grid-column: 2;
     padding: 3% 7%;
+    color: #2e2e2e;
 }
 
 .right .CF-text{
@@ -85,7 +87,7 @@ main{
     border: none;
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: #a09f9f;
+    background-color: #c0c0c0;
     margin-bottom: 15px;
 }
 .form-group textarea {
@@ -119,4 +121,12 @@ main{
 }
 .form-group .submit-btn:hover {
     box-shadow: 0px 0px 20px rgb(116, 116, 116);
+}
+@media screen and (max-width: 1200px) {
+    main {
+        display: block;
+    }
+    .left {
+        margin-bottom: 20px;
+    }
 }
