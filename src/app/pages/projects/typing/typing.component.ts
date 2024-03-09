@@ -110,6 +110,14 @@ export class TypingComponent implements OnInit{
         this.textArray[this.position-1].status = 0;
         if(this.position > 0) this.position--;
       }
+      else{
+        for(let i = this.position; i >= 0; i--){
+          if(this.textArray[i].status !== 0){
+            this.position = i+1;
+            break;
+          }
+        }
+      }
 
     }
     else{ // normal key press
@@ -122,6 +130,9 @@ export class TypingComponent implements OnInit{
       if(this.textArray[this.position].character === event.key)
         this.textArray[this.position].status = 1;
       else{ // incorrect key
+        if(this.textArray[this.position-1].character === ' ' && key !== 32){
+          this.position--;
+        }
         this.textArray[this.position].status = 2;
         if(key === 32){ // skip to next space
           for(let i = this.position; i < this.textArray.length; i++){
@@ -136,6 +147,7 @@ export class TypingComponent implements OnInit{
     
       this.position++;
     }
+
     const element = document.getElementById('main-text');
     if (element instanceof HTMLDivElement) {
       const selection = window.getSelection();
