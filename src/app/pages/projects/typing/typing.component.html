@@ -16,8 +16,9 @@
         </div>
 
         <p class="timer" id="timer">{{timer | number : '.1-1'}}</p>
-        <div class="main-text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false"contenteditable="true" id="main-text" (click)="textClicked()" (keyup)="onKeyUp($event)" (keydown)="onKeyDown($event)" autofocus="autofocus" >
-            <span *ngFor="let letter of textArray;" [ngClass]="{'letter': letter.status == 0, 'letter-correct': letter.status == 1, 'letter-incorrect': letter.status == 2}">{{letter.character}}</span>
+
+        <div class="main-text-active" (focus)="onFocus()" (blur)="onBlur()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false"contenteditable="true" id="main-text" (click)="textClicked()" (keyup)="onKeyUp($event)" (keydown)="onKeyDown($event)" autofocus="autofocus" >
+            <span *ngFor="let letter of currentText;" [ngClass]="{'letter': letter.status == 0, 'letter-correct': letter.status == 1, 'letter-incorrect': letter.status == 2, 'letter-blurred': letter.status == 3}">{{letter.character}}</span>
         </div>
         
         <div class="analysis-hide" id="analysis">
