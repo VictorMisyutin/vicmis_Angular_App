@@ -122,6 +122,18 @@ main{
 .form-group .submit-btn:hover {
     box-shadow: 0px 0px 20px rgb(116, 116, 116);
 }
+#post-submission-text{
+    text-align: center;
+}
+.sub-text-hidden{
+    display: none;
+}
+.sub-text-valid{
+    color: green;
+}
+.sub-text-invalid{
+    color: rgb(207, 55, 55);
+}
 @media screen and (max-width: 1200px) {
     main {
         display: block;

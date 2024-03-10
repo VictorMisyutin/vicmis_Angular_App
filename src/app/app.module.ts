@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
 import { TypingComponent } from './pages/projects/typing/typing.component';
 import { CollisionResolutionComponent } from './pages/projects/collision-resolution/collision-resolution.component';
 import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-invaders.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-in
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
