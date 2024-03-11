@@ -17,9 +17,10 @@ export class TypingComponent implements OnInit{
   timerRef: any;
   timed: boolean = true;
   timeLength: number = 30;
+  tempTime: number = 0;
   WPM: number = 0.0;
   accuracy: number = 0.0;
-
+  currentText: {character: string, status: number}[] = [];
   ngOnInit(): void {
     this.setWords(25);
   }
@@ -81,8 +82,9 @@ export class TypingComponent implements OnInit{
       this.textArray[i] = {character: tempArr[i], status: 0};
     }
     this.numCharacters = this.textArray.length; 
-    this.position=0;
+    this.position = 0;
     document.getElementById('main-text')?.focus();
+    this.onFocus();
   }
   onKeyUp(event:KeyboardEvent){
     const key = event.keyCode || event.charCode; 
@@ -121,7 +123,7 @@ export class TypingComponent implements OnInit{
     }
     else{ // normal key press
       if(this.position === 0) this.startTime = Date.now();
-      if(this.position ===0){
+      if(this.position === 0){
         this.timerRef = setInterval(() => {
           this.timer = (Date.now() - this.startTime)/1000;
         });
@@ -204,5 +206,27 @@ export class TypingComponent implements OnInit{
       this.generateText(2*this.timeLength);
     else
       this.generateText(this.numWords);
-}
+  }
+  onFocus(){
+    document.getElementById('main-text')?.classList.remove('main-text-blur');
+    document.getElementById('main-text')?.classList.add('main-text-active');
+    this.currentText = this.textArray;
+    if (!this.timed && this.position !== 0) {
+      this.startTime = Date.now();
+      this.timerRef = setInterval(() => {
+        this.timer = ((Date.now() - this.startTime) / 1000) + this.tempTime;
+      });
+    }
+  }
+  onBlur(){
+    clearInterval(this.timerRef);
+    this.tempTime = this.timer;
+    document.getElementById('main-text')?.classList.remove('main-text-active');
+    document.getElementById('main-text')?.classList.add('main-text-blur');
+    let text = "click here to continue...";
+    this.currentText = []
+    for(let i = 0 ; i < text.length; i++){
+      this.currentText[i] = {character: text[i], status: 3};
+    }
+  }
 }
