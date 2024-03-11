@@ -52,22 +52,22 @@ export class TypingComponent implements OnInit{
     clearInterval(this.timerRef);
     this.timed = true;
     this.timeLength = time;
+    // remove possible old classes
     document.getElementById('10-words')?.classList.remove('active-select');
     document.getElementById('25-words')?.classList.remove('active-select');
     document.getElementById('50-words')?.classList.remove('active-select');
     document.getElementById('100-words')?.classList.remove('active-select');
-
     document.getElementById('15-seconds')?.classList.remove('active-select');
     document.getElementById('30-seconds')?.classList.remove('active-select');
     document.getElementById('60-seconds')?.classList.remove('active-select');
     document.getElementById('120-seconds')?.classList.remove('active-select');
+    // add current class
     switch(time){
       case 15: { document.getElementById('15-seconds')?.classList.add('active-select'); break;}
       case 30: { document.getElementById('30-seconds')?.classList.add('active-select'); break;}
       case 60: { document.getElementById('60-seconds')?.classList.add('active-select'); break;}
       case 120: { document.getElementById('120-seconds')?.classList.add('active-select'); break;}
     }
-
     this.generateText(2*this.timeLength);
   }
 
@@ -118,7 +118,6 @@ export class TypingComponent implements OnInit{
           }
         }
       }
-
     }
     else{ // normal key press
       if(this.position === 0) this.startTime = Date.now();
@@ -144,7 +143,6 @@ export class TypingComponent implements OnInit{
           }
         }
       }
-    
       this.position++;
     }
 
