@@ -76,7 +76,8 @@ export class TypingComponent implements OnInit{
     this.timer = 0;
     this.textString = "";
     this.textArray = [];
-    this.textString = generate(length).toString().toLowerCase().replaceAll(',', ' ');
+    // this.textString = generate(length).toString().toLowerCase().replaceAll(',', ' ');
+    this.textString = generate({exactly: length, maxLength: 7}).toString().toLowerCase().replaceAll(',', ' ');
     let tempArr: string[] = this.textString.split('');
     for(let i = 0; i < tempArr.length; i++){
       this.textArray[i] = {character: tempArr[i], status: 0};
