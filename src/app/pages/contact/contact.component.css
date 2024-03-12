@@ -134,6 +134,17 @@ main{
 .sub-text-invalid{
     color: rgb(207, 55, 55);
 }
+.social-media{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.social-media a{
+    color: rgb(192, 192, 192);
+    font-size: large;
+}
+.social-media a:hover{
+    color: rgb(140, 140, 140);
+}
 @media screen and (max-width: 1200px) {
     main {
         display: block;
