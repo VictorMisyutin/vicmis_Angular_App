@@ -1,75 +1,23 @@
-#title{
+h2{
     text-align: center;
-    margin-top: 2%;
-    margin-bottom: 3%;
 }
 
-main{
-    margin: 0 19%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3%;
-    margin-bottom: 50px;
-    overflow-wrap: anywhere;
-}
-.social{
+.social-media{
     text-align: center;
-    font-size: x-large;
-    margin-top: -20px;
-    margin-bottom: 40px;
 }
-.social a{
+.social-media a{
+    color: rgb(192, 192, 192);
+    font-size: large;
     text-decoration: none;
-    color:#845e96;
 }
-.social a:hover{
-    color:#7b2e9e;
-}
-.icon{
-    text-align: center;
-    font-size: 50px;
-    margin-top: 30px;
-    padding: 0;
-}
-.icon a{
-    color: #5f6160; 
-}
-.icon a:hover{
-    color:#949494;
-}
-#subtitle{
-    text-align: center;
-    font-size: 23px;
-    line-height: 40px;
-}
-#subtitle-2{
-    text-align: center;
-    font-size: 23px;
-    margin-top: 11%;
-    margin-bottom: 5%;
-}
-.left {
-    grid-column: 1;
-    padding: 2% 7%;
-    border-radius: 30px;
-    background-color: #9c9c9c;
-    color: #2e2e2e;
+.social-media a:hover{
+    color: rgb(140, 140, 140);
 }
 
-.right{
-    background-color: #9c9c9c;
-    border-radius: 30px;
-    grid-column: 2;
-    padding: 3% 7%;
-    color: #2e2e2e;
+form{
+    width: 25%;
+    margin: 0 auto;
 }
-
-.right .CF-text{
-    display: block;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 .form-group {
     margin-bottom: 20px;
 }
@@ -90,22 +38,10 @@ main{
     background-color: #c0c0c0;
     margin-bottom: 15px;
 }
-.form-group textarea {
-    height: 230px;
-    resize: none;
-}
-.form-group .half {
-    display: inline-block;
-    width: 46%;
-}
-.form-group .half:first-child {
-    margin-right: 4%;
-}
-.form-group .half:last-child {
-    margin-left: 4%;
-}
-.form-group .full {
-    width: 100%;
+.form-group textArea{
+    min-height: 100px;
+    max-height: 300px;
+    max-width: 100%;
 }
 .form-group .submit-btn {
     display: block; 
@@ -125,31 +61,16 @@ main{
 #post-submission-text{
     text-align: center;
 }
-.sub-text-hidden{
-    display: none;
-}
 .sub-text-valid{
     color: green;
 }
 .sub-text-invalid{
     color: rgb(207, 55, 55);
 }
-.social-media{
-    text-align: center;
-    margin-bottom: 50px;
-}
-.social-media a{
-    color: rgb(192, 192, 192);
-    font-size: large;
-}
-.social-media a:hover{
-    color: rgb(140, 140, 140);
-}
+
+
 @media screen and (max-width: 1200px) {
     main {
         display: block;
-    }
-    .left {
-        margin-bottom: 20px;
     }
 }
