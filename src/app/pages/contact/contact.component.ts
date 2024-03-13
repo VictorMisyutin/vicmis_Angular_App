@@ -24,8 +24,10 @@ export class ContactComponent implements OnInit{
   onSubmit() {
     if (this.contactForm.valid) {
       const formValues = this.contactForm.value;
-      // do something with the values
-
+      // TODO: do something with the values
+      // probably send myself an email or 
+      // place the information in a JSON file or
+      // anywhere where I can view the message and information
 
       document.getElementById('post-submission-text')?.classList.remove('sub-text-invalid');
       document.getElementById('post-submission-text')?.classList.add('sub-text-valid');
