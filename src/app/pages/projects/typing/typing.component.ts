@@ -95,7 +95,7 @@ export class TypingComponent implements OnInit{
       }
     }
     else if (key === 9){
-      this.generateText(this.numWords);
+      this.restart();
     }
   }
   onKeyDown(event:KeyboardEvent){
@@ -131,8 +131,10 @@ export class TypingComponent implements OnInit{
       if(this.textArray[this.position].character === event.key)
         this.textArray[this.position].status = 1;
       else{ // incorrect key
-        if(this.textArray[this.position-1].character === ' ' && key !== 32){
-          this.position--;
+        if(this.position !== 0){
+          if(this.textArray[this.position-1].character === ' ' && key !== 32 && this.position !== 1){
+            this.position--;
+          }
         }
         this.textArray[this.position].status = 2;
         if(key === 32){ // skip to next space
@@ -194,7 +196,6 @@ export class TypingComponent implements OnInit{
     }
   }
   restart(){
-
     document.getElementById('timer')?.classList.remove('timer-hide');
     document.getElementById('main-text')?.classList.remove('main-text-hide');
     document.getElementById('main-text')?.classList.add('main-text');
@@ -203,9 +204,11 @@ export class TypingComponent implements OnInit{
     document.getElementById('analysis')?.classList.add('analysis-hide');
     document.getElementById('main-text')?.focus();
     if(this.timed)
-      this.generateText(2*this.timeLength);
+    this.generateText(2*this.timeLength);
     else
-      this.generateText(this.numWords);
+    this.generateText(this.numWords);
+    this.timer = 0;
+    clearInterval(this.timerRef);
   }
   onFocus(){
     document.getElementById('main-text')?.classList.remove('main-text-blur');
