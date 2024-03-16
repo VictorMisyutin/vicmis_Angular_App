@@ -93,6 +93,11 @@
     cursor: pointer;
 }
 
+.information{
+    margin-top: 60px;
+    text-align: center;
+    color:rgb(224, 219, 219);
+}
 @media screen and (max-width:650px){
     .menu{
         width: 220px;
