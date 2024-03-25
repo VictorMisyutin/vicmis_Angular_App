@@ -29,6 +29,7 @@ export class ContactComponent implements OnInit{
       // place the information in a JSON file or
       // anywhere where I can view the message and information
 
+      // ascthetic changes
       document.getElementById('post-submission-text')?.classList.remove('sub-text-invalid');
       document.getElementById('post-submission-text')?.classList.add('sub-text-valid');
       this.postSubmissionText = "Thank you for your submission!";

@@ -6,12 +6,12 @@ h2{
     text-align: center;
 }
 .social-media a{
-    color: rgb(192, 192, 192);
+    color: rgb(111, 161, 214);
     font-size: large;
     text-decoration: none;
 }
 .social-media a:hover{
-    color: rgb(140, 140, 140);
+    text-decoration: underline;
 }
 
 form{
