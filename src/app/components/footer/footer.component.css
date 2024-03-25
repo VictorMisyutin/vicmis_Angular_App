@@ -1,12 +1,45 @@
+*{
+    font-family: 'Times New Roman';
+}
 footer {
     position: relative;
     bottom: 0;
-    height: 80px;
-    text-align: center;
-    font-family: 'Times New Roman';
-    font-size: 17px;
-    padding: 15px;
+    height:300px;
+    flex-direction: row;
+    padding: 15px 0px 0px 100px;
     background-color: black;
-    color: white;
-    margin: auto;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
+.copywrite{
+    color: rgb(152, 152, 152);
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+a:hover{
+    text-decoration: underline;
+    color: rgb(154, 154, 154);
+}
+.logo{
+    color: white;
+    font-size: 40px;
+    float: left;
+    margin-top: 5px;
+}
+.pages{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equally spaced columns */
+}
+.column{
+    margin-top: 0;
+    text-align: center;
+    height: 100%;
+    font-size: 17px;
+}
+.copywrite{
+    font-size: 17px;
+    float: right;
+    margin-right: 100px;
+} 
