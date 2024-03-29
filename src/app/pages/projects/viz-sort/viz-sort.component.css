@@ -1,0 +1,67 @@
+.menu{
+    text-align: center;
+    margin: 50px 0;
+}
+.menu p{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+}
+.menu input{
+    display: inline-block;
+    margin: 0 10px;
+    width: 40px;
+}
+.menu button{
+    margin-left: 10px;
+}
+.center-container{
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+  
+.rectangle-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    display: flex; /* Use flexbox */
+    align-items: flex-end; /* Align items to the bottom of the container */
+    justify-content: center; /* Center align the content horizontally */
+    background-color: antiquewhite;
+    padding: 20px 50px;
+}
+
+.rectangle {
+    width: 50px;
+    margin: 2px;
+    position: relative; /* Positioning context for the text */
+}
+  
+.rectangle .height-text {
+position: absolute;
+bottom: 5px; 
+left: 0;
+right: 0;
+text-align: center; 
+color: white; 
+}
+.blue{
+    background-color: #007bff;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+  
+@media screen and (max-width:650px){
+    .rectangle-container{
+        padding: 10px;
+        margin-top: -100;
+    }
+    .rectangle{
+        width: 20px;
+    }
+}

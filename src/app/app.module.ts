@@ -19,6 +19,7 @@ import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
 import { TypingComponent } from './pages/projects/typing/typing.component';
 import { CollisionResolutionComponent } from './pages/projects/collision-resolution/collision-resolution.component';
 import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-invaders.component';
+import { VizSortComponent } from './pages/projects/viz-sort/viz-sort.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-in
     SudokuComponent,
     TypingComponent,
     CollisionResolutionComponent,
-    SpaceInvadersComponent
+    SpaceInvadersComponent,
+    VizSortComponent
   ],
   imports: [
     BrowserModule,
