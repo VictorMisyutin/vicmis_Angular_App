@@ -26,7 +26,6 @@ export class VizSortComponent{
     this.generateRandomHeights();
   }
 
-
   updateSize() {
     let newSize: number = 0;
     const enterSizeElement = document.getElementById("sizeInput") as HTMLInputElement;
@@ -64,16 +63,14 @@ export class VizSortComponent{
         this.timer = (Date.now() - this.startTime) / 1000;
         delay += this.updateInterval * 1000;
         setTimeout(() => {
-          this.rectangles[j].color = 'yellow';
           
           if (this.rectangles[j].height > this.rectangles[j + 1].height) {
               const temp = this.rectangles[j];
               this.rectangles[j] = this.rectangles[j + 1];
-              this.rectangles[j].color = 'yellow';
+              // this.rectangles[j].color = 'yellow';
               this.rectangles[j + 1] = temp;
               swapped = true;
           }
-          this.rectangles[j].color = 'blue';
           }, delay);
       }
       count++;
@@ -81,9 +78,6 @@ export class VizSortComponent{
           return;
       }
         i++;
-        this.rectangles.forEach(rectangle => {
-            rectangle.color = 'blue';
-        });
         swapAndContinue();
     };
     swapAndContinue();
