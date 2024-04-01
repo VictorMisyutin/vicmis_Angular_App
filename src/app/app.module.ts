@@ -20,6 +20,7 @@ import { TypingComponent } from './pages/projects/typing/typing.component';
 import { CollisionResolutionComponent } from './pages/projects/collision-resolution/collision-resolution.component';
 import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-invaders.component';
 import { VizSortComponent } from './pages/projects/viz-sort/viz-sort.component';
+import { ConnectionsComponent } from './pages/projects/connections/connections.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VizSortComponent } from './pages/projects/viz-sort/viz-sort.component';
     TypingComponent,
     CollisionResolutionComponent,
     SpaceInvadersComponent,
-    VizSortComponent
+    VizSortComponent,
+    ConnectionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<body>
+    <h1 class="title">connections</h1>
+
+    <div class="main-content-area" >
+        <div *ngFor="let word of wordsArray"  class="word" 
+        [ngClass]="{'unsolved': word.status == 0 , 'selected': word.status == 1, 'green': word.status == 2}" 
+        (click)="wordClicked(word.word)">
+        {{ word.word }}
+        </div>
+    </div>
+
+    <div class="lives">
+        <div *ngFor="let life of lives">&#x25CF;</div>
+    </div>
+    <button class="submit-button" (click)="submitClicked()">submit</button>
+
+</body>
+
+<app-footer></app-footer>

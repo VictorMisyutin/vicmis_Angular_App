@@ -14,6 +14,7 @@ import { TypingComponent } from './pages/projects/typing/typing.component';
 import { CollisionResolutionComponent } from './pages/projects/collision-resolution/collision-resolution.component';
 import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-invaders.component';
 import { VizSortComponent } from './pages/projects/viz-sort/viz-sort.component';
+import { ConnectionsComponent } from './pages/projects/connections/connections.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path: 'projects/typing', component: TypingComponent, title: 'Typing Game'},
   {path: 'projects/collision', component: CollisionResolutionComponent, title: 'Collision Resolution'},
   {path: 'projects/space-invaders', component: SpaceInvadersComponent, title: 'Space Invaders'},
-  {path: 'projects/viz-sort', component: VizSortComponent, title: 'viz sort'}
+  {path: 'projects/viz-sort', component: VizSortComponent, title: 'viz sort'},
+  {path: 'projects/connections', component: ConnectionsComponent, title: 'connections'}
 ];
 
 @NgModule({

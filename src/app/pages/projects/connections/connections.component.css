@@ -1,0 +1,55 @@
+.title{
+    text-align: center;
+}
+.main-content-area{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 20px auto;
+}
+.word{
+    text-align: center;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.word:hover{
+    cursor: pointer;
+}
+.unsolved{
+    background-color: grey;
+}
+.selected{
+    background-color: rgb(36, 36, 36);
+}
+.yellow{
+    background-color: rgb(157, 157, 2);
+    pointer-events: none;
+}
+.green{
+    background-color: rgb(7, 110, 7);
+    pointer-events: none;
+}
+.blue{
+    background-color: rgb(32, 32, 162);
+    pointer-events: none;
+}
+.purple{
+    background-color: rgb(114, 6, 114);
+    pointer-events: none;
+}
+.lives{
+    margin: 0 auto;
+    display: inline-flex;
+}
+.submit-button{
+    background-color: rgb(212, 212, 212);
+    width: 100px;
+    margin:  10px auto;
+    border-radius: 10px;
+    padding: 5px 0;
+}
+.submit-button:hover{
+    cursor: pointer;
+    background-color: rgb(164, 147, 187);
+}
