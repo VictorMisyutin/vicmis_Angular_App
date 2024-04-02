@@ -57,17 +57,32 @@ export class ConnectionsComponent {
     if(this.clickedWords !== 4){ // check if enough words are selected
       return; // pop up for not enough selected words
     }
-    let tempArray: string[] = []; // create temp array or current clicked words
+    let tempArray: {word:string, status: number, category: string}[] = []; // create temp array or current clicked words
     
     for(let i = 0; i < this.wordsArray.length; i++){ // iterate through all words and add selected ones to temp array
       if(this.wordsArray[i].status === 1){
-        tempArray.push(this.wordsArray[i].word);
+        tempArray.push(this.wordsArray[i]);
       }
     }
 
-    for(let i = 0 ; i < this.guesses.length; i++){ // make sure this sequence has not been guessed before
+    // for(let i = 0 ; i < this.guesses.length; i++){ // make sure this sequence has not been guessed before
         
+    // }
+
+    // check that all clicked words are in same category
+    let tempCategory: string = tempArray[0].category;
+    for(let i = 1; i < tempArray.length; i++){
+      if(tempArray[i].category !== tempCategory){
+        this.lives.pop();
+        return;
+      }
     }
+
+    for(let i = 0; i < tempArray.length; i++){
+      tempArray[i].status = 2;
+    }
+    this.clickedWords = 0;
+
   }
 
 }

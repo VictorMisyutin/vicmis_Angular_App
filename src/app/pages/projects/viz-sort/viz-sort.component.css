@@ -39,12 +39,12 @@
 }
   
 .rectangle .height-text {
-position: absolute;
-bottom: 5px; 
-left: 0;
-right: 0;
-text-align: center; 
-color: white; 
+    position: absolute;
+    bottom: 5px; 
+    left: 0;
+    right: 0;
+    text-align: center; 
+    color: white; 
 }
 .blue{
     background-color: #007bff;
