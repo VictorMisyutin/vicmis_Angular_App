@@ -11,10 +11,15 @@
         </div>
     </div>
 
+    <p class="pop-up-text" id="pop-up-text">{{pop_up_text}}</p>
+
     <div class="lives">
         <div *ngFor="let life of lives">&#x25CF;</div>
     </div>
-    <button class="submit-button" (click)="submitClicked()">submit</button>
+    <div class="buttons">
+        <button class="button" (click)="check()">submit</button>
+        <button class="button" (click)="shuffle()">shuffle</button>
+    </div>
 
 </body>
 
