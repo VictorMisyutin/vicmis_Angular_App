@@ -21,27 +21,27 @@ export class ConnectionsComponent {
   guesses: string[][] = []; // keep track of already guessed sequences
   pop_up_text: string = ""; // text that will display below grid
   guessedCategories: number = 0; // keep track of how many categories player has gotten correct
-  categoryNames: string[] = ["first four numbers", "The Four numbers after that", "more numbers", "the last Numbers"];
+  categoryNames: string[] = ["Words that could be a letter", "Types of Pasta", "the f sound without 'f' ", "Radio + ____"];
 
   displayedCategories: string[] = ["", "", "",""];
 
   constructor(){
-    this.wordsArray.push({ word: "one", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "two", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "three", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "four", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "five", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "six", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "seven", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "eight", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "nine", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "ten", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "eleven", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "twelve", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "thirteen", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "fourteen", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "fiveteen", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "sixteen", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "tea", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "queue", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "sea", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "bee", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "angel", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "bow tie", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "lasagne", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "elbow", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "gopher", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "enough", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "physics", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "phone", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "show", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "head", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "shack", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "waves", status: 4, categoryNum: 3});
     this.shuffle();
   }  
   wordClicked(word: string){
@@ -135,6 +135,9 @@ export class ConnectionsComponent {
       }
       this.guessedCategories++;
       this.displayedCategories[currentCheckedWords[0].status] = this.categoryNames[currentCheckedWords[0].status];
+      if(this.guessedCategories == 4){
+        this.pop_up_text = "Nice Job!!!";
+      }
     }
     else{ // incorrect guess
       this.pop_up_text = "incorrect";
