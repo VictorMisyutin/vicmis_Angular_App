@@ -8,48 +8,55 @@ import { catchError } from 'rxjs';
 })
 export class ConnectionsComponent {
   lives: number[] = [0, 1, 2, 3];
-  wordsArray: {word:string, status: number, category: string}[] = [];
+  wordsArray: {word:string, status: number, categoryNum: number}[] = [];
   clickedWords: number = 0;
   /*
-  status: 0 ==> unsolved
-  status: 1 ==> clicked
-  status: 2 ==> solved
+  status: 0 ==> yellow
+  status: 1 ==> green
+  status: 2 ==> blue
+  status: 3 ==> purple
+  status: 4 ==> unsolved
+  status: 5 ==> clicked
   */
   guesses: string[][] = []; // keep track of already guessed sequences
   pop_up_text: string = ""; // text that will display below grid
   guessedCategories: number = 0; // keep track of how many categories player has gotten correct
+  categoryNames: string[] = ["first four numbers", "The Four numbers after that", "more numbers", "the last Numbers"];
+
+  displayedCategories: string[] = ["????", "????", "????", "????"];
+
 
   constructor(){
-    this.wordsArray.push({ word: "one", status: 0, category: "first"});
-    this.wordsArray.push({ word: "two", status: 0, category: "first"});
-    this.wordsArray.push({ word: "three", status: 0, category: "first"});
-    this.wordsArray.push({ word: "four", status: 0, category: "first"});
-    this.wordsArray.push({ word: "five", status: 0, category: "second"});
-    this.wordsArray.push({ word: "six", status: 0, category: "second"});
-    this.wordsArray.push({ word: "seven", status: 0, category: "second"});
-    this.wordsArray.push({ word: "eight", status: 0, category: "second"});
-    this.wordsArray.push({ word: "nine", status: 0, category: "third"});
-    this.wordsArray.push({ word: "ten", status: 0, category: "third"});
-    this.wordsArray.push({ word: "eleven", status: 0, category: "third"});
-    this.wordsArray.push({ word: "twelve", status: 0, category: "third"});
-    this.wordsArray.push({ word: "thirteen", status: 0, category: "fourth"});
-    this.wordsArray.push({ word: "fourteen", status: 0, category: "fourth"});
-    this.wordsArray.push({ word: "fiveteen", status: 0, category: "fourth"});
-    this.wordsArray.push({ word: "sixteen", status: 0, category: "fourth"});
+    this.wordsArray.push({ word: "one", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "two", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "three", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "four", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "five", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "six", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "seven", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "eight", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "nine", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "ten", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "eleven", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "twelve", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "thirteen", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "fourteen", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "fiveteen", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "sixteen", status: 4, categoryNum: 3});
     this.shuffle();
   }  
   wordClicked(word: string){
     this.pop_up_text = "";
     for(let i = 0; i < this.wordsArray.length;i++){
       if(this.wordsArray[i].word === word){
-        if(this.wordsArray[i].status === 0){
+        if(this.wordsArray[i].status === 4){
           if(this.clickedWords < 4){
-            this.wordsArray[i].status = 1;
+            this.wordsArray[i].status = 5;
             this.clickedWords++;
           }
         }
         else{
-          this.wordsArray[i].status = 0;
+          this.wordsArray[i].status = 4;
           this.clickedWords--;
         }
         return;
@@ -62,28 +69,28 @@ export class ConnectionsComponent {
       this.pop_up_text = "Please Select 4 Words";
       return;
     }
-    let tempArray: {word:string, status: number, category: string}[] = []; // create temp array for current clicked words
+    let currentCheckedWords: {word:string, status: number, categoryNum: number}[] = []; // create temp array for current clicked words
     
     for(let i = 0; i < this.wordsArray.length; i++){ // iterate through all words and add selected ones to temp array
-      if(this.wordsArray[i].status === 1){
-        tempArray.push(this.wordsArray[i]);
+      if(this.wordsArray[i].status === 5){
+        currentCheckedWords.push(this.wordsArray[i]);
       }
     }
 
     // create array of just the words
-    let tempArrayStrings: string[] = [];
-    for(let word of tempArray){
-      tempArrayStrings.push(word.word);
+    let currentCheckedWordsStrings: string[] = [];
+    for(let word of currentCheckedWords){
+      currentCheckedWordsStrings.push(word.word);
     }
     
     // sort the temp array
-    tempArrayStrings.sort((a, b) => {return a.localeCompare(b);});
+    currentCheckedWordsStrings.sort((a, b) => {return a.localeCompare(b);});
 
     let guessedBefore: boolean = false;
     for(let i = 0 ; i < this.guesses.length; i++){ // make sure this sequence has not been guessed before
       guessedBefore = true;
       for(let j = 0; j < this.guesses[i].length;j++){
-        if(this.guesses[i][j] !== tempArrayStrings[j])
+        if(this.guesses[i][j] !== currentCheckedWordsStrings[j])
           guessedBefore = false;
       }
       if(guessedBefore)
@@ -96,45 +103,47 @@ export class ConnectionsComponent {
     }
     else{
       // add to guesses
-      this.guesses.push(tempArrayStrings);
+      this.guesses.push(currentCheckedWordsStrings);
     }
 
     let correct:boolean = true;
     // check that all clicked words are in same category
-    let tempCategory: string = tempArray[0].category;
-    for(let i = 1; i < tempArray.length; i++){
-      if(tempArray[i].category !== tempCategory){ // guess was incorrect
+    let tempCategory: number = currentCheckedWords[0].categoryNum;
+    for(let i = 1; i < currentCheckedWords.length; i++){
+      if(currentCheckedWords[i].categoryNum !== tempCategory){ // guess was incorrect
         this.lives.pop();
         correct = false;
       }
     }
 
     if(correct){
-      for(let i = 0; i < tempArray.length; i++){ // update array to show that guess was correct
-        tempArray[i].status = 2;
+      for(let i = 0; i < currentCheckedWords.length; i++){ // update array to show that guess was correct
+        currentCheckedWords[i].status = currentCheckedWords[i].categoryNum;
       }
       this.clickedWords = 0; // reset clicked words
       // put solved categories words at the top
       let count: number = 0;
-      for(let i = 0; i < this.wordsArray.length; i++){
-        for(let j = count; j < tempArray.length; j++){
-          if(this.wordsArray[i] == tempArray[j]){
-            
+      for(let i = this.guessedCategories; i < this.wordsArray.length; i++){
+        for(let j = count; j < currentCheckedWords.length; j++){
+          if(this.wordsArray[i] == currentCheckedWords[j]){
+            let temp = this.wordsArray[i];
+            this.wordsArray.splice(i,1); // delete from old spot
+            this.wordsArray.splice((4*this.guessedCategories) + count, 0, temp); // place in front of already guessed categories
             count++;
           }
         }
       }
       this.guessedCategories++;
+      this.displayedCategories[currentCheckedWords[0].status] = this.categoryNames[currentCheckedWords[0].status];
     }
     else{ // incorrect guess
       this.pop_up_text = "incorrect";
     }
-
   }
   
   shuffle(){
-    for (let i = this.wordsArray.length - 1; i > 0; i--) { 
-      const j = Math.floor(Math.random() * (i + 1)); 
+    for (let i = this.wordsArray.length - 1; i >= (4*this.guessedCategories); i--) { 
+      const j = Math.floor(Math.random() * (i - (4*this.guessedCategories) + 1) + (4*this.guessedCategories)); // Ensure j is at least 4
       [this.wordsArray[i], this.wordsArray[j]] = [this.wordsArray[j], this.wordsArray[i]]; 
     } 
   }

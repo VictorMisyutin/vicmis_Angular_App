@@ -3,9 +3,17 @@
 <body>
     <h1 class="title">connections</h1>
 
+    <div class="categories-menu">
+        <p id="yellow-menu">{{displayedCategories[0]}}</p>
+        <p id="green-menu">{{displayedCategories[1]}}</p>
+        <p id="blue-menu">{{displayedCategories[2]}}</p>
+        <p id="purple-menu">{{displayedCategories[3]}}</p>
+    </div>
+
     <div class="main-content-area" >
         <div *ngFor="let word of wordsArray"  class="word" 
-        [ngClass]="{'unsolved': word.status == 0 , 'selected': word.status == 1, 'green': word.status == 2}" 
+        [ngClass]="{'unsolved': word.status == 4 , 'selected': word.status == 5, 'yellow': word.status == 0, 'green': word.status == 1
+        , 'blue': word.status == 2, 'purple': word.status == 3}" 
         (click)="wordClicked(word.word)">
         {{ word.word }}
         </div>
