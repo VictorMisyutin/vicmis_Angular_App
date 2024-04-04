@@ -2,55 +2,44 @@
     text-align: center;
 }
 .categories-menu{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 0 auto;
-    column-gap: 20px;
+    display: block;
     color: white;
 }
 #yellow-menu{
     background-color: rgb(157, 157, 2);
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    min-width: 150px;
+    height: 30px;
     text-align: center;
-    border-radius: 10px;
-    padding: 5px 10px;
 }
 #green-menu{
     background-color: rgb(7, 110, 7);
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    min-width: 150px;
+    height: 30px;
     text-align: center;
-    border-radius: 10px;
-    padding: 5px 10px;
 }
 #blue-menu{
     background-color: rgb(32, 32, 162);
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    min-width: 150px;
+    height: 30px;
     text-align: center;
-    border-radius: 10px;
-    padding: 5px 10px;
 }
 #purple-menu{
     background-color: rgb(114, 6, 114);
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    min-width: 150px;
+    height: 30px;
     text-align: center;
-    border-radius: 10px;
-    padding: 5px 10px;
 }
 
 .main-content-area{
@@ -77,26 +66,26 @@
 }
 .yellow{
     background-color: rgb(157, 157, 2);
-    margin: 5px 0;
-    border-radius: 0;
+    margin: 5px;
+    border-radius: 5px;
     pointer-events: none;
 }
 .green{
     background-color: rgb(7, 110, 7);
-    margin: 5px 0;
-    border-radius: 0;
+    margin: 5px;
+    border-radius: 5px;
     pointer-events: none;
 }
 .blue{
     background-color: rgb(32, 32, 162);
-    margin: 5px 0;
-    border-radius: 0;
+    margin: 5px;
+    border-radius: 5px;
     pointer-events: none;
 }
 .purple{
     background-color: rgb(114, 6, 114);
-    margin: 5px 0;
-    border-radius: 0;
+    margin: 5px;
+    border-radius: 5px;
     pointer-events: none;
 }
 .pop-up-text{
@@ -119,4 +108,8 @@
 .button:hover{
     cursor: pointer;
     background-color: rgb(164, 147, 187);
+}
+
+@media screen and (max-width: 750px) {
+
 }

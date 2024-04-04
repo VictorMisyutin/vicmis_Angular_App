@@ -23,8 +23,7 @@ export class ConnectionsComponent {
   guessedCategories: number = 0; // keep track of how many categories player has gotten correct
   categoryNames: string[] = ["first four numbers", "The Four numbers after that", "more numbers", "the last Numbers"];
 
-  displayedCategories: string[] = ["????", "????", "????", "????"];
-
+  displayedCategories: string[] = ["", "", "",""];
 
   constructor(){
     this.wordsArray.push({ word: "one", status: 4, categoryNum: 0});
@@ -113,6 +112,7 @@ export class ConnectionsComponent {
       if(currentCheckedWords[i].categoryNum !== tempCategory){ // guess was incorrect
         this.lives.pop();
         correct = false;
+        break;
       }
     }
 
