@@ -12,14 +12,14 @@
 
     <div class="main-content-area" >
         <div *ngFor="let word of wordsArray"  class="word" 
-        [ngClass]="{'unsolved': word.status == 4 , 'selected': word.status == 5, 'yellow': word.status == 0, 'green': word.status == 1
+        [ngClass]="{ 'hinted':word.status === 6, 'unsolved': word.status == 4 , 'selected': word.status == 5, 'yellow': word.status == 0, 'green': word.status == 1
         , 'blue': word.status == 2, 'purple': word.status == 3}" 
         (click)="wordClicked(word.word)">
         {{ word.word }}
         </div>
     </div>
 
-    <p class="pop-up-text" id="pop-up-text">{{pop_up_text}}</p>
+    <p class="pop-up-text-hidden" id="pop-up-text">{{pop_up_text}}</p>
 
     <div class="lives">
         <div *ngFor="let life of lives">&#x25CF;</div>
@@ -27,6 +27,7 @@
     <div class="buttons">
         <button class="button" (click)="check()">submit</button>
         <button class="button" (click)="shuffle()">shuffle</button>
+        <button class="button" (click)="hint()">hint</button>
     </div>
 
 </body>

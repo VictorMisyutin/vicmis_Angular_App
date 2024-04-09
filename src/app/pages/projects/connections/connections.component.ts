@@ -8,7 +8,7 @@ import { catchError } from 'rxjs';
 })
 export class ConnectionsComponent {
   lives: number[] = [0, 1, 2, 3];
-  wordsArray: {word:string, status: number, categoryNum: number}[] = [];
+  wordsArray: {word:string, status: number, categoryNum: number, highlight: boolean}[] = [];
   clickedWords: number = 0;
   /*
   status: 0 ==> yellow
@@ -17,6 +17,7 @@ export class ConnectionsComponent {
   status: 3 ==> purple
   status: 4 ==> unsolved
   status: 5 ==> clicked
+  status: 6 ==> hinted
   */
   guesses: string[][] = []; // keep track of already guessed sequences
   pop_up_text: string = ""; // text that will display below grid
@@ -26,36 +27,41 @@ export class ConnectionsComponent {
   displayedCategories: string[] = ["", "", "",""];
 
   constructor(){
-    this.wordsArray.push({ word: "Foot", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "Soccer", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "Tennis", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "Basket", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "Turquoise", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "Ruby", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "Quartz", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "Opal", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "Slice", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "Split", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "Portion", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "Part", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "Brew", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "Java", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "Joe", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "Mud", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "Foot", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Soccer", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Tennis", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Basket", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Turquoise", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "Ruby", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "Quartz", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "Opal", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "Slice", status: 4, categoryNum: 2, highlight: false});
+    this.wordsArray.push({ word: "Split", status: 4, categoryNum: 2, highlight: false});
+    this.wordsArray.push({ word: "Portion", status: 4, categoryNum: 2, highlight: false});
+    this.wordsArray.push({ word: "Part", status: 4, categoryNum: 2, highlight: false});
+    this.wordsArray.push({ word: "Brew", status: 4, categoryNum: 3, highlight: false});
+    this.wordsArray.push({ word: "Java", status: 4, categoryNum: 3, highlight: false});
+    this.wordsArray.push({ word: "Joe", status: 4, categoryNum: 3, highlight: false});
+    this.wordsArray.push({ word: "Mud", status: 4, categoryNum: 3, highlight: false});
     this.shuffle();
   }  
   wordClicked(word: string){
     this.pop_up_text = "";
+    document.getElementById('pop-up-text')?.classList.remove('pop-up-text-active');
+    document.getElementById('pop-up-text')?.classList.add('pop-up-text-hidden');
     for(let i = 0; i < this.wordsArray.length;i++){
       if(this.wordsArray[i].word === word){
-        if(this.wordsArray[i].status === 4){
+        if(this.wordsArray[i].status === 4 || this.wordsArray[i].status === 6){
           if(this.clickedWords < 4){
-            this.wordsArray[i].status = 5;
+              this.wordsArray[i].status = 5;
             this.clickedWords++;
           }
         }
         else{
-          this.wordsArray[i].status = 4;
+          if(this.wordsArray[i].highlight)
+            this.wordsArray[i].status = 6;
+          else
+            this.wordsArray[i].status = 4;
           this.clickedWords--;
         }
         return;
@@ -66,6 +72,8 @@ export class ConnectionsComponent {
   check(){
     if(this.clickedWords !== 4){ // check if enough words are selected
       this.pop_up_text = "Please Select 4 Words";
+      document.getElementById('pop-up-text')?.classList.remove('pop-up-text-hidden');
+      document.getElementById('pop-up-text')?.classList.add('pop-up-text-active');
       return;
     }
     let currentCheckedWords: {word:string, status: number, categoryNum: number}[] = []; // create temp array for current clicked words
@@ -98,6 +106,8 @@ export class ConnectionsComponent {
 
     if(guessedBefore){
       this.pop_up_text = "Already Guessed";
+      document.getElementById('pop-up-text')?.classList.remove('pop-up-text-hidden');
+      document.getElementById('pop-up-text')?.classList.add('pop-up-text-active');
       return; 
     }
     else{
@@ -137,10 +147,14 @@ export class ConnectionsComponent {
       this.displayedCategories[currentCheckedWords[0].status] = this.categoryNames[currentCheckedWords[0].status];
       if(this.guessedCategories == 4){
         this.pop_up_text = "Nice Job!!!";
+        document.getElementById('pop-up-text')?.classList.remove('pop-up-text-hidden');
+        document.getElementById('pop-up-text')?.classList.add('pop-up-text-active');
       }
     }
     else{ // incorrect guess
       this.pop_up_text = "incorrect";
+      document.getElementById('pop-up-text')?.classList.remove('pop-up-text-hidden');
+      document.getElementById('pop-up-text')?.classList.add('pop-up-text-active');
     }
   }
   
@@ -149,5 +163,16 @@ export class ConnectionsComponent {
       const j = Math.floor(Math.random() * (i - (4*this.guessedCategories) + 1) + (4*this.guessedCategories)); // Ensure j is at least 4
       [this.wordsArray[i], this.wordsArray[j]] = [this.wordsArray[j], this.wordsArray[i]]; 
     } 
+  }
+
+  hint(){
+    // properly highlight a word
+    this.wordsArray[6].highlight = true;
+    this.wordsArray[6].status = 6;
+  
+    // TODO: find two words in a category that has not been solved yet
+
+    // highlight those words using the above method.
+    
   }
 }

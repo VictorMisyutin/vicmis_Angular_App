@@ -88,7 +88,16 @@
     border-radius: 5px;
     pointer-events: none;
 }
-.pop-up-text{
+.hinted{
+    background-color: rgb(202, 148, 157);
+    margin: 5px;
+    border-radius: 5px;
+}
+.pop-up-text-hidden{
+    margin: 0;
+}
+.pop-up-text-active{
+    margin: 10px auto;
     text-align: center;
 }
 .lives{
