@@ -21,27 +21,27 @@ export class ConnectionsComponent {
   guesses: string[][] = []; // keep track of already guessed sequences
   pop_up_text: string = ""; // text that will display below grid
   guessedCategories: number = 0; // keep track of how many categories player has gotten correct
-  categoryNames: string[] = ["Words that could be a letter", "Types of Pasta", "the f sound without 'f' ", "Radio + ____"];
+  categoryNames: string[] = ["Sports Balls", "Gemstones", "Sectioning/Seperation", "Coffee Slang"];
 
   displayedCategories: string[] = ["", "", "",""];
 
   constructor(){
-    this.wordsArray.push({ word: "tea", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "queue", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "sea", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "bee", status: 4, categoryNum: 0});
-    this.wordsArray.push({ word: "angel", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "bow tie", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "lasagne", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "elbow", status: 4, categoryNum: 1});
-    this.wordsArray.push({ word: "gopher", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "enough", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "physics", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "phone", status: 4, categoryNum: 2});
-    this.wordsArray.push({ word: "show", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "head", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "shack", status: 4, categoryNum: 3});
-    this.wordsArray.push({ word: "waves", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "Foot", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "Soccer", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "Tennis", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "Basket", status: 4, categoryNum: 0});
+    this.wordsArray.push({ word: "Turquoise", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "Ruby", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "Quartz", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "Opal", status: 4, categoryNum: 1});
+    this.wordsArray.push({ word: "Slice", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "Split", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "Portion", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "Part", status: 4, categoryNum: 2});
+    this.wordsArray.push({ word: "Brew", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "Java", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "Joe", status: 4, categoryNum: 3});
+    this.wordsArray.push({ word: "Mud", status: 4, categoryNum: 3});
     this.shuffle();
   }  
   wordClicked(word: string){
