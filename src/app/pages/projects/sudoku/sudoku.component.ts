@@ -17,6 +17,8 @@ export class SudokuComponent implements OnInit {
   userGeneratedBoard: boolean = false;
   cellsFilled: number = 0;
   difficulty: number = 1;
+  solverTimeoutCounter: number = 0;
+  isASolution: boolean = true;
   
   constructor() { }
   
@@ -97,7 +99,6 @@ export class SudokuComponent implements OnInit {
     this.solveSudokuGridMyAlgo();
     // remove some random cells
     let deviation = -7 * (this.difficulty-5) + 10;
-    console.log(deviation);
     let starterCellCount = Math.floor(Math.random() * 10) + deviation; 
 
     for(let i = 0; i < 9; i++){
@@ -142,25 +143,33 @@ export class SudokuComponent implements OnInit {
       }
     }
     else{
-      const emptyCell = this.findEmptyCell();
-      if (!emptyCell) {
-          return true; // Sudoku grid solved
-      }
-  
-      const row = emptyCell[0];
-      const col = emptyCell[1];
-  
-      for (let num = 1; num <= 9; num++) {
-        if (this.isValidPlacement(row, col, num)) {
-          this.displayedSudokuData[row][col] = {value: num, correctSpot: true, initialVal: false, checked: true};
-          
-          if (this.solveSudokuGridMyAlgo()) {
-              return true; // Sudoku grid solved
-          }
-
-          // If the current placement doesn't lead to a solution, backtrack
-          this.displayedSudokuData[row][col] = {value: 0, correctSpot: false, initialVal: false, checked: false};
+      if(this.solverTimeoutCounter < 1000){
+        const emptyCell = this.findEmptyCell();
+        if (!emptyCell) {
+            return true; // Sudoku grid solved
         }
+    
+        const row = emptyCell[0];
+        const col = emptyCell[1];
+    
+        for (let num = 1; num <= 9; num++) {
+          if (this.isValidPlacement(row, col, num)) {
+            this.displayedSudokuData[row][col] = {value: num, correctSpot: true, initialVal: false, checked: true};
+            
+            if (this.solveSudokuGridMyAlgo()) {
+                return true; // Sudoku grid solved
+            }
+  
+            // If the current placement doesn't lead to a solution, backtrack
+            this.displayedSudokuData[row][col] = {value: 0, correctSpot: false, initialVal: false, checked: false};
+          }
+        }
+        this.solverTimeoutCounter++; 
+      }
+      else{
+        window.alert("no solution");
+        this.isASolution = false;
+        return true;
       }
     }
     return false; // No solution found
@@ -175,7 +184,12 @@ export class SudokuComponent implements OnInit {
       }
     }
     else{
+      this.solverTimeoutCounter = 0;
+      this.isASolution = true;
       this.solveSudokuGridMyAlgo();
+      if(!this.isASolution){
+        this.resetSudokuGrid();
+      }
     }
   }
 
