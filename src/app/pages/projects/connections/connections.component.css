@@ -46,7 +46,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .word{
     text-align: center;
