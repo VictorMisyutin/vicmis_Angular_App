@@ -22,27 +22,27 @@ export class ConnectionsComponent {
   guesses: string[][] = []; // keep track of already guessed sequences
   pop_up_text: string = ""; // text that will display below grid
   guessedCategories: number = 0; // keep track of how many categories player has gotten correct
-  categoryNames: string[] = ["Sports Balls", "Gemstones", "Sectioning/Seperation", "Coffee Slang"];
+    categoryNames: string[] = ["Finger Foods", "Nail Shapes", "Types of Shoes", "Found in a park"];
 
   displayedCategories: string[] = ["", "", "",""];
 
   constructor(){
-    this.wordsArray.push({ word: "Foot", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Soccer", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Tennis", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Basket", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Turquoise", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "Ruby", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "Quartz", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "Opal", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "Slice", status: 4, categoryNum: 2, highlight: false});
-    this.wordsArray.push({ word: "Split", status: 4, categoryNum: 2, highlight: false});
-    this.wordsArray.push({ word: "Portion", status: 4, categoryNum: 2, highlight: false});
-    this.wordsArray.push({ word: "Part", status: 4, categoryNum: 2, highlight: false});
-    this.wordsArray.push({ word: "Brew", status: 4, categoryNum: 3, highlight: false});
-    this.wordsArray.push({ word: "Java", status: 4, categoryNum: 3, highlight: false});
-    this.wordsArray.push({ word: "Joe", status: 4, categoryNum: 3, highlight: false});
-    this.wordsArray.push({ word: "Mud", status: 4, categoryNum: 3, highlight: false});
+    this.wordsArray.push({ word: "Seeds", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Wings", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Cracker", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Hotdog", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Almond", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "Square", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "edge", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "Stiletto", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "Heel", status: 4, categoryNum: 2, highlight: false});
+    this.wordsArray.push({ word: "Flat", status: 4, categoryNum: 2, highlight: false});
+    this.wordsArray.push({ word: "Boat", status: 4, categoryNum: 2, highlight: false});
+    this.wordsArray.push({ word: "Platform", status: 4, categoryNum: 2, highlight: false});
+    this.wordsArray.push({ word: "Bench", status: 4, categoryNum: 3, highlight: false});
+    this.wordsArray.push({ word: "Swing", status: 4, categoryNum: 3, highlight: false});
+    this.wordsArray.push({ word: "Slide", status: 4, categoryNum: 3, highlight: false});
+    this.wordsArray.push({ word: "Kids", status: 4, categoryNum: 3, highlight: false});
     this.shuffle();
   }  
   wordClicked(word: string){
