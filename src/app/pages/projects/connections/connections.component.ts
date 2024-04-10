@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { catchError } from 'rxjs';
+import { catchError, first } from 'rxjs';
 
 @Component({
   selector: 'app-connections',
@@ -22,18 +22,19 @@ export class ConnectionsComponent {
   guesses: string[][] = []; // keep track of already guessed sequences
   pop_up_text: string = ""; // text that will display below grid
   guessedCategories: number = 0; // keep track of how many categories player has gotten correct
-    categoryNames: string[] = ["Finger Foods", "Nail Shapes", "Types of Shoes", "Found in a park"];
+  hinted: boolean = false; // keep track of if user already has hint
+  categoryNames: string[] = ["Finger Foods", "Nail Shapes", "Types of Shoes", "Found in a park"];
 
   displayedCategories: string[] = ["", "", "",""];
 
   constructor(){
-    this.wordsArray.push({ word: "Seeds", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Wings", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Seed", status: 4, categoryNum: 0, highlight: false});
+    this.wordsArray.push({ word: "Wing", status: 4, categoryNum: 0, highlight: false});
     this.wordsArray.push({ word: "Cracker", status: 4, categoryNum: 0, highlight: false});
     this.wordsArray.push({ word: "Hotdog", status: 4, categoryNum: 0, highlight: false});
     this.wordsArray.push({ word: "Almond", status: 4, categoryNum: 1, highlight: false});
     this.wordsArray.push({ word: "Square", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "edge", status: 4, categoryNum: 1, highlight: false});
+    this.wordsArray.push({ word: "Edge", status: 4, categoryNum: 1, highlight: false});
     this.wordsArray.push({ word: "Stiletto", status: 4, categoryNum: 1, highlight: false});
     this.wordsArray.push({ word: "Heel", status: 4, categoryNum: 2, highlight: false});
     this.wordsArray.push({ word: "Flat", status: 4, categoryNum: 2, highlight: false});
@@ -76,7 +77,7 @@ export class ConnectionsComponent {
       document.getElementById('pop-up-text')?.classList.add('pop-up-text-active');
       return;
     }
-    let currentCheckedWords: {word:string, status: number, categoryNum: number}[] = []; // create temp array for current clicked words
+    let currentCheckedWords: {word:string, status: number, categoryNum: number, highlight: boolean}[] = []; // create temp array for current clicked words
     
     for(let i = 0; i < this.wordsArray.length; i++){ // iterate through all words and add selected ones to temp array
       if(this.wordsArray[i].status === 5){
@@ -128,7 +129,11 @@ export class ConnectionsComponent {
 
     if(correct){
       for(let i = 0; i < currentCheckedWords.length; i++){ // update array to show that guess was correct
+        if(currentCheckedWords[i].highlight){
+          this.hinted = false;
+        }
         currentCheckedWords[i].status = currentCheckedWords[i].categoryNum;
+        // if guessed category with the given hint then reset the hinted boolean
       }
       this.clickedWords = 0; // reset clicked words
       // put solved categories words at the top
@@ -166,13 +171,32 @@ export class ConnectionsComponent {
   }
 
   hint(){
-    // properly highlight a word
-    this.wordsArray[6].highlight = true;
-    this.wordsArray[6].status = 6;
-  
-    // TODO: find two words in a category that has not been solved yet
-
-    // highlight those words using the above method.
+    if(!this.hinted){
+      // select random word
+      let index = Math.floor(Math.random() * (this.wordsArray.length - (this.guessedCategories*4)) + (this.guessedCategories*4))
+      console.log(index);
+      this.wordsArray[index].highlight = true;
+      this.wordsArray[index].status = 6;
+      let firstWord = this.wordsArray[index].word;
+      let firstWordCategory = this.wordsArray[index].categoryNum;
+      let secondWord = "";
+      let foundAnotherWord = false;
+      // select random words until you find a different word in the same category.
+      while(!foundAnotherWord){
+        let index = Math.floor(Math.random() * (this.wordsArray.length - (this.guessedCategories*4) + 1) + (this.guessedCategories*4));
+        if(this.wordsArray[index].categoryNum == firstWordCategory && this.wordsArray[index].word != firstWord){
+          this.wordsArray[index].highlight = true;
+          this.wordsArray[index].status = 6;
+          foundAnotherWord = true;
+        }
+      }
+      this.hinted = true;
+    }
+    else{
+      this.pop_up_text = "Solve the current hint before getting another.";
+      document.getElementById('pop-up-text')?.classList.remove('pop-up-text-hidden');
+      document.getElementById('pop-up-text')?.classList.add('pop-up-text-active');
+    }
     
   }
 }
