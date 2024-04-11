@@ -4,15 +4,23 @@ body{
 .hero {
     text-align: center;
     font-size: large;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
-.hero hr {
+hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 2px solid #555555;
+    border-top: 2px solid #686868;
 }
-
+.feature-upper{
+    text-align: center;
+}
+.feature-upper h4{
+    margin-bottom: 30px;
+}
+.feature-upper a{
+    color: #cbcbcb;
+}
 .feature-left {
     float: left;
     margin-bottom: 50px;
