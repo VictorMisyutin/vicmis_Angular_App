@@ -25,6 +25,7 @@ h2{
     border: 2px black solid;
     border-radius: 5px;
     padding: 30px 20px;
+    flex-direction: column;
 }
 .project a{
     text-decoration: none;
@@ -64,7 +65,7 @@ h2{
 } 
 @media screen and (max-width: 650px){
     .project{
-        width:240px;
+        width:300px;
     }
 }
 /* @media (max-width: 1060px){
