@@ -173,8 +173,8 @@ export class ConnectionsComponent {
   hint(){
     if(!this.hinted){
       // select random word
-      let index = Math.floor(Math.random() * (this.wordsArray.length - (this.guessedCategories*4)) + (this.guessedCategories*4))
-      console.log(index);
+      let index = Math.floor(Math.random() * (this.wordsArray.length - (this.guessedCategories*4)) + (this.guessedCategories*4));
+      console.log("first index: " + index);
       this.wordsArray[index].highlight = true;
       this.wordsArray[index].status = 6;
       let firstWord = this.wordsArray[index].word;
@@ -183,7 +183,8 @@ export class ConnectionsComponent {
       let foundAnotherWord = false;
       // select random words until you find a different word in the same category.
       while(!foundAnotherWord){
-        let index = Math.floor(Math.random() * (this.wordsArray.length - (this.guessedCategories*4) + 1) + (this.guessedCategories*4));
+        let index = Math.floor(Math.random() * (this.wordsArray.length - (this.guessedCategories*4)) + (this.guessedCategories*4));
+        console.log(index);
         if(this.wordsArray[index].categoryNum == firstWordCategory && this.wordsArray[index].word != firstWord){
           this.wordsArray[index].highlight = true;
           this.wordsArray[index].status = 6;
