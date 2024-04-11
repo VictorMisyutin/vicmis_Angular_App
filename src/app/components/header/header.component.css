@@ -23,7 +23,7 @@ background-color: #2c4635; */
     font-size: 23px;
     color: white;
 }
-.header a:hover {
+.header a:hover, a:focus {
     /* color: black; */
     text-shadow: 0 0 15px white;
 }

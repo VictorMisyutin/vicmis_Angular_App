@@ -44,7 +44,7 @@ body {
     color: white;
 }
 
-.sidebar ul li:hover {
+.sidebar ul li:hover li:focus{
     text-shadow: 0 0 10px white;
 }
 
