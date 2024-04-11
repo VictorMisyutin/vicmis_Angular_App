@@ -118,4 +118,7 @@
     .container .main-text {
         text-align: center;
     }
+    .information{
+        margin: 0 10%;
+    }
 }

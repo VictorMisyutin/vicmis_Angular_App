@@ -113,15 +113,30 @@
     margin:  10px 4px;
     border-radius: 10px;
     padding: 5px 0;
+    margin-bottom: 40px;
 }
 .button:hover{
     cursor: pointer;
     background-color: rgb(164, 147, 187);
 }
-
+.description{
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    line-height: 2;
+}
+.description h3{
+    margin-bottom: 0;
+}
+.description p{
+    margin-top: 0;
+}
 @media screen and (max-width: 750px) {
     .word{
         padding: 8px 12px;
         font-size: 13px;
+    }
+    .description{
+        width: 80%;
     }
 }
