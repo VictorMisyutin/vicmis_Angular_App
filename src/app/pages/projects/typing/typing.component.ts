@@ -27,6 +27,7 @@ export class TypingComponent implements OnInit{
   
   setWords(words: number){
     clearInterval(this.timerRef);
+    this.timer = 0;
     this.timed = false;
     this.numWords = words;
     document.getElementById('10-words')?.classList.remove('active-select');
@@ -51,6 +52,7 @@ export class TypingComponent implements OnInit{
 
   setTime(time: number){
     clearInterval(this.timerRef);
+    this.timer = 0;
     this.timed = true;
     this.timeLength = time;
     // remove possible old classes
@@ -73,7 +75,6 @@ export class TypingComponent implements OnInit{
   }
 
   generateText(length: number){
-    this.timer = 0;
     this.textString = "";
     this.textArray = [];
     this.textString = generate({exactly: length, maxLength: 7}).toString().toLowerCase().replaceAll(',', ' ');
@@ -88,7 +89,7 @@ export class TypingComponent implements OnInit{
   }
   onKeyUp(event:KeyboardEvent){
     const key = event.keyCode || event.charCode; 
-    if(key === 27) {
+    if(key === 27 || key === 17) {
       const mainText = document.getElementById('main-text');
       if (mainText) {
         mainText.blur();
@@ -100,13 +101,14 @@ export class TypingComponent implements OnInit{
   }
   onKeyDown(event:KeyboardEvent){
     const key = event.keyCode || event.charCode;
-    if(key === 27 || key === 9) { // escape || tab
-      return false;
+    let correct: boolean = true;
+    if(key === 27) { // escape
+      return;
     }
     else if(key == 17){ // ctrl
-      return false;
+      return;
     }
-    else if (key === 8 || key === 46) { //backspace or delete
+    else if (key === 8 || key === 46 || key === 17) { //backspace or delete or ctrl
       // go back to last character with status that is not 0
       if(this.textArray[this.position-1].status != 0){
         this.textArray[this.position-1].status = 0;
@@ -122,22 +124,20 @@ export class TypingComponent implements OnInit{
       }
     }
     else{ // normal key press
-      if(this.position === 0) this.startTime = Date.now();
       if(this.position === 0){
+        this.startTime = Date.now();
         this.timerRef = setInterval(() => {
           this.timer = (Date.now() - this.startTime)/1000;
         });
       }
-      if(this.textArray[this.position].character === event.key)
+      if(this.textArray[this.position].character === event.key){
         this.textArray[this.position].status = 1;
+        correct = true;
+      }
       else{ // incorrect key
-        if(this.position !== 0){
-          if(this.textArray[this.position-1].character === ' ' && key !== 32 && this.position !== 1){
-            this.position--;
-          }
-        }
+        correct = false;
         this.textArray[this.position].status = 2;
-        if(key === 32){ // skip to next space
+        if(key === 32 && this.textArray[this.position-1].character !== ' '){ // skip to next space
           for(let i = this.position; i < this.textArray.length; i++){
             if(this.textArray[i].character == ' '){
               this.position = i;
@@ -148,6 +148,9 @@ export class TypingComponent implements OnInit{
         }
       }
       this.position++;
+      if(this.textArray[this.position-1].character === ' ' && !correct){
+        this.position--;
+      }
     }
 
     const element = document.getElementById('main-text');
