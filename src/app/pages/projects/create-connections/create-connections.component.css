@@ -1,5 +1,23 @@
+.URL-hidden{
+    display: none;
+}
+.copy-button{
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.URL-show{
+    margin: 0 auto;
+    margin-top: 20px;
+    width:60%;
+    background-color: black;
+    border-radius: 10px;
+    flex-direction: columna;
+    overflow-wrap: break-word;
+    text-align: center;
+    padding: 10px;
+}
 .main-container{
-    margin-top: 70px;
+    margin-top: 30px;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }

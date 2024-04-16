@@ -60,6 +60,23 @@ export class CreateConnectionsComponent {
     let currentUrl = window.location.href.split('?')[0]; // Get current URL without query params
     currentUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/'));
     this.shareURL = `${currentUrl}?a=${yellowCategory}&b=${greenCategory}&c=${blueCategory}&d=${purpleCategory}&e=${yellowAnswers}&f=${greenAnswers}&g=${blueAnswers}&h=${purpleAnswers}`;
-    console.log(this.shareURL);
+    document.getElementById('url-display')?.classList.remove('URL-hidden');
+    document.getElementById('url-display')?.classList.add('URL-show');
   }
+  copyLink(){
+
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(this.shareURL)
+        .then(() => {
+          alert('Text copied to clipboard');
+        })
+        .catch(err => {
+          alert('Error copying text: ');
+        });
+    } else {
+      alert('Clipboard API not supported');
+    }
+
+  }
+
 }
