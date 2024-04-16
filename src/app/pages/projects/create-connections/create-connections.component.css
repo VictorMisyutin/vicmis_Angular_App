@@ -47,17 +47,21 @@
 .purple{
     color: rgb(196, 2, 196);
 }
-
-.create-button{
+.buttons{
     margin: 0 auto;
-    margin-top: 50px;
+}
+.button{
+    margin: 20px;
     font-size: 15px;
     padding: 10px 20px;
-    border-radius: 10px;    
+    border-radius: 10px;   
+    background-color: aliceblue;
+    border: 1px black solid;
+    text-decoration: none;
 }
-.create-button:hover{
+.button:hover{
     cursor: pointer;
-    background-color: rgb(164, 147, 187);
+    background-color: rgb(172, 172, 172);
 }
 @media screen and (max-width: 850px){
     .main-container{

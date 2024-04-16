@@ -76,7 +76,6 @@ export class CreateConnectionsComponent {
     } else {
       alert('Clipboard API not supported');
     }
-
   }
 
 }
