@@ -15,6 +15,7 @@ import { CollisionResolutionComponent } from './pages/projects/collision-resolut
 import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-invaders.component';
 import { VizSortComponent } from './pages/projects/viz-sort/viz-sort.component';
 import { ConnectionsComponent } from './pages/projects/connections/connections.component';
+import { CreateConnectionsComponent } from './pages/projects/create-connections/create-connections.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path: 'projects/collision', component: CollisionResolutionComponent, title: 'Collision Resolution'},
   {path: 'projects/space-invaders', component: SpaceInvadersComponent, title: 'Space Invaders'},
   {path: 'projects/viz-sort', component: VizSortComponent, title: 'viz sort'},
-  {path: 'projects/connections', component: ConnectionsComponent, title: 'connections'}
+  {path: 'projects/connections', component: ConnectionsComponent, title: 'connections'},
+  {path: 'projects/connections/create', component: CreateConnectionsComponent, title: 'create connections'}
 ];
 
 @NgModule({

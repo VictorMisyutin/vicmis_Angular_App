@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { catchError, first } from 'rxjs';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-connections',
   templateUrl: './connections.component.html',
   styleUrl: './connections.component.css'
 })
+
 export class ConnectionsComponent {
+  
   lives: number[] = [0, 1, 2, 3];
   wordsArray: {word:string, status: number, categoryNum: number, highlight: boolean}[] = [];
   clickedWords: number = 0;
@@ -27,7 +30,9 @@ export class ConnectionsComponent {
 
   displayedCategories: string[] = ["", "", "",""];
 
-  constructor(){
+  selectedWord: string = "";
+
+  constructor(private route: ActivatedRoute){
     this.wordsArray.push({ word: "Seed", status: 4, categoryNum: 0, highlight: false});
     this.wordsArray.push({ word: "Wing", status: 4, categoryNum: 0, highlight: false});
     this.wordsArray.push({ word: "Cracker", status: 4, categoryNum: 0, highlight: false});
@@ -45,6 +50,11 @@ export class ConnectionsComponent {
     this.wordsArray.push({ word: "Slide", status: 4, categoryNum: 3, highlight: false});
     this.wordsArray.push({ word: "Kids", status: 4, categoryNum: 3, highlight: false});
     this.shuffle();
+
+    this.route.queryParams.subscribe(params => {
+      this.selectedWord = params['word'];
+    });
+    console.log(this.selectedWord);
   }  
   wordClicked(word: string){
     this.pop_up_text = "";
@@ -200,4 +210,12 @@ export class ConnectionsComponent {
     }
     
   }
+
+  createConnections(){
+    const currentUrl = window.location.href.split('?')[0]; // Get current URL without query params
+    const encodedWord = encodeURIComponent("buns");
+    const sharedUrl = `${currentUrl}?word=${encodedWord}`;
+    console.log(sharedUrl);
+  }
+
 }

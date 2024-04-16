@@ -21,6 +21,7 @@ import { CollisionResolutionComponent } from './pages/projects/collision-resolut
 import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-invaders.component';
 import { VizSortComponent } from './pages/projects/viz-sort/viz-sort.component';
 import { ConnectionsComponent } from './pages/projects/connections/connections.component';
+import { CreateConnectionsComponent } from './pages/projects/create-connections/create-connections.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ConnectionsComponent } from './pages/projects/connections/connections.c
     CollisionResolutionComponent,
     SpaceInvadersComponent,
     VizSortComponent,
-    ConnectionsComponent
+    ConnectionsComponent,
+    CreateConnectionsComponent
   ],
   imports: [
     BrowserModule,
