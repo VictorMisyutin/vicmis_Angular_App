@@ -6,21 +6,57 @@
 .row{
     display: grid;
     grid-template-columns: 0.5fr 1fr;
-    margin: 0 auto;
-    width: 60%;
-    text-align: center;
+    grid-gap: 100px;
+    width: 50%;
+    text-align: lefft;
     padding: 10px 20px;
+    margin: 0 auto;
 }
 .row input[type="text"]{
     height: 50px;
-    width: 80%;
+    width: 100%;
     border-radius: 10px;
 }
-@media screen and (max-width: 750px){
+.yellow{
+    color: yellow;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: rgb(7, 7, 177);
+}
+.purple{
+    color: rgb(196, 2, 196);
+}
+
+.create-button{
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;    
+}
+.create-button:hover{
+    cursor: pointer;
+    background-color: rgb(164, 147, 187);
+}
+@media screen and (max-width: 850px){
     .main-container{
         margin-top: 20px;
     }
     .row{
         width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 10px;
+        margin-bottom: 20px;
+    }
+    .category-input{
+        max-width: 200px;
+    }
+    .create-button{
+        margin-top: 0;
+        margin-bottom: 70px;
     }
 }

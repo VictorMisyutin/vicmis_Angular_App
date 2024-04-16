@@ -32,29 +32,72 @@ export class ConnectionsComponent {
 
   selectedWord: string = "";
 
+
+    // decrypt the encrypted string
+    decrypt(encryptedString: string){
+      let key: string = "";
+      if(!encryptedString || encryptedString.length == 0) return key;
+  
+      for(let i = 0; i < encryptedString.length; i+=3){
+        key += String.fromCharCode(parseInt(encryptedString.substring(i, i+3)));
+      }
+      return key;
+    }
+
   constructor(private route: ActivatedRoute){
-    this.wordsArray.push({ word: "Seed", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Wing", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Cracker", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Hotdog", status: 4, categoryNum: 0, highlight: false});
-    this.wordsArray.push({ word: "Almond", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "Square", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "Edge", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "Stiletto", status: 4, categoryNum: 1, highlight: false});
-    this.wordsArray.push({ word: "Heel", status: 4, categoryNum: 2, highlight: false});
-    this.wordsArray.push({ word: "Flat", status: 4, categoryNum: 2, highlight: false});
-    this.wordsArray.push({ word: "Boat", status: 4, categoryNum: 2, highlight: false});
-    this.wordsArray.push({ word: "Platform", status: 4, categoryNum: 2, highlight: false});
-    this.wordsArray.push({ word: "Bench", status: 4, categoryNum: 3, highlight: false});
-    this.wordsArray.push({ word: "Swing", status: 4, categoryNum: 3, highlight: false});
-    this.wordsArray.push({ word: "Slide", status: 4, categoryNum: 3, highlight: false});
-    this.wordsArray.push({ word: "Kids", status: 4, categoryNum: 3, highlight: false});
+    // check if custom game
+    if(window.location.href.indexOf('?') == -1){
+      this.wordsArray.push({ word: "Seed", status: 4, categoryNum: 0, highlight: false});
+      this.wordsArray.push({ word: "Wing", status: 4, categoryNum: 0, highlight: false});
+      this.wordsArray.push({ word: "Cracker", status: 4, categoryNum: 0, highlight: false});
+      this.wordsArray.push({ word: "Hotdog", status: 4, categoryNum: 0, highlight: false});
+      this.wordsArray.push({ word: "Almond", status: 4, categoryNum: 1, highlight: false});
+      this.wordsArray.push({ word: "Square", status: 4, categoryNum: 1, highlight: false});
+      this.wordsArray.push({ word: "Edge", status: 4, categoryNum: 1, highlight: false});
+      this.wordsArray.push({ word: "Stiletto", status: 4, categoryNum: 1, highlight: false});
+      this.wordsArray.push({ word: "Heel", status: 4, categoryNum: 2, highlight: false});
+      this.wordsArray.push({ word: "Flat", status: 4, categoryNum: 2, highlight: false});
+      this.wordsArray.push({ word: "Boat", status: 4, categoryNum: 2, highlight: false});
+      this.wordsArray.push({ word: "Platform", status: 4, categoryNum: 2, highlight: false});
+      this.wordsArray.push({ word: "Bench", status: 4, categoryNum: 3, highlight: false});
+      this.wordsArray.push({ word: "Swing", status: 4, categoryNum: 3, highlight: false});
+      this.wordsArray.push({ word: "Slide", status: 4, categoryNum: 3, highlight: false});
+      this.wordsArray.push({ word: "Kids", status: 4, categoryNum: 3, highlight: false});
+    }
+    else{
+      this.route.queryParams.subscribe(params => {
+        // get categories
+        this.categoryNames[0] = this.decrypt(params['a']);
+        this.categoryNames[1] = this.decrypt(params['b']);
+        this.categoryNames[2] = this.decrypt(params['c']);
+        this.categoryNames[3] = this.decrypt(params['d']);
+        // get answers
+        let yellowAnswers = this.decrypt(params['e']).split(',');
+        let greenAnswers = this.decrypt(params['f']).split(',');
+        let blueAnswers = this.decrypt(params['g']).split(',');
+        let purpleAnswers = this.decrypt(params['h']).split(',');
+        
+        // push to wordsArray
+        this.wordsArray.push({ word: yellowAnswers[0], status: 4, categoryNum: 0, highlight: false});
+        this.wordsArray.push({ word: yellowAnswers[1], status: 4, categoryNum: 0, highlight: false});
+        this.wordsArray.push({ word: yellowAnswers[2], status: 4, categoryNum: 0, highlight: false});
+        this.wordsArray.push({ word: yellowAnswers[3], status: 4, categoryNum: 0, highlight: false});
+        this.wordsArray.push({ word: greenAnswers[0], status: 4, categoryNum: 1, highlight: false});
+        this.wordsArray.push({ word: greenAnswers[1], status: 4, categoryNum: 1, highlight: false});
+        this.wordsArray.push({ word: greenAnswers[2], status: 4, categoryNum: 1, highlight: false});
+        this.wordsArray.push({ word: greenAnswers[3], status: 4, categoryNum: 1, highlight: false});
+        this.wordsArray.push({ word: blueAnswers[0], status: 4, categoryNum: 2, highlight: false});
+        this.wordsArray.push({ word: blueAnswers[1], status: 4, categoryNum: 2, highlight: false});
+        this.wordsArray.push({ word: blueAnswers[2], status: 4, categoryNum: 2, highlight: false});
+        this.wordsArray.push({ word: blueAnswers[3], status: 4, categoryNum: 2, highlight: false});
+        this.wordsArray.push({ word: purpleAnswers[0], status: 4, categoryNum: 3, highlight: false});
+        this.wordsArray.push({ word: purpleAnswers[1], status: 4, categoryNum: 3, highlight: false});
+        this.wordsArray.push({ word: purpleAnswers[2], status: 4, categoryNum: 3, highlight: false});
+        this.wordsArray.push({ word: purpleAnswers[3], status: 4, categoryNum: 3, highlight: false});
+      });
+    }
     this.shuffle();
 
-    this.route.queryParams.subscribe(params => {
-      this.selectedWord = params['word'];
-    });
-    console.log(this.selectedWord);
   }  
   wordClicked(word: string){
     this.pop_up_text = "";
@@ -215,7 +258,6 @@ export class ConnectionsComponent {
     const currentUrl = window.location.href.split('?')[0]; // Get current URL without query params
     const encodedWord = encodeURIComponent("buns");
     const sharedUrl = `${currentUrl}?word=${encodedWord}`;
-    console.log(sharedUrl);
   }
 
 }

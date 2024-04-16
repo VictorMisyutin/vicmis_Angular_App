@@ -1,48 +1,51 @@
 <app-header></app-header>
 <body>
     <div class="main-container">
-        <div class="row">
+        <div class="row yellow">
             <div class="left">
                 <p>Yellow Category</p>
-                <input type="text">
+                <input id="yellowCategory" class="category-input" type="text">
             </div>
             <div class="right">
                 <p>Yellow Answers (seperate with commas)</p>
-                <input type="text">
-            </div>
-        </div>
-        <div class="row">
-            <div class="left">
-                <p>Green Category</p>
-                <input type="text">
-            </div>
-            <div class="right">
-                <p>Green Answers (seperate with commas)</p>
-                <input type="text">
-            </div>
-        </div>
-        <div class="row">
-            <div class="left">
-                <p>Blue Category</p>
-                <input type="text">
-            </div>
-            <div class="right">
-                <p>Blue Answers (seperate with commas)</p>
-                <input type="text">
-            </div>
-        </div>
-        <div class="row">
-            <div class="left">
-                <p>Purple Category</p>
-                <input type="text">
-            </div>
-            <div class="right">
-                <p>Purple Answers (seperate with commas)</p>
-                <input type="text">
+                <input id="yellowAnswers" type="text">
             </div>
         </div>
 
-        <button (click)="createGame()">Create Game</button>
+        <div class="row green">
+            <div class="left">
+                <p>Green Category</p>
+                <input id="greenCategory" class="category-input" type="text">
+            </div>
+            <div class="right">
+                <p>Green Answers (seperate with commas)</p>
+                <input id="greenAnswers" type="text">
+            </div>
+        </div>
+
+        <div class="row blue">
+            <div class="left">
+                <p>Blue Category</p>
+                <input id="blueCategory" class="category-input" type="text">
+            </div>
+            <div class="right">
+                <p>Blue Answers (seperate with commas)</p>
+                <input id="blueAnswers" type="text">
+            </div>
+        </div>
+
+        <div class="row purple">
+            <div class="left">
+                <p>Purple Category</p>
+                <input id="purpleCategory" class="category-input" type="text">
+            </div>
+            <div class="right">
+                <p>Purple Answers (seperate with commas)</p>
+                <input id="purpleAnswers" type="text">
+            </div>
+        </div>
+
+        <button class="create-button" (click)="createGame()">Create Game</button>
     </div>
 
 </body>
