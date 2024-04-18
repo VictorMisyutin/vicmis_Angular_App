@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+}
+.title{
+    margin: 40px 0;
+}
+.links{
+    display: block;
+    margin: 0 auto;
+}
+.link{
+    margin-bottom: 20px;
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover{
+    color: rgb(134, 134, 134);
+}

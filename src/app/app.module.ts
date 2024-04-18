@@ -19,9 +19,9 @@ import { SudokuComponent } from './pages/projects/sudoku/sudoku.component';
 import { TypingComponent } from './pages/projects/typing/typing.component';
 import { CollisionResolutionComponent } from './pages/projects/collision-resolution/collision-resolution.component';
 import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-invaders.component';
-import { VizSortComponent } from './pages/projects/viz-sort/viz-sort.component';
 import { ConnectionsComponent } from './pages/projects/connections/connections.component';
 import { CreateConnectionsComponent } from './pages/projects/create-connections/create-connections.component';
+import { CatalogedComponent } from './pages/projects/cataloged/cataloged.component';
 
 @NgModule({
   declarations: [
@@ -41,9 +41,9 @@ import { CreateConnectionsComponent } from './pages/projects/create-connections/
     TypingComponent,
     CollisionResolutionComponent,
     SpaceInvadersComponent,
-    VizSortComponent,
     ConnectionsComponent,
-    CreateConnectionsComponent
+    CreateConnectionsComponent,
+    CatalogedComponent
   ],
   imports: [
     BrowserModule,

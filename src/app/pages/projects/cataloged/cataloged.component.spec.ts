@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VizSortComponent } from './viz-sort.component';
+import { CatalogedComponent } from './cataloged.component';
 
-describe('VizSortComponent', () => {
-  let component: VizSortComponent;
-  let fixture: ComponentFixture<VizSortComponent>;
+describe('CatalogedComponent', () => {
+  let component: CatalogedComponent;
+  let fixture: ComponentFixture<CatalogedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VizSortComponent]
+      declarations: [CatalogedComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(VizSortComponent);
+    fixture = TestBed.createComponent(CatalogedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
