@@ -22,6 +22,7 @@ import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-in
 import { ConnectionsComponent } from './pages/projects/connections/connections.component';
 import { CreateConnectionsComponent } from './pages/projects/create-connections/create-connections.component';
 import { CatalogedComponent } from './pages/projects/cataloged/cataloged.component';
+import { JdubzComponent } from './pages/jdubz/jdubz.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { CatalogedComponent } from './pages/projects/cataloged/cataloged.compone
     SpaceInvadersComponent,
     ConnectionsComponent,
     CreateConnectionsComponent,
-    CatalogedComponent
+    CatalogedComponent,
+    JdubzComponent
   ],
   imports: [
     BrowserModule,

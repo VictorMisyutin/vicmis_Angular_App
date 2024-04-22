@@ -16,7 +16,7 @@ import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-in
 import { ConnectionsComponent } from './pages/projects/connections/connections.component';
 import { CreateConnectionsComponent } from './pages/projects/create-connections/create-connections.component';
 import { CatalogedComponent } from './pages/projects/cataloged/cataloged.component';
-
+import { JdubzComponent } from './pages/jdubz/jdubz.component';
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
   {path: 'docs', component: DocsPageComponent, title: 'Documentation'},
@@ -33,7 +33,8 @@ const routes: Routes = [
   {path: 'projects/space-invaders', component: SpaceInvadersComponent, title: 'Space Invaders'},
   {path: 'projects/connections', component: ConnectionsComponent, title: 'connections'},
   {path: 'projects/cataloged', component: CatalogedComponent, title: 'cataloged'},
-  {path: 'projects/connections/create', component: CreateConnectionsComponent, title: 'create connections'}
+  {path: 'projects/connections/create', component: CreateConnectionsComponent, title: 'create connections'},
+  {path: 'jdubz', component: JdubzComponent, title: 'JDubz'}
 ];
 
 @NgModule({
