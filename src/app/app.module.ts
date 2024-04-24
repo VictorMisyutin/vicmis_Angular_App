@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +24,6 @@ import { ConnectionsComponent } from './pages/projects/connections/connections.c
 import { CreateConnectionsComponent } from './pages/projects/create-connections/create-connections.component';
 import { CatalogedComponent } from './pages/projects/cataloged/cataloged.component';
 import { JdubzComponent } from './pages/jdubz/jdubz.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +51,8 @@ import { JdubzComponent } from './pages/jdubz/jdubz.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
