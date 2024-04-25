@@ -23,7 +23,8 @@ import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-in
 import { ConnectionsComponent } from './pages/projects/connections/connections.component';
 import { CreateConnectionsComponent } from './pages/projects/create-connections/create-connections.component';
 import { CatalogedComponent } from './pages/projects/cataloged/cataloged.component';
-import { JdubzComponent } from './pages/jdubz/jdubz.component';
+import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.component';
+import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { JdubzComponent } from './pages/jdubz/jdubz.component';
     ConnectionsComponent,
     CreateConnectionsComponent,
     CatalogedComponent,
-    JdubzComponent
+    LandingPageComponent,
+    ResultsPageComponent
   ],
   imports: [
     BrowserModule,

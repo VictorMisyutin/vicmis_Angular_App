@@ -1,0 +1,40 @@
+<header>
+    <h1>Flex Gym</h1>
+    <nav>
+        <ul>
+            <li><a [routerLink]="['/flexgym']">Home</a></li>
+            <li><a href="jdubz">Workouts</a></li>
+            <li><a href="jdubz">About</a></li>
+            <li><a href="jdubz">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <main>
+        <div class="form">
+            <div class="row">
+                <p class="inputDesc">age</p>
+                <input type="text" name="age" id="age" placeholder="25...">
+            </div>
+            <div class="row">
+                <p class="inputDesc">weight (lbs)</p>
+                <input type="text" name="weight" id="weight" placeholder="185.4">
+            </div>
+            <div class="row">
+                <p class="inputDesc">duration (minutes)</p>
+                <input type="text" name="duration" id="durations" placeholder="45">
+            </div>
+            <div class="row wide">
+                <p class="inputDesc">Equipment</p>
+                <textarea type="text" name="Equipment" id="Equipment" placeholder="A commercial gym, dumbells, jumprope, nothing, ..."></textarea>
+            </div>
+        </div>
+        <button (click)="getWorkout()">generate</button>
+      <section *ngIf="showWorkout">
+        <p id="result-display" *ngFor="let line of workout.split('\n')">{{line}}<br></p>
+      </section>
+    </main>
+</body>
+<footer>
+    <p>&copy; 2024 Flex Gym. All rights reserved.</p>
+</footer>

@@ -16,7 +16,8 @@ import { SpaceInvadersComponent } from './pages/projects/space-invaders/space-in
 import { ConnectionsComponent } from './pages/projects/connections/connections.component';
 import { CreateConnectionsComponent } from './pages/projects/create-connections/create-connections.component';
 import { CatalogedComponent } from './pages/projects/cataloged/cataloged.component';
-import { JdubzComponent } from './pages/jdubz/jdubz.component';
+import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.component';
+import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
   {path: 'docs', component: DocsPageComponent, title: 'Documentation'},
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path: 'projects/connections', component: ConnectionsComponent, title: 'connections'},
   {path: 'projects/cataloged', component: CatalogedComponent, title: 'cataloged'},
   {path: 'projects/connections/create', component: CreateConnectionsComponent, title: 'create connections'},
-  {path: 'jdubz', component: JdubzComponent, title: 'JDubz'}
+  {path: 'flexgym', component: LandingPageComponent, title: 'flex gym'},
+  {path: 'flexgym/results', component: ResultsPageComponent, title: 'flex gym'}
 ];
 
 @NgModule({

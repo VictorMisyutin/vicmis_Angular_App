@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JdubzComponent } from './jdubz.component';
+import { LandingPageComponent } from './landing-page.component';
 
-describe('JdubzComponent', () => {
-  let component: JdubzComponent;
-  let fixture: ComponentFixture<JdubzComponent>;
+describe('LandingPageComponent', () => {
+  let component: LandingPageComponent;
+  let fixture: ComponentFixture<LandingPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [JdubzComponent]
+      declarations: [LandingPageComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(JdubzComponent);
+    fixture = TestBed.createComponent(LandingPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

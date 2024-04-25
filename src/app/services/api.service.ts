@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Player } from '../interfaces/player';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<Player> {
-    return this.http.get<Player>('https://vicmis.com/api/nba/get-player/Stephen%20Curry');
+  getWorkout(age: string, weight: string, duration: string, equipment: string): Observable<any> {
+    return this.http.get(`https://vicmis.com/api/workout/${age}/${weight}/${duration}/${equipment}`);
   }
 
 }
