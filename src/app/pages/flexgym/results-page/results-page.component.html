@@ -1,11 +1,11 @@
 <header>
-    <h1>Flex Gym</h1>
+    <h1 class="title">LiftWare</h1>
     <nav>
         <ul>
-            <li><a [routerLink]="['/flexgym']">Home</a></li>
-            <li><a href="jdubz">Workouts</a></li>
-            <li><a href="jdubz">About</a></li>
-            <li><a href="jdubz">Contact</a></li>
+            <li><a [routerLink]="['/liftware']">Home</a></li>
+            <li><a [routerLink]="['/liftware/results']">Workouts</a></li>
+            <li><a [routerLink]="['/liftware']">About</a></li>
+            <li><a [routerLink]="['/liftware']">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -14,7 +14,7 @@
         <div class="form">
             <div class="row">
                 <p class="inputDesc">age</p>
-                <input type="text" name="age" id="age" placeholder="25...">
+                <input type="text" name="age" id="age" placeholder="25">
             </div>
             <div class="row">
                 <p class="inputDesc">weight (lbs)</p>
@@ -24,9 +24,17 @@
                 <p class="inputDesc">duration (minutes)</p>
                 <input type="text" name="duration" id="durations" placeholder="45">
             </div>
+            <div class="row">
+                <p class="inputDesc">frequency (per week)</p>
+                <input type="text" name="frequency" id="frequency" placeholder="45">
+            </div>
+            <div class="row wide">
+                <p class="inputDesc">workout goal</p>
+                <textarea type="text" name="goal" id="goal" placeholder="Lose weight and gain musle"></textarea>
+            </div>
             <div class="row wide">
                 <p class="inputDesc">Equipment</p>
-                <textarea type="text" name="Equipment" id="Equipment" placeholder="A commercial gym, dumbells, jumprope, nothing, ..."></textarea>
+                <textarea type="text" name="equipment" id="equipment" placeholder="A commercial gym, dumbells, jumprope, nothing, ..."></textarea>
             </div>
         </div>
         <button (click)="getWorkout()">generate</button>
@@ -36,5 +44,5 @@
     </main>
 </body>
 <footer>
-    <p>&copy; 2024 Flex Gym. All rights reserved.</p>
+    <p>&copy; 2024 LiftWare. All rights reserved.</p>
 </footer>

@@ -10,8 +10,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getWorkout(age: string, weight: string, duration: string, equipment: string): Observable<any> {
-    return this.http.get(`https://vicmis.com/api/workout/${age}/${weight}/${duration}/${equipment}`);
+  getWorkout(age: string, weight: string, goal: string, duration: string, equipment: string, frequency: string): Observable<any> {
+    return this.http.get(`https://vicmis.com/api/workout/${age}/${weight}/${goal}/${duration}/${equipment}/${frequency}`);
   }
 
 }

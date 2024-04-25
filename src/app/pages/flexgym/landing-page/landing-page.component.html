@@ -1,12 +1,12 @@
 <body>
     <header>
-      <h1>Flex Gym</h1>
+      <h1 class="title">LiftWare</h1>
       <nav>
         <ul>
-          <li><a [routerLink]="['/flexgym']">Home</a></li>
-          <li><a href="jdubz">Workouts</a></li>
-          <li><a href="jdubz">About</a></li>
-          <li><a href="jdubz">Contact</a></li>
+          <li><a [routerLink]="['/liftware']">Home</a></li>
+          <li><a [routerLink]="['/liftware/results']">Workouts</a></li>
+          <li><a [routerLink]="['/liftware']">About</a></li>
+          <li><a [routerLink]="['/liftware']">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -14,7 +14,7 @@
       <section class="hero">
         <h2>Your Journey Starts Here</h2>
         <p>Get ready to sweat and achieve your fitness goals!</p>
-        <a [routerLink]="['/flexgym/results']" class="cta-btn">Start Your Workout</a>
+        <a [routerLink]="['/liftware/results']" class="cta-btn">Start Your Workout</a>
         <br>
       </section>
       <section class="features">
@@ -34,6 +34,6 @@
       </section>
     </main>
     <footer>
-      <p>&copy; 2024 Flex Gym. All rights reserved.</p>
+      <p>&copy; 2024 LiftWare. All rights reserved.</p>
     </footer>
   </body>
