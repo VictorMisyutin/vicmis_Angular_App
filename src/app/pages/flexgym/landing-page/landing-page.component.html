@@ -11,11 +11,18 @@
       </div>
     </div>
     <div class="questions">
-      <div class="age-text">I am <input type="text" name="age" id="age" maxlength="3"> years old</div>
-      <div class="weight-text">Weigh _ pounds</div>
-      <div class="times-text"> I want to workout _ days a week for _ mins</div>
-      <div class="Equipment-text">My fitness goal is to _</div>
-
+      <div class="age-text">I am <input type="number" placeholder="22" (input)="maxLengthCheck($event.target)" maxlength = "3" min = "1" max = "999" name="age" id="age"> years old</div>
+      <div class="weight-text">I weigh <input type="number"name="weight" placeholder="180" id="weight" (input)="maxLengthCheck($event.target)" maxlength = "3" min = "1" max = "999" > pounds</div>
+      <div class="times-text"> I want to workout <input type="number" placeholder="4" (input)="maxLengthCheck($event.target)" maxlength = "1" min = "1" max = "9" name="frequency" id="frequency"> days a week for <input type="number" placeholder="45" (input)="maxLengthCheck($event.target)" maxlength = "3" min = "1" max = "999" name="duration" id="duration"> mins</div>
     </div>
-  </div>
+    </div>
+    <div class="goal-text" >My fitness goal is to <textarea name="goal" [placeholder]="sampleFitnessGoal" id="goal" maxlength="30"></textarea></div>
+    <div class="bottom-part">
+      <div class="button-container">
+        <a href="{{redirectUrl}}"><button style="--clr:#8A2BE2" id="generate-button" (click)="GrabValues()"><span id="generate-button-text">Generate</span><i></i></button></a>
+      </div>
+    </div>
+    <div class="creds">
+      <p>Developed and maintained by our professional team of software engineers: © supercow256 and © jdubiez.</p>
+    </div>
 </body>

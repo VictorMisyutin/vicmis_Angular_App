@@ -1,68 +1,8 @@
 body{
-    background-color: #FFEADD;
-  }
-  .questions{
-    display: grid;
-  }
-  .row{
-    margin-bottom: 10px;
-    display: inline-flex;
-    color: black;
-    font-size: 20px;
-    text-align: center;
-    justify-content: center;
-  }
-  #weight, #age, #duration, #frequency{
-    background-color: transparent;
-    margin: 18px 8px 0 8px;
-    padding: none;
-    border: none;
-    resize: none;
-    border-bottom: 2px black dashed;
-    width: 40px;
-    height: 1.5em;
-    font-size: 20px;
-    text-align: center;
-  }
-  #frequency{
-    width: 20px ;
-  }
-  #goal, #equipment{
-    background-color: transparent;
-    margin: 17px 8px 0 8px;
-    padding: none;
-    border: none;
-    resize: none;
-    border-bottom: 2px black dashed;
-    width: 200px;
-    height: 1.5em;
-    font-size: 20px;
-    overflow: hidden;
-  }
-  .row form{
-    display: inline-flex;
-  }
-  .row form input[type="radio"]{
-    margin: 0 5px;
-  }
-  .buttons{
-    margin-top: 20px;
-    text-align: center
-  }
-  .button{
-    margin: 0 auto;
-    display: flex;
-    color: black;
-    border: 2px black solid;
-    border-radius: 10px;
-    width: 100px;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .button:hover {
-    cursor: pointer;
-    background-color: #d42b2b;
-  }
-  
+min-height: 100vh;
+}
+.main-content{
+  margin-top: 3vw;
+  text-align: center;
+  font-size: 2vw;
+}

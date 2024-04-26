@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../services/api.service';
 import { ElementRef } from '@angular/core';
 import { Renderer2 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-results-page',
   templateUrl: './results-page.component.html',
@@ -17,27 +18,30 @@ export class ResultsPageComponent{
   goal: string = "lose weight";
   frequency: string = "4";
   showWorkout: boolean = false;
-  constructor(private apiService: ApiService, private elementRef: ElementRef, private renderer: Renderer2) {}
-
-
-  getWorkout() {
-    const ageInput = document.getElementById("age") as HTMLInputElement;
-    const weightInput = document.getElementById("weight") as HTMLInputElement;
-    const durationInput = document.getElementById("durations") as HTMLInputElement;
-    const goalInput = document.getElementById("goal") as HTMLInputElement;
-    const frequencyInput = document.getElementById("frequency") as HTMLInputElement;
-    const equipmentTextarea = document.getElementById("equipment") as HTMLTextAreaElement;
-
-    this.age = ageInput.value;
-    this.weight = weightInput.value;
-    this.duration = durationInput.value;
-    this.goal = goalInput.value;
-    this.frequency = frequencyInput.value;
-    this.equipment = equipmentTextarea.value;
-
+  constructor(private apiService: ApiService, private elementRef: ElementRef, private renderer: Renderer2, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      // get categories
+      if (params['a'] !== undefined && params['a'] !== '') {
+        this.age = params['a'];
+      }
+      if (params['b'] !== undefined && params['b'] !== '') {
+        this.weight = params['b'];
+      }
+      if (params['c'] !== undefined && params['c'] !== '') {
+        this.duration = params['c'];
+      }
+      if (params['d'] !== undefined && params['d'] !== '') {
+        this.equipment = params['d'];
+      }
+      if (params['e'] !== undefined && params['e'] !== '') {
+        this.goal = params['e'];
+      }
+      if (params['f'] !== undefined && params['f'] !== '') {
+        this.equipment = params['f'];
+      }
+    });
     this.apiService.getWorkout(this.age, this.weight, this.goal, this.duration, this.equipment, this.frequency).subscribe(data => {
       this.workout = data.workout;
     });
-    this.showWorkout = true;
   }
 }
