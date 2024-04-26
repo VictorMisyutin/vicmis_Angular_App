@@ -1,3 +1,17 @@
+/* fonts */
+@font-face {
+    font-family: 'blackitalic';
+    src: url('assets/fonts/aileron/Aileron-BlackItalic.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'black';
+    src: url('assets/fonts/aileron/Aileron-Black.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 * {

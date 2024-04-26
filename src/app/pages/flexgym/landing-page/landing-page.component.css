@@ -1,80 +1,66 @@
-.title{
-  letter-spacing: 1px;
+body{
+  background-color: #42414a;
+  color: white;
 }
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+.main{
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+  padding: 2.5% 5%;
+}
+.hero{
+  grid-column: 1;
+  margin-left: 10%;
+  margin-top: 5%;
+  font-size: 30px;
+  display: block;
+  font-style: italic;
+  font-weight: bold;
+}
+.text div{
+  padding: 0;
+  font-family: 'blackitalic';
+}
+.text-one{
+  margin-bottom: -7px;
+  font-size: 50px;
+}
+.text-two{
+  font-size: 50px;
+  color: #FC4F4F;
+}
+.text-three{
+  color: white;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.text-four{
+  color: #FC4F4F;
+  font-size: 20px;
+}
+.questions{
+  grid-column: 2;
+  height: 400px;
+  display: block;
+}
+.questions div{
+  font-family: 'black';
+  font-size: 40px;
+  letter-spacing: 1.1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.questions div input[type='text']{
+  margin: 0 10px;
+  margin-top: 10px;
+  background-color: transparent;
+  overflow: none;
+  border: none;
+  border-bottom: 3px white solid;
   
-  header {
-    background-color: #eb3856;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .main {
-    padding: 20px;
-  }
-  
-  .hero {
-    background-color: #fef8ed;
-    text-align: center;
-    padding: 100px 0;
-    color: #3a3a3a;
-  }
-  
-  .hero h2 {
-    font-size: 3em;
-  }
-  
-  .cta-btn {
-    display: inline-block;
-    background-color: #FF5733;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-  
-  .features {
-    background-color: #FFE4CF;
-    text-align: center;
-    padding: 50px 0;
-    color: #3a3a3a;
-  }
-  
-  .feature {
-    display: inline-block;
-    width: 30%;
-    margin: 0 2%;
-  }
-  
-  .feature h3 {
-    margin-top: 20px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-  }
-  
+}
+#age{
+  width: 50px;
+  height: 30px;
+}

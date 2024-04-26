@@ -1,39 +1,21 @@
 <body>
-    <header>
-      <h1 class="title">LiftWare</h1>
-      <nav>
-        <ul>
-          <li><a [routerLink]="['/liftware']">Home</a></li>
-          <li><a [routerLink]="['/liftware/results']">Workouts</a></li>
-          <li><a [routerLink]="['/liftware']">About</a></li>
-          <li><a [routerLink]="['/liftware']">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="hero">
-        <h2>Your Journey Starts Here</h2>
-        <p>Get ready to sweat and achieve your fitness goals!</p>
-        <a [routerLink]="['/liftware/results']" class="cta-btn">Start Your Workout</a>
-        <br>
-      </section>
-      <section class="features">
-        <h2>Why Choose Us?</h2>
-        <div class="feature">
-          <h3>Customized Workouts</h3>
-          <p>We tailor workouts to your fitness level and goals.</p>
-        </div>
-        <div class="feature">
-          <h3>Expert Training</h3>
-          <p>We will guide you through every workout.</p>
-        </div>
-        <div class="feature">
-          <h3>Flexible Plans</h3>
-          <p>Choose which plans fits you the best.</p>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 LiftWare. All rights reserved.</p>
-    </footer>
-  </body>
+  <app-liftware-header></app-liftware-header>
+  
+  <div class="main">
+    <div class="hero">
+      <div class="text">
+        <div class="text-one">No Equipment?</div>
+        <div class="text-two">No Problem</div>
+        <div class="text-three">Find your perfect workout</div>
+        <div class="text-four">NOW</div>
+      </div>
+    </div>
+    <div class="questions">
+      <div class="age-text">I am <input type="text" name="age" id="age" maxlength="3"> years old</div>
+      <div class="weight-text">Weigh _ pounds</div>
+      <div class="times-text"> I want to workout _ days a week for _ mins</div>
+      <div class="Equipment-text">My fitness goal is to _</div>
+
+    </div>
+  </div>
+</body>
