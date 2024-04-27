@@ -104,6 +104,19 @@ input:focus{
   margin-left: -15%;
 }
 
+.equipment-text {
+  font-family: 'black';
+  margin: 0 auto;
+  margin-top: 4%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font-family: 'black';
+  font-size: 3vw;
+  letter-spacing: 0.08vw;
+  width: 85%;
+}
 .goal-text {
   font-family: 'black';
   margin: 0 auto;
@@ -128,6 +141,73 @@ input:focus{
 #frequency {
   width: 6%;
 }
+#if-any{
+  font-family: 'black';
+  margin: 0 auto;
+  margin-left: 17%;
+  display: inline-flex;
+  text-align: left;
+  font-family: 'black';
+  font-size: 1vw;
+  letter-spacing: 0.08vw;
+}
+#equipment {
+  border: none;
+  font-family: 'black';
+  margin-left: 1%;
+  background-color: transparent;
+  border-bottom: 0.15vw white solid;
+  font-size: 3vw;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  resize: none;
+  text-align: left;
+  width: 55%;
+  overflow: hidden;
+  height: 3.1vw;
+  margin-bottom: -0,1vw;
+  padding-bottom: 0.4vw;
+  color: #FC4F4F
+}
+#more-equipment-1{
+  border: none;
+  font-family: 'black';
+  margin-left: 1%;
+  background-color: transparent;
+  border-bottom: 0.15vw white solid;
+  font-size: 3vw;
+  color: white;
+  white-space: nowrap;
+  resize: none;
+  width: 46.73%;
+  overflow: hidden;
+  height: 3vw;
+  margin-bottom: -0,1vw;
+  padding-bottom: 0.4vw;
+  color: #FC4F4F;
+  margin-left: 35.8vw;
+  margin-top: -1.1vw;
+}
+#more-equipment-2{
+  border: none;
+  font-family: 'black';
+  margin-left: 1%;
+  background-color: transparent;
+  border-bottom: 0.15vw white solid;
+  font-size: 3vw;
+  color: white;
+  white-space: nowrap;
+  resize: none;
+  width: 46.73%;
+  overflow: hidden;
+  height: 3vw;
+  margin-bottom: -0,1vw;
+  padding-bottom: 0.4vw;
+  color: #FC4F4F;
+  margin-left: 35.8vw;
+  margin-top: 0.17vw;
+}
 #goal {
   border: none;
   font-family: 'black';
@@ -147,10 +227,9 @@ input:focus{
   margin-bottom: -0.7vw;
   color: #FC4F4F
 } 
-#goal:focus{
+textarea:focus{
   outline: none;
   border-bottom: 0.15vw white solid;
-
 }
 .bottom-part{
   margin: 0 auto;

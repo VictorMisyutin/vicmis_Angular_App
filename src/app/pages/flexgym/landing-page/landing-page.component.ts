@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 
 export class LandingPageComponent {
   redirectUrl: string = "";
+  equipmentTextOne: string = "";
+  equipmentTextTwo: string = "";
+  equipmentTextThree: string = "";
+  moreTextOneBool: boolean = false;
+  moreTextTwoBool: boolean = false;
 
   sampleFitnessGoals: string[] = [
     "stay in shape",
@@ -33,6 +38,28 @@ export class LandingPageComponent {
   maxLengthCheck(object: any){
     if (object.value.length > object.maxLength)
       object.value = object.value.slice(0, object.maxLength)
+  }
+
+  checkEquipmentText() {
+    const maxLength = 20;
+    let character = '';
+    if (this.equipmentTextOne.length >= maxLength) {
+      this.equipmentTextTwo = this.equipmentTextOne.slice(-1) + this.equipmentTextTwo;
+      this.moreTextOneBool = true;
+      this.equipmentTextOne = this.equipmentTextOne.slice(0, -1);
+      document.getElementById("more-equipment-1")?.focus();
+    }
+    if (this.equipmentTextTwo.length >= maxLength) {
+      this.equipmentTextThree += this.equipmentTextTwo.slice(-1) + this.equipmentTextThree;
+      this.equipmentTextTwo = this.equipmentTextTwo.slice(0, -1);
+      this.moreTextTwoBool = true;
+      document.getElementById("more-equipment-2")?.focus();
+    }
+    if(this.moreTextTwoBool){
+      if (this.equipmentTextThree.length >= maxLength) {
+        this.equipmentTextThree = this.equipmentTextThree.slice(0, -1);
+      }
+    }
   }
 
   GrabValues(){
