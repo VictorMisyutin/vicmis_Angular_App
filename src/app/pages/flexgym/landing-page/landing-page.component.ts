@@ -75,12 +75,13 @@ export class LandingPageComponent {
     let frequency: string = frequencyInput.value;
     let duration: string = durationInput.value;
     let goal: string = goalInput.value;
-
-    this.buttonText = "Loading...";
+    let allEquipment: string = this.equipmentTextOne + " " + this.equipmentTextTwo + " " + this.equipmentTextThree;
+    let generateButton = document.getElementById("generate-button-text") as HTMLButtonElement;
+    generateButton.innerHTML = "loading...";
 
     // send to next page
     let currentUrl = window.location.href.split('?')[0]; // Get current URL without query params
     currentUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/'));
-    this.redirectUrl = `${currentUrl}/liftware/results?a=${age}&b=${weight}&c=${frequency}&d=${duration}&e=${goal}&f=a gym`;
+    this.redirectUrl = `${currentUrl}/liftware/results?a=${age}&b=${weight}&c=${frequency}&d=${duration}&e=${goal}&f=${allEquipment}`;
   }
 }
