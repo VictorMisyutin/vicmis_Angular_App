@@ -1,8 +1,23 @@
 body{
 min-height: 100vh;
 }
-.main-content{
-  margin-top: 3vw;
-  text-align: center;
+.hero{
+  margin-top: -1vw;
+  margin-left: 5vw;
   font-size: 2vw;
+}
+.main-content{
+  color: white;
+  margin: 0 2vw;
+  border-radius: 0.6vw;
+  padding: 0.4vw 0.6vw;
+  background-color: #212121;
+  margin-top: -1vw;
+}
+.main-content-description{
+  margin-top: 0;
+  font-size: 1.2vw;
+}
+.workout{
+  font-size: 1.2vw;
 }

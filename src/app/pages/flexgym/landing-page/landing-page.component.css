@@ -5,6 +5,7 @@ body {
 }
 
 .main {
+  margin-top: 2vw;
   display: grid;
   grid-template-columns: 40% 60%;
   gap: 3%;
@@ -233,121 +234,23 @@ textarea:focus{
 }
 .bottom-part{
   margin: 0 auto;
-  margin-top: 3vw;
-}
-.button-container {
-  margin-top: 2vw;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  height: 3.7vw;
-  width: 8.9vw;
-}
-.button-container a{
-  all:none ;
+  margin-top: 4.5vw;
 }
 button {
   font-family: 'black';
-  position: relative;
-  background: #FC4F4F;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: none;
-  letter-spacing: 0.05vw;
-  font-size: 0.9vw;
-  padding: 1vw 1.5vw;
-  transition: 0.2s;
+  background-color: #FC4F4F;
+  color: white;
+  border: 0.1vw white solid;
+  padding: 0.75vw 1.25vw;
+  border-radius: 0.5vw;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.5vw;
 }
-
 button:hover {
-  letter-spacing: 0.12vw;
-  padding: 1.2vw 1.5vw;
-  background:  #FC4F4F;
-  color: #FC4F4F;
-  animation: box 3s infinite;
   cursor: pointer;
+  transform: translateX(2vw);
+  box-shadow: -0.5vw 0 1vw white;
 }
-
-button::before {
-  content: "";
-  position: absolute;
-  inset: 0.1vw;
-  background: #272822;
-}
-
-button span {
-  position: relative;
-  z-index: 1;
-}
-button i {
-  position: absolute;
-  inset: 0;
-  display: block;
-}
-
-button i::before {
-  content: "";
-  position: absolute;
-  width: 0.7vw;
-  height: 0.1vw;
-  left: 80%;
-  top: -0.1vw;
-  border: 0.1vw solid #FC4F4F;
-  background: #272822;
-  transition: 0.2s;
-}
-
-button:hover i::before {
-  width: 1vw;
-  height: 0.2vw;
-  left: 20%;
-  animation: move 3s infinite;
-}
-
-button i::after {
-  content: "";
-  position: absolute;
-  width: 0.7vw;
-  height: 0.1vw;
-  left: 20%;
-  bottom: -0.1vw;
-  border: 0.1vw solid  #FC4F4F;
-  background: #272822;
-  transition: 0.2s;
-}
-
-button:hover i::after {
-  width: 1vw;
-  height: 0.25vw;
-  left: 80%;
-  animation: move 3s infinite;
-}
-
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(0.25vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes box {
-  0% {
-    box-shadow:  #FC4F4F;
-  }
-  50% {
-    box-shadow: 0 0 2vw  #FC4F4F;
-  }
-  100% {
-    box-shadow: #FC4F4F;
-  }
-}
-
 .creds p{
   margin-top: 4vw;
   font-family: 'black';

@@ -1,7 +1,13 @@
 <app-liftware-header></app-liftware-header>
 <body>
-  ajshdjkahs dkjahd kajdh kajs hdaskjd haksdj h
+  <div class="hero">
+    <h2>Fitness Schedule For<br>"{{goal}}":</h2>
+  </div>
   <div class="main-content">
-    {{workout}}
+    <p class="main-content-description">Here is your personalized goal weekly workout<br>schedule tailored to help you achieve your<br> goal of getting "{{goal}}":</p>
+    <hr>
+    <p class="workout" *ngFor="let line of workout.split('\n')">
+      {{line}}<br>
+    </p>
   </div>
 </body>

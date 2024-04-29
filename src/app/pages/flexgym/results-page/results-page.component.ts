@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResultsPageComponent{
   workout: string = "Loading...";
+  // workout: string = "ajdlk ajsdlkjaldaldkja lkdjad\nlakjd adoa sdjkash daihd aidiaudh aidhasidn ajdn ajkfh quifhawdnawidu aiuwdbahdb aid hwidb aibawiud badihabfia bdiadh ajvnasjc njaskd nakjfha kjd hajkfha jdjdkvhas d ";
 
   age: string = "18";
   weight: string = "180";
