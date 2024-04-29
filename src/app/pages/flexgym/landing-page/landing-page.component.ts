@@ -13,7 +13,6 @@ export class LandingPageComponent {
   equipmentTextThree: string = "";
   moreTextOneBool: boolean = false;
   moreTextTwoBool: boolean = false;
-  buttonText: string = "Generate";
   sampleFitnessGoals: string[] = [
     "stay in shape",
     "get a gyat by summer",
@@ -76,8 +75,9 @@ export class LandingPageComponent {
     let duration: string = durationInput.value;
     let goal: string = goalInput.value;
     let allEquipment: string = this.equipmentTextOne + " " + this.equipmentTextTwo + " " + this.equipmentTextThree;
-    let generateButton = document.getElementById("generate-button-text") as HTMLButtonElement;
-    generateButton.innerHTML = "loading...";
+    if(allEquipment.length <= 2){
+      allEquipment = "nothing";
+    }
 
     // send to next page
     let currentUrl = window.location.href.split('?')[0]; // Get current URL without query params
