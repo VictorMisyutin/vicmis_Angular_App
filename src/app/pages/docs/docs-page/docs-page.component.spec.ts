@@ -9,9 +9,9 @@ describe('DocsPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DocsPageComponent]
-    })
-    .compileComponents();
-    
+    }).compileComponents();
+
+
     fixture = TestBed.createComponent(DocsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
