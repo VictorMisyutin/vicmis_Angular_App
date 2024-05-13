@@ -73,12 +73,14 @@ export class LandingPageComponent {
     let weight: string = weightInput.value;
     let frequency: string = frequencyInput.value;
     let duration: string = durationInput.value;
+    console.log(duration);
     let goal: string = goalInput.value;
     let allEquipment: string = this.equipmentTextOne + " " + this.equipmentTextTwo + " " + this.equipmentTextThree;
     if(allEquipment.length <= 2){
       allEquipment = "nothing";
     }
-
+    // math department: 847 635 1688
+    // a167 chinese school need help with zoom
     // send to next page
     let currentUrl = window.location.href.split('?')[0]; // Get current URL without query params
     currentUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/'));

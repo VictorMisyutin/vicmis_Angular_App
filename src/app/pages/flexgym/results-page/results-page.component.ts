@@ -29,10 +29,10 @@ export class ResultsPageComponent{
         this.weight = params['b'];
       }
       if (params['c'] !== undefined && params['c'] !== '') {
-        this.duration = params['c'];
+        this.frequency = params['c'];
       }
       if (params['d'] !== undefined && params['d'] !== '') {
-        this.equipment = params['d'];
+        this.duration = params['d'];
       }
       if (params['e'] !== undefined && params['e'] !== '') {
         this.goal = params['e'];
