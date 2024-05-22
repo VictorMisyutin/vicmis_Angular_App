@@ -5,56 +5,41 @@
         <button class="copy-button" (click)="copyLink()">Copy Link</button>
     </div>
     <div class="main-container">
-        <div class="row yellow">
-            <div class="left">
-                <p>Yellow Category</p>
-                <input id="yellowCategory" class="category-input" type="text">
-            </div>
-            <div class="right">
-                <p>Yellow Answers (seperate with commas)</p>
-                <input id="yellowAnswers" type="text">
-            </div>
-        </div>
+        <p class="input-header">Category</p>
+        <p class="input-header">Solution 1</p>
+        <p class="input-header">Solution 2</p>
+        <p class="input-header">Solution 3</p>
+        <p class="input-header">Solution 4</p>
 
-        <div class="row green">
-            <div class="left">
-                <p>Green Category</p>
-                <input id="greenCategory" class="category-input" type="text">
-            </div>
-            <div class="right">
-                <p>Green Answers (seperate with commas)</p>
-                <input id="greenAnswers" type="text">
-            </div>
-        </div>
+        <input class="yellow" id="yellow-category" type="text">
+        <input class="yellow" id="yellow-answer-one" type="text">
+        <input class="yellow" id="yellow-answer-two" type="text">
+        <input class="yellow" id="yellow-answer-three" type="text">
+        <input class="yellow" id="yellow-answer-four" type="text">
+        
+        <input class="green" id="green-category" type="text">
+        <input class="green" id="green-answer-one" type="text">
+        <input class="green" id="green-answer-two" type="text">
+        <input class="green" id="green-answer-three" type="text">
+        <input class="green" id="green-answer-four" type="text">
 
-        <div class="row blue">
-            <div class="left">
-                <p>Blue Category</p>
-                <input id="blueCategory" class="category-input" type="text">
-            </div>
-            <div class="right">
-                <p>Blue Answers (seperate with commas)</p>
-                <input id="blueAnswers" type="text">
-            </div>
-        </div>
+        <input class="blue" id="blue-category" type="text">
+        <input class="blue" id="blue-answer-one" type="text">
+        <input class="blue" id="blue-answer-two" type="text">
+        <input class="blue" id="blue-answer-three" type="text">
+        <input class="blue" id="blue-answer-four" type="text">
 
-        <div class="row purple">
-            <div class="left">
-                <p>Purple Category</p>
-                <input id="purpleCategory" class="category-input" type="text">
-            </div>
-            <div class="right">
-                <p>Purple Answers (seperate with commas)</p>
-                <input id="purpleAnswers" type="text">
-            </div>
-        </div>
-        <div class="buttons">
-            <button class="button" (click)="createGame()">Create Game</button>
-            <a href="{{shareURL}}" (click)="createGame()" class="button">Play Now</a>
-
-        </div>
+        <input class="purple" id="purple-category" type="text">
+        <input class="purple" id="purple-answer-one" type="text">
+        <input class="purple" id="purple-answer-two" type="text">
+        <input class="purple" id="purple-answer-three" type="text">
+        <input class="purple" id="purple-answer-four" type="text">
     </div>
+    <div class="buttons">
+        <button class="button" (click)="createGame()">Create Game</button>
+        <a href="{{shareURL}}" (click)="createGame()" class="button">Play Now</a>
 
+    </div>
 </body>
 
 <app-footer></app-footer>

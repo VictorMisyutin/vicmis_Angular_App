@@ -37,25 +37,47 @@ export class CreateConnectionsComponent {
     let blueAnswers: string = "";
     let purpleAnswers: string = "";
 
-    let yellowCategoryElement = document.getElementById("yellowCategory") as HTMLInputElement;
-    let yellowAnswersElements = document.getElementById("yellowAnswers") as HTMLInputElement;
-    let greenCategoryElement = document.getElementById("greenCategory") as HTMLInputElement;
-    let greenAnswersElements = document.getElementById("greenAnswers") as HTMLInputElement;
-    let blueCategoryElement = document.getElementById("blueCategory") as HTMLInputElement;
-    let blueAnswersElements = document.getElementById("blueAnswers") as HTMLInputElement;
-    let purpleCategoryElement = document.getElementById("purpleCategory") as HTMLInputElement;
-    let purpleAnswersElements = document.getElementById("purpleAnswers") as HTMLInputElement;
-    console.log(purpleAnswersElements.value);
+    let yellowCategoryElement = document.getElementById("yellow-category") as HTMLInputElement;
+    let yellowAnswerOne = document.getElementById("yellow-answer-one") as HTMLInputElement;
+    let yellowAnswerTwo = document.getElementById("yellow-answer-two") as HTMLInputElement;
+    let yellowAnswerThree = document.getElementById("yellow-answer-three") as HTMLInputElement;
+    let yellowAnswerFour = document.getElementById("yellow-answer-four") as HTMLInputElement;
+    yellowAnswers = yellowAnswerOne.value + ", " + yellowAnswerTwo.value + ", " + yellowAnswerThree.value + ", " + yellowAnswerFour.value;
+    yellowAnswers.replace(/\s*,\s*/g, ',');
+
+    let greenCategoryElement = document.getElementById("green-category") as HTMLInputElement;
+    let greenAnswerOne = document.getElementById("green-answer-one") as HTMLInputElement;
+    let greenAnswerTwo = document.getElementById("green-answer-two") as HTMLInputElement;
+    let greenAnswerThree = document.getElementById("green-answer-three") as HTMLInputElement;
+    let greenAnswerFour = document.getElementById("green-answer-four") as HTMLInputElement;
+    greenAnswers = greenAnswerOne.value + ", " + greenAnswerTwo.value + ", " + greenAnswerThree.value + ", " + greenAnswerFour.value;
+    greenAnswers.replace(/\s*,\s*/g, ',');
+
+    let blueCategoryElement = document.getElementById("blue-category") as HTMLInputElement;
+    let blueAnswerOne = document.getElementById("blue-answer-one") as HTMLInputElement;
+    let blueAnswerTwo = document.getElementById("blue-answer-two") as HTMLInputElement;
+    let blueAnswerThree = document.getElementById("blue-answer-three") as HTMLInputElement;
+    let blueAnswerFour = document.getElementById("blue-answer-four") as HTMLInputElement;
+    blueAnswers = blueAnswerOne.value + ", " + blueAnswerTwo.value + ", " + blueAnswerThree.value + ", " + blueAnswerFour.value;
+    blueAnswers.replace(/\s*,\s*/g, ',');
+
+    let purpleCategoryElement = document.getElementById("purple-category") as HTMLInputElement;
+    let purpleAnswerOne = document.getElementById("purple-answer-one") as HTMLInputElement;
+    let purpleAnswerTwo = document.getElementById("purple-answer-two") as HTMLInputElement;
+    let purpleAnswerThree = document.getElementById("purple-answer-three") as HTMLInputElement;
+    let purpleAnswerFour = document.getElementById("purple-answer-four") as HTMLInputElement;
+    purpleAnswers = purpleAnswerOne.value + ", " + purpleAnswerTwo.value + ", " + purpleAnswerThree.value + ", " + purpleAnswerFour.value;
+    purpleAnswers.replace(/\s*,\s*/g, ',');
+
     yellowCategory = this.encrypt(yellowCategoryElement.value.trim());
     greenCategory = this.encrypt(greenCategoryElement.value.trim());
     blueCategory = this.encrypt(blueCategoryElement.value.trim());
     purpleCategory = this.encrypt(purpleCategoryElement.value.trim());
-    
-    yellowAnswers = this.encrypt(yellowAnswersElements.value.replace(/\s*,\s*/g, ','));
-    greenAnswers = this.encrypt(greenAnswersElements.value.replace(/\s*,\s*/g, ','));
-    blueAnswers = this.encrypt(blueAnswersElements.value.replace(/\s*,\s*/g, ','));
-    purpleAnswers = this.encrypt(purpleAnswersElements.value.replace(/\s*,\s*/g, ','));
-    console.log(purpleAnswers);
+
+    yellowAnswers = this.encrypt(yellowAnswers);
+    greenAnswers = this.encrypt(greenAnswers);
+    blueAnswers = this.encrypt(blueAnswers);
+    purpleAnswers = this.encrypt(purpleAnswers);
     // encode into url
     let currentUrl = window.location.href.split('?')[0]; // Get current URL without query params
     currentUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/'));
