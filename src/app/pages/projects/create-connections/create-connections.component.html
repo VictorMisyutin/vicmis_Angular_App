@@ -11,30 +11,31 @@
         <p class="input-header">Solution 3</p>
         <p class="input-header">Solution 4</p>
 
-        <input class="yellow" id="yellow-category" type="text">
-        <input class="yellow" id="yellow-answer-one" type="text">
-        <input class="yellow" id="yellow-answer-two" type="text">
-        <input class="yellow" id="yellow-answer-three" type="text">
-        <input class="yellow" id="yellow-answer-four" type="text">
+        <input class="yellow" id="yellow-category" type="text" #input>
+        <input class="yellow" id="yellow-answer-two" type="text" #input>
+        <input class="yellow" id="yellow-answer-one" type="text" #input>
+        <input class="yellow" id="yellow-answer-three" type="text" #input>
+        <input class="yellow" id="yellow-answer-four" type="text" #input>
         
-        <input class="green" id="green-category" type="text">
-        <input class="green" id="green-answer-one" type="text">
-        <input class="green" id="green-answer-two" type="text">
-        <input class="green" id="green-answer-three" type="text">
-        <input class="green" id="green-answer-four" type="text">
+        <input class="green" id="green-category" type="text" #input>
+        <input class="green" id="green-answer-one" type="text" #input>
+        <input class="green" id="green-answer-two" type="text" #input>
+        <input class="green" id="green-answer-three" type="text" #input>
+        <input class="green" id="green-answer-four" type="text" #input>
 
-        <input class="blue" id="blue-category" type="text">
-        <input class="blue" id="blue-answer-one" type="text">
-        <input class="blue" id="blue-answer-two" type="text">
-        <input class="blue" id="blue-answer-three" type="text">
-        <input class="blue" id="blue-answer-four" type="text">
+        <input class="blue" id="blue-category" type="text" #input>
+        <input class="blue" id="blue-answer-one" type="text" #input>
+        <input class="blue" id="blue-answer-two" type="text" #input>
+        <input class="blue" id="blue-answer-three" type="text" #input>
+        <input class="blue" id="blue-answer-four" type="text" #input>
 
-        <input class="purple" id="purple-category" type="text">
-        <input class="purple" id="purple-answer-one" type="text">
-        <input class="purple" id="purple-answer-two" type="text">
-        <input class="purple" id="purple-answer-three" type="text">
-        <input class="purple" id="purple-answer-four" type="text">
+        <input class="purple" id="purple-category" type="text" #input>
+        <input class="purple" id="purple-answer-one" type="text" #input>
+        <input class="purple" id="purple-answer-two" type="text" #input>
+        <input class="purple" id="purple-answer-three" type="text" #input>
+        <input class="purple" id="purple-answer-four" type="text" #input>
     </div>
+    <p class="error-message">{{errorMessage}}</p>
     <div class="buttons">
         <button class="button" (click)="createGame()">Create Game</button>
         <a href="{{shareURL}}" (click)="createGame()" class="button">Play Now</a>

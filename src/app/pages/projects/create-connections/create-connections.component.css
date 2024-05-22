@@ -46,8 +46,13 @@
 .purple{
     color: rgb(196, 2, 196);
 }
+.error-message{
+    text-align: center;
+    color: rgb(231, 21, 21);
+    margin-bottom: 0;
+}
 .buttons{
-    margin: 3vh auto;
+    margin: 1vh auto;
 }
 .button{
     margin: 20px;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-create-connections',
@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './create-connections.component.css'
 })
 export class CreateConnectionsComponent {
-  
-  shareURL:string = ""; 
+  @ViewChildren('input') inputs: QueryList<ElementRef> = new QueryList<ElementRef>();
 
+  shareURL:string = "vicmis.com/projects/connections/create"; 
+  errorMessage:string = "";
   // encrypt each character into three digit unicode
   encrypt(key: string){
     let hash: string = "";
@@ -27,18 +28,17 @@ export class CreateConnectionsComponent {
   }
 
   allElementsFilled(){
-    let yellowCategoryElement = document.getElementById("yellow-category") as HTMLInputElement;
-    let yellowAnswerOneElement = document.getElementById("yellow-answer-one") as HTMLInputElement;
-    let yellowAnswerTwoElement = document.getElementById("yellow-answer-two") as HTMLInputElement;
-    let yellowAnswerThreeElement = document.getElementById("yellow-answer-three") as HTMLInputElement;
-    let yellowAnswerFourElement = document.getElementById("yellow-answer-four") as HTMLInputElement;
-    
-    return false;
+    return this.inputs.toArray().every((input) => input.nativeElement.value.trim() !== "");
   }
 
   createGame(){
-    if(!this.allElementsFilled())
+    if(!this.allElementsFilled()){
+      this.errorMessage = "Please fill in all the boxes";
       return;
+    }
+    else{
+      this.errorMessage = "";
+    }
 
     // get all categories and answers
     let yellowCategory: string = "";
