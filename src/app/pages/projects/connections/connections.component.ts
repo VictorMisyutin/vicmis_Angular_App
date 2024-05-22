@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { catchError, first } from 'rxjs';
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
@@ -241,12 +240,10 @@ export class ConnectionsComponent {
       this.wordsArray[index].status = 6;
       let firstWord = this.wordsArray[index].word;
       let firstWordCategory = this.wordsArray[index].categoryNum;
-      let secondWord = "";
       let foundAnotherWord = false;
       // select random words until you find a different word in the same category.
       while(!foundAnotherWord){
         let index = Math.floor(Math.random() * (this.wordsArray.length - (this.guessedCategories*4)) + (this.guessedCategories*4));
-        console.log(index);
         if(this.wordsArray[index].categoryNum == firstWordCategory && this.wordsArray[index].word != firstWord){
           this.wordsArray[index].highlight = true;
           this.wordsArray[index].status = 6;
