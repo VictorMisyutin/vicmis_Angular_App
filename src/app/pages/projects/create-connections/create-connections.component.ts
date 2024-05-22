@@ -26,7 +26,20 @@ export class CreateConnectionsComponent {
     return hash;
   }
 
+  allElementsFilled(){
+    let yellowCategoryElement = document.getElementById("yellow-category") as HTMLInputElement;
+    let yellowAnswerOneElement = document.getElementById("yellow-answer-one") as HTMLInputElement;
+    let yellowAnswerTwoElement = document.getElementById("yellow-answer-two") as HTMLInputElement;
+    let yellowAnswerThreeElement = document.getElementById("yellow-answer-three") as HTMLInputElement;
+    let yellowAnswerFourElement = document.getElementById("yellow-answer-four") as HTMLInputElement;
+    
+    return false;
+  }
+
   createGame(){
+    if(!this.allElementsFilled())
+      return;
+
     // get all categories and answers
     let yellowCategory: string = "";
     let greenCategory: string = "";
@@ -38,35 +51,35 @@ export class CreateConnectionsComponent {
     let purpleAnswers: string = "";
 
     let yellowCategoryElement = document.getElementById("yellow-category") as HTMLInputElement;
-    let yellowAnswerOne = document.getElementById("yellow-answer-one") as HTMLInputElement;
-    let yellowAnswerTwo = document.getElementById("yellow-answer-two") as HTMLInputElement;
-    let yellowAnswerThree = document.getElementById("yellow-answer-three") as HTMLInputElement;
-    let yellowAnswerFour = document.getElementById("yellow-answer-four") as HTMLInputElement;
-    yellowAnswers = yellowAnswerOne.value + ", " + yellowAnswerTwo.value + ", " + yellowAnswerThree.value + ", " + yellowAnswerFour.value;
+    let yellowAnswerOneElement = document.getElementById("yellow-answer-one") as HTMLInputElement;
+    let yellowAnswerTwoElement = document.getElementById("yellow-answer-two") as HTMLInputElement;
+    let yellowAnswerThreeElement = document.getElementById("yellow-answer-three") as HTMLInputElement;
+    let yellowAnswerFourElement = document.getElementById("yellow-answer-four") as HTMLInputElement;
+    yellowAnswers = yellowAnswerOneElement.value + ", " + yellowAnswerTwoElement.value + ", " + yellowAnswerThreeElement.value + ", " + yellowAnswerFourElement.value;
     yellowAnswers.replace(/\s*,\s*/g, ',');
 
     let greenCategoryElement = document.getElementById("green-category") as HTMLInputElement;
-    let greenAnswerOne = document.getElementById("green-answer-one") as HTMLInputElement;
-    let greenAnswerTwo = document.getElementById("green-answer-two") as HTMLInputElement;
-    let greenAnswerThree = document.getElementById("green-answer-three") as HTMLInputElement;
-    let greenAnswerFour = document.getElementById("green-answer-four") as HTMLInputElement;
-    greenAnswers = greenAnswerOne.value + ", " + greenAnswerTwo.value + ", " + greenAnswerThree.value + ", " + greenAnswerFour.value;
+    let greenAnswerOneElement = document.getElementById("green-answer-one") as HTMLInputElement;
+    let greenAnswerTwoElement = document.getElementById("green-answer-two") as HTMLInputElement;
+    let greenAnswerThreeElement = document.getElementById("green-answer-three") as HTMLInputElement;
+    let greenAnswerFourElement = document.getElementById("green-answer-four") as HTMLInputElement;
+    greenAnswers = greenAnswerOneElement.value + ", " + greenAnswerTwoElement.value + ", " + greenAnswerThreeElement.value + ", " + greenAnswerFourElement.value;
     greenAnswers.replace(/\s*,\s*/g, ',');
 
     let blueCategoryElement = document.getElementById("blue-category") as HTMLInputElement;
-    let blueAnswerOne = document.getElementById("blue-answer-one") as HTMLInputElement;
-    let blueAnswerTwo = document.getElementById("blue-answer-two") as HTMLInputElement;
-    let blueAnswerThree = document.getElementById("blue-answer-three") as HTMLInputElement;
-    let blueAnswerFour = document.getElementById("blue-answer-four") as HTMLInputElement;
-    blueAnswers = blueAnswerOne.value + ", " + blueAnswerTwo.value + ", " + blueAnswerThree.value + ", " + blueAnswerFour.value;
+    let blueAnswerOneElement = document.getElementById("blue-answer-one") as HTMLInputElement;
+    let blueAnswerTwoElement = document.getElementById("blue-answer-two") as HTMLInputElement;
+    let blueAnswerThreeElement = document.getElementById("blue-answer-three") as HTMLInputElement;
+    let blueAnswerFourElement = document.getElementById("blue-answer-four") as HTMLInputElement;
+    blueAnswers = blueAnswerOneElement.value + ", " + blueAnswerTwoElement.value + ", " + blueAnswerThreeElement.value + ", " + blueAnswerFourElement.value;
     blueAnswers.replace(/\s*,\s*/g, ',');
 
     let purpleCategoryElement = document.getElementById("purple-category") as HTMLInputElement;
-    let purpleAnswerOne = document.getElementById("purple-answer-one") as HTMLInputElement;
-    let purpleAnswerTwo = document.getElementById("purple-answer-two") as HTMLInputElement;
-    let purpleAnswerThree = document.getElementById("purple-answer-three") as HTMLInputElement;
-    let purpleAnswerFour = document.getElementById("purple-answer-four") as HTMLInputElement;
-    purpleAnswers = purpleAnswerOne.value + ", " + purpleAnswerTwo.value + ", " + purpleAnswerThree.value + ", " + purpleAnswerFour.value;
+    let purpleAnswerOneElement = document.getElementById("purple-answer-one") as HTMLInputElement;
+    let purpleAnswerTwoElement = document.getElementById("purple-answer-two") as HTMLInputElement;
+    let purpleAnswerThreeElement = document.getElementById("purple-answer-three") as HTMLInputElement;
+    let purpleAnswerFourElement = document.getElementById("purple-answer-four") as HTMLInputElement;
+    purpleAnswers = purpleAnswerOneElement.value + ", " + purpleAnswerTwoElement.value + ", " + purpleAnswerThreeElement.value + ", " + purpleAnswerFourElement.value;
     purpleAnswers.replace(/\s*,\s*/g, ',');
 
     yellowCategory = this.encrypt(yellowCategoryElement.value.trim());
