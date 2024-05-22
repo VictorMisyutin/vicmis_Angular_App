@@ -216,6 +216,15 @@ export class ConnectionsComponent {
     }
   }
   
+  deselectAll(){
+    for(let i = 0; i < this.wordsArray.length;i++){
+      if(this.wordsArray[i].status === 5){
+        this.wordsArray[i].status = 4;
+        this.clickedWords--;
+      }
+    }
+  }
+
   shuffle(){
     for (let i = this.wordsArray.length - 1; i >= (4*this.guessedCategories); i--) { 
       const j = Math.floor(Math.random() * (i - (4*this.guessedCategories) + 1) + (4*this.guessedCategories)); // Ensure j is at least 4
