@@ -1,14 +1,15 @@
+// src/app/typing/typing.component.ts
 import { Component, OnInit } from '@angular/core';
 import { generate } from "random-words";
 
 @Component({
   selector: 'app-typing',
   templateUrl: './typing.component.html',
-  styleUrl: './typing.component.css'
+  styleUrls: ['./typing.component.css']
 })
-export class TypingComponent implements OnInit{
+export class TypingComponent implements OnInit {
   textString: string = "";
-  textArray: {character: string, status: number}[] = [];
+  textArray: { character: string, status: number }[] = [];
   numCharacters: number = 0;
   position: number = 0;
   numWords: number = 30;
@@ -20,12 +21,14 @@ export class TypingComponent implements OnInit{
   tempTime: number = 0;
   WPM: number = 0.0;
   accuracy: number = 0.0;
-  currentText: {character: string, status: number}[] = [];
+  currentText: { character: string, status: number }[] = [];
+  isCapsLockOn: boolean = false;
+
   ngOnInit(): void {
     this.setWords(25);
   }
-  
-  setWords(words: number){
+
+  setWords(words: number) {
     clearInterval(this.timerRef);
     this.timer = 0;
     this.timed = false;
@@ -40,17 +43,17 @@ export class TypingComponent implements OnInit{
     document.getElementById('60-seconds')?.classList.remove('active-select');
     document.getElementById('120-seconds')?.classList.remove('active-select');
 
-    switch(words){
-      case 10: { document.getElementById('10-words')?.classList.add('active-select'); break;}
-      case 25: { document.getElementById('25-words')?.classList.add('active-select'); break;}
-      case 50: { document.getElementById('50-words')?.classList.add('active-select'); break;}
-      case 100: { document.getElementById('100-words')?.classList.add('active-select'); break;}
+    switch (words) {
+      case 10: { document.getElementById('10-words')?.classList.add('active-select'); break; }
+      case 25: { document.getElementById('25-words')?.classList.add('active-select'); break; }
+      case 50: { document.getElementById('50-words')?.classList.add('active-select'); break; }
+      case 100: { document.getElementById('100-words')?.classList.add('active-select'); break; }
     }
 
     this.generateText(this.numWords);
   }
 
-  setTime(time: number){
+  setTime(time: number) {
     clearInterval(this.timerRef);
     this.timer = 0;
     this.timed = true;
@@ -65,81 +68,85 @@ export class TypingComponent implements OnInit{
     document.getElementById('60-seconds')?.classList.remove('active-select');
     document.getElementById('120-seconds')?.classList.remove('active-select');
     // add current class
-    switch(time){
-      case 15: { document.getElementById('15-seconds')?.classList.add('active-select'); break;}
-      case 30: { document.getElementById('30-seconds')?.classList.add('active-select'); break;}
-      case 60: { document.getElementById('60-seconds')?.classList.add('active-select'); break;}
-      case 120: { document.getElementById('120-seconds')?.classList.add('active-select'); break;}
+    switch (time) {
+      case 15: { document.getElementById('15-seconds')?.classList.add('active-select'); break; }
+      case 30: { document.getElementById('30-seconds')?.classList.add('active-select'); break; }
+      case 60: { document.getElementById('60-seconds')?.classList.add('active-select'); break; }
+      case 120: { document.getElementById('120-seconds')?.classList.add('active-select'); break; }
     }
-    this.generateText(2*this.timeLength);
+    this.generateText(2 * this.timeLength);
   }
 
-  generateText(length: number){
+  generateText(length: number) {
     this.textString = "";
     this.textArray = [];
-    this.textString = generate({exactly: length, maxLength: 7}).toString().toLowerCase().replaceAll(',', ' ');
+    this.textString = generate({ exactly: length, maxLength: 7 }).toString().toLowerCase().replaceAll(',', ' ');
     let tempArr: string[] = this.textString.split('');
-    for(let i = 0; i < tempArr.length; i++){
-      this.textArray[i] = {character: tempArr[i], status: 0};
+    for (let i = 0; i < tempArr.length; i++) {
+      this.textArray[i] = { character: tempArr[i], status: 0 };
     }
-    this.numCharacters = this.textArray.length; 
+    this.numCharacters = this.textArray.length;
     this.position = 0;
     document.getElementById('main-text')?.focus();
     this.onFocus();
   }
-  onKeyUp(event:KeyboardEvent){
-    const key = event.keyCode || event.charCode; 
-    if(key === 27 || key === 17) {
+
+  onKeyUp(event: KeyboardEvent) {
+    const key = event.keyCode || event.charCode;
+    this.isCapsLockOn = event.getModifierState && event.getModifierState('CapsLock');
+    if (key === 27 || key === 17) {
       const mainText = document.getElementById('main-text');
       if (mainText) {
         mainText.blur();
       }
     }
-    else if (key === 9){
+    else if (key === 9) {
       this.restart();
     }
   }
-  onKeyDown(event:KeyboardEvent){
+
+  onKeyDown(event: KeyboardEvent) {
     const key = event.keyCode || event.charCode;
     let correct: boolean = true;
-    if(key === 27) { // escape
+    this.isCapsLockOn = event.getModifierState && event.getModifierState('CapsLock');
+    if (key === 27) { // escape
       return;
     }
-    else if(key == 17){ // ctrl
+    else if (key == 17) { // ctrl
       return;
     }
     else if (key === 8 || key === 46 || key === 17) { //backspace or delete or ctrl
       // go back to last character with status that is not 0
-      if(this.textArray[this.position-1].status != 0){
-        this.textArray[this.position-1].status = 0;
-        if(this.position > 0) this.position--;
+      if (this.textArray[this.position - 1].status != 0) {
+        this.textArray[this.position - 1].status = 0;
+        if (this.position > 0) this.position--;
       }
-      else{
-        for(let i = this.position; i >= 0; i--){
-          if(this.textArray[i].status !== 0){
-            this.position = i+1;
+      else {
+        for (let i = this.position; i >= 0; i--) {
+          if (this.textArray[i].status !== 0) {
+            this.position = i + 1;
             break;
           }
         }
       }
     }
-    else{ // normal key press
-      if(this.position === 0){
+    else { // normal key press
+      if (this.position === 0) {
         this.startTime = Date.now();
         this.timerRef = setInterval(() => {
-          this.timer = (Date.now() - this.startTime)/1000;
+          this.timer = (Date.now() - this.startTime) / 1000;
         });
       }
-      if(this.textArray[this.position].character === event.key){
+      if (this.textArray[this.position].character === event.key) {
         this.textArray[this.position].status = 1;
         correct = true;
       }
-      else{ // incorrect key
+      else { // incorrect key
         correct = false;
         this.textArray[this.position].status = 2;
-        if(key === 32 && this.textArray[this.position-1].character !== ' '){ // skip to next space
-          for(let i = this.position; i < this.textArray.length; i++){
-            if(this.textArray[i].character == ' '){
+        if (key === 32 && this.textArray[this.position - 1].character !== ' ') { // skip to next space
+          for (let i = this.position; i < this.textArray.length; i++) {
+            if (this.textArray[i].character == ' ') {
               this.position = i;
               this.textArray[this.position].status = 1;
               break;
@@ -148,7 +155,7 @@ export class TypingComponent implements OnInit{
         }
       }
       this.position++;
-      if(this.textArray[this.position-1].character === ' ' && !correct){
+      if (this.textArray[this.position - 1].character === ' ' && !correct) {
         this.position--;
       }
     }
@@ -162,22 +169,22 @@ export class TypingComponent implements OnInit{
       selection?.removeAllRanges();
       selection?.addRange(range);
     }
-    if((!this.timed && this.position == this.numCharacters) || (this.timed && this.timer > this.timeLength))
+    if ((!this.timed && this.position == this.numCharacters) || (this.timed && this.timer > this.timeLength))
       this.testComplete();
 
     return false;
   }
 
-  testComplete(){
+  testComplete() {
     clearInterval(this.timerRef);
     let typedCorrectly: number = 0;
     let typedIncorrectly: number = 0;
-    for(let letter of this.textArray){
-      if(letter.status === 1) typedCorrectly++;
-      else if(letter.status === 2) typedIncorrectly++;
+    for (let letter of this.textArray) {
+      if (letter.status === 1) typedCorrectly++;
+      else if (letter.status === 2) typedIncorrectly++;
     }
-    this.WPM = (typedCorrectly/5) / (this.timer/60);
-    this.accuracy = (typedCorrectly)/(typedIncorrectly + typedCorrectly)
+    this.WPM = (typedCorrectly / 5) / (this.timer / 60);
+    this.accuracy = (typedCorrectly) / (typedIncorrectly + typedCorrectly);
 
     document.getElementById('main-text')?.classList.remove('main-text');
     document.getElementById('timer')?.classList.remove('timer');
@@ -185,9 +192,9 @@ export class TypingComponent implements OnInit{
     document.getElementById('main-text')?.classList.add('main-text-hide');
     document.getElementById('analysis')?.classList.remove('analysis-hide');
     document.getElementById('analysis')?.classList.add('analysis');
-
   }
-  textClicked(){
+
+  textClicked() {
     const element = document.getElementById('main-text');
     if (element instanceof HTMLDivElement) {
       const selection = window.getSelection();
@@ -198,7 +205,8 @@ export class TypingComponent implements OnInit{
       selection?.addRange(range);
     }
   }
-  restart(){
+
+  restart() {
     document.getElementById('timer')?.classList.remove('timer-hide');
     document.getElementById('main-text')?.classList.remove('main-text-hide');
     document.getElementById('main-text')?.classList.add('main-text');
@@ -206,14 +214,15 @@ export class TypingComponent implements OnInit{
     document.getElementById('analysis')?.classList.remove('analysis');
     document.getElementById('analysis')?.classList.add('analysis-hide');
     document.getElementById('main-text')?.focus();
-    if(this.timed)
-    this.generateText(2*this.timeLength);
+    if (this.timed)
+      this.generateText(2 * this.timeLength);
     else
-    this.generateText(this.numWords);
+      this.generateText(this.numWords);
     this.timer = 0;
     clearInterval(this.timerRef);
   }
-  onFocus(){
+
+  onFocus() {
     document.getElementById('main-text')?.classList.remove('main-text-blur');
     document.getElementById('main-text')?.classList.add('main-text-active');
     this.currentText = this.textArray;
@@ -224,15 +233,16 @@ export class TypingComponent implements OnInit{
       });
     }
   }
-  onBlur(){
+
+  onBlur() {
     clearInterval(this.timerRef);
     this.tempTime = this.timer;
     document.getElementById('main-text')?.classList.remove('main-text-active');
     document.getElementById('main-text')?.classList.add('main-text-blur');
     let text = "click here to continue...";
     this.currentText = []
-    for(let i = 0 ; i < text.length; i++){
-      this.currentText[i] = {character: text[i], status: 3};
+    for (let i = 0; i < text.length; i++) {
+      this.currentText[i] = { character: text[i], status: 3 };
     }
   }
 }

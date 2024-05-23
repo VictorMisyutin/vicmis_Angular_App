@@ -1,35 +1,40 @@
 <app-header></app-header>
 <body>
-    <div class="container">
-        <div class="menu">
-            <span class="label">timed: </span>
-            <button class="select" (click)="setTime(15)" id="15-seconds">15</button>
-            <button class="select" (click)="setTime(30)" id="30-seconds">30</button>
-            <button class="select" (click)="setTime(60)" id="60-seconds">60</button>
-            <button class="select" (click)="setTime(120)" id="120-seconds">120</button>
-            <span class="break">|</span>
-            <span class="label">words: </span>
-            <button class="select" (click)="setWords(10)" id="10-words">10</button>
-            <button class="select" (click)="setWords(25)" id="25-words">25</button>
-            <button class="select" (click)="setWords(50)" id="50-words">50</button>
-            <button class="select" (click)="setWords(100)" id="100-words">100</button>
-        </div>
-
-        <p class="timer" id="timer">{{timer | number : '.1-1'}}</p>
-
-        <div class="main-text-active" (focus)="onFocus()" (blur)="onBlur()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false"contenteditable="true" id="main-text" (click)="textClicked()" (keyup)="onKeyUp($event)" (keydown)="onKeyDown($event)" autofocus="autofocus" >
-            <span *ngFor="let letter of currentText;" [ngClass]="{'letter': letter.status == 0, 'letter-correct': letter.status == 1, 'letter-incorrect': letter.status == 2, 'letter-blurred': letter.status == 3}">{{letter.character}}</span>
-        </div>
-        
-        <div class="analysis-hide" id="analysis">
-            <div>wpm: {{WPM | number : '.2-2'}} | accuracy: {{accuracy | number : '.2-2'}}</div>
-            <button class="restart-button" (click)="restart()">restart</button>
-        </div>
+  <div class="container">
+    <div class="menu">
+      <span class="label">timed: </span>
+      <button class="select" (click)="setTime(15)" id="15-seconds">15</button>
+      <button class="select" (click)="setTime(30)" id="30-seconds">30</button>
+      <button class="select" (click)="setTime(60)" id="60-seconds">60</button>
+      <button class="select" (click)="setTime(120)" id="120-seconds">120</button>
+      <span class="break">|</span>
+      <span class="label">words: </span>
+      <button class="select" (click)="setWords(10)" id="10-words">10</button>
+      <button class="select" (click)="setWords(25)" id="25-words">25</button>
+      <button class="select" (click)="setWords(50)" id="50-words">50</button>
+      <button class="select" (click)="setWords(100)" id="100-words">100</button>
     </div>
-    <div class="information">
-        <p>Currently having issues on certain devices</p>
-        <p>If you are having issues such as the text not updating or repeated letters on input, please send an email</p>
-        <p>to <a href="mailto:misyutinvictor@gmail.com" class="my-email-link">misyutinvictor&#64;gmail.com</a> with your issue and the name of the device you are on. Thank you for your patience.</p>
+
+    <p class="timer" id="timer">{{timer | number: '.1-1'}}</p>
+
+    <div class="main-text-active" (focus)="onFocus()" (blur)="onBlur()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false" contenteditable="true" id="main-text" (click)="textClicked()" (keyup)="onKeyUp($event)" (keydown)="onKeyDown($event)" autofocus="autofocus">
+      <span *ngFor="let letter of currentText;" [ngClass]="{'letter': letter.status == 0, 'letter-correct': letter.status == 1, 'letter-incorrect': letter.status == 2, 'letter-blurred': letter.status == 3}">{{letter.character}}</span>
     </div>
+
+    <div class="analysis-hide" id="analysis">
+      <div>wpm: {{WPM | number: '.2-2'}} | accuracy: {{accuracy | number: '.2-2'}}</div>
+      <button class="restart-button" (click)="restart()">restart</button>
+    </div>
+  </div>
+
+  <div [class.caps-lock-container-show]="isCapsLockOn" [class.caps-lock-container-hide]="!isCapsLockOn" id="caps-lock-container">
+    <p class="caps-lock">Caps Lock</p>
+  </div>
+
+  <div class="information">
+    <p>Currently having issues on certain devices</p>
+    <p>If you are having issues such as the text not updating or repeated letters on input, please send an email</p>
+    <p>to <a href="mailto:misyutinvictor@gmail.com" class="my-email-link">misyutinvictor&#64;gmail.com</a> with your issue and the name of the device you are on. Thank you for your patience.</p>
+  </div>
 </body>
 <app-footer></app-footer>
