@@ -18,6 +18,7 @@ import { CreateConnectionsComponent } from './pages/projects/create-connections/
 import { CatalogedComponent } from './pages/projects/cataloged/cataloged.component';
 import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.component';
 import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
+import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'projects/connections', component: ConnectionsComponent, title: 'connections'},
   {path: 'projects/cataloged', component: CatalogedComponent, title: 'cataloged'},
   {path: 'projects/connections/create', component: CreateConnectionsComponent, title: 'create connections'},
+  {path: 'projects/data-viz', component: DataVizComponent, title: 'Data Visualization'},
   {path: 'liftware', component: LandingPageComponent, title: 'liftware'},
   {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'}
 ];

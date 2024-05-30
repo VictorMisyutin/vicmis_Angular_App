@@ -26,6 +26,7 @@ import { CatalogedComponent } from './pages/projects/cataloged/cataloged.compone
 import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.component';
 import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
 import { LiftwareHeaderComponent } from './pages/flexgym/components/liftware-header/liftware-header.component';
+import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { LiftwareHeaderComponent } from './pages/flexgym/components/liftware-hea
     CatalogedComponent,
     LandingPageComponent,
     ResultsPageComponent,
-    LiftwareHeaderComponent
+    LiftwareHeaderComponent,
+    DataVizComponent
   ],
   imports: [
     BrowserModule,
