@@ -214,8 +214,9 @@ export class TypingComponent implements OnInit {
   }
 
   onKeyUp(event: KeyboardEvent) {
+    this.isCapsLockOn = event.getModifierState && event.getModifierState('CapsLock');
     const key = event.keyCode || event.charCode;
-    if((key < 32 || key > 125) && key != 8) return;
+    if(key < 32&& key != 8) return;
     if (key === 27) {
       const mainText = document.getElementById('main-text');
       if (mainText) {
@@ -223,14 +224,13 @@ export class TypingComponent implements OnInit {
       }
     }
     if((key < 32 || key > 125) && key != 8) return;
-    this.isCapsLockOn = event.getModifierState && event.getModifierState('CapsLock');
   }
 
   onKeyDown(event: KeyboardEvent) {
-    const key = event.keyCode || event.charCode;
-    if((key < 32 || key > 125) && key != 8) return;
-    let correct: boolean = true;
     this.isCapsLockOn = event.getModifierState && event.getModifierState('CapsLock');
+    const key = event.keyCode || event.charCode;
+    if(key < 32 && key != 8) return;
+    let correct: boolean = true;
     if (key === 8 || key === 46) { //backspace or delete or ctrl
       // go back to last character with status that is not 0
       if (this.textArray[this.position - 1].status != 0) {
