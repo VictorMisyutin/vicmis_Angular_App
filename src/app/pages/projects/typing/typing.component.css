@@ -11,6 +11,33 @@
     margin-bottom: 10%;
     text-align: center;
 }
+.game-type{
+    font-size: 17px;
+    border: none;
+    background: none;
+    color: gray;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+.game-type:hover{
+    color: #cacaca;
+}
+.option{
+    font-size: 17px;
+    border: none;
+    background: none;
+    color: gray;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+.active-select{
+    font-size: 17px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 8px;
+    color: #cacaca;
+}
 .break{
     height: 2px;
     padding: 2px;
@@ -18,20 +45,6 @@
 }
 .label{
     font-size: 17px;
-}
-.select{
-    border: none;
-    font-size: 15px;
-    background: none;
-    color: gray;
-    cursor: pointer;
-    margin-bottom: 8px;
-}
-.select:hover{
-    color: #cacaca;
-}
-.active-select{
-    color: #bb08bb;
 }
 .timer{
     margin-left: 10%;

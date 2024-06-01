@@ -23,33 +23,146 @@ export class TypingComponent implements OnInit {
   accuracy: number = 0.0;
   currentText: { character: string, status: number }[] = [];
   isCapsLockOn: boolean = false;
+  activeGameType:string = "";
+  // game options:
+  // timed
+  // words
+  // quotes
+
+  option1: string = "";
+  option2: string = "";
+  option3: string = "";
+  option4: string = "";
 
   ngOnInit(): void {
+    this.activeGameType = "words"
+    this.option1 = "10";
+    this.option2 = "25";
+    this.option3 = "50";
+    this.option4 = "100";
     this.setWords(25);
+    document.getElementById('words-game-typeop')?.classList.add('active-select');
+    document.getElementById('option2')?.classList.add('active-select');
   }
+
+  option1_clicked(){
+    document.getElementById('option1')?.classList.add('active-select');
+    document.getElementById('option2')?.classList.remove('active-select');
+    document.getElementById('option3')?.classList.remove('active-select');
+    document.getElementById('option4')?.classList.remove('active-select');
+
+    if(this.activeGameType === 'timed'){
+      this.setTime(15);
+    }
+    else if(this.activeGameType === 'words'){
+      this.setTime(10);
+    }
+    else if(this.activeGameType === 'quotes'){
+
+    }
+  }
+  option2_clicked(){
+    document.getElementById('option1')?.classList.remove('active-select');
+    document.getElementById('option2')?.classList.add('active-select');
+    document.getElementById('option3')?.classList.remove('active-select');
+    document.getElementById('option4')?.classList.remove('active-select');
+    
+    if(this.activeGameType === 'timed'){
+      this.setTime(30);
+    }
+    else if(this.activeGameType === 'words'){
+      this.setTime(25);
+    }
+    else if(this.activeGameType === 'quotes'){
+
+    }
+  }
+  option3_clicked(){
+    document.getElementById('option1')?.classList.remove('active-select');
+    document.getElementById('option2')?.classList.remove('active-select');
+    document.getElementById('option3')?.classList.add('active-select');
+    document.getElementById('option4')?.classList.remove('active-select');
+    
+    if(this.activeGameType === 'timed'){
+      this.setTime(60);
+    }
+    else if(this.activeGameType === 'words'){
+      this.setTime(50);
+    }
+    else if(this.activeGameType === 'quotes'){
+
+    }
+  }
+  option4_clicked(){
+    document.getElementById('option1')?.classList.remove('active-select');
+    document.getElementById('option2')?.classList.remove('active-select');
+    document.getElementById('option3')?.classList.remove('active-select');
+    document.getElementById('option4')?.classList.add('active-select');
+    
+    if(this.activeGameType === 'timed'){
+      this.setTime(120);
+    }
+    else if(this.activeGameType === 'words'){
+      this.setTime(100);
+    }
+    else if(this.activeGameType === 'quotes'){
+
+    }
+  }
+
+  setActiveGameType(type: string){  
+    if(type === 'timed'){
+      document.getElementById('words-game-type')?.classList.remove('active-select');
+      document.getElementById('quotes-game-type')?.classList.remove('active-select');
+      document.getElementById('words-game-type')?.classList.add('game-type');
+      document.getElementById('quotes-game-type')?.classList.add('game-type');
+
+      document.getElementById('timed-game-type')?.classList.remove('game-type');
+      document.getElementById('timed-game-type')?.classList.add('active-select'); 
+
+      this.activeGameType = "timed"
+      this.option1 = "15";
+      this.option2 = "30";
+      this.option3 = "60";
+      this.option4 = "120";
+      this.setTime(30);
+    }
+    else if(type === 'words'){
+      document.getElementById('timed-game-type')?.classList.remove('active-select');
+      document.getElementById('quotes-game-type')?.classList.remove('active-select');
+      document.getElementById('timed-game-type')?.classList.add('game-type');
+      document.getElementById('quotes-game-type')?.classList.add('game-type');
+
+      document.getElementById('words-game-type')?.classList.remove('game-type');
+      document.getElementById('words-game-type')?.classList.add('active-select'); 
+
+      this.activeGameType = "words"
+      this.option1 = "10";
+      this.option2 = "25";
+      this.option3 = "50";
+      this.option4 = "100";
+      this.setWords(25);
+
+    }
+    else if(type === 'quotes'){
+      document.getElementById('timed-game-type')?.classList.remove('active-select');
+      document.getElementById('words-game-type')?.classList.remove('active-select');
+      document.getElementById('timed-game-type')?.classList.add('game-type');
+      document.getElementById('words-game-type')?.classList.add('game-type');
+
+      document.getElementById('quotes-game-type')?.classList.remove('game-type');
+      document.getElementById('quotes-game-type')?.classList.add('active-select'); 
+
+      
+    }
+  }
+
 
   setWords(words: number) {
     clearInterval(this.timerRef);
     this.timer = 0;
     this.timed = false;
     this.numWords = words;
-    document.getElementById('10-words')?.classList.remove('active-select');
-    document.getElementById('25-words')?.classList.remove('active-select');
-    document.getElementById('50-words')?.classList.remove('active-select');
-    document.getElementById('100-words')?.classList.remove('active-select');
-
-    document.getElementById('15-seconds')?.classList.remove('active-select');
-    document.getElementById('30-seconds')?.classList.remove('active-select');
-    document.getElementById('60-seconds')?.classList.remove('active-select');
-    document.getElementById('120-seconds')?.classList.remove('active-select');
-
-    switch (words) {
-      case 10: { document.getElementById('10-words')?.classList.add('active-select'); break; }
-      case 25: { document.getElementById('25-words')?.classList.add('active-select'); break; }
-      case 50: { document.getElementById('50-words')?.classList.add('active-select'); break; }
-      case 100: { document.getElementById('100-words')?.classList.add('active-select'); break; }
-    }
-
     this.generateText(this.numWords);
   }
 
@@ -58,22 +171,6 @@ export class TypingComponent implements OnInit {
     this.timer = 0;
     this.timed = true;
     this.timeLength = time;
-    // remove possible old classes
-    document.getElementById('10-words')?.classList.remove('active-select');
-    document.getElementById('25-words')?.classList.remove('active-select');
-    document.getElementById('50-words')?.classList.remove('active-select');
-    document.getElementById('100-words')?.classList.remove('active-select');
-    document.getElementById('15-seconds')?.classList.remove('active-select');
-    document.getElementById('30-seconds')?.classList.remove('active-select');
-    document.getElementById('60-seconds')?.classList.remove('active-select');
-    document.getElementById('120-seconds')?.classList.remove('active-select');
-    // add current class
-    switch (time) {
-      case 15: { document.getElementById('15-seconds')?.classList.add('active-select'); break; }
-      case 30: { document.getElementById('30-seconds')?.classList.add('active-select'); break; }
-      case 60: { document.getElementById('60-seconds')?.classList.add('active-select'); break; }
-      case 120: { document.getElementById('120-seconds')?.classList.add('active-select'); break; }
-    }
     this.generateText(2 * this.timeLength);
   }
 
