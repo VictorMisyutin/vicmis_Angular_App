@@ -215,29 +215,23 @@ export class TypingComponent implements OnInit {
 
   onKeyUp(event: KeyboardEvent) {
     const key = event.keyCode || event.charCode;
-    this.isCapsLockOn = event.getModifierState && event.getModifierState('CapsLock');
-    if (key === 27 || key === 17) {
+    console.log(key)
+    if (key === 27) {
       const mainText = document.getElementById('main-text');
       if (mainText) {
         mainText.blur();
       }
     }
-    else if (key === 9) {
-      this.restart();
-    }
+    if((key < 32 || key > 125) && key != 8) return;
+    this.isCapsLockOn = event.getModifierState && event.getModifierState('CapsLock');
   }
 
   onKeyDown(event: KeyboardEvent) {
     const key = event.keyCode || event.charCode;
+    if((key < 32 || key > 125) && key != 8) return;
     let correct: boolean = true;
     this.isCapsLockOn = event.getModifierState && event.getModifierState('CapsLock');
-    if (key === 27) { // escape
-      return;
-    }
-    else if (key == 17) { // ctrl
-      return;
-    }
-    else if (key === 8 || key === 46 || key === 17) { //backspace or delete or ctrl
+    if (key === 8 || key === 46) { //backspace or delete or ctrl
       // go back to last character with status that is not 0
       if (this.textArray[this.position - 1].status != 0) {
         this.textArray[this.position - 1].status = 0;
