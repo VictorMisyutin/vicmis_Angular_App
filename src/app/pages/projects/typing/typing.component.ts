@@ -1,6 +1,7 @@
 // src/app/typing/typing.component.ts
 import { Component, OnInit } from '@angular/core';
 import { generate } from "random-words";
+import { QuoteService } from '../../../services/quote.service';
 
 @Component({
   selector: 'app-typing',
@@ -34,6 +35,8 @@ export class TypingComponent implements OnInit {
   option3: string = "";
   option4: string = "";
 
+  constructor(private quoteService: QuoteService){}
+
   ngOnInit(): void {
     this.activeGameType = "words"
     this.option1 = "10";
@@ -41,7 +44,8 @@ export class TypingComponent implements OnInit {
     this.option3 = "50";
     this.option4 = "100";
     this.setWords(25);
-    document.getElementById('words-game-typeop')?.classList.add('active-select');
+    
+    document.getElementById('words-game-type')?.classList.add('active-select');
     document.getElementById('option2')?.classList.add('active-select');
   }
 
@@ -58,9 +62,10 @@ export class TypingComponent implements OnInit {
       this.setTime(10);
     }
     else if(this.activeGameType === 'quotes'){
-
+      this.setQuote(1);
     }
   }
+
   option2_clicked(){
     document.getElementById('option1')?.classList.remove('active-select');
     document.getElementById('option2')?.classList.add('active-select');
@@ -74,9 +79,10 @@ export class TypingComponent implements OnInit {
       this.setTime(25);
     }
     else if(this.activeGameType === 'quotes'){
-
+      this.setQuote(2);
     }
   }
+
   option3_clicked(){
     document.getElementById('option1')?.classList.remove('active-select');
     document.getElementById('option2')?.classList.remove('active-select');
@@ -90,9 +96,10 @@ export class TypingComponent implements OnInit {
       this.setTime(50);
     }
     else if(this.activeGameType === 'quotes'){
-
+      this.setQuote(3);
     }
   }
+
   option4_clicked(){
     document.getElementById('option1')?.classList.remove('active-select');
     document.getElementById('option2')?.classList.remove('active-select');
@@ -106,7 +113,7 @@ export class TypingComponent implements OnInit {
       this.setTime(100);
     }
     else if(this.activeGameType === 'quotes'){
-
+      this.setQuote(4);
     }
   }
 
@@ -153,10 +160,28 @@ export class TypingComponent implements OnInit {
       document.getElementById('quotes-game-type')?.classList.remove('game-type');
       document.getElementById('quotes-game-type')?.classList.add('active-select'); 
 
-      
+      this.activeGameType = "quotes"
+      this.option1 = "small";
+      this.option2 = "medium";
+      this.option3 = "large";
+      this.option4 = "X large";
+      this.setQuote(2);
     }
   }
 
+  setQuote(length: number) {
+    clearInterval(this.timerRef);
+    this.timer = 0;
+    this.timed = false;
+    this.quoteService.getRandomQuote(length).subscribe((data) => {
+      this.textString = data[0].content;
+      this.textArray = this.textString.split('').map((char: string) => ({ character: char, status: 0 }));
+      this.numCharacters = this.textArray.length;
+      this.position = 0;
+      document.getElementById('main-text')?.focus();
+      this.onFocus();
+    });
+  }
 
   setWords(words: number) {
     clearInterval(this.timerRef);
