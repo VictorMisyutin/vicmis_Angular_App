@@ -285,7 +285,7 @@ export class TypingComponent implements OnInit {
       selection?.removeAllRanges();
       selection?.addRange(range);
     }
-    if ((!this.timed && this.position == this.numCharacters) || (this.timed && this.timer > this.timeLength))
+    if (((this.activeGameType === 'words' || this.activeGameType ==='quote' ) && this.position == this.numCharacters) || (this.activeGameType === 'timed' && this.timer > this.timeLength))
       this.testComplete();
 
     return false;
