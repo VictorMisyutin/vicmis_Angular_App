@@ -215,7 +215,7 @@ export class TypingComponent implements OnInit {
 
   onKeyUp(event: KeyboardEvent) {
     const key = event.keyCode || event.charCode;
-    console.log(key)
+    if((key < 32 || key > 125) && key != 8) return;
     if (key === 27) {
       const mainText = document.getElementById('main-text');
       if (mainText) {
