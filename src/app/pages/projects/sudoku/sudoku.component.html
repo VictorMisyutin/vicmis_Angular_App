@@ -17,7 +17,7 @@
                     [ngClass]="{'gray-cell': cell.initialVal , 'green-cell': !cell.initialVal && cell.correctSpot, 
                     'red-cell': !cell.correctSpot && cell.checked && cell.value !== 0}">
                     <input type="number" *ngIf="cell.correctSpot" [value]="cell.value" readonly>
-                    <input type="number" *ngIf="!cell.correctSpot" [value]="" pattern="\d*" min="1" max="9" maxlength="1" (input)="handleInput($event, i, j)">
+                    <input type="number" *ngIf="!cell.correctSpot" [value]="" pattern="\d*" maxlength = "1" min = "1" max = "9" (input)="handleInput($event, i, j)">
                 </div>
             </div>
         </div>

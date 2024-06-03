@@ -69,12 +69,18 @@ export class SudokuComponent implements OnInit {
   };
   
   handleInput(event: Event, row: number, col: number) {
+    this.maxLengthCheck(event.target);
     const target = event.target as HTMLInputElement;
     let num = 0;
     if(target.value != '') num = parseInt(target.value);   
     this.updateMatrix(row, col, num);
   }
   
+  maxLengthCheck(object: any){
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+  }
+
   updateMatrix(row: number, col: number, value: number) {
     this.displayedSudokuData[row][col].value = value;
     this.displayedSudokuData[row][col].checked = false;
