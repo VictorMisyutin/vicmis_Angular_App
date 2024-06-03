@@ -19,6 +19,7 @@ export class ResultsPageComponent{
   goal: string = "lose weight";
   frequency: string = "4";
   showWorkout: boolean = false;
+
   constructor(private apiService: ApiService, private elementRef: ElementRef, private renderer: Renderer2, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       // get categories
@@ -41,6 +42,7 @@ export class ResultsPageComponent{
         this.equipment = params['f'];
       }
     });
+
     this.apiService.getWorkout(this.age, this.weight, this.goal, this.duration, this.equipment, this.frequency).subscribe(data => {
       this.workout = data.workout;
     });

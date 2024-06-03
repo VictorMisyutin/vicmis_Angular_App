@@ -11,7 +11,8 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getWorkout(age: string, weight: string, goal: string, duration: string, equipment: string, frequency: string): Observable<any> {
-    return this.http.get(`https://vicmis.com/api/workout/${age}/${weight}/${goal}/${duration}/${equipment}/${frequency}`);
+    let result = this.http.get(`https://vicmis.com/api/workout/${age}/${weight}/${goal}/${duration}/${equipment}/${frequency}`);
+    return result;
   }
 
 }
