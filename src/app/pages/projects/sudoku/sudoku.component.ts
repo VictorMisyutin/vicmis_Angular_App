@@ -1,14 +1,11 @@
 import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 
-// enum difficulty {easy, medium, hard, extreme}
-
 @Component({
   selector: 'app-sudoku',
   templateUrl: './sudoku.component.html',
   styleUrls: ['./sudoku.component.css'],
   encapsulation: ViewEncapsulation.None // Disable encapsulation
 })
-
 
 export class SudokuComponent implements OnInit {
   
