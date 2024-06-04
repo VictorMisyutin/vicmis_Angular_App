@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-thirdwardarchive-login',
@@ -17,7 +17,8 @@ export class ThirdwardarchiveLoginComponent {
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router){}
 
   onSubmit(){
-    let user = this.authService.login(this.loginForm.value.username, this.loginForm.value.password);
+    let user = this.authService.adminLogin(this.loginForm.value.username, this.loginForm.value.password);
+    console.log(user);
     if (!user){
       alert('Invalid username or password')
     }

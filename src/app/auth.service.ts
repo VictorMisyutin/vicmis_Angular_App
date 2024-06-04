@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  users: any[] = [
+  admins: any[] = [
     {
       id: 1,
       name: 'Victor Misyutin',
@@ -22,16 +22,16 @@ export class AuthService {
 
   session: any;
 
-  login(username: string, password:string){
-    let user = this.users.find(
+  adminLogin(username: string, password:string){
+    let admin = this.admins.find(
       (u) => u.username === username && u.password === password
     );
-    if(user){
-      this.session = user;
+    if(admin){
+      this.session = admin;
       localStorage.setItem('session', JSON.stringify(this.session));
     }
 
-    return user;
+    return admin;
   }
 
 }

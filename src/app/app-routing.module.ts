@@ -26,7 +26,7 @@ import { ThirdwardarchiveMerchComponent } from './pages/projects/thirdwardarchiv
 import { ThirdwardarchiveMerchDetailComponent } from './pages/projects/thirdwardarchive-merch-detail/thirdwardarchive-merch-detail.component';
 import { ThirdwardarchiveLoginComponent } from './pages/projects/thirdwardarchive-login/thirdwardarchive-login.component';
 import { ThirdwardarchiveAddProductComponent } from './pages/projects/thirdwardarchive-add-product/thirdwardarchive-add-product.component';
-
+import { ThirdwardarchiveAdminViewComponent } from './pages/projects/thirdwardarchive-admin-view/thirdwardarchive-admin-view.component';
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
   {path: 'docs', component: DocsPageComponent, title: 'Documentation'},
@@ -51,7 +51,8 @@ const routes: Routes = [
   {path: 'thirdwardarchive/checkout', component: ThirdwardarchiveCheckoutComponent, title: 'thirdwardarchive'},
   {path: 'thirdwardarchive/merch', component: ThirdwardarchiveMerchComponent, title: 'thirdwardarchive'},
   {path: 'thirdwardarchive/login', component: ThirdwardarchiveLoginComponent, title: 'thirdwardarchive'},
-  {path: 'thirdwardarchive/admin', component: ThirdwardarchiveAddProductComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
+  {path: 'thirdwardarchive/admin', component: ThirdwardarchiveAdminViewComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
+  {path: 'thirdwardarchive/admin/add-products', component: ThirdwardarchiveAddProductComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
   {path: 'thirdwardarchive/merch/details', component: ThirdwardarchiveMerchDetailComponent, title: 'thirdwardarchive'}
   
 ];

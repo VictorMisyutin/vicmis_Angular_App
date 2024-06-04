@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(54, 54, 54);
+}
+.header{
+    display: flex;
+    padding: 20px 40px;
+}
+.title{
+    margin: 0 auto;
+    font-family: 'great-reaper';
+    /* font-family: 'gothicdawn'; */
+    letter-spacing: 3px;
+    font-size: 80px;
+    color: black;
+    text-align: center;
+    width: auto;
+}
+.title:hover{
+    cursor: pointer;
+}
+form{
+    width: 25%;
+    margin: 4% auto;
+    color: #ffffff;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"]{
+    height: 30px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+}
+.form-group input[type="file"] {
+    display: block;
+    text-align: center;
+    width:  100%;
+    margin: 0 auto;    
+}
+.form input[formControlName="price"]{
+    display: block;
+    text-align: center;
+    width:  20%;
+    margin: 0 auto;
+}
+.submit-btn {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    height: 30px;
+    width: 30%;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+}
+.submit-btn:hover, .submit-btn:focus{
+    cursor: pointer;
+    background-color:#bebebe;
+}
