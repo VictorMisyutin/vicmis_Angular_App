@@ -1,0 +1,17 @@
+<body>
+    <div class="header">
+        <h2 class="title" [routerLink]="['/thirdwardarchive']">third ward archive</h2>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div class="form-group">
+            <label>username</label>
+            <input type="text" formControlName="username" >
+        </div>
+        <div class="form-group">
+            <label>password</label>
+            <input type="password" formControlName="password">
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</body>

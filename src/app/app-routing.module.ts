@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
 import { HomeComponent } from './pages/home/home.component';
 import { DocsCbbComponent } from './pages/docs/docs-cbb/docs-cbb.component';
 import { DocsMlbComponent } from './pages/docs/docs-mlb/docs-mlb.component';
@@ -23,6 +24,8 @@ import { ThirdwardarchiveComponent } from './pages/projects/thirdwardarchive/thi
 import { ThirdwardarchiveCheckoutComponent } from './pages/projects/thirdwardarchive-checkout/thirdwardarchive-checkout.component';
 import { ThirdwardarchiveMerchComponent } from './pages/projects/thirdwardarchive-merch/thirdwardarchive-merch.component';
 import { ThirdwardarchiveMerchDetailComponent } from './pages/projects/thirdwardarchive-merch-detail/thirdwardarchive-merch-detail.component';
+import { ThirdwardarchiveLoginComponent } from './pages/projects/thirdwardarchive-login/thirdwardarchive-login.component';
+import { ThirdwardarchiveAddProductComponent } from './pages/projects/thirdwardarchive-add-product/thirdwardarchive-add-product.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -47,6 +50,8 @@ const routes: Routes = [
   {path: 'thirdwardarchive', component: ThirdwardarchiveComponent, title: 'thirdwardarchive'},
   {path: 'thirdwardarchive/checkout', component: ThirdwardarchiveCheckoutComponent, title: 'thirdwardarchive'},
   {path: 'thirdwardarchive/merch', component: ThirdwardarchiveMerchComponent, title: 'thirdwardarchive'},
+  {path: 'thirdwardarchive/login', component: ThirdwardarchiveLoginComponent, title: 'thirdwardarchive'},
+  {path: 'thirdwardarchive/admin', component: ThirdwardarchiveAddProductComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
   {path: 'thirdwardarchive/merch/details', component: ThirdwardarchiveMerchDetailComponent, title: 'thirdwardarchive'}
   
 ];

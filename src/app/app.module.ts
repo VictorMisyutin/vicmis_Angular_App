@@ -31,6 +31,8 @@ import { ThirdwardarchiveComponent } from './pages/projects/thirdwardarchive/thi
 import { ThirdwardarchiveCheckoutComponent } from './pages/projects/thirdwardarchive-checkout/thirdwardarchive-checkout.component';
 import { ThirdwardarchiveMerchComponent } from './pages/projects/thirdwardarchive-merch/thirdwardarchive-merch.component';
 import { ThirdwardarchiveMerchDetailComponent } from './pages/projects/thirdwardarchive-merch-detail/thirdwardarchive-merch-detail.component';
+import { ThirdwardarchiveLoginComponent } from './pages/projects/thirdwardarchive-login/thirdwardarchive-login.component';
+import { ThirdwardarchiveAddProductComponent } from './pages/projects/thirdwardarchive-add-product/thirdwardarchive-add-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,9 @@ import { ThirdwardarchiveMerchDetailComponent } from './pages/projects/thirdward
     ThirdwardarchiveComponent,
     ThirdwardarchiveCheckoutComponent,
     ThirdwardarchiveMerchComponent,
-    ThirdwardarchiveMerchDetailComponent
+    ThirdwardarchiveMerchDetailComponent,
+    ThirdwardarchiveLoginComponent,
+    ThirdwardarchiveAddProductComponent
   ],
   imports: [
     BrowserModule,
