@@ -4,7 +4,14 @@
     </div>
 
     <!-- sigle product display -->
-    <img class="product-photo" src="assets\shirts\random_shirt_1.jpg" [routerLink]="['/thirdwardarchive/merch/details']">
+    <!-- thirdwardarchive-merch-detail.component.html -->
+    <div *ngIf="imageUrl">
+        <img [src]="imageUrl" alt="Image from Flask">
+    </div>
+    <div *ngIf="!imageUrl">
+        Loading image...
+    </div>
+    
     <div class="bottom-part">
         <div class="description">
             <h2 style="margin-left: 30px;">Random Tee One</h2>
