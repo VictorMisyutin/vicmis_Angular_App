@@ -27,6 +27,7 @@ import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.
 import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
 import { LiftwareHeaderComponent } from './pages/flexgym/components/liftware-header/liftware-header.component';
 import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
+import { ThirdwardarchiveComponent } from './pages/projects/thirdwardarchive/thirdwardarchive.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
     LandingPageComponent,
     ResultsPageComponent,
     LiftwareHeaderComponent,
-    DataVizComponent
+    DataVizComponent,
+    ThirdwardarchiveComponent
   ],
   imports: [
     BrowserModule,

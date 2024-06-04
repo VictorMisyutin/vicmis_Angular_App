@@ -11,6 +11,30 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'thin-worms';
+    src: url('assets/fonts/MB-Thin_Worms.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gothicdawn';
+    src: url('assets/fonts/MB-GothicDawn_Font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'great-reaper';
+    src: url('assets/fonts/MB-The_Great_Reaper.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tyran';
+    src: url('assets/fonts/MB_TyranT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* You can add global styles to this file, and also import other style files */
 
