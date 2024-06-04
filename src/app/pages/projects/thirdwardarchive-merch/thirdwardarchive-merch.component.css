@@ -39,8 +39,9 @@ body{
 }
 .product-photo:hover{
     cursor: pointer;
+    transform: translateY(20px);
 }
-.product-title{
+.product-title{ 
     float: left;
 }
 .product-price{
