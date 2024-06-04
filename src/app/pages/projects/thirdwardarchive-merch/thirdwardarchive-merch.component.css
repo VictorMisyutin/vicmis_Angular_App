@@ -39,7 +39,7 @@ body{
 }
 .product-photo:hover{
     cursor: pointer;
-    transform: translateY(20px);
+    transform: translateY(-20px);
 }
 .product-title{ 
     float: left;
