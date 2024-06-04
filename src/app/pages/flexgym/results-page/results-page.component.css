@@ -13,11 +13,12 @@ min-height: 100vh;
   padding: 1vw 1vw;
   background-color: #212121;
   margin-top: -1vw;
+  margin-bottom: 1vw 
 }
 .main-content-description{
   margin-top: 0;
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
 .workout{
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
