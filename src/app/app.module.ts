@@ -28,6 +28,9 @@ import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.
 import { LiftwareHeaderComponent } from './pages/flexgym/components/liftware-header/liftware-header.component';
 import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 import { ThirdwardarchiveComponent } from './pages/projects/thirdwardarchive/thirdwardarchive.component';
+import { ThirdwardarchiveCheckoutComponent } from './pages/projects/thirdwardarchive-checkout/thirdwardarchive-checkout.component';
+import { ThirdwardarchiveMerchComponent } from './pages/projects/thirdwardarchive-merch/thirdwardarchive-merch.component';
+import { ThirdwardarchiveMerchDetailComponent } from './pages/projects/thirdwardarchive-merch-detail/thirdwardarchive-merch-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +56,10 @@ import { ThirdwardarchiveComponent } from './pages/projects/thirdwardarchive/thi
     ResultsPageComponent,
     LiftwareHeaderComponent,
     DataVizComponent,
-    ThirdwardarchiveComponent
+    ThirdwardarchiveComponent,
+    ThirdwardarchiveCheckoutComponent,
+    ThirdwardarchiveMerchComponent,
+    ThirdwardarchiveMerchDetailComponent
   ],
   imports: [
     BrowserModule,

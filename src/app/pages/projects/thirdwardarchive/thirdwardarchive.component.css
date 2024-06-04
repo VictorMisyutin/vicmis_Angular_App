@@ -4,11 +4,39 @@ body{
 .header{
     padding: 20px 40px;
 }
+.header:hover{
+    cursor: pointer;
+}
 .title{
     margin: 0;
+    font-family: 'great-reaper';
+    /* font-family: 'gothicdawn'; */
+    letter-spacing: 3px;
+    font-size: 80px;
+    color: black;
+    text-align: center;
+}
+.countdown{
+    margin: 0;
+    margin-top: 350px;
+    margin-bottom: 40px;
     font-family: 'great-reaper';
     letter-spacing: 6px;
     font-size: 80px;
     color: black;
     text-align: center;
+}
+.drops{
+    background: transparent;
+    border: none;
+    margin: 0 auto;
+    width: 130px;
+    border-bottom: 2px black dashed;
+    font-family: 'great-reaper';
+    font-size: 40px;
+    color: black;
+    text-align: center;
+}
+.drops:hover{
+    cursor: pointer;
 }

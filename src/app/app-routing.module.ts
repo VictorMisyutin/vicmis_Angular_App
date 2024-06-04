@@ -20,6 +20,10 @@ import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.
 import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
 import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 import { ThirdwardarchiveComponent } from './pages/projects/thirdwardarchive/thirdwardarchive.component';
+import { ThirdwardarchiveCheckoutComponent } from './pages/projects/thirdwardarchive-checkout/thirdwardarchive-checkout.component';
+import { ThirdwardarchiveMerchComponent } from './pages/projects/thirdwardarchive-merch/thirdwardarchive-merch.component';
+import { ThirdwardarchiveMerchDetailComponent } from './pages/projects/thirdwardarchive-merch-detail/thirdwardarchive-merch-detail.component';
+
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
   {path: 'docs', component: DocsPageComponent, title: 'Documentation'},
@@ -40,7 +44,11 @@ const routes: Routes = [
   {path: 'projects/data-viz', component: DataVizComponent, title: 'Data Visualization'},
   {path: 'liftware', component: LandingPageComponent, title: 'liftware'},
   {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'},
-  {path: 'thirdwardarchive', component: ThirdwardarchiveComponent, title: 'thirdwardarchive'}
+  {path: 'thirdwardarchive', component: ThirdwardarchiveComponent, title: 'thirdwardarchive'},
+  {path: 'thirdwardarchive/checkout', component: ThirdwardarchiveCheckoutComponent, title: 'thirdwardarchive'},
+  {path: 'thirdwardarchive/merch', component: ThirdwardarchiveMerchComponent, title: 'thirdwardarchive'},
+  {path: 'thirdwardarchive/merch/details', component: ThirdwardarchiveMerchDetailComponent, title: 'thirdwardarchive'}
+  
 ];
 
 @NgModule({
