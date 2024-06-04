@@ -48,6 +48,9 @@ body{
 }
 
 @media screen and (max-width: 1450px) {
+    .title{
+        margin-bottom: 0px;
+    }
     .products{
         margin: 50px 20%;
         display: grid;
@@ -57,22 +60,28 @@ body{
 
     .product{
         background-color: rgb(126, 126, 126);
-        height:300px;
-        min-width: 100px
+        height:240px;
+        min-width: 100px;
+        margin-top: 30px;
     }
 
-    @media screen and (max-width: 1050px) {
+    @media screen and (max-width: 800px) {
+        .title{
+            margin-bottom: 0px;
+        }
+
         .products{
-            display: block;
+            display: grid;
+            grid-template-columns: 1fr ;
+            gap: 75px;
         }
         
         .product{
             background-color: rgb(126, 126, 126);
-            height:300px;
+            height:240px;
             min-width: 100px;
             max-width: 400px;
             margin: 0 auto;
-            margin-bottom: 50px;
         }
     }
 }

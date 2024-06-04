@@ -21,7 +21,7 @@ body{
 .photo-container{
     display: block;
     margin: 20px auto;
-    }
+}
 .product-photo{
     border-radius: 5px;
     background-color: white;
@@ -38,6 +38,23 @@ body{
     text-align: center;
     font-weight: bold;
 }
-/* .description{
-    font
-} */
+
+@media screen and (max-width: 1450px) {
+    .product-photo{
+        border-radius: 5px;
+        background-color: white;
+        margin: 0 auto;
+        width: 400px;
+        height: 500px;
+    }
+
+    @media screen and (max-width: 800px) {
+        .product-photo{
+            border-radius: 5px;
+            background-color: white;
+            margin: 0 auto;
+            width: 300px;
+            height: 400px;
+        }
+    }
+}

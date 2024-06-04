@@ -20,7 +20,7 @@ body{
 }
 .logo{
     color: black;
-    margin: 110px 0;
+    margin: 95px 0;
     text-align: center;
     font-family: 'great-reaper';
     font-size: 250px;
@@ -42,6 +42,7 @@ body{
     font-size: 40px;
     color: black;
     text-align: center;
+    margin-bottom: 50px;
 }
 .drops:hover{
     cursor: pointer;
