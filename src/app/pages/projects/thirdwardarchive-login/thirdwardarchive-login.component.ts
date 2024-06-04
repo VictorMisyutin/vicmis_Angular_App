@@ -18,7 +18,6 @@ export class ThirdwardarchiveLoginComponent {
 
   onSubmit(){
     let user = this.authService.adminLogin(this.loginForm.value.username, this.loginForm.value.password);
-    console.log(user);
     if (!user){
       alert('Invalid username or password')
     }
