@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(54, 54, 54);
+}
+.header{
+    display: flex;
+    padding: 20px 40px;
+}
+.title{
+    margin: 0 auto;
+    font-family: 'great-reaper';
+    /* font-family: 'gothicdawn'; */
+    letter-spacing: 3px;
+    font-size: 80px;
+    color: black;
+    text-align: center;
+    width: auto;
+}
+.title:hover{
+    cursor: pointer;
+}
+.photo-container{
+    display: block;
+    margin: 20px auto;
+    }
+.product-photo{
+    border-radius: 5px;
+    background-color: white;
+    margin: 0 auto;
+    width: 500px;
+    height: 600px;
+}
+.bottom-part{
+    margin: 0 20%;
+    display: block;
+    margin-bottom: 50px;
+}
+.bottom-center-bold{
+    text-align: center;
+    font-weight: bold;
+}
+/* .description{
+    font
+} */

@@ -1,0 +1,20 @@
+<body>
+    <div class="header">
+        <h2 class="title" [routerLink]="['/thirdwardarchive']">third ward archive</h2>
+    </div>
+
+    <!-- sigle product display -->
+    <!-- thirdwardarchive-merch-detail.component.html -->
+    <div *ngIf="imageUrl" class="photo-container">
+        <img [src]="imageUrl" class="product-photo">
+    </div>
+    
+    <div class="bottom-part">
+        <h2 class="bottom-center-bold">{{title}}</h2>
+        <h3 class="bottom-center-bold">${{price}}</h3>
+        <div class="description">
+            <p>{{description}}</p>
+            <p>{{materials}}</p>
+        </div>
+    </div>
+</body>

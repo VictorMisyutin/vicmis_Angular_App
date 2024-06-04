@@ -1,0 +1,18 @@
+<body>
+    <div class="header">
+        <h2 class="title" [routerLink]="['/thirdwardarchive']">third ward archive</h2>
+    </div>
+    <div class="products">
+        <!-- make this dynamic -->
+        <div *ngFor="let productImage of productImageUrls; let i = index">
+            <a href="https://vicmis.com/thirdwardarchive/merch/details?id={{i+1}}" ><img [src]="productImage" class="product-photo"></a>
+            <div class="product-title">
+                {{productInfo[i][0]}}
+            </div>
+            <div class="product-price">
+                ${{productInfo[i][1]}}
+            </div>
+        </div>
+    </div>
+    
+</body>

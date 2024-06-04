@@ -2,13 +2,48 @@ body{
     background-color: rgb(54, 54, 54);
 }
 .header{
+    display: flex;
     padding: 20px 40px;
 }
 .title{
+    margin: 0 auto;
+    font-family: 'great-reaper';
+    /* font-family: 'gothicdawn'; */
+    letter-spacing: 3px;
+    font-size: 80px;
+    color: black;
+    text-align: center;
+    width: auto;
+}
+.title:hover{
+    cursor: pointer;
+}
+.logo{
+    color: black;
+    margin: 110px 0;
+    text-align: center;
+    font-family: 'great-reaper';
+    font-size: 250px;
+
+}
+.countdown{
     margin: 0;
+    margin-bottom: 40px;
     font-family: 'great-reaper';
     letter-spacing: 6px;
     font-size: 80px;
     color: black;
     text-align: center;
+}
+.drops{
+    margin: 0 auto;
+    width: 130px;
+    font-family: 'great-reaper';
+    font-size: 40px;
+    color: black;
+    text-align: center;
+}
+.drops:hover{
+    cursor: pointer;
+    color: rgb(184, 184, 184);
 }
