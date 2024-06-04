@@ -4,6 +4,7 @@ body{
 .header{
     display: flex;
     padding: 20px 40px;
+    padding-bottom: 0;
 }
 .title{
     margin: 0 auto;
