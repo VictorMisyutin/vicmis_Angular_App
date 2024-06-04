@@ -2,36 +2,41 @@ body{
     background-color: rgb(54, 54, 54);
 }
 .header{
+    display: flex;
     padding: 20px 40px;
 }
-.header:hover{
-    cursor: pointer;
-}
 .title{
-    margin: 0;
+    margin: 0 auto;
     font-family: 'great-reaper';
+    /* font-family: 'gothicdawn'; */
     letter-spacing: 3px;
     font-size: 80px;
     color: black;
     text-align: center;
+    width: auto;
 }
+.title:hover{
+    cursor: pointer;
+}
+.photo-container{
+    display: block;
+    margin: 20px auto;
+    }
 .product-photo{
     border-radius: 5px;
-    height: 280px;
     background-color: white;
-    margin: 20px auto;
-    width: 22%;
-    height: 22%;
+    margin: 0 auto;
+    width: 500px;
+    height: 600px;
 }
 .bottom-part{
-    margin: 0 15%;
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 30px
+    margin: 0 20%;
+    display: block;
 }
-.description{
-    padding: 5px 10px;
+.bottom-center-bold{
+    text-align: center;
+    font-weight: bold;
 }
-.materials{
-    padding: 5px 10px;
-}
+/* .description{
+    font
+} */

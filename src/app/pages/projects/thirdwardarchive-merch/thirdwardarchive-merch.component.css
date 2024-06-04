@@ -2,18 +2,21 @@ body{
     background-color: rgb(54, 54, 54);
 }
 .header{
+    display: flex;
     padding: 20px 40px;
 }
-.header:hover{
-    cursor: pointer;
-}
 .title{
-    margin: 0;
+    margin: 0 auto;
     font-family: 'great-reaper';
+    /* font-family: 'gothicdawn'; */
     letter-spacing: 3px;
     font-size: 80px;
     color: black;
     text-align: center;
+    width: auto;
+}
+.title:hover{
+    cursor: pointer;
 }
 .products{
     margin: 50px 15%;

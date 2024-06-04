@@ -5,20 +5,16 @@
 
     <!-- sigle product display -->
     <!-- thirdwardarchive-merch-detail.component.html -->
-    <div *ngIf="imageUrl">
-        <img [src]="imageUrl" alt="Image from Flask">
-    </div>
-    <div *ngIf="!imageUrl">
-        Loading image...
+    <div *ngIf="imageUrl" class="photo-container">
+        <img [src]="imageUrl" class="product-photo">
     </div>
     
     <div class="bottom-part">
+        <h2 class="bottom-center-bold">{{title}}</h2>
+        <h3 class="bottom-center-bold">${{price}}</h3>
         <div class="description">
-            <h2 style="margin-left: 30px;">{{title}} | {{price}}</h2>
             <p>{{description}}</p>
-        </div>
-        <div class="materials">
-            {{materials}}
+            <p>{{materials}}</p>
         </div>
     </div>
 </body>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-thirdwardarchive-merch-detail',
@@ -13,16 +14,20 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
   description: string | undefined;
   materials: string | undefined;
 
+  product_id: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.product_id = params['id'];
+    });
     this.fetchImage();
     this.fetchInfo();
   }
 
   fetchImage() {
-    this.http.get('https://vicmis.com/api/get-product-image/2', { responseType: 'blob' }).subscribe(
+    this.http.get(`https://vicmis.com/api/get-product-image/${this.product_id}`, { responseType: 'blob' }).subscribe(
       (response) => {
         const reader = new FileReader();
         reader.onloadend = () => {
@@ -35,8 +40,9 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
       }
     );
   }
+  
   fetchInfo() {
-    this.http.get<string[]>('https://vicmis.com/api/get-product-info/2').subscribe(
+    this.http.get<string[]>(`https://vicmis.com/api/get-product-info/${this.product_id}`).subscribe(
       (response) => {
         if (response.length >= 4) {
           this.title = response[0];

@@ -2,44 +2,15 @@
     <div class="header">
         <h2 class="title" [routerLink]="['/thirdwardarchive']">third ward archive</h2>
     </div>
-
     <div class="products">
         <!-- make this dynamic -->
-
-        <div class="product">
-            <img class="product-photo" src="assets\shirts\random_shirt_1.jpg" [routerLink]="['/thirdwardarchive/merch/details']">
+        <div *ngFor="let productImage of productImageUrls; let i = index">
+            <a href="https://vicmis.com/thirdwardarchive/merch/details?id={{i+1}}" ><img [src]="productImage" class="product-photo"></a>
             <div class="product-title">
-                stussy rip of lol
+                {{productInfo[i][0]}}
             </div>
             <div class="product-price">
-                $40
-            </div>
-        </div>
-        <div class="product">
-            <img class="product-photo" src="assets\shirts\random_shirt_2.jpg">
-            <div class="product-title">
-                stussy rip of lol
-            </div>
-            <div class="product-price">
-                $40
-            </div>
-        </div>
-        <div class="product">
-            <img class="product-photo" src="assets\shirts\random_shirt_3.jpg">
-            <div class="product-title">
-                stussy rip of lol
-            </div>
-            <div class="product-price">
-                $40
-            </div>
-        </div>
-        <div class="product">
-            <img class="product-photo" src="assets\shirts\random_shirt_4.jpg">
-            <div class="product-title">
-                stussy rip of lol
-            </div>
-            <div class="product-price">
-                $40
+                ${{productInfo[i][1]}}
             </div>
         </div>
     </div>
