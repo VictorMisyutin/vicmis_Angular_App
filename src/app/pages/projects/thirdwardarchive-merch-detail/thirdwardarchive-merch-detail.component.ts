@@ -8,15 +8,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ThirdwardarchiveMerchDetailComponent implements OnInit {
   imageUrl: string | undefined;
+  title: string | undefined;
+  price: string | undefined;
+  description: string | undefined;
+  materials: string | undefined;
+
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.fetchImage();
+    this.fetchInfo();
   }
 
   fetchImage() {
-    this.http.get('https://vicmis.com/api/get-file', { responseType: 'blob' }).subscribe(
+    this.http.get('https://vicmis.com/api/get-product-image/2', { responseType: 'blob' }).subscribe(
       (response) => {
         const reader = new FileReader();
         reader.onloadend = () => {
@@ -26,6 +32,23 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching image', error);
+      }
+    );
+  }
+  fetchInfo() {
+    this.http.get<string[]>('https://vicmis.com/api/get-product-info/2').subscribe(
+      (response) => {
+        if (response.length >= 4) {
+          this.title = response[0];
+          this.price = response[1];
+          this.description = response[2];
+          this.materials = response[3];
+        } else {
+          console.error('Unexpected response format', response);
+        }
+      },
+      (error) => {
+        console.error('Error fetching information', error);
       }
     );
   }
