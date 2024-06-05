@@ -2,7 +2,6 @@ body{
     background-color: rgb(54, 54, 54);
 }
 .header{
-    display: flex;
     padding: 20px 40px;
 }
 .title{
@@ -13,7 +12,7 @@ body{
     font-size: 80px;
     color: black;
     text-align: center;
-    width: auto;
+    width: 50%;
 }
 .title:hover{
     cursor: pointer;
@@ -22,17 +21,16 @@ body{
     cursor: pointer;
     font-family: 'great-reaper';
     letter-spacing: 3px;
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(54, 54, 54);
     position: absolute;
     right: 75px;
-    top: 35px;
+    top: 25px;
 }
 .hidden-login:hover{
     color: rgb(255, 255, 255);
-    position: absolute;
-    right: 75px;
-    top: 35px;
+    /* color: black; */
+
 }
 .logo{
     color: black;
@@ -63,4 +61,23 @@ body{
 .drops:hover{
     cursor: pointer;
     color: rgb(184, 184, 184);
+}
+
+@media screen and (max-width:1500px) {
+    .header{
+        all: none;
+        display: block;
+    }
+    .title{
+        width: 100%;
+    }
+    .hidden-login{
+        position: static;
+        margin: 0 auto;
+        font-family: 'great-reaper';
+        /* font-family: 'gothicdawn'; */
+        letter-spacing: 3px;
+        text-align: center;
+        width: auto;
+    }
 }
