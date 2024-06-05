@@ -9,7 +9,7 @@ import { interval, Subscription } from 'rxjs';
 export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
   
   private subscription: Subscription = new Subscription;
-  public targetDate: Date = new Date('2024-06-12T23:59:59');
+  public targetDate: Date = new Date('2024-06-24T23:59:59');
   public countdown: string = '___ ___ ___ ___';
 
   constructor() {}
