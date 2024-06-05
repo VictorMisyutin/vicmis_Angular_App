@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(54, 54, 54);
+    background-color: #816e6e;
 }
 .header{
     display: flex;
@@ -56,7 +56,7 @@ form{
     display: block;
     margin: 0 auto;
     height:33px;
-    width: 23%;
+    width: 28%;
     border: none;
     border-radius: 5px;
     box-sizing: border-box;

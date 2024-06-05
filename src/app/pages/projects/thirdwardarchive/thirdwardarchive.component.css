@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(54, 54, 54);
+    background-color: #816e6e;
 }
 .header{
     padding: 20px 40px;
@@ -22,14 +22,14 @@ body{
     font-family: 'great-reaper';
     letter-spacing: 3px;
     font-size: 30px;
-    color: rgb(54, 54, 54);
+    color: #816e6e;
     position: absolute;
     right: 75px;
     top: 25px;
 }
 .hidden-login:hover{
-    color: rgb(255, 255, 255);
-    /* color: black; */
+    /* color: rgb(255, 255, 255); */
+    color: black;
 
 }
 .logo{
