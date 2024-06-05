@@ -15,6 +15,7 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
   constructor() {}
 
   ngOnInit() {
+    this.updateCountdown();
     this.subscription = interval(1000).subscribe(() => {
       this.updateCountdown();
     });
