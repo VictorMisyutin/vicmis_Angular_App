@@ -28,7 +28,7 @@ body{
     color: black;
     text-decoration: none;
 }
-.option-select p:hover{
+.option-select a:hover{
     cursor: pointer;
     color: white;
 }

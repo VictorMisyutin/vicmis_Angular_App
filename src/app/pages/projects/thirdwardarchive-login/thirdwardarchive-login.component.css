@@ -19,18 +19,21 @@ body{
     cursor: pointer;
 }
 form{
-    width: 25%;
+    width: 20%;
     margin: 8% auto;
-    color: #ffffff;
+    color: #000000;
 }
 .form-group {
     margin-bottom: 20px;
 }
 .form-group label {
     display: block;
-    font-weight: bold;
+    font-family: 'great-reaper';
+    color: white;
+    letter-spacing: 3px;
+    font-size: 25px;
     margin-bottom: 5px;
-    font-size: large;
+    margin-left: 5px;
 }
 
 .form-group input[type="text"],
@@ -41,22 +44,36 @@ form{
     border: none;
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: #000000;
     margin-bottom: 15px;
+    color: white;
+    font-family: 'great-reaper';
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-stretch: 200%;
 }
 .submit-btn {
     display: block;
-    text-align: center;
     margin: 0 auto;
-    height: 30px;
-    width: 30%;
+    height:33px;
+    width: 23%;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: #000000;
+    color: white;
     margin-bottom: 15px;
+    font-family: 'great-reaper';
+    letter-spacing: 3px;
+    font-size: 22px;
+    padding: 5px;
+    padding-left: 8px;
+    /* transition: all 1s ease-in-out; */
+    transition: all 1s linear;
+
 }
 .submit-btn:hover, .submit-btn:focus{
     cursor: pointer;
-    background-color:#bebebe;
+    color: red;
+    transform: translateY(20px) scale(1.1);
 }
