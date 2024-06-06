@@ -5,10 +5,10 @@ body{
 }
 .logo{
     color: black;
-    margin: 5.5vw 0;
+    margin: 10vh 0;
     text-align: center;
     font-family: 'punk-kid';
-    font-size: 15vw;
+    font-size: 30vh;
 }
 .countdown{
     margin: 0;
