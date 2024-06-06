@@ -6,11 +6,13 @@
         <!-- make this dynamic -->
         <div *ngFor="let productImage of productImageUrls; let i = index">
             <img [src]="productImage" class="product-photo" [routerLink]="['/thirdwardarchive/merch/details']" [queryParams]="{id: i+1}">
-            <div class="product-title">
-                {{productInfo[i][0]}}
-            </div>
-            <div class="product-price">
-                ${{productInfo[i][1]}}
+            <div class="product-footer">
+                <div class="product-title">
+                    {{productInfo[i][0]}}
+                </div>
+                <div class="product-price">
+                    ${{productInfo[i][1]}}
+                </div>
             </div>
         </div>
     </div>

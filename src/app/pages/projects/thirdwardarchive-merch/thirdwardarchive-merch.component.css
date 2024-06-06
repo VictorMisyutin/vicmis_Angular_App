@@ -41,10 +41,17 @@ body{
     cursor: pointer;
     transform: translateY(-20px);
 }
+.product-footer{
+    padding: 0 5px;
+}
 .product-title{ 
+    font-family: 'panton-black-caps';
+    letter-spacing: 1px;
     float: left;
 }
 .product-price{
+    font-family: 'panton-black-caps';
+    letter-spacing: 1px;
     float: right;
 }
 
