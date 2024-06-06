@@ -2,8 +2,25 @@
     <app-twa-header></app-twa-header>
 
     <h2 class="header-text">Admin Detail Product View</h2>
-    <div class="data">
-        <p class="line-of-data" *ngFor="let line of productLines">{{line}}</p>
-    </div>
+    <table class="data-table">
+        <tr class="data-row" *ngFor="let line of productLines">
+            <td class="data-cell">ID</td>
+            <td class="data-cell">Title</td>
+            <td class="data-cell">Price</td>
+            <td class="data-cell">Description</td>
+            <td class="data-cell">Materials</td>
+            <td class="data-cell">Quantity</td>
+            <td class="data-cell">Status</td>
+        </tr>
+        <tr class="data-row" *ngFor="let line of productLines">
+            <td class="data-cell">{{line[0]}}</td>
+            <td class="data-cell">{{line[1]}}</td>
+            <td class="data-cell">${{line[2]}}</td>
+            <td class="data-cell">{{line[3]}}</td>
+            <td class="data-cell">{{line[4]}}</td>
+            <td class="data-cell">{{line[5]}}</td>
+            <td class="data-cell">{{line[6]}}</td>
+        </tr>
+    </table>
 
 </body>

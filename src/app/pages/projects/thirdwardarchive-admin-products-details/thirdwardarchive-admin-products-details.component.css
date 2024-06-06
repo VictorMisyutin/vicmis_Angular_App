@@ -5,4 +5,16 @@ body{
     text-align: center;
     font-family: 'great-reaper';
     color: black;
+    font-size: 2.5vw;
+}
+.data-table{
+    margin: 0 auto;
+    grid-template-columns: repeat(7, 1fr);
+    color: black;
+    font-size: 1vw
+}
+.data-cell{
+    padding: 5px;
+    text-align: left;
+    border: 2px black solid;    
 }
