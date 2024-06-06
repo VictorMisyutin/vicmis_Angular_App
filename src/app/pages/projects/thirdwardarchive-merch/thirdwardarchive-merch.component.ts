@@ -32,7 +32,7 @@ export class ThirdwardarchiveMerchComponent implements OnInit{
   fetchImages() {
     let count = 0;
     while(count < this.productCount){
-      this.http.get(`https://vicmis.com/api/get-product-image/${count+1}`, { responseType: 'blob' }).subscribe(
+      this.http.get(`https://vicmis.com/api/get-product-image/${count+1}/0`, { responseType: 'blob' }).subscribe(
         (response) => {
           const reader = new FileReader();
           reader.onloadend = () => {

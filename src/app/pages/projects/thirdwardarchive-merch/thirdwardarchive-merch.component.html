@@ -5,7 +5,7 @@
     <div class="products">
         <!-- make this dynamic -->
         <div *ngFor="let productImage of productImageUrls; let i = index">
-            <a href="https://vicmis.com/thirdwardarchive/merch/details?id={{i+1}}" ><img [src]="productImage" class="product-photo"></a>
+            <img [src]="productImage" class="product-photo" [routerLink]="['/thirdwardarchive/merch/details']" [queryParams]="{id: i+1}">
             <div class="product-title">
                 {{productInfo[i][0]}}
             </div>

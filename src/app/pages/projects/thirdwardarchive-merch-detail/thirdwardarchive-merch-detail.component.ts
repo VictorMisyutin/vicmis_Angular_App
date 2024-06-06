@@ -27,7 +27,7 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
   }
 
   fetchImage() {
-    this.http.get(`https://vicmis.com/api/get-product-image/${this.product_id}`, { responseType: 'blob' }).subscribe(
+    this.http.get(`https://vicmis.com/api/get-product-image/${this.product_id}/0`, { responseType: 'blob' }).subscribe(
       (response) => {
         const reader = new FileReader();
         reader.onloadend = () => {
