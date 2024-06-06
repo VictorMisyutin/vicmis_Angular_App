@@ -25,7 +25,7 @@ body{
     font-family: 'great-reaper';
     letter-spacing: 2px;
     font-weight: lighter;
-    font-size: 30px;
+    font-size: 2vw;
     color: #816e6e;
     position: absolute;
     right: 100px;
@@ -34,5 +34,28 @@ body{
 .hidden-login:hover{
     /* color: rgb(255, 255, 255); */
     color: black;
-
+}
+@media screen and (max-width:1500px) {
+    .header{
+        all: none;
+        display: block;
+    }
+    .title{
+        width: 100%;
+    }
+    .hidden-login{
+        position: static;
+        margin: 0 auto;
+        font-family: 'great-reaper';
+        /* font-family: 'gothicdawn'; */
+        letter-spacing: 3px;
+        text-align: center;
+        width: auto;
+        font-size: 3vw;
+    }
+    @media screen and (max-width:600px) {
+        .hidden-login{
+            font-size: 2vw;
+        }
+    }
 }

@@ -38,9 +38,6 @@ body{
 }
 
 @media screen and (max-width: 1450px) {
-    .title{
-        margin-bottom: 0px;
-    }
     .products{
         margin: 50px 20%;
         display: grid;

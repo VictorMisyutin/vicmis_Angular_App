@@ -34,22 +34,3 @@ body{
     cursor: pointer;
     color: rgb(184, 184, 184);
 }
-
-@media screen and (max-width:1500px) {
-    .header{
-        all: none;
-        display: block;
-    }
-    .title{
-        width: 100%;
-    }
-    .hidden-login{
-        position: static;
-        margin: 0 auto;
-        font-family: 'great-reaper';
-        /* font-family: 'gothicdawn'; */
-        letter-spacing: 3px;
-        text-align: center;
-        width: auto;
-    }
-}
