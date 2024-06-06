@@ -5,7 +5,7 @@
 
     <!-- sigle product display -->
     <!-- thirdwardarchive-merch-detail.component.html -->
-    <div *ngIf="imageUrl" class="photo-container">
+    <div *ngFor="let imageUrl of imageUrls" class="photo-container">
         <img [src]="imageUrl" class="product-photo">
     </div>
     

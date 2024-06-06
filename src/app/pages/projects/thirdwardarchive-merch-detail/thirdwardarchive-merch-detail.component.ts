@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ThirdwardarchiveMerchDetailComponent implements OnInit {
   imageUrl: string | undefined;
+  imageUrls: string[] = []; 
   title: string | undefined;
   price: string | undefined;
   description: string | undefined;
@@ -32,6 +33,20 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
         const reader = new FileReader();
         reader.onloadend = () => {
           this.imageUrl = reader.result as string;
+          this.imageUrls.push(this.imageUrl)
+        };
+        reader.readAsDataURL(response);
+      },
+      (error) => {
+        console.error('Error fetching image', error);
+      }
+    );
+    this.http.get(`https://vicmis.com/api/get-product-image/${this.product_id}/1`, { responseType: 'blob' }).subscribe(
+      (response) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          this.imageUrl = reader.result as string;
+          this.imageUrls.push(this.imageUrl)
         };
         reader.readAsDataURL(response);
       },
