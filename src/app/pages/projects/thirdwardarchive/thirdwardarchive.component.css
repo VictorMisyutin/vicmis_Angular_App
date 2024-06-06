@@ -1,4 +1,6 @@
 body{
+    padding: 0;
+    margin: 0;
     background-color: #816e6e;
 }
 .header{
@@ -7,9 +9,10 @@ body{
 .title{
     margin: 0 auto;
     font-family: 'great-reaper';
+    letter-spacing: 6px;
+    font-weight: lighter;
     /* font-family: 'gothicdawn'; */
-    letter-spacing: 3px;
-    font-size: 80px;
+    font-size: 90px;
     color: black;
     text-align: center;
     width: 50%;
@@ -20,11 +23,12 @@ body{
 .hidden-login{
     cursor: pointer;
     font-family: 'great-reaper';
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    font-weight: lighter;
     font-size: 30px;
     color: #816e6e;
     position: absolute;
-    right: 75px;
+    right: 100px;
     top: 25px;
 }
 .hidden-login:hover{
@@ -36,15 +40,15 @@ body{
     color: black;
     margin: 95px 0;
     text-align: center;
-    font-family: 'great-reaper';
+    font-family: 'punk-kid';
     font-size: 250px;
-
 }
 .countdown{
     margin: 0;
     margin-bottom: 40px;
     font-family: 'great-reaper';
-    letter-spacing: 6px;
+    letter-spacing: 3px;
+    word-spacing: 25px;
     font-size: 80px;
     color: black;
     text-align: center;
@@ -53,10 +57,12 @@ body{
     margin: 0 auto;
     width: 130px;
     font-family: 'great-reaper';
-    font-size: 40px;
+    font-size: 50px;
+    letter-spacing: 10px;
     color: black;
     text-align: center;
     margin-bottom: 50px;
+    font-weight: bolder;
 }
 .drops:hover{
     cursor: pointer;

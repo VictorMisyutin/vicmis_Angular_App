@@ -35,6 +35,30 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'pure-evil';
+    src: url('assets/fonts/puree____2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'forever';
+    src: url('assets/fonts/MB-ForeverRaw.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'cocaine';
+    src: url('assets/fonts/Cocaine_sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'punk-kid';
+    src: url('assets/fonts/punk_kid.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* You can add global styles to this file, and also import other style files */
 
