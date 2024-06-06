@@ -1,23 +1,6 @@
 body{
     background-color: #816e6e;
 }
-.header{
-    display: flex;
-    padding: 20px 40px;
-}
-.title{
-    margin: 0 auto;
-    font-family: 'great-reaper';
-    /* font-family: 'gothicdawn'; */
-    letter-spacing: 3px;
-    font-size: 80px;
-    color: black;
-    text-align: center;
-    width: auto;
-}
-.title:hover{
-    cursor: pointer;
-}
 .photo-container{
     display: block;
     margin: 20px auto;
