@@ -12,25 +12,44 @@ body{
 }
 .countdown{
     margin: 0;
-    margin-bottom: 3vw;
+    margin-bottom: 6vh;
     font-family: 'great-reaper';
     letter-spacing: 3px;
-    word-spacing: 1vw;
-    font-size: 5vw  ;
+    word-spacing: 2vh;
+    font-size: 10vh  ;
     color: black;
     text-align: center;
 }
 .drops{
     margin: 0 auto;
     font-family: 'great-reaper';
-    font-size: 4vw;
+    font-size: 8vh;
     letter-spacing: 10px;
     color: black;
     text-align: center;
-    margin-bottom: 50px;
     font-weight: bolder;
+    margin-bottom: 5vh;
 }
 .drops:hover{
     cursor: pointer;
     color: rgb(184, 184, 184);
+}
+@media screen and (max-width: 700px) {
+    .countdown{
+        font-size: 8vh  ;
+        /* margin-bottom: 50px; */
+        margin-bottom: 3vh;
+
+    }
+    .logo{
+        font-size: 25vh;
+    }
+    .drops{
+        font-size: 6vh;
+    }
+    @media screen and (max-width: 600px) {
+        .countdown{
+            font-size: 5vh  ;
+        }
+    }
 }
