@@ -15,14 +15,18 @@ export class ThirdwardarchiveLoginComponent {
   });
 
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router){}
+  admin_username: any;
 
   onSubmit(){
-    let user = this.authService.adminLogin(this.loginForm.value.username, this.loginForm.value.password);
-    if (!user){
-      alert('Invalid username or password')
-    }
-    else{
-      this.router.navigateByUrl('/thirdwardarchive/admin')
-    }
+    this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(response => {
+      if (response.message === 'Logged in successfully') {
+        this.router.navigateByUrl('/thirdwardarchive/admin')
+
+        // success = true;
+      } 
+      else {
+        alert('Invalid username or password')
+      }
+    });
   }
 }
