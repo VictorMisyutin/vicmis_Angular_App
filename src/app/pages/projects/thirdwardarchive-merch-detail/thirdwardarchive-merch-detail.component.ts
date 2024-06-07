@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { local } from 'd3';
 
 @Component({
   selector: 'app-thirdwardarchive-merch-detail',
@@ -15,7 +16,7 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
   description: string | undefined;
   materials: string | undefined;
 
-  product_id: string | undefined;
+  product_id: string = "";
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
@@ -73,4 +74,16 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
       }
     );
   }
+
+  addToCart() {
+    let currentCart = localStorage.getItem('cart');
+    
+    let cartArray = currentCart ? JSON.parse(currentCart) : [];
+  
+    cartArray.push(this.product_id);
+  
+    localStorage.setItem('cart', JSON.stringify(cartArray));
+    console.log(cartArray)
+  }
+
 }
