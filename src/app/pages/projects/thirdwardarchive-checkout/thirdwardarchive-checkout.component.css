@@ -1,0 +1,91 @@
+body{
+    background-color:#816e6e;
+}
+.main-cart-area{
+    padding: 0 1vh;
+    padding-top:1vh;
+    border-radius: 10px;
+    background-color: #8f7272;
+    margin: 5vh auto;
+}
+.row{
+    border-radius: 10px;
+    margin-bottom: 1vh;
+    background-color: #a89292;
+    padding-right: 0.5vw;
+    display: flex;
+    width: 70vw;
+    height:  30vh;
+}
+.product-photo{
+    border-radius: 10px;
+    background-color: white;
+    height: 100%;
+    width: 17%;     
+    float: left; 
+    margin-right: 2vw;
+}
+.product-center{
+    display: grid;
+    width: 73%;
+    grid-template-rows: 0.1fr 0.9fr;
+    grid-template-columns: 1;
+    padding-top: 2vh;
+    padding-right: 2vw;
+}
+.product-title{
+    margin: 0;
+    font-family: 'times new roman';
+    text-align: left;
+    height: 1lh;
+    color: black;
+}
+.product-description{
+    padding: 2vh 0;
+    font-family: 'times new roman';
+    color: black;
+    text-align: left;
+    height: 1lh;
+} 
+.product-right-side{
+    /* margin: 0 auto; */
+    display: grid;
+    width: 10%;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-columns: 1;
+    padding-top: 2vh;
+    /* height: 100%; */
+}
+.product-price{
+    font-size: 25px;
+    color: black;
+    font-family: 'times new roman';
+    text-align: center;
+}
+.product-quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'times new roman';
+    color: black;
+    gap: 0.5vw;
+}
+  
+.product-quantity-options {
+    font-size: 20px;
+    padding: 5px;
+    user-select: none;
+    /* font-family: 'times new roman'; */
+    color: black;
+} 
+.product-quantity-options:hover {
+    cursor: pointer;
+    color: #705757;
+}
+    
+.product-quantity {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'times new roman';
+}
