@@ -15,7 +15,7 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
   price: string | undefined;
   description: string | undefined;
   materials: string | undefined;
-
+  numberOfImages: number = 1;
   product_id: string = "";
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
@@ -24,50 +24,18 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.product_id = params['id'];
     });
-    this.fetchImage();
     this.fetchInfo();
-  }
-
-  fetchImage() {
-    this.http.get(`https://vicmis.com/api/get-product-image/${this.product_id}/0`, { responseType: 'blob' }).subscribe(
-      (response) => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          this.imageUrl = reader.result as string;
-          this.imageUrls.push(this.imageUrl)
-        };
-        reader.readAsDataURL(response);
-      },
-      (error) => {
-        console.error('Error fetching image', error);
-      }
-    );
-    this.http.get(`https://vicmis.com/api/get-product-image/${this.product_id}/1`, { responseType: 'blob' }).subscribe(
-      (response) => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          this.imageUrl = reader.result as string;
-          this.imageUrls.push(this.imageUrl)
-        };
-        reader.readAsDataURL(response);
-      },
-      (error) => {
-        console.error('Error fetching image', error);
-      }
-    );
   }
   
   fetchInfo() {
     this.http.get<string[]>(`https://vicmis.com/api/get-product-info/${this.product_id}`).subscribe(
       (response) => {
-        if (response.length >= 4) {
-          this.title = response[0];
-          this.price = response[1];
-          this.description = response[2];
-          this.materials = response[3];
-        } else {
-          console.error('Unexpected response format', response);
-        }
+        this.title = response[0].trim();
+        this.price = response[1].trim();
+        this.description = response[2].trim();
+        this.materials = response[3].trim();
+        this.numberOfImages = Number(response[6].trim())
+        this.fetchImages();
       },
       (error) => {
         console.error('Error fetching information', error);
@@ -75,15 +43,40 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
     );
   }
 
+  fetchImages() {
+    for(let i = 0; i < this.numberOfImages; i++){
+      this.http.get(`https://vicmis.com/api/get-product-image/${this.product_id}/${i}`, { responseType: 'blob' }).subscribe(
+        (response) => {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            this.imageUrl = reader.result as string;
+            this.imageUrls.push(this.imageUrl)
+            };
+            reader.readAsDataURL(response);
+            },
+            (error) => {
+          console.error('Error fetching image', error);
+        }
+      );
+    }
+  }
+  
+
   addToCart() {
     let currentCart = localStorage.getItem('cart');
-    
     let cartArray = currentCart ? JSON.parse(currentCart) : [];
   
-    cartArray.push(this.product_id);
+    let productInCart = cartArray.find((item: { id: string; quantity: number }) => item.id === this.product_id);
   
+    if (productInCart) {
+      productInCart.quantity += 1;
+    } else {
+      cartArray.push({ id: this.product_id, quantity: 1 });
+    }
     localStorage.setItem('cart', JSON.stringify(cartArray));
-    console.log(cartArray)
+
+    window.alert("product added");
   }
+  
 
 }

@@ -23,12 +23,29 @@ export class ThirdwardarchiveMerchComponent implements OnInit{
     this.http.get('https://vicmis.com/api/get-product-count').subscribe(
       (response) => {
         this.productCount = parseInt(response.toString());
-        this.fetchImages();
         this.fetchInfo();
       }
     );
   }
   
+
+  fetchInfo() {
+    let count = 0;
+    while(count < this.productCount){
+      this.http.get<string[]>(`https://vicmis.com/api/get-product-info/${count+1}`).subscribe( 
+        (response) => {
+          this.productInfo.push(new Array(response[0], response[1]))
+        },
+        (error) => {
+          console.error('Error fetching information', error);
+          return;
+        }
+      );
+      count++;
+    }
+    this.fetchImages();
+  }
+
   fetchImages() {
     let count = 0;
     while(count < this.productCount){
@@ -42,26 +59,6 @@ export class ThirdwardarchiveMerchComponent implements OnInit{
         },
         (error) => {
           console.error('Error fetching images', error);
-          return;
-        }
-      );
-      count++;
-    }
-  }
-
-  fetchInfo() {
-    let count = 0;
-    while(count < this.productCount){
-      this.http.get<string[]>(`https://vicmis.com/api/get-product-info/${count+1}`).subscribe( 
-        (response) => {
-          if (response.length >= 4) {
-            this.productInfo.push(new Array(response[0], response[1]))
-          } else {
-            console.error('Unexpected response format', response);
-          }
-        },
-        (error) => {
-          console.error('Error fetching information', error);
           return;
         }
       );
