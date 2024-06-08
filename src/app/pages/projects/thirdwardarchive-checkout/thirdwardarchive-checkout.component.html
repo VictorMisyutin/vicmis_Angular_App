@@ -1,1 +1,19 @@
-<p>thirdwardarchive-checkout works!</p>
+<body>
+    <app-twa-header></app-twa-header>    
+
+    <div class="main-cart-area">
+        <!-- make row for each item in cart -->
+        <div class="row" *ngFor="let id of cart_ids">
+            <!-- [src]="productImage" -->
+            <img  class="product-photo" [routerLink]="['/thirdwardarchive/merch/details']" [queryParams]="{id: id}">
+            <div class="product-center">
+                <h3 class="product-title">Product Title</h3>
+                <h3 class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consequat arcu ullamcorper orci placerat, in semper purus euismod. Vivamus pretium enim mi, at ullamcorper nisl dapibus ac. Donec non metus.</h3>
+            </div>
+            <div class="product-right-side">
+                <p class="product-quantity">$14</p>
+            </div>
+        </div>
+    </div>
+
+</body>
