@@ -33,6 +33,7 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
 
     this.productImageUrls = [];
     this.productInfo = [];
+    this.totalSum = 0;
 
     this.storedCart = localStorage.getItem("cart");
     if (this.storedCart) {
@@ -136,11 +137,6 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
 
   }
 
-
-  products = [
-    { name: 'Product 1', quantity: 2 },
-    { name: 'Product 2', quantity: 1 }
-  ];
 
   checkout() {
     document.getElementById('processing')?.classList.remove('hidden');
