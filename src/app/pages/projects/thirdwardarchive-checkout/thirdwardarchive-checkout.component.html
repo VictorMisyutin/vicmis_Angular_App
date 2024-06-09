@@ -1,7 +1,8 @@
+
 <body>
     <app-twa-header></app-twa-header>    
 
-    <div class="main-cart-area">
+    <div class="main-cart-area" id="main-cart-area">
         <!-- make row for each item in cart -->
         <div class="row" *ngFor="let id of cart_ids">
             <!-- [src]="productImage" -->
@@ -23,8 +24,11 @@
             <p class="total-desc">Total:</p>
             <p class="total-sum">${{totalSum}}</p>
         </div>
+        <button class="checkout-button" (click)="checkout()">checkout</button>
     </div>
 
-    
+    <div class="hidden" id="processing">
+        <p>processing...</p>
+    </div>
 
 </body>

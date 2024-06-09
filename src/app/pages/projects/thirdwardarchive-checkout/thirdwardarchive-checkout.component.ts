@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-thirdwardarchive-checkout',
@@ -7,8 +8,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./thirdwardarchive-checkout.component.css']
 })
 export class ThirdwardarchiveCheckoutComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private apiService: ApiService) {}
 
+  storedCart: any;
   cart_ids: string[] = [];
   cart_quantities: number[] = [];
   productMap = new Map<string, string[]>();
@@ -32,9 +34,9 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
     this.productImageUrls = [];
     this.productInfo = [];
 
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      let data = JSON.parse(storedCart);
+    this.storedCart = localStorage.getItem("cart");
+    if (this.storedCart) {
+      let data = JSON.parse(this.storedCart);
       // console.log(`Product ID: ${item.id}, Quantity: ${item.quantity}`);
       data.forEach((item: { id: string; quantity: number }) => {
         this.cart_ids.push(item.id);
@@ -134,4 +136,25 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
 
   }
 
+
+  products = [
+    { name: 'Product 1', quantity: 2 },
+    { name: 'Product 2', quantity: 1 }
+  ];
+
+  checkout() {
+    document.getElementById('processing')?.classList.remove('hidden');
+    document.getElementById('processing')?.classList.add('processing-shown');
+    document.getElementById('main-cart-area')?.classList.remove('main-cart-area');
+    document.getElementById('main-cart-area')?.classList.add('hidden');
+
+    this.apiService.createCheckoutSession(this.storedCart).subscribe(
+      (response) => {
+        window.location.href = response.url;
+      },
+      (error) => {
+        console.error('Error creating checkout session', error);
+      }
+    );
+  }
 }

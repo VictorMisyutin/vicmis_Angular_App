@@ -108,3 +108,26 @@ body{
     text-align: center;
     width: 10%;
 }
+.checkout-button{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 4vh;
+    padding: 0.5vh 0.5vw;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'times new roman';
+}
+.checkout-button:hover{
+    cursor: pointer;
+    background-color: rgb(161, 161, 161);
+}
+.hidden{
+    display: none;
+}
+.processing-shown{
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'times new roman';
+    color: rgb(201, 201, 201);
+}
