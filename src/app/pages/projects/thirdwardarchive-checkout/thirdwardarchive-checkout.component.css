@@ -70,12 +70,10 @@ body{
     color: black;
     gap: 0.5vw;
 }
-  
 .product-quantity-options {
     font-size: 20px;
     padding: 5px;
     user-select: none;
-    /* font-family: 'times new roman'; */
     color: black;
 } 
 .product-quantity-options:hover {
@@ -88,4 +86,25 @@ body{
     font-size: 30px;
     font-weight: bold;
     font-family: 'times new roman';
+}
+.under-products-area{
+    margin-top: -0.5vh;
+    display: flex;
+}
+.total-desc{
+    font-size: 25px;
+    font-family: 'times new roman';
+    color: black;
+    padding-left: 2vw;
+    text-align: left;
+    float: left;
+    width: 90%;
+}
+.total-sum{
+    font-size: 25px;
+    font-family: 'times new roman';
+    color: black;
+    padding-right: 0.5vw;
+    text-align: center;
+    width: 10%;
 }

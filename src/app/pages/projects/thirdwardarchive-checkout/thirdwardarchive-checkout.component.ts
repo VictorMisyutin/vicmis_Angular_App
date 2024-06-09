@@ -16,6 +16,7 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
   productImageUrls: string[] = [];
   productInfo: string[][] = [];
 
+  totalSum: number = 0;
 
   ngOnInit(): void {
     this.updateDisplay();
@@ -99,6 +100,7 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
       price = Math.round(price * 100) / 100
       if (info && imageUrl) {
         this.productMap.set(id, [...info, imageUrl, price.toString()]);
+        this.totalSum += price;
       }
     });
   }

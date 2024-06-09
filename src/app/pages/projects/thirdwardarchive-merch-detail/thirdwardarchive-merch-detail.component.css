@@ -45,7 +45,6 @@ body{
     color: red;
     transform: translateY(20px) scale(1.1);
 }
-
 @media screen and (max-width: 1450px) {
     .product-photo{
         border-radius: 5px;
