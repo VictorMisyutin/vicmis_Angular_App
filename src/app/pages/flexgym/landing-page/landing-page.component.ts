@@ -13,6 +13,21 @@ export class LandingPageComponent {
   equipmentTextThree: string = "";
   moreTextOneBool: boolean = false;
   moreTextTwoBool: boolean = false;
+  sampleEquipmentText: string = "";
+  sampleEquipmentTexts: string[] = [
+    "Commercial gym",
+    "Dumbells",
+    "jump rope",
+    "barbell",
+    "bike",
+    "treadmill",
+    "elliptical",
+    "yoga mat",
+    "Pull Up bar",
+    "Squat Rack",
+    "Rowing Machine"
+  ];
+
   sampleFitnessGoals: string[] = [
     "stay in shape",
     "get a gyat by summer",
@@ -33,6 +48,7 @@ export class LandingPageComponent {
   sampleFitnessGoal: string= "";
   constructor(){
     this.sampleFitnessGoal = this.sampleFitnessGoals[Math.floor(Math.random() * this.sampleFitnessGoals.length)]
+    this.sampleEquipmentText = this.sampleEquipmentTexts[Math.floor(Math.random() * this.sampleEquipmentTexts.length)]
   }
   maxLengthCheck(object: any){
     if (object.value.length > object.maxLength)
@@ -41,23 +57,41 @@ export class LandingPageComponent {
 
   checkEquipmentText() {
     const maxLength = 20;
-    let character = '';
-    if (this.equipmentTextOne.length >= maxLength) {
-      this.equipmentTextTwo = this.equipmentTextOne.slice(-1) + this.equipmentTextTwo;
+
+
+    if (this.equipmentTextOne.length > maxLength) {
       this.moreTextOneBool = true;
-      this.equipmentTextOne = this.equipmentTextOne.slice(0, -1);
-      document.getElementById("more-equipment-1")?.focus();
+      this.equipmentTextTwo = this.equipmentTextOne.slice(maxLength - 1) + this.equipmentTextTwo;
+      this.equipmentTextOne = this.equipmentTextOne.slice(0, maxLength - 1);
+      setTimeout(() => {
+        document.getElementById("more-equipment-1")?.focus();
+      });
     }
-    if (this.equipmentTextTwo.length >= maxLength) {
-      this.equipmentTextThree += this.equipmentTextTwo.slice(-1) + this.equipmentTextThree;
-      this.equipmentTextTwo = this.equipmentTextTwo.slice(0, -1);
+    if(this.equipmentTextTwo.length == 0){
+      this.moreTextOneBool = false;
+      setTimeout(() => {
+        document.getElementById("more-equipment-1")?.focus();
+      });
+    }
+
+    if (this.equipmentTextTwo.length > maxLength) {
       this.moreTextTwoBool = true;
-      document.getElementById("more-equipment-2")?.focus();
+      this.equipmentTextThree = this.equipmentTextTwo.slice(maxLength - 1) + this.equipmentTextThree;
+      this.equipmentTextTwo = this.equipmentTextTwo.slice(0, maxLength - 1);
+      setTimeout(() => {
+        document.getElementById("more-equipment-2")?.focus();
+      });
     }
-    if(this.moreTextTwoBool){
-      if (this.equipmentTextThree.length >= maxLength) {
-        this.equipmentTextThree = this.equipmentTextThree.slice(0, -1);
-      }
+    
+    if(this.equipmentTextThree.length == 0){
+      this.moreTextTwoBool = false;
+      setTimeout(() => {
+        document.getElementById("more-equipment-2")?.focus();
+      });
+    }
+
+    if (this.moreTextTwoBool && this.equipmentTextThree.length > maxLength) {
+      this.equipmentTextThree = this.equipmentTextThree.slice(0, maxLength);
     }
   }
 

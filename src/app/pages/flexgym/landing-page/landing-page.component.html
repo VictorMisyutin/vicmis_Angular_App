@@ -15,7 +15,7 @@
       <div class="times-text"> I want to workout <input type="number" placeholder="4" (input)="maxLengthCheck($event.target)" maxlength = "1" min = "1" max = "9" name="frequency" id="frequency"> days a week for <input type="number" placeholder="45" (input)="maxLengthCheck($event.target)" maxlength = "3" min = "1" max = "999" name="duration" id="duration"> mins</div>
     </div>
     </div>
-    <div class="equipment-text" >Equipment:<textarea name="equipment" placeholder="asdasd" id="equipment" (input)="checkEquipmentText()" [(ngModel)]="equipmentTextOne"></textarea></div>
+    <div class="equipment-text" >Equipment:<textarea name="equipment" [placeholder]="sampleEquipmentText" id="equipment" (input)="checkEquipmentText()" [(ngModel)]="equipmentTextOne"></textarea></div>
     <span id="if-any">(if any)</span>
     <textarea *ngIf="moreTextOneBool" name="more-equipment" id="more-equipment-1" (input)="checkEquipmentText()" [(ngModel)]="equipmentTextTwo"></textarea>
     <textarea *ngIf="moreTextTwoBool" name="more-equipment" id="more-equipment-2" (input)="checkEquipmentText()" [(ngModel)]="equipmentTextThree"></textarea>
