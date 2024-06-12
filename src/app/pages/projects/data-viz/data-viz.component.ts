@@ -83,47 +83,55 @@ export class DataVizComponent implements OnInit {
     { "Artist(s)": "Queen", "Song": "Bohemian Rhapsody", "Streams": "80000000" },
     { "Artist(s)": "Eminem", "Song": "Lose Yourself", "Streams": "55000000" }
   ];
-
+  
   ngOnInit(): void {
     d3.select(".main-table")
-      .selectAll("p")
+      .selectAll("div")
       .data(this.data)
-      .join("p")
-      .text((d) => `${d['Artist(s)']} ${d.Song} ${d.Streams}`)
-      .style("width", d => `${Number(d.Streams) / 105000}px`)
-      .style("height", "20px")
-      .style("background-color", "#848484")
-      .style("margin-top", "0")
-      .style("margin-bottom", "0")
-      .style("text-align", "left")
-      .style("padding", "2px 10px")
-      .style("border-radius", "10px")
-      .style("border", "2px black solid")
-      .style("cursor", "default")
-      .style("transform", "scale(1)")
-      .on('mouseover', function (event, d) {
-        d3.select(this)
-          .style("width", `${Number(d.Streams) / 103000}px`)
-          .style("height", "22px")
-          .style("background-color", "#335588")
-          .style("cursor", "pointer")
-          .style("margin-top", "1px")
-          .style("margin-bottom", "1px")
-      })
-      .on('mouseout', function (event, d) {
-        d3.select(this)
-          .style("width", `${Number(d.Streams) / 105000}px`)
-          .style("background-color", "#848484")
-          .style("margin-top", "0")
-          .style("margin-bottom", "0")
-          .style("text-align", "left")
-          .style("padding", "2px 10px")
-          .style("border-radius", "10px")
-          .style("border", "2px black solid")
-          .style("cursor", "default")
-          .style("transform", "scale(1)")
+      .join("div")
+      .style("display", "grid")
+      .style("grid-template-columns", "0.1fr 1fr")
+      .style("margin-bottom", "10px")
+      .each(function(d) {
+        // Append the left-stuff div for text
+        d3.select(this).append("div")
+          .attr("class", "left-stuff")
+          .append("div")
+          .text(`${d.Song}, ${d['Artist(s)']}`)
+          .style("margin-right", "10px") // Space between text and bar
+          .style("white-space", "nowrap") // Prevent text wrapping
+          .style("text-align", "right") // Corrected 'text-align'
+          .style("width", "275px");
+  
+        // Append the right-stuff div for the bar
+        d3.select(this).append("div")
+        .attr("class", "right-stuff")
+        .style("justify-self", "start")  // Aligns the right-stuff div content to the left
+        .append("div")
+        .style("width", `${Number(d.Streams) / 105000}px`)
+        .style("height", "20px")
+        .style("background-color", "#848484")
+        .style("border-radius", "10px")
+        .style("border", "2px black solid")
+        .style("cursor", "default")
+        .style("padding", "2px 10px")
+          .on('mouseover', function (event) {
+            d3.select(this)
+              .style("width", `${Number(d.Streams) / 103000}px`)
+              .style("height", "22px")
+              .style("background-color", "#335588")
+              .style("cursor", "pointer");
+          })
+          .on('mouseout', function (event) {
+            d3.select(this)
+              .style("width", `${Number(d.Streams) / 105000}px`)
+              .style("background-color", "#848484")
+              .style("height", "20px");
+          });
       });
   }
+  
+  
 
 
 
