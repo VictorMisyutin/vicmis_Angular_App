@@ -104,29 +104,56 @@ export class DataVizComponent implements OnInit {
           .style("width", "275px");
   
         // Append the right-stuff div for the bar
-        d3.select(this).append("div")
-        .attr("class", "right-stuff")
-        .style("justify-self", "start")  // Aligns the right-stuff div content to the left
-        .append("div")
-        .style("width", `${Number(d.Streams) / 105000}px`)
-        .style("height", "20px")
-        .style("background-color", "#848484")
-        .style("border-radius", "10px")
-        .style("border", "2px black solid")
-        .style("cursor", "default")
-        .style("padding", "2px 10px")
+        const barContainer = d3.select(this).append("div")
+          .attr("class", "right-stuff")
+          .style("justify-self", "start");  // Aligns the right-stuff div content to the left
+        
+        // Append the tooltip
+        const tooltip = barContainer.append("div")
+          .attr("class", "tooltip")
+          .text(`${d.Song}, ${d['Artist(s)']}: ${d.Streams} Streams`)
+          .style("position", "absolute")
+          .style("background-color", "white")
+          .style("border", "1px solid black")
+          .style("padding", "5px")
+          .style("border-radius", "3px")
+          .style("color", "black")
+          .style("visibility", "hidden");  // Initially hidden
+  
+        // Append the bar
+        const bar = barContainer.append("div")
+          .style("width", `${Number(d.Streams) / 105000}px`)
+          .style("height", "20px")
+          .style("background-color", "#848484")
+          .style("border-radius", "10px")
+          .style("border", "2px black solid")
+          .style("cursor", "default")
+          .style("padding", "2px 10px")
           .on('mouseover', function (event) {
             d3.select(this)
               .style("width", `${Number(d.Streams) / 103000}px`)
               .style("height", "22px")
               .style("background-color", "#335588")
               .style("cursor", "pointer");
+  
+            // Show and position the tooltip
+            tooltip.style("visibility", "visible")
+              .style("top", `${event.pageY - 40}px`)
+              .style("left", `${event.pageX}px`);
+          })
+          .on('mousemove', function (event) {
+            // Update tooltip position on mouse move
+            tooltip.style("top", `${event.pageY - 40}px`)
+              .style("left", `${event.pageX}px`);
           })
           .on('mouseout', function (event) {
             d3.select(this)
               .style("width", `${Number(d.Streams) / 105000}px`)
               .style("background-color", "#848484")
               .style("height", "20px");
+  
+            // Hide the tooltip
+            tooltip.style("visibility", "hidden");
           });
       });
   }
