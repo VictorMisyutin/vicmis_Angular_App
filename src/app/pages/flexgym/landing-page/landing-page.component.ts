@@ -119,5 +119,6 @@ export class LandingPageComponent {
     let currentUrl = window.location.href.split('?')[0]; // Get current URL without query params
     currentUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/'));
     this.redirectUrl = `${currentUrl}/liftware/results?a=${age}&b=${weight}&c=${frequency}&d=${duration}&e=${goal}&f=${allEquipment}`;
+    window.location.href = this.redirectUrl;
   }
 }
