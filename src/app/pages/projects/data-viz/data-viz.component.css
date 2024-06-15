@@ -4,3 +4,33 @@ body{
 .main-table{
     margin: 0 10%;
 }
+.options{
+    margin: 0 auto;
+    border: 2px black solid;
+    display: inline-flex;
+}
+.option{
+    border: 2px black solid;
+    padding: 5px 10px;
+    color: white;
+    font-size: 25px;
+}
+.option:hover{
+    cursor: pointer;
+    color: rgb(158, 121, 121);
+}
+.sub-options{
+    margin: 0 auto;
+    border: 1px black solid;
+    display: inline-flex;
+}
+.sub-option{
+    border: 1px black solid;
+    padding: 5px 10px; 
+    color: white;
+    font-size: 20px;
+}
+.sub-option:hover{
+    cursor: pointer;
+    color: rgb(158, 121, 121);
+}
