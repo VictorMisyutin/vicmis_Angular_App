@@ -1,18 +1,39 @@
 <app-header></app-header>
 <body> 
     <div class="options">
-        <div class="option" (click)="sortByYear()">year</div>
-        <div class="option" (click)="sortByName()">name</div>
-        <div class="option" (click)="sortByEthnicity()">ethnicity</div>
-        <div class="option" (click)="sortByGender()">gender</div>
-    </div>
-    <div class="sub-options">
-        <div class="sub-option" (click)="sortByYear()">year</div>
-        <div class="sub-option" (click)="sortByName()">name</div>
-        <div class="sub-option" (click)="sortByEthnicity()">ethnicity</div>
-    </div>
+        <span class="option">year: 
+          <select name="years" id="years" [(ngModel)]="selectedYear" (change)="selectChange($event)">
+            <option *ngFor="let year of years" [value]="year">{{year}}</option>
+          </select>
+        </span>
+      
+        <span class="option">ethnicity: 
+          <select name="ethnicity" id="ethnicity" [(ngModel)]="selectedEthnicity" (change)="onEthnicityChange($event)">
+            <option *ngFor="let ethnicity of ethnicities" [value]="ethnicity">{{ethnicity}}</option>
+          </select>
+        </span>
+      
+        <span class="option">gender: 
+          <select name="genders" id="genders" [(ngModel)]="selectedGender" (change)="onGenderChange($event)">
+            <option value="both">both</option>
+            <option value="female">female</option>
+            <option value="male">male</option>
+          </select>
+        </span>
+      
+        <span class="option">group genders 
+          <input type="checkbox" name="group-genders" id="group-genders" [(ngModel)]="groupGender" (change)="onGroupGenderChange($event)">
+        </span>
+      
+        <span class="option">group ethnicities 
+          <input type="checkbox" name="group-ethnicities" id="group-ethnicities" [(ngModel)]="groupEthnicities" (change)="onGroupEthnicitiesChange($event)">
+        </span>
+      
+        <span class="option">count 
+          <input type="number" [(ngModel)]="count" (input)="validateCount($event)" style="width: 6vw;" pattern="\d*" maxlength="3" min="1" max="999">
+        </span>
+      </div>
 
-    <h3>Spotify Hits</h3>
     <div class="main-table"></div>
 </body>
 <app-footer></app-footer> 

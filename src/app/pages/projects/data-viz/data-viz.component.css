@@ -2,35 +2,28 @@ body{
     text-align: center;
 }
 .main-table{
-    margin: 0 10%;
+    margin: 0 20vw;
 }
 .options{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.6fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: aliceblue;
     margin: 0 auto;
     border: 2px black solid;
-    display: inline-flex;
+    color: black;
+    height: 2fr;
+    width: 3fr;
+    max-width: 60vw;
+    margin-bottom: 4vh;
 }
 .option{
-    border: 2px black solid;
+    background-color: #666666;
     padding: 5px 10px;
-    color: white;
-    font-size: 25px;
-}
-.option:hover{
-    cursor: pointer;
-    color: rgb(158, 121, 121);
-}
-.sub-options{
-    margin: 0 auto;
-    border: 1px black solid;
-    display: inline-flex;
-}
-.sub-option{
-    border: 1px black solid;
-    padding: 5px 10px; 
-    color: white;
     font-size: 20px;
 }
-.sub-option:hover{
+
+.option:hover{
     cursor: pointer;
     color: rgb(158, 121, 121);
 }
