@@ -1,3 +1,29 @@
 body{
     text-align: center;
 }
+.main-table{
+    margin: 0 20vw;
+}
+.options{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.6fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: aliceblue;
+    margin: 0 auto;
+    border: 2px black solid;
+    color: black;
+    height: 2fr;
+    width: 3fr;
+    max-width: 60vw;
+    margin-bottom: 4vh;
+}
+.option{
+    background-color: #666666;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+.option:hover{
+    cursor: pointer;
+    color: rgb(158, 121, 121);
+}

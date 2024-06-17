@@ -20,4 +20,9 @@ export class ApiService {
     return this.http.post<any>('https://vicmis.com/api/create-checkout-session', { products }, { headers });
   }
 
+  getBabyNames(args: string): Observable<any>{
+    let result = this.http.get(`https://vicmis.com/api/baby-names?${args}`);
+    return result;
+  }
+
 }

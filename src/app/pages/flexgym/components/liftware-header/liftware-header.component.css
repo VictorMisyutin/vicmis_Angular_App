@@ -13,6 +13,8 @@
     align-items: center;
     margin-left: 2vw;
     font-size: 0.7vw;
+    color: white;
+    text-decoration: none;
 }
 .title img{
     width: 1.7vw;

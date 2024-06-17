@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
+import { ApiService } from '../../../services/api.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-data-viz',
@@ -7,67 +9,158 @@ import * as d3 from 'd3';
   styleUrl: './data-viz.component.css'
 })
 export class DataVizComponent implements OnInit {
+  data: any[] = []; // Initialize the data array
+  years: string[] = ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2011"];
+  ethnicities: string[] = ["all", "White Non Hisp", "Hispanic", "BLACK NON HISP", "ASIAN AND PACI"]
+  selectedYear: string = "2011";
+  selectedEthnicity: string = "all";
+  selectedGender: string = "both"
+  count: number = 30;
+  groupGender: boolean = false;
+  groupEthnicities: boolean = false;
 
-  private data = [
-    {"Framework": "Vue", "Stars": "166443", "Released": "2014"},
-    {"Framework": "React", "Stars": "150793", "Released": "2013"},
-    {"Framework": "Angular", "Stars": "62342", "Released": "2016"},
-    {"Framework": "Backbone", "Stars": "27647", "Released": "2010"},
-    {"Framework": "Ember", "Stars": "21471", "Released": "2011"},
-  ];
-  
-  private svg: any;
-  private margin = 50;
-  private width = 750 - (this.margin * 2);
-  private height = 400 - (this.margin * 2);
-  
-  private createSvg(): void {
-    this.svg = d3.select("figure#bar")
-    .append("svg")
-    .attr("width", this.width + (this.margin * 2))
-    .attr("height", this.height + (this.margin * 2))
-    .append("g")
-    .attr("transform", "translate(" + this.margin + "," + this.margin + ")");
-  }
-  
-  private drawBars(data: any[]): void {
-    // Create the X-axis band scale
-    const x = d3.scaleBand()
-    .range([0, this.width])
-    .domain(data.map(d => d.Framework))
-    .padding(0.2);
-  
-    // Draw the X-axis on the DOM
-    this.svg.append("g")
-    .attr("transform", "translate(0," + this.height + ")")
-    .call(d3.axisBottom(x))
-    .selectAll("text")
-    .attr("transform", "translate(-10,0)rotate(-45)")
-    .style("text-anchor", "end");
-  
-    // Create the Y-axis band scale
-    const y = d3.scaleLinear()
-    .domain([0, 200000])
-    .range([this.height, 0]);
-  
-    // Draw the Y-axis on the DOM
-    this.svg.append("g")
-    .call(d3.axisLeft(y));
-  
-    // Create and fill the bars
-    this.svg.selectAll("bars")
-    .data(data)
-    .enter()
-    .append("rect")
-    .attr("x", (d: any) => x(d.Framework))
-    .attr("y", (d: any) => y(d.Stars))
-    .attr("width", x.bandwidth())
-    .attr("height", (d: any) => this.height - y(d.Stars))
-    .attr("fill", "#d04a35");
-  }
-  
+  constructor(private apiService: ApiService) {}
+
   ngOnInit(): void {
-    this.createSvg();
-    this.drawBars(this.data);
+    this.fetchData();
   }
+
+  fetchData() {
+    const params = `year=${this.selectedYear}&ethnicity=${this.selectedEthnicity}&gender=${this.selectedGender}&group_genders=${this.groupGender? "true" : "false"}&group_ethnicities=${this.groupEthnicities? "true" : "false"}&quantity=${this.count}`
+
+    this.apiService.getBabyNames(params).subscribe(
+      (data: any) => {
+        this.data = data;
+        this.renderTable();
+      },
+      (error) => {
+        console.error('Error fetching data:', error);
+      }
+    );
+  }
+
+  getBabyNamesByYear(year: string): Observable<any> {
+    return this.apiService.getBabyNames(`?year=${year}`);
+  }
+  
+  renderTable(): void {
+    d3.select('.main-table').selectAll('div').remove();
+
+    const tableSelection = d3.select('.main-table')
+      .selectAll('div')
+      .data(this.data)
+      .join('div')
+      .style('display', 'grid')
+      .style('grid-template-columns', '0.1fr 1fr')
+      .style('margin-bottom', '0.5vh');
+
+    tableSelection.each(function(d) {
+      const row = d3.select(this);
+
+      // Append the left-stuff div for text
+      row.append('div')
+        .attr('class', 'left-stuff')
+        .append('div')
+        .text(`${d.name}, ${d.ethnicity}`)
+        .style('margin-right', '0.5vw')
+        .style('white-space', 'nowrap')
+        .style('text-align', 'right')
+        .style('font-size', '14px')
+        .style('width', '275px');
+
+      // Append the right-stuff div for the bar
+      const barContainer = row.append('div')
+        .attr('class', 'right-stuff')
+        .style('justify-self', 'start');
+
+      // Append the tooltip
+      const tooltip = barContainer.append('div')
+        .attr('class', 'tooltip')
+        .text(`${d.name}, ${d.ethnicity}, ${d.gender}, ${d.count}`)
+        .style('position', 'absolute')
+        .style('background-color', 'white')
+        .style('border', '1px solid black')
+        .style('padding', '5px')
+        .style('border-radius', '3px')
+        .style('color', 'black')
+        .style('visibility', 'hidden');
+
+      // Append the bar
+      const bar = barContainer.append('div')
+        .style('width', `${Number(d.count)}px`)
+        .style('height', '10px')
+        .style('background-color', '#848484')
+        .style('border-radius', '10px')
+        .style('background-color', d.gender === 'MALE' ? '#00AAAA' : (d.gender === 'FEMALE' ? '#FFC0CB' : (d.gender === 'Grouped' ? '#EED700' : '#848484')))
+        .style('border', '2px black solid')
+        .style('cursor', 'default')
+        .style('padding', '2px 10px')
+        .on('mouseover', function(event) {
+          d3.select(this)
+            .style('width', `${Number(d.count)}px`)
+            .style('height', '12px')
+            .style('cursor', 'pointer');
+
+          // Show and position the tooltip
+          tooltip.style('visibility', 'visible')
+            .style('top', `${event.pageY - 40}px`)
+            .style('left', `${event.pageX}px`);
+        })
+        .on('mousemove', function(event) {
+          tooltip.style('top', `${event.pageY - 40}px`)
+            .style('left', `${event.pageX}px`);
+        })
+        .on('mouseout', function() {
+          d3.select(this)
+            .style('width', `${Number(d.Streams) / 105000}px`)
+            .style('height', '10px');
+
+          tooltip.style('visibility', 'hidden');
+        });
+    });
+  }
+
+
+  validateCount(event: Event) {
+    this.maxLengthCheck(event.target);
+    const target = event.target as HTMLInputElement;
+    let num = 0;
+    if(target.value != '') num = parseInt(target.value);   
+    this.fetchData();
+  }
+  maxLengthCheck(object: any){
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+  }
+
+  selectChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.selectedYear = selectElement.value;
+    this.fetchData();
+  }
+
+  onEthnicityChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.selectedEthnicity = selectElement.value;
+    this.fetchData();
+  }
+
+  onGenderChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.selectedGender = selectElement.value;
+    this.fetchData();
+  }
+
+  onGroupGenderChange(event: Event) {
+    const checkboxElement = event.target as HTMLInputElement;
+    this.groupGender = checkboxElement.checked;
+    this.fetchData();
+  }
+
+  onGroupEthnicitiesChange(event: Event) {
+    const checkboxElement = event.target as HTMLInputElement;
+    this.groupEthnicities = checkboxElement.checked;
+    this.fetchData();
+  }
+
 }

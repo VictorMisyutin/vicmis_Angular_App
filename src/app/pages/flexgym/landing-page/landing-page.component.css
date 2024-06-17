@@ -167,8 +167,8 @@ input:focus{
   width: 55%;
   overflow: hidden;
   height: 3.1vw;
-  margin-bottom: -0,1vw;
-  padding-bottom: 0.4vw;
+  margin-bottom: -0.5vw;
+  padding-bottom: 0.8vw;
   color: #FC4F4F
 }
 #more-equipment-1{
@@ -184,8 +184,8 @@ input:focus{
   width: 46.73%;
   overflow: hidden;
   height: 3vw;
-  margin-bottom: -0,1vw;
-  padding-bottom: 0.4vw;
+  margin-bottom: -0.5vw;
+  padding-bottom: 0.8vw;
   color: #FC4F4F;
   margin-left: 35.8vw;
   margin-top: -1.1vw;
@@ -203,8 +203,8 @@ input:focus{
   width: 46.73%;
   overflow: hidden;
   height: 3vw;
-  margin-bottom: -0,1vw;
-  padding-bottom: 0.4vw;
+  margin-bottom: -0.5vw;
+  padding-bottom: 0.8vw;
   color: #FC4F4F;
   margin-left: 35.8vw;
   margin-top: 0.17vw;
@@ -248,8 +248,7 @@ button {
 }
 button:hover {
   cursor: pointer;
-  transform: translateX(1vw);
-  box-shadow: -0.5vw 0 1vw white;
+  box-shadow: 0 0 2vw white;
 }
 .creds p{
   margin-top: 4vw;
