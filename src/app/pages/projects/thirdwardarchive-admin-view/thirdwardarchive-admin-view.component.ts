@@ -12,7 +12,7 @@ export class ThirdwardarchiveAdminViewComponent{
 
   
   logout(){
-    this.authService.logout();
+    this.authService.logout().subscribe();
   }
 
 }

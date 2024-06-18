@@ -71,7 +71,7 @@ export class AuthService {
         // Only reset the timeout if user is active (performing some action)
         return true;
       } else {
-        this.logout(); // Invalidate the session if timeout has passed
+        this.logout().subscribe() // Invalidate the session if timeout has passed
       }
     }
     return false;
