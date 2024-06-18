@@ -49,10 +49,15 @@ export class AuthService {
     return throwError(errorMessage);
   }
 
-  logout(): void {
-    localStorage.removeItem(this.adminUsernameKey);
-    localStorage.removeItem(this.loginTimeKey);
-    this.router.navigateByUrl('/thirdwardarchive');
+  
+  logout(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/logout`).pipe(
+      tap(() => {
+        localStorage.removeItem(this.adminUsernameKey);
+        localStorage.removeItem(this.loginTimeKey);
+        this.router.navigateByUrl('/thirdwardarchive');
+      })
+    );
   }
 
   isAuthenticated(): boolean {
