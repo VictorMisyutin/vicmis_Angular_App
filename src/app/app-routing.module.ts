@@ -56,7 +56,7 @@ const routes: Routes = [
   {path: 'thirdwardarchive/admin', component: ThirdwardarchiveAdminViewComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
   {path: 'thirdwardarchive/admin/add-products', component: ThirdwardarchiveAddProductComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
   {path: 'thirdwardarchive/admin/product-view', component: ThirdwardarchiveAdminProductsDetailsComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
-  {path: 'thirdwardarchive/merch/details', component: ThirdwardarchiveMerchDetailComponent, title: 'thirdwardarchive'}
+  {path: 'thirdwardarchive/merch/details', component: ThirdwardarchiveMerchDetailComponent, title: 'thirdwardarchive', canActivate: [authGuard]}
   
 ];
 

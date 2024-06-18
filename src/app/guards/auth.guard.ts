@@ -4,6 +4,6 @@ import { AuthService } from '../auth.service';
 
 export const authGuard: CanActivateFn = (route, state) => {
   if(inject(AuthService).admin_username) return true;
-  inject(Router).navigateByUrl('/thirdwardarchive')
+  inject(Router).navigateByUrl('/thirdwardarchive/login')
   return false;
 };
