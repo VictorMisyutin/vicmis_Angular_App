@@ -11,11 +11,11 @@ import { Observable } from 'rxjs';
 export class DataVizComponent implements OnInit {
   data: any[] = []; // Initialize the data array
   years: string[] = ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2011"];
-  ethnicities: string[] = ["all", "White Non Hispanic", "Hispanic", "BLACK NON HISPANIC", "ASIAN AND PACIFIC ISLANDER"]
+  ethnicities: string[] = ["all", "White Non Hisp", "Hispanic", "BLACK NON HISP", "ASIAN AND PACI"]
   selectedYear: string = "2011";
   selectedEthnicity: string = "all";
   selectedGender: string = "both"
-  count: string = "30";
+  count: number = 30;
   groupGender: boolean = false;
   groupEthnicities: boolean = false;
 
@@ -26,13 +26,11 @@ export class DataVizComponent implements OnInit {
   }
 
   fetchData() {
-    const params = `year=${this.selectedYear}&ethnicity=${this.selectedEthnicity}&gender=${this.selectedGender}&count=${this.count}&group_genders=${this.groupGender? "true" : "false"}&group_ethnicities=${this.groupEthnicities? "true" : "false"}&quantity=${this.count}`
-    console.log(params);
+    const params = `year=${this.selectedYear}&ethnicity=${this.selectedEthnicity}&gender=${this.selectedGender}&group_genders=${this.groupGender? "true" : "false"}&group_ethnicities=${this.groupEthnicities? "true" : "false"}&quantity=${this.count}`
 
     this.apiService.getBabyNames(params).subscribe(
       (data: any) => {
         this.data = data;
-        console.log(data);
         this.renderTable();
       },
       (error) => {
@@ -46,6 +44,8 @@ export class DataVizComponent implements OnInit {
   }
   
   renderTable(): void {
+    d3.select('.main-table').selectAll('div').remove();
+
     const tableSelection = d3.select('.main-table')
       .selectAll('div')
       .data(this.data)
@@ -91,7 +91,7 @@ export class DataVizComponent implements OnInit {
         .style('height', '10px')
         .style('background-color', '#848484')
         .style('border-radius', '10px')
-        .style('background-color', d.gender === 'MALE' ? '#00AAAA' : '#FFC0CB')
+        .style('background-color', d.gender === 'MALE' ? '#00AAAA' : (d.gender === 'FEMALE' ? '#FFC0CB' : (d.gender === 'Grouped' ? '#EED700' : '#848484')))
         .style('border', '2px black solid')
         .style('cursor', 'default')
         .style('padding', '2px 10px')
@@ -126,6 +126,7 @@ export class DataVizComponent implements OnInit {
     const target = event.target as HTMLInputElement;
     let num = 0;
     if(target.value != '') num = parseInt(target.value);   
+    this.fetchData();
   }
   maxLengthCheck(object: any){
     if (object.value.length > object.maxLength)
