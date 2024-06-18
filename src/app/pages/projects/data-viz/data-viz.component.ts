@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class DataVizComponent implements OnInit {
   data: any[] = []; // Initialize the data array
   years: string[] = ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2011"];
-  ethnicities: string[] = ["all", "White Non Hisp", "Hispanic", "BLACK NON HISP", "ASIAN AND PACI"]
+  ethnicities: string[] = ["all", "White", "Hispanic", "Black", "Asian and Pacific Islander"]
   selectedYear: string = "2011";
   selectedEthnicity: string = "all";
   selectedGender: string = "both"
@@ -26,7 +26,10 @@ export class DataVizComponent implements OnInit {
   }
 
   fetchData() {
-    const params = `year=${this.selectedYear}&ethnicity=${this.selectedEthnicity}&gender=${this.selectedGender}&group_genders=${this.groupGender? "true" : "false"}&group_ethnicities=${this.groupEthnicities? "true" : "false"}&quantity=${this.count}`
+    let queryEthnicity = this.selectedEthnicity;
+    if(queryEthnicity == 'Asian and Pacific Islander')
+      queryEthnicity = 'asian';
+    const params = `year=${this.selectedYear}&ethnicity=${queryEthnicity}&gender=${this.selectedGender}&group_genders=${this.groupGender? "true" : "false"}&group_ethnicities=${this.groupEthnicities? "true" : "false"}&quantity=${this.count}`
 
     this.apiService.getBabyNames(params).subscribe(
       (data: any) => {
@@ -39,10 +42,6 @@ export class DataVizComponent implements OnInit {
     );
   }
 
-  getBabyNamesByYear(year: string): Observable<any> {
-    return this.apiService.getBabyNames(`?year=${year}`);
-  }
-  
   renderTable(): void {
     d3.select('.main-table').selectAll('div').remove();
 
@@ -66,7 +65,9 @@ export class DataVizComponent implements OnInit {
         .style('white-space', 'nowrap')
         .style('text-align', 'right')
         .style('font-size', '14px')
-        .style('width', '275px');
+        .style('color', 'white')
+        .style('overflow', 'hidden')
+        .style('width', '18vw');
 
       // Append the right-stuff div for the bar
       const barContainer = row.append('div')

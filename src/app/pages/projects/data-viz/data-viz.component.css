@@ -2,13 +2,14 @@ body{
     text-align: center;
 }
 .main-table{
-    margin: 0 20vw;
+    margin: 0 15vw;
+    margin-bottom: 10vh;
 }
 .options{
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.6fr;
     grid-template-rows: 1fr 1fr;
-    background-color: aliceblue;
+    background-color: #666666;
     margin: 0 auto;
     border: 2px black solid;
     color: black;
@@ -16,10 +17,10 @@ body{
     width: 3fr;
     max-width: 60vw;
     margin-bottom: 4vh;
+    padding: 1vw;
 }
 .option{
-    background-color: #666666;
-    padding: 5px 10px;
+    padding: 0.5vw;
     font-size: 20px;
 }
 
