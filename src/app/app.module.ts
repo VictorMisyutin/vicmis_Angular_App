@@ -36,6 +36,7 @@ import { ThirdwardarchiveAddProductComponent } from './pages/projects/thirdwarda
 import { ThirdwardarchiveAdminViewComponent } from './pages/projects/thirdwardarchive-admin-view/thirdwardarchive-admin-view.component';
 import { TWAHeaderComponent } from './components/twa-header/twa-header.component';
 import { ThirdwardarchiveAdminProductsDetailsComponent } from './pages/projects/thirdwardarchive-admin-products-details/thirdwardarchive-admin-products-details.component';
+import { TwaBackArrowComponent } from './components/twa-back-arrow/twa-back-arrow.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,8 @@ import { ThirdwardarchiveAdminProductsDetailsComponent } from './pages/projects/
     ThirdwardarchiveAddProductComponent,
     ThirdwardarchiveAdminViewComponent,
     TWAHeaderComponent,
-    ThirdwardarchiveAdminProductsDetailsComponent
+    ThirdwardarchiveAdminProductsDetailsComponent,
+    TwaBackArrowComponent
   ],
   imports: [
     BrowserModule,
