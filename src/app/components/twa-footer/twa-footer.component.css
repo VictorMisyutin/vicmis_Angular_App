@@ -1,0 +1,27 @@
+.footer {
+    height: 47vh;
+    background-color: #EBEBEB;
+    padding: 10vh 20vw;
+}
+
+.logo {
+    float: left;
+    width: 7.8vw;
+}
+
+.top-part {
+    position: relative;
+}
+
+.right-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+    border: 2px red solid;
+}
+
+.right-menu .option {
+    color: black;
+    margin: 0 1vw;
+}
