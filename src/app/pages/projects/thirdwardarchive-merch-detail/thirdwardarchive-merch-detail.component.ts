@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { local } from 'd3';
 
 @Component({
   selector: 'app-thirdwardarchive-merch-detail',
@@ -26,7 +25,7 @@ export class ThirdwardarchiveMerchDetailComponent implements OnInit {
     });
     this.fetchInfo();
   }
-  
+
   fetchInfo() {
     this.http.get<string[]>(`https://vicmis.com/api/get-product-info/${this.product_id}`).subscribe(
       (response) => {
