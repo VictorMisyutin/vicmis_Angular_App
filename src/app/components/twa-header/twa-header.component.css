@@ -9,12 +9,8 @@ body{
 .right-stuff{
     margin-right: 2vw;
     display: flex;
-<<<<<<< HEAD
     justify-content:end;
     align-items: center;
-=======
-    margin-bottom: 2vh;
->>>>>>> a7226070d702c0ecd9da5592e9063dd5707c4388
 }
 .right-stuff img{
     margin: 0 1vw;
