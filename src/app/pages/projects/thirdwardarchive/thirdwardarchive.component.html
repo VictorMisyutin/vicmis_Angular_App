@@ -7,7 +7,7 @@
     <div class="countdown-area">
         <p class="countdown-desc">Countdown Till Drop</p>
         <p class="coutdown-text">{{countdown}}</p>
-        <div class="shop-button">shop</div>
+        <!-- <div class="shop-button">shop</div> -->
     </div>
     <div class="hidden" id="catalog-area">
         <p class="new-in-text">NEW IN</p>
@@ -16,7 +16,7 @@
             <div *ngFor="let productImage of productImageUrls; let i = index" class="product">
                 <div class="product-image">
                     <img [src]="productImage" [routerLink]="['/thirdwardarchive/merch/details']" [queryParams]="{id: i+1}" class="photo">
-                    <img src="/assets/twa/twa-heart-black.png" class="heart">
+                    <!-- <img src="/assets/twa/twa-heart-black.png" class="heart"> -->
                 </div>
                 <div class="product-desc">
                     <div class="title">{{productInfo[i][0]}}</div>
@@ -29,9 +29,9 @@
         <div class="left-side">
             <p class="section-title">STAY IN THE LOOP</p>
             <p class="section-subtitle">Get notified when our next collection drops</p>
-            <input type="text" class="email-input-box" id="email-input-box" placeholder="Email Address">
+            <input type="text" class="email-input-box" id="email-input-box" placeholder="Email Address" [(ngModel)]="email">
             <br style="clear:both"/>
-            <div class="email-signup-button">Sign Up</div>
+            <div class="email-signup-button" (click)="emailSignup()">Sign Up</div>
         </div>  
         <div class="right-side">
             <img src="/assets/twa/twa-email-signup-image.png">

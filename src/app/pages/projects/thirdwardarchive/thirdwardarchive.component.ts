@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../../auth.service';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-thirdwardarchive',
@@ -21,7 +22,9 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
   productInfo = new Array;
   currentUrl = "";
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  email: string = '';
+
+  constructor(private http: HttpClient, private authService: AuthService, private apiService: ApiService) { }
 
   ngOnInit() {
     this.updateCountdown();
@@ -109,4 +112,11 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
     }
   }
 
+  emailSignup(){
+    if(this.email){
+      this.apiService.updateEmailAndTextList("NA", "NA", this.email, true, "NA", false).subscribe();
+      window.alert("success");
+      this.email = '';
+    }
+  }
 }

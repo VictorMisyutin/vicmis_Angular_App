@@ -82,6 +82,9 @@ body{
     position: relative;
     display: inline-block;
 }
+.product-image:hover {
+    cursor: pointer;
+}
 .product-image .photo{
     position: relative;
     background-color: #D9D9D9;
