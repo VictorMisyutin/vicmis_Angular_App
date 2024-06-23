@@ -6,6 +6,16 @@ body{
     background-color: #232222;
     padding: 1vh 0;
 }
+.logo{
+    float: left;
+    height: 4.5vh;
+    margin-left: 2vw;
+    filter: invert(100%);
+}
+.logo:hover{
+    cursor: pointer;
+    filter: invert(60%);
+}
 .right-stuff{
     margin-right: 2vw;
     display: flex;
