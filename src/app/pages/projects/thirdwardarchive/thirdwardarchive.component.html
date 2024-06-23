@@ -1,50 +1,33 @@
 <body>
     <app-twa-header></app-twa-header>
     <div class="hero">
-        <p class="left-hero-text">third ward archive</p>
+        <p class="left-hero-text">THIRD WARD ARCHIVE</p>
         <img src="/assets/twa/TWA-acidiclogo.png">
     </div>
     <div class="countdown-area">
-        <p class="countdown-desc">countdown till drop</p>
+        <p class="countdown-desc">Countdown Till Drop</p>
         <p class="coutdown-text">{{countdown}}</p>
         <div class="shop-button">shop</div>
     </div>
-    <div class="catalog-area">
-        <p class="new-in-text">new in</p>
+    <div class="hidden" id="catalog-area">
+        <p class="new-in-text">NEW IN</p>
 
         <div class="products-container">
-            <div class="product">
+            <div *ngFor="let productImage of productImageUrls; let i = index" class="product">
                 <div class="product-image">
-                    <img src="/assets/twa/twa-heart-black.png">
+                    <img [src]="productImage" [routerLink]="['/thirdwardarchive/merch/details']" [queryParams]="{id: i+1}" class="photo">
+                    <img src="/assets/twa/twa-heart-black.png" class="heart">
                 </div>
                 <div class="product-desc">
-                    <div class="title">3* Tee</div>
-                    <div class="price">$24.99</div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-image">
-                    <img src="/assets/twa/twa-heart-black.png">
-                </div>
-                <div class="product-desc">
-                    <div class="title">3* Tee</div>
-                    <div class="price">$24.99</div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-image">
-                    <img src="/assets/twa/twa-heart-black.png">
-                </div>
-                <div class="product-desc">
-                    <div class="title">3* Tee</div>
-                    <div class="price">$24.99</div>
+                    <div class="title">{{productInfo[i][0]}}</div>
+                    <div class="price">${{productInfo[i][1]}}</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="email-signup-section">
         <div class="left-side">
-            <p class="section-title">stay in the loop</p>
+            <p class="section-title">STAY IN THE LOOP</p>
             <p class="section-subtitle">Get notified when our next collection drops</p>
             <input type="text" class="email-input-box" id="email-input-box" placeholder="Email Address">
             <br style="clear:both"/>

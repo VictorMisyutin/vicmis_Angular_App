@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../../services/api.service';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-thirdwardarchive-checkout',
@@ -8,7 +9,9 @@ import { ApiService } from '../../../services/api.service';
   styleUrls: ['./thirdwardarchive-checkout.component.css']
 })
 export class ThirdwardarchiveCheckoutComponent implements OnInit {
-  constructor(private http: HttpClient, private apiService: ApiService) {}
+  checkoutForm!: FormGroup; // Ensure the form is initialized in ngOnInit
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private apiService: ApiService) {}
 
   storedCart: any;
   cart_ids: string[] = [];
@@ -22,11 +25,23 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateDisplay();
+    this.checkoutForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      address: ['', [Validators.required, Validators.minLength(5)]],
+      apartment: [''],
+      city: ['', Validators.required],
+      state: ['', [Validators.required, Validators.pattern('^[A-Z]{2}$')]], // Assuming state is a 2-letter code
+      zip: ['', [Validators.required, Validators.pattern('^[0-9]{5}(?:-[0-9]{4})?$')]], // 5 or 9 digit zip code
+      phone: ['', [Validators.required, Validators.pattern('^\\+?[1-9]\\d{1,14}$')]], // E.164 international phone number format
+      emailUpdates: [false],
+      textUpdates: [false],
+    });
   }
 
   updateDisplay(){
     // reset vars
-
     this.cart_ids = [];
     this.cart_quantities = [];
     this.productMap = new Map<string, string[]>();
@@ -43,7 +58,7 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
         this.cart_ids.push(item.id);
         this.cart_quantities.push(item.quantity);
       });
-    }{}
+    }
     this.fetchProducts();
   }
 
@@ -138,19 +153,53 @@ export class ThirdwardarchiveCheckoutComponent implements OnInit {
   }
 
 
-  checkout() {
-    document.getElementById('processing')?.classList.remove('hidden');
-    document.getElementById('processing')?.classList.add('processing-shown');
-    document.getElementById('main-cart-area')?.classList.remove('main-cart-area');
-    document.getElementById('main-cart-area')?.classList.add('hidden');
+  // saveShippingInfo(shippingData: any): void {
+  //   this.http.post('/api/shipping', shippingData).subscribe(response => {
+  //     console.log('Shipping information saved', response);
+  //   });
+  // }
 
-    this.apiService.createCheckoutSession(this.storedCart).subscribe(
-      (response) => {
-        window.location.href = response.url;
-      },
-      (error) => {
-        console.error('Error creating checkout session', error);
+  loading = false; // Flag to track loading state
+
+  checkout() {
+    if (this.checkoutForm?.valid) {
+      this.loading = true;
+
+      // Simulate a delay for demonstration purposes (replace with actual form submission logic)
+      setTimeout(() => {
+        console.log('Form is valid and submitted:', this.checkoutForm.value);
+
+        // Reset form and loading flag after submission
+        this.checkoutForm.reset();
+        this.loading = false;
+      }, 2000); // Simulated 2 seconds delay
+
+      // this.saveShippingInfo(this.checkoutForm.value);
+      document.getElementById('processing')?.classList.remove('hidden');
+      document.getElementById('processing')?.classList.add('processing-shown');
+      document.getElementById('main-cart-area')?.classList.remove('main-cart-area');
+      document.getElementById('main-cart-area')?.classList.add('hidden');
+
+      this.apiService.updateEmailAndTextList(this.checkoutForm.value['firstName'],this.checkoutForm.value['lastName'], this.checkoutForm.value['email'], this.checkoutForm.value['emailUpdates'], this.checkoutForm.value['phone'], this.checkoutForm.value['textUpdates']  ).subscribe();
+      this.apiService.createCheckoutSession(this.storedCart).subscribe(
+        (response) => {
+          window.location.href = response.url;
+        },
+        (error) => {
+          console.error('Error creating checkout session', error);
+        }
+      );
+    } 
+    else {
+      for (const field of Object.keys(this.checkoutForm.controls)) {
+        const control = this.checkoutForm.get(field);
+        if (control && control.invalid) {
+          const fieldName = field.charAt(0).toUpperCase() + field.slice(1); // Capitalize first letter
+          window.alert(`${fieldName} is invalid.`);
+          control.markAsTouched({ onlySelf: true });
+          break; // Exit the loop after finding the first invalid field
+        }
       }
-    );
+    }
   }
 }

@@ -1,133 +1,253 @@
-body{
-    background-color:#816e6e;
+body {
+    background-color: #848484;
 }
-.main-cart-area{
-    padding: 0 1vh;
-    padding-top:1vh;
-    border-radius: 10px;
-    background-color: #8f7272;
-    margin: 5vh auto;
-}
-.row{
-    border-radius: 10px;
-    margin-bottom: 1vh;
-    background-color: #a89292;
-    padding-right: 0.5vw;
+
+.main {
     display: flex;
-    width: 70vw;
-    height:  30vh;
+    justify-content: space-between;
+    min-height: 110vh;
 }
-.product-photo{
-    border-radius: 10px;
-    background-color: white;
-    height: 100%;
-    width: 17%;     
-    float: left; 
-    margin-right: 2vw;
-}
-.product-center{
-    display: grid;
-    width: 73%;
-    grid-template-rows: 0.1fr 0.9fr;
-    grid-template-columns: 1;
-    padding-top: 2vh;
-    padding-right: 2vw;
-}
-.product-title{
-    margin: 0;
-    font-family: 'times new roman';
-    text-align: left;
-    height: 1lh;
-    color: black;
-}
-.product-description{
-    padding: 2vh 0;
-    font-family: 'times new roman';
-    color: black;
-    text-align: left;
-    height: 1lh;
-} 
-.product-right-side{
-    /* margin: 0 auto; */
-    display: grid;
-    width: 10%;
-    grid-template-rows: 1fr 0.1fr;
-    grid-template-columns: 1;
-    padding-top: 2vh;
-    /* height: 100%; */
-}
-.product-price{
-    font-size: 25px;
-    color: black;
-    font-family: 'times new roman';
+
+.left-area {
+    flex: 1;
+    padding-left: 100px;
     text-align: center;
+    margin-bottom: 10vh;
 }
-.product-quantity-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'times new roman';
-    color: black;
-    gap: 0.5vw;
-}
-.product-quantity-options {
+
+.left-titles {
+    width: 255px;
+    color: white;
     font-size: 20px;
-    padding: 5px;
-    user-select: none;
-    color: black;
-} 
-.product-quantity-options:hover {
-    cursor: pointer;
-    color: #705757;
+    margin-bottom: 7vh;
 }
-    
-.product-quantity {
-    color: black;
+
+.left-title {
+    text-align: center;
+    font-family: 'koulon';
+    font-size: 70px;
+    margin-bottom: 0;
+}
+
+.order-summary-text {
     font-size: 30px;
-    font-weight: bold;
-    font-family: 'times new roman';
 }
-.under-products-area{
-    margin-top: -0.5vh;
+
+.product {
+    margin-bottom: 10vh;
+    width: 255px;
+}
+
+.product-image-container {
+    width: 255px;
+    height: 211px;
+    background-color: #D9D9D9;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
 }
-.total-desc{
-    font-size: 25px;
-    font-family: 'times new roman';
-    color: black;
-    padding-left: 2vw;
-    text-align: left;
-    float: left;
-    width: 90%;
+
+.product-photo {
+    width: 233px;
+    height: 190px;
 }
-.total-sum{
-    font-size: 25px;
-    font-family: 'times new roman';
-    color: black;
-    padding-right: 0.5vw;
-    text-align: center;
-    width: 10%;
+.product-subtitle{
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
 }
-.checkout-button{
+.product-title {
     display: block;
-    margin: 0 auto;
-    margin-bottom: 4vh;
-    padding: 0.5vh 0.5vw;
-    border-radius: 10px;
+    margin-top: 2vh;
+    color: white;
     font-size: 20px;
-    font-family: 'times new roman';
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: left;
 }
-.checkout-button:hover{
+.product-quantity{
+    color: white;
+    text-align: right;
+}
+.product-detail {
+    display: block;
+    color: white;
+    margin-top: 1vh;
+    font-size: 20px;
+}
+
+.product-size {
+    margin-top: 0;
+    float: left;
+}
+
+.product-price {
+    margin-top: 0;
+    float: right;
+}
+
+.under-products-area {
+    padding: 0;
+    margin: 0;
+    width: 280px;
+}
+
+.total-container {
+    margin: 0;
+    color: white;
+    font-size: 25px;
+    padding: 2vh 0.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-text {
+    float: left;
+}
+
+.total-price {
+    float: right;
+}
+
+.right-area {
+    flex: 2;
+    background-color: #777777;
+    padding-top: 5vh;
+}
+
+.checkout-form-container {
+    width: 658px;
+    padding: 0 5vw;
+}
+
+.form-titles {
+    font-size: 30px;
+    color: white;
+}
+
+.container {
+    display: block;
+    position: relative;
+    margin-left: 10px;
+    padding-left: 35px;
+    margin-bottom: 12px;
     cursor: pointer;
-    background-color: rgb(161, 161, 161);
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-.hidden{
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px black solid;
+    border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #8f8f8f;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
     display: none;
 }
-.processing-shown{
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
     display: block;
-    text-align: center;
-    font-size: 40px;
-    font-family: 'times new roman';
-    color: rgb(201, 201, 201);
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.checkbox-text{
+    color: #3E3E3E;
+}
+input[type="text"], input[type="email"] {
+    background-color: #D9D9D9;
+    border-radius: 21px;
+    border: none;
+    padding-left: 30px;
+    margin-bottom: 2vh;
+}
+
+.form-input-long {
+    width: 658px;
+    height: 66px;
+    font-size: 20px;
+}
+
+.name-inputs {
+    margin-bottom: 3vh;
+}
+
+.inline-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 686px;
+    gap: 30px;
+}
+
+.form-input-short {
+    width: 178px;
+    height: 66px;
+    font-size: 20px;
+}
+.form-full-row{
+    width: 690px;
+}
+.payment-button{
+    margin-top: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #06094D;
+    color: white;
+    width: 389px;
+    height: 76px;
+    float: right;
+    font-size: 20px;
+    margin-bottom: 10vh;
+}
+.payment-button:hover{
+    cursor: pointer;
+    background-color: #0b1179;
+}
+.error-message {
+    color: red;
+    font-size: 0.8em;
 }

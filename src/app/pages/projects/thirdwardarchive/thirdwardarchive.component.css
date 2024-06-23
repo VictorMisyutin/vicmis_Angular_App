@@ -1,13 +1,14 @@
 body{
     padding: 0;
     margin: 0;
-    background-color: #848484;
-    background-image: url("/assets/twa/heroimage.png");
-    background-size: cover;
+    /* background-color: #848484; */
     height: 110vh;
 }   
 .hero{
-    height: 104vh;
+    height: 124vh;
+    background-image: url("/assets/twa/heroimage.png");
+    background-size: cover;
+    padding-bottom: 0;
 }
 .left-hero-text{
     color: white;
@@ -16,7 +17,11 @@ body{
     width: 30vw;
     font-size: 9vw;
     font-family: 'koulon';
-    margin-top:0vh;
+    margin-top: 15vh;
+
+    font-family: 'acidic';
+    font-size: 8vw;
+    line-height: 1.5em;
 }
 .hero img{
     position: absolute;
@@ -27,10 +32,13 @@ body{
 .countdown-area{
     padding: 13vh;
     text-align: center;
+    background-color: rgb(32,32,32);
+    background: linear-gradient(90deg, rgba(32,32,32,1) 0%, rgba(143,143,143,1) 50%, rgba(44,44,44,1) 100%);
 }
 .countdown-area p{
     color: white;
     font-family: 'koulon';
+    font-family: 'acidic';
     font-size: 4.15vw;
 }
 .shop-button{
@@ -51,39 +59,54 @@ body{
     background-color: #0c116f;
 }
 .catalog-area{
-    padding-left: 7.8vw;
-    padding-right: 7.8vw;
+    padding-left: 14vw;
+    padding-right: 14vw;
     padding-bottom: 20vh;    
+    background-color: rgb(32,32,32);
+    background: linear-gradient(90deg, rgba(32,32,32,1) 0%, rgba(143,143,143,1) 50%, rgba(44,44,44,1) 100%);
 }
 .new-in-text{
     font-family: 'koulon';
+    font-family: 'acidic';
     font-size: 4.6vw;
     color: white;
+    margin-bottom: 5vh;
 }
 .products-container{
     margin: 0 auto;
     display: grid;
-    gap: 4vw;
+    gap: 8vw;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.product-image{
-    background-color: #D9D9D9;
-    height: 69.5vh;  
+.product-image {
     position: relative;
+    display: inline-block;
 }
-.product-image img{
+.product-image .photo{
+    position: relative;
+    background-color: #D9D9D9;
+    height: 60.48vh;  
+    width: 18vw;
+}
+.product-image .heart{
     position: absolute;
-    right: 0;
     bottom: 0;
+    right: 0;
     margin-bottom: 2vh;
     margin-right: 2vh;
 }
 .product-desc{
-    padding: 3vh 0
+    padding: 1vh;
 }
 .product-desc div{
-    font-size: 2.6vw;
+    font-size: 1.5vw;
     color: white;
+}
+.product-desc .title{
+    max-width: 12vw;
+    white-space: nowrap;
+    /* text-overflow:clip; */
+    overflow: hidden;
 }
 .title{
     float: left;
@@ -97,6 +120,8 @@ body{
     padding-left: 7.8vw;
     padding-right: 7.8vw;
     padding-bottom: 10vh;
+    background-color: rgb(32,32,32);
+    background: linear-gradient(90deg, rgba(32,32,32,1) 0%, rgba(143,143,143,1) 50%, rgba(44,44,44,1) 100%);
 }
 .email-signup-section .left-side {
     float: left;
@@ -110,6 +135,9 @@ body{
     margin-top: 0;
     margin-bottom: 0;
     color: white;
+    
+    font-family: 'acidic';
+    margin-bottom: 5vh;
 }
 .email-signup-section .section-subtitle {
     /* font-family: 'koulon'; */
@@ -142,6 +170,10 @@ body{
     font-family: 'koulon';
     color: white;
 }
+.email-signup-button:hover{
+    cursor: pointer;
+    background-color: #0c116f;
+}
 .email-signup-section .right-side {
     float: right;
     height: 72vh;
@@ -153,6 +185,8 @@ body{
     padding-left: 6vw;
     padding-right: 10vw;
     padding-bottom: 15vh;
+    background-color: rgb(32,32,32);
+    background: linear-gradient(90deg, rgba(32,32,32,1) 0%, rgba(143,143,143,1) 50%, rgba(44,44,44,1) 100%);
 }
 .follow-section .left-side{
     float: left;
@@ -163,6 +197,9 @@ body{
     font-family: 'koulon';
     font-size: 6.5vw;
     color: white;
+
+    font-family: 'acidic';
+    font-size: 5.5vw;
 }
 .follow-subtitle{
     font-size: 3.1vw;
@@ -178,4 +215,7 @@ body{
 .follow-section .right-side img{
     width: 21.3vw;
     height: 21.3vw;
+}
+.hidden{
+    display: none;
 }

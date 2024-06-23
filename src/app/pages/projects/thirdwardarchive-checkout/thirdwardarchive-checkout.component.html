@@ -1,34 +1,74 @@
-
 <body>
-    <app-twa-header></app-twa-header>    
-
-    <div class="main-cart-area" id="main-cart-area">
-        <!-- make row for each item in cart -->
-        <div class="row" *ngFor="let id of cart_ids">
-            <!-- [src]="productImage" -->
-            <img  class="product-photo" [src]="productMap.get(id)?.[8]" [routerLink]="['/thirdwardarchive/merch/details']" [queryParams]="{id: id}">
-            <div class="product-center">
-                <h3 class="product-title">{{productMap.get(id)?.[1]}}</h3>
-                <h3 class="product-description">{{productMap.get(id)?.[3]}}</h3>
+    <app-twa-header></app-twa-header>
+    <div class="main">
+        <div class="left-area">
+            <div class="left-titles">
+                <p class="left-title">Checkout</p>
+                <p class="order-summary-text">Order Summary</p>
             </div>
-            <div class="product-right-side">
-                <p class="product-price">${{productMap.get(id)?.[9]}}</p>
-                <div class="product-quantity-container">
-                    <p class="product-quantity-options" (click)="removeProduct(id)">-</p>
-                    <p class="product-quantity">{{productMap.get(id)?.[0]}}</p>
-                    <p class="product-quantity-options" (click)="addProduct(id)">+</p>
+            <div class="main-cart-area" id="main-cart-area">
+                <div class="product" *ngFor="let id of cart_ids">
+                    <div class="product-image-container">
+                        <img class="product-photo" [src]="productMap.get(id)?.[8]" [routerLink]="['/thirdwardarchive/merch/details']" [queryParams]="{id: id}">
+                    </div>
+                    <div class="product-subtitle">
+                        <h3 class="product-title">{{productMap.get(id)?.[1]}}</h3>
+                        <h3 class="product-quantity">{{productMap.get(id)?.[0]}}</h3>
+                    </div>
+                    <div class="product-detail">
+                        <p class="product-size">M</p>
+                        <p class="product-price">${{productMap.get(id)?.[9]}}</p>
+                    </div>
+                </div>
+                <div class="under-products-area">
+                    <hr>
+                    <div class="total-container">
+                        <div class="total-text">Total:</div>
+                        <div class="total-price"><span class="dollar-sign">$</span>{{totalSum}}</div>
+                    </div>
+                    <hr>
                 </div>
             </div>
         </div>
-        <div class="under-products-area">
-            <p class="total-desc">Total:</p>
-            <p class="total-sum">${{totalSum}}</p>
+        <div class="right-area">
+            <div class="checkout-form-container">
+                <form [formGroup]="checkoutForm" (ngSubmit)="checkout()">
+                    <p class="form-titles">Contact Information</p>
+                    <input type="email" formControlName="email" class="form-input-long" placeholder="Email Address">
+                    <label class="container">
+                      <input type="checkbox" formControlName="emailUpdates">
+                      <span class="checkmark"></span>
+                      <span class="checkbox-text" id="email-updates">Email me with news and offers</span>
+                    </label>
+                    <p class="form-titles">Shipping Address</p>
+                    <div class="name-inputs">
+                      <input type="text" formControlName="firstName" class="form-input-long" placeholder="First Name">
+                      <input type="text" formControlName="lastName" class="form-input-long" placeholder="Last Name">
+                    </div>
+                    <input type="text" formControlName="address" class="form-input-long" placeholder="Address">
+                    <input type="text" formControlName="apartment" class="form-input-long" placeholder="Apartment, suite, etc (optional)">
+                    <div class="inline-form">
+                      <input type="text" formControlName="city" class="form-input-short" placeholder="City">
+                      <input type="text" formControlName="state" class="form-input-short" placeholder="State">
+                      <input type="text" formControlName="zip" class="form-input-short" placeholder="Zip Code">
+                    </div>
+                    <input type="text" formControlName="phone" class="form-input-long" placeholder="Phone">
+                    <label class="container">
+                      <input type="checkbox" formControlName="textUpdates">
+                      <span class="checkmark"></span>
+                      <span class="checkbox-text" id="text-updates">Text me with news and offers</span>
+                    </label>
+                    <div class="form-full-row">
+                      <button type="submit" class="payment-button">    
+                        <span *ngIf="!loading">Continue to payment</span>
+                        <div *ngIf="loading" class="spinner-border text-primary" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </button>
+                    </div>
+                  </form>
+            </div>
         </div>
-        <button class="checkout-button" (click)="checkout()">checkout</button>
     </div>
-
-    <div class="hidden" id="processing">
-        <p>processing...</p>
-    </div>
-
+    <app-twa-footer></app-twa-footer>
 </body>

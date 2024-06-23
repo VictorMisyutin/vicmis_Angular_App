@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-thirdwardarchive',
@@ -7,18 +8,27 @@ import { interval, Subscription } from 'rxjs';
   styleUrl: './thirdwardarchive.component.css'
 })
 export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
-  
+  // for countdown
   private subscription: Subscription = new Subscription;
   public targetDate: Date = new Date('2024-06-24T23:59:59');
   public countdown: string = '___ ___ ___ ___';
 
-  constructor() {}
+  // for products
+  productCount = 1;
+  productImageUrls = new Array;
+  productInfo = new Array;
+  currentUrl = "";
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.updateCountdown();
     this.subscription = interval(1000).subscribe(() => {
       this.updateCountdown();
     });
+
+    this.fetchProducts();
+    this.currentUrl = window.location.href;
   }
 
   ngOnDestroy() {
@@ -46,4 +56,51 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
 
     this.countdown = `${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
+
+  fetchProducts(){
+    this.http.get('https://vicmis.com/api/get-product-count').subscribe(
+      (response) => {
+        this.productCount = parseInt(response.toString());
+        this.fetchInfo();
+      }
+    );
+  }
+
+  fetchInfo() {
+    let count = 0;
+    while(count < this.productCount){
+      this.http.get<string[]>(`https://vicmis.com/api/get-product-info/${count+1}`).subscribe( 
+        (response) => {
+          this.productInfo.push(new Array(response[0], response[1]))
+        },
+        (error) => {
+          console.error('Error fetching information', error);
+          return;
+        }
+      );
+      count++;
+    }
+    this.fetchImages();
+  }
+
+  fetchImages() {
+    let count = 0;
+    while(count < this.productCount){
+      this.http.get(`https://vicmis.com/api/get-product-image/${count+1}/0`, { responseType: 'blob' }).subscribe(
+        (response) => {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            this.productImageUrls.push(reader.result as string);
+          };
+          reader.readAsDataURL(response);
+        },
+        (error) => {
+          console.error('Error fetching images', error);
+          return;
+        }
+      );
+      count++;
+    }
+  }
+
 }

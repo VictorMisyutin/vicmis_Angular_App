@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, first } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,10 @@ export class ApiService {
   createCheckoutSession(products: any[]): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<any>('https://vicmis.com/api/create-checkout-session', { products }, { headers });
+  }
+
+  updateEmailAndTextList(firstName: string, lastName: string, email: string, emailDecision: boolean, number: string, textDecision: boolean){
+    return this.http.get(`https://vicmis.com/api/email-text-list/${firstName}/${lastName}/${email}/${emailDecision}/${number}/${textDecision}`);
   }
 
   getBabyNames(args: string): Observable<any>{
