@@ -208,6 +208,10 @@ body{
     font-size: 3.1vw;
     color: white;
 }
+.follow-subtitle:hover{
+    cursor: pointer;
+    color: #b1b1b1;
+}
 .follow-section .right-side{
     float: right;
     display: grid;

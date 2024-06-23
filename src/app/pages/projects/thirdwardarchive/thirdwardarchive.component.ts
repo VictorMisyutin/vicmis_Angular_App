@@ -119,4 +119,8 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
       this.email = '';
     }
   }
+
+  sendToInstagram(){
+    window.location.href = "https://www.instagram.com/thirdwardarchive/";
+  }
 }
