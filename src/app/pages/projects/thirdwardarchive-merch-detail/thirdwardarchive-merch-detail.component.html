@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
     <app-twa-header></app-twa-header>
 
     <app-twa-back-arrow></app-twa-back-arrow>
@@ -16,4 +16,21 @@
         </div>
         <button class="add-to-cart-button" (click)="addToCart()">add to cart</button>
     </div>
+</body> -->
+<body>
+    <app-twa-header></app-twa-header>
+
+    <!-- <div *ngFor="let imageUrl of imageUrls" class="photo-container"> -->
+        <!-- </div> -->
+        
+        <div class="main">
+            <div class="left-part">
+                <div class="image-container">
+                    <img [src]="imageUrls[0]" class="product-photo">
+                </div>
+            </div>
+            <div class="right-part">
+
+            </div>
+        </div>
 </body>

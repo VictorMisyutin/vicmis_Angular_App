@@ -1,5 +1,6 @@
-body{
-    background-color: #816e6e;
+/* body{
+    background-color: rgb(32,32,32);
+    background: linear-gradient(90deg, rgba(32,32,32,1) 0%, rgba(143,143,143,1) 50%, rgba(44,44,44,1) 100%);
 }
 .photo-container{
     display: block;
@@ -36,7 +37,6 @@ body{
     font-size: 22px;
     padding: 5px;
     padding-left: 8px;
-    /* transition: all 1s ease-in-out; */
     transition: all 1s linear;
 
 }
@@ -62,4 +62,31 @@ body{
             height: 400px;
         }
     }
+} */
+/* D9D9D9 */
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.left-part {
+    border: 2px black solid;
+    height: 100vh;
+    display: flex; /* Added */
+    justify-content: center; /* Horizontally centers the image */
+    align-items: center; /* Vertically centers the image */
+}
+.image-container{
+    background-color: #D9D9D9;
+    padding: 10px;
+}
+.product-photo {
+    width: 607px;
+    height: 607px;
+    /* margin: 0 auto; -- Removed this line as it's no longer needed */
+}
+
+.right-part {
+    border: 2px red solid;
+    height: 100vh;
 }
