@@ -56,7 +56,8 @@ export class AuthService {
         localStorage.removeItem(this.adminUsernameKey);
         localStorage.removeItem(this.loginTimeKey);
         this.router.navigateByUrl('/thirdwardarchive');
-      })
+      }),
+      catchError(this.handleError) // Add error handling here
     );
   }
 

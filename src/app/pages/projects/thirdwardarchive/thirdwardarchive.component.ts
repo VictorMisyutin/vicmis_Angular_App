@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../../auth.service';
 
 @Component({
   selector: 'app-thirdwardarchive',
@@ -11,6 +12,7 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
   // for countdown
   private subscription: Subscription = new Subscription;
   public targetDate: Date = new Date('2024-06-24T23:59:59');
+  // public targetDate: Date = new Date('2024-06-22T23:59:59');
   public countdown: string = '___ ___ ___ ___';
 
   // for products
@@ -19,7 +21,7 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
   productInfo = new Array;
   currentUrl = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit() {
     this.updateCountdown();
@@ -29,6 +31,11 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
 
     this.fetchProducts();
     this.currentUrl = window.location.href;
+
+    // check if admin
+    if(this.authService.isAuthenticated())
+      document.getElementById('catalog-area')?.classList.remove('hidden');
+      document.getElementById('catalog-area')?.classList.add('catalog-area');
   }
 
   ngOnDestroy() {
@@ -42,10 +49,9 @@ export class ThirdwardarchiveComponent implements OnInit, OnDestroy{
     const distance = this.targetDate.getTime() - now;
 
     if (distance < 0) {
-      // this.countdown = 'Countdown has ended';
-      if (this.subscription) {
-        this.subscription.unsubscribe();
-      }
+      this.countdown = "0d 0h 0m 0s";
+      document.getElementById('catalog-area')?.classList.remove('hidden');
+      document.getElementById('catalog-area')?.classList.add('catalog-area');
       return;
     }
 
