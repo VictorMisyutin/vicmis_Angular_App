@@ -20,14 +20,6 @@ import { CatalogedComponent } from './pages/projects/cataloged/cataloged.compone
 import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.component';
 import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
 import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
-import { ThirdwardarchiveComponent } from './pages/projects/thirdwardarchive/thirdwardarchive.component';
-import { ThirdwardarchiveCheckoutComponent } from './pages/projects/thirdwardarchive-checkout/thirdwardarchive-checkout.component';
-import { ThirdwardarchiveMerchComponent } from './pages/projects/thirdwardarchive-merch/thirdwardarchive-merch.component';
-import { ThirdwardarchiveMerchDetailComponent } from './pages/projects/thirdwardarchive-merch-detail/thirdwardarchive-merch-detail.component';
-import { ThirdwardarchiveLoginComponent } from './pages/projects/thirdwardarchive-login/thirdwardarchive-login.component';
-import { ThirdwardarchiveAddProductComponent } from './pages/projects/thirdwardarchive-add-product/thirdwardarchive-add-product.component';
-import { ThirdwardarchiveAdminViewComponent } from './pages/projects/thirdwardarchive-admin-view/thirdwardarchive-admin-view.component';
-import { ThirdwardarchiveAdminProductsDetailsComponent } from './pages/projects/thirdwardarchive-admin-products-details/thirdwardarchive-admin-products-details.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -48,15 +40,7 @@ const routes: Routes = [
   {path: 'projects/connections/create', component: CreateConnectionsComponent, title: 'create connections'},
   {path: 'projects/data-viz', component: DataVizComponent, title: 'Data Visualization'},
   {path: 'liftware', component: LandingPageComponent, title: 'liftware'},
-  {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'},
-  {path: 'thirdwardarchive', component: ThirdwardarchiveComponent, title: 'thirdwardarchive'},
-  {path: 'thirdwardarchive/checkout', component: ThirdwardarchiveCheckoutComponent, title: 'thirdwardarchive'},
-  {path: 'thirdwardarchive/merch', component: ThirdwardarchiveMerchComponent, title: 'thirdwardarchive'},
-  {path: 'thirdwardarchive/login', component: ThirdwardarchiveLoginComponent, title: 'thirdwardarchive'},
-  {path: 'thirdwardarchive/admin', component: ThirdwardarchiveAdminViewComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
-  {path: 'thirdwardarchive/admin/add-products', component: ThirdwardarchiveAddProductComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
-  {path: 'thirdwardarchive/admin/product-view', component: ThirdwardarchiveAdminProductsDetailsComponent, title: 'thirdwardarchive', canActivate: [authGuard]},
-  {path: 'thirdwardarchive/merch/details', component: ThirdwardarchiveMerchDetailComponent, title: 'thirdwardarchive'}
+  {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'}
   
 ];
 

@@ -27,17 +27,6 @@ import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.
 import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
 import { LiftwareHeaderComponent } from './pages/flexgym/components/liftware-header/liftware-header.component';
 import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
-import { ThirdwardarchiveComponent } from './pages/projects/thirdwardarchive/thirdwardarchive.component';
-import { ThirdwardarchiveCheckoutComponent } from './pages/projects/thirdwardarchive-checkout/thirdwardarchive-checkout.component';
-import { ThirdwardarchiveMerchComponent } from './pages/projects/thirdwardarchive-merch/thirdwardarchive-merch.component';
-import { ThirdwardarchiveMerchDetailComponent } from './pages/projects/thirdwardarchive-merch-detail/thirdwardarchive-merch-detail.component';
-import { ThirdwardarchiveLoginComponent } from './pages/projects/thirdwardarchive-login/thirdwardarchive-login.component';
-import { ThirdwardarchiveAddProductComponent } from './pages/projects/thirdwardarchive-add-product/thirdwardarchive-add-product.component';
-import { ThirdwardarchiveAdminViewComponent } from './pages/projects/thirdwardarchive-admin-view/thirdwardarchive-admin-view.component';
-import { TWAHeaderComponent } from './components/twa-header/twa-header.component';
-import { ThirdwardarchiveAdminProductsDetailsComponent } from './pages/projects/thirdwardarchive-admin-products-details/thirdwardarchive-admin-products-details.component';
-import { TwaFooterComponent } from './components/twa-footer/twa-footer.component';
-import { TwaBackArrowComponent } from './components/twa-back-arrow/twa-back-arrow.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,18 +51,7 @@ import { TwaBackArrowComponent } from './components/twa-back-arrow/twa-back-arro
     LandingPageComponent,
     ResultsPageComponent,
     LiftwareHeaderComponent,
-    DataVizComponent,
-    ThirdwardarchiveComponent,
-    ThirdwardarchiveCheckoutComponent,
-    ThirdwardarchiveMerchComponent,
-    ThirdwardarchiveMerchDetailComponent,
-    ThirdwardarchiveLoginComponent,
-    ThirdwardarchiveAddProductComponent,
-    ThirdwardarchiveAdminViewComponent,
-    TWAHeaderComponent,
-    ThirdwardarchiveAdminProductsDetailsComponent,
-    TwaFooterComponent,
-    TwaBackArrowComponent
+    DataVizComponent
   ],
   imports: [
     BrowserModule,
