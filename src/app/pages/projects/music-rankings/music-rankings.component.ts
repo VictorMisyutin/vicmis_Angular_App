@@ -254,13 +254,71 @@ export class MusicRankingsComponent implements OnInit {
     "Béla Bartók"
   ]
 
+  rankings: string[] = [];
+  currentArtist: string = '';
+
   ngOnInit(): void {
+    this.current_genre = 'pop';
     this.changeGenre('rock');
   }
-  
+
   changeGenre(genre: string){
+    this.rankings = [];
     document.getElementById(this.current_genre)?.classList.remove('selected');
     this.current_genre = genre;
     document.getElementById(genre)?.classList.add('selected');
+  }
+
+  rollNewArtist() {
+    let currentArr: string[] = [];
+    switch (this.current_genre.toLowerCase()) {
+      case 'rock':
+        currentArr = this.rock_artists;
+        break;
+      case 'pop':
+        currentArr = this.pop_artists;
+        break;
+      case 'jazz':
+        currentArr = this.jazz_artists;
+        break;
+      case 'hip hop':
+        currentArr = this.hiphop_artists;
+        break;
+      case 'classical':
+        currentArr = this.classical_artists;
+        break;
+      case 'all':
+        currentArr = [
+          ...this.rock_artists,
+          ...this.pop_artists,
+          ...this.jazz_artists,
+          ...this.hiphop_artists,
+          ...this.classical_artists
+        ];
+        break;
+      default:
+        return;
+    }
+  
+    const pickRandomArtist = () => {
+      return currentArr[Math.floor(Math.random() * currentArr.length)];
+    };
+  
+    const numberOfShuffles = 15;
+    let currentShuffleNumber = 0;
+    let randomArtist = '';
+  
+    const shuffle = () => {
+      if (currentShuffleNumber < numberOfShuffles && !this.rankings.includes(randomArtist)) {
+        randomArtist = pickRandomArtist();
+        currentShuffleNumber++;
+        setTimeout(shuffle, 100); // wait 0.1 seconds and shuffle again
+        this.currentArtist = randomArtist;
+      } else {
+        this.currentArtist = randomArtist;
+      }
+    };
+  
+    shuffle();
   }
 }

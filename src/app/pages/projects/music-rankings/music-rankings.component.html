@@ -14,9 +14,9 @@
                 <p class="genre" *ngFor="let genre of genre_options" (click)="changeGenre(genre)" id={{genre}}>{{genre}}</p>    
             </div>
         </div>
-        <div class="menu-options">
-                
-        </div>
     </div>
+
+    <h2>{{currentArtist}}</h2>
+    <input type="button" value="" (click)="rollNewArtist()">
 </body>
 <app-footer></app-footer>
