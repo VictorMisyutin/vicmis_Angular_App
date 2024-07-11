@@ -1,0 +1,32 @@
+.menu-select-container{
+    margin: 0 auto;
+}
+.menu-select-container div{
+    padding: 10px 40px;
+}
+.top-menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.game-type{
+    font-size: 25px;
+    text-align: center;
+}
+.section-title{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+.menu-options{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+.genre{
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.selected{
+    color: white;
+}

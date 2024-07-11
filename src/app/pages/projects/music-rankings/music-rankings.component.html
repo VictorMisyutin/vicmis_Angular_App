@@ -1,0 +1,22 @@
+<app-header></app-header>
+<body>
+    <div class="menu-select-container">
+        <!-- <p class="section-title">Game Type</p>
+        <hr>
+        <div class="top-menu">
+            <p class="game-type">Artists</p>
+            <p class="game-type">Album</p>
+        </div> -->
+        <p class="section-title">Genre</p>
+        <hr>
+        <div class="right-menu">
+            <div class="menu-options">
+                <p class="genre" *ngFor="let genre of genre_options" (click)="changeGenre(genre)" id={{genre}}>{{genre}}</p>    
+            </div>
+        </div>
+        <div class="menu-options">
+                
+        </div>
+    </div>
+</body>
+<app-footer></app-footer>
