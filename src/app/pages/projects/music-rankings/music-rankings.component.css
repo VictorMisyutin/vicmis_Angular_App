@@ -30,3 +30,47 @@
 .selected{
     color: white;
 }
+.current-artist{
+    font-size: 24px;
+    text-align: center;
+}
+
+.roll-button{
+    width: 180px;
+    height: 70px;
+    background-color: rgb(180, 180, 180);
+    border-radius: 18px;
+    font-size: 20px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.reset-button{
+    width: 180px;
+    height: 70px;
+    background-color: rgb(180, 180, 180);
+    border-radius: 18px;
+    font-size: 20px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.rankings{
+    margin: 0 auto;
+    width: 40%;
+    height: 20px;
+}
+.ranking{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    font-size: 20px;
+    cursor: pointer;
+}
+.index{
+    font-size: 22px;
+}
+.empty-artist{
+    border-bottom: 1px white dashed;
+}
+.artist{
+    font-size: 22px;
+}

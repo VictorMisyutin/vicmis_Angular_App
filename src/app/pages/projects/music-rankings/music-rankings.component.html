@@ -16,7 +16,16 @@
         </div>
     </div>
 
-    <h2>{{currentArtist}}</h2>
-    <input type="button" value="" (click)="rollNewArtist()">
+    <input type="button" value="Roll" class="roll-button" (click)="rollNewArtist()">
+    <!-- <input type="button" value="Reset" class="reset-button" (click)="resetRankings()"> -->
+    <h2 class="current-artist">{{currentArtist}}</h2>
+
+    <div class="rankings">
+        <div class="ranking" *ngFor="let artist of rankings; let i = index" (click)="setRank(i)">
+            <div class="index">{{i+1}}.</div>
+            <div class="artist" *ngIf="artist != ''">{{artist}}</div>
+            <div class="empty-artist" *ngIf="artist == ''"></div>
+        </div>
+    </div>
 </body>
 <app-footer></app-footer>

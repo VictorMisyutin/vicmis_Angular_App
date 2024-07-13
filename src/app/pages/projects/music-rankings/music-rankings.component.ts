@@ -31,7 +31,7 @@ export class MusicRankingsComponent implements OnInit {
     'Dire Straits',
     'The Talking Heads',
     'King Crimson',
-    'Steel Dan',
+    'Steely Dan',
     'Fleetwood Mac',
     'Santana',
     'Lynyrd Skynyrd',
@@ -258,18 +258,26 @@ export class MusicRankingsComponent implements OnInit {
   currentArtist: string = '';
 
   ngOnInit(): void {
-    this.current_genre = 'pop';
-    this.changeGenre('rock');
+    this.rankings = ['', '', '', '', '', '', '', '', '', ''];
   }
 
   changeGenre(genre: string){
-    this.rankings = [];
+    this.rankings = ['', '', '', '', '', '', '', '', '', ''];
     document.getElementById(this.current_genre)?.classList.remove('selected');
     this.current_genre = genre;
     document.getElementById(genre)?.classList.add('selected');
   }
 
+  resetRankings(){
+    this.rankings = ['', '', '', '', '', '', '', '', '', ''];
+  }
+  
   rollNewArtist() {
+    if(this.current_genre == '')
+    {
+      alert("please select a genre");
+      return;
+    }
     let currentArr: string[] = [];
     switch (this.current_genre.toLowerCase()) {
       case 'rock':
@@ -306,19 +314,26 @@ export class MusicRankingsComponent implements OnInit {
   
     const numberOfShuffles = 15;
     let currentShuffleNumber = 0;
-    let randomArtist = '';
+    let randomArtist = 'asdasdadasdsadas';
   
     const shuffle = () => {
-      if (currentShuffleNumber < numberOfShuffles && !this.rankings.includes(randomArtist)) {
+      if (currentShuffleNumber < numberOfShuffles) {
         randomArtist = pickRandomArtist();
+        this.currentArtist = randomArtist;
         currentShuffleNumber++;
         setTimeout(shuffle, 100); // wait 0.1 seconds and shuffle again
-        this.currentArtist = randomArtist;
       } else {
-        this.currentArtist = randomArtist;
+        while(this.rankings.includes(randomArtist)){
+          randomArtist = pickRandomArtist();
+          this.currentArtist = randomArtist;
+        }
       }
     };
-  
+
     shuffle();
+  }
+  
+  setRank(index: number){
+    this.rankings[index] = this.currentArtist;
   }
 }
