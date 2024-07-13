@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { booleanAttribute, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-music-rankings',
@@ -256,6 +256,7 @@ export class MusicRankingsComponent implements OnInit {
 
   rankings: string[] = [];
   currentArtist: string = '';
+  placedAlready: boolean = false;
 
   ngOnInit(): void {
     this.rankings = ['', '', '', '', '', '', '', '', '', ''];
@@ -274,10 +275,11 @@ export class MusicRankingsComponent implements OnInit {
   
   rollNewArtist() {
     if(this.current_genre == '')
-    {
-      alert("please select a genre");
-      return;
-    }
+      {
+        alert("please select a genre");
+        return;
+      }
+    this.placedAlready = false;
     let currentArr: string[] = [];
     switch (this.current_genre.toLowerCase()) {
       case 'rock':
@@ -334,6 +336,13 @@ export class MusicRankingsComponent implements OnInit {
   }
   
   setRank(index: number){
-    this.rankings[index] = this.currentArtist;
+    if(this.rankings[index] == '' && !this.placedAlready){
+      this.rankings[index] = this.currentArtist;
+      this.placedAlready = true;
+    }
+    else if(this.placedAlready)
+      alert('Please roll another name')
+    else
+      alert('This spot is already taken, pick another')
   }
 }
