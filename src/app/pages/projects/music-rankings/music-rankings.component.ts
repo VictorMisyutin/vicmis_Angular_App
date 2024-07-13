@@ -38,7 +38,7 @@ export class MusicRankingsComponent implements OnInit {
     'Iron Maidon',
     'The Smiths',
     'Pearl Jam',
-    'Pixies',
+    'The Pixies',
     'The Eagles',
     'AC/DC',
     'Radiohead',
