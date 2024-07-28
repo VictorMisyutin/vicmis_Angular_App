@@ -21,6 +21,8 @@ import { LandingPageComponent } from './pages/flexgym/landing-page/landing-page.
 import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.component';
 import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 import { MusicRankingsComponent } from './pages/projects/music-rankings/music-rankings.component';
+import { BlogHomeComponent } from './pages/blog/blog-home/blog-home.component';
+import { MultiplaterGameComponent } from './pages/projects/multiplater-game/multiplater-game.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -42,7 +44,9 @@ const routes: Routes = [
   {path: 'projects/data-viz', component: DataVizComponent, title: 'Data Visualization'},
   {path: 'liftware', component: LandingPageComponent, title: 'liftware'},
   {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'},
-  {path: 'projects/music-ranking', component: MusicRankingsComponent, title: 'music ranking'}
+  {path: 'projects/music-ranking', component: MusicRankingsComponent, title: 'music ranking'},
+  {path: 'projects/multiplayer', component: MultiplaterGameComponent, title: 'multiplayer game'},
+  {path: 'blog', component: BlogHomeComponent, title: 'blog'}
   
 ];
 

@@ -28,6 +28,8 @@ import { ResultsPageComponent } from './pages/flexgym/results-page/results-page.
 import { LiftwareHeaderComponent } from './pages/flexgym/components/liftware-header/liftware-header.component';
 import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 import { MusicRankingsComponent } from './pages/projects/music-rankings/music-rankings.component';
+import { BlogHomeComponent } from './pages/blog/blog-home/blog-home.component';
+import { MultiplaterGameComponent } from './pages/projects/multiplater-game/multiplater-game.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,9 @@ import { MusicRankingsComponent } from './pages/projects/music-rankings/music-ra
     ResultsPageComponent,
     LiftwareHeaderComponent,
     DataVizComponent,
-    MusicRankingsComponent
+    MusicRankingsComponent,
+    BlogHomeComponent,
+    MultiplaterGameComponent
   ],
   imports: [
     BrowserModule,
