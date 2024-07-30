@@ -8,9 +8,9 @@ export class MultiplayerServiceService {
 
   currentMessage = this.socket.fromEvent<string>('message');
   constructor(private socket: Socket) { }
-
+  
   sendMessage(msg: string) {
     this.socket.emit('message', msg);
   }
-  
+
 }

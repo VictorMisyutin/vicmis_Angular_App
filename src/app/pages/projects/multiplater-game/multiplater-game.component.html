@@ -1,12 +1,9 @@
-<!-- <div style="text-align:center">
-    <h1>Chat App</h1>
-    <input [(ngModel)]="message" placeholder="Enter message">
-    <button (click)="sendMessage()">Send</button>
-    <ul>
-        <li *ngFor="let msg of messages">{{ msg }}</li>
-    </ul>
-</div> -->
 <body>
     <p class="title-text">organizedfort.com</p>
-    <div class="begin-button">begin</div>
+    <div class="queue-text" *ngIf="displayQueueText">
+        <h2>Thank you for joining the queue</h2>        
+        <p>Your game will begin shortly...</p>
+        <p class="waiting-text">3/8</p>
+    </div>
+    <div class="begin-button" (click)="begin_button_clicked()">begin</div>
 </body>

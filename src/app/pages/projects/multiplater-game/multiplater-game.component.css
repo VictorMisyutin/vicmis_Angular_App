@@ -1,5 +1,6 @@
 body{
     background-color: rgb(30, 30, 30);
+    color: white;
 }
 .title-text{
     margin-top: 120px;
@@ -22,6 +23,13 @@ body{
 }
 .begin-button:hover{
     cursor: pointer;
-    background-color: rgb(88, 88, 88);
-
+    width: 210px;
+    height: 65px;
+    font-size: 24px;
+    text-decoration: underline;
+}
+.queue-text{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }

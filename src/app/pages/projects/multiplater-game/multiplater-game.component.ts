@@ -9,6 +9,8 @@ import { MultiplayerServiceService } from '../../../services/multiplayer-service
 export class MultiplaterGameComponent {
   message: string = '';
   messages: string[] = [];
+  
+  displayQueueText: boolean = false;
 
   constructor(private MultiplayerServiceService: MultiplayerServiceService) {
     this.MultiplayerServiceService.currentMessage.subscribe(msg => {
@@ -20,4 +22,11 @@ export class MultiplaterGameComponent {
     this.MultiplayerServiceService.sendMessage(this.message);
     this.message = '';
   }
+
+  begin_button_clicked(){
+    this.displayQueueText = true;
+  }
+
+
+
 }
