@@ -30,6 +30,9 @@ import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 import { MusicRankingsComponent } from './pages/projects/music-rankings/music-rankings.component';
 import { BlogHomeComponent } from './pages/blog/blog-home/blog-home.component';
 import { MultiplaterGameComponent } from './pages/projects/multiplater-game/multiplater-game.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +67,8 @@ import { MultiplaterGameComponent } from './pages/projects/multiplater-game/mult
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

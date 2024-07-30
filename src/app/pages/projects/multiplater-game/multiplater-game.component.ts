@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
-// import { Server } from "socket.io";
+import { Component, OnInit } from '@angular/core';
+import { MultiplayerServiceService } from '../../../services/multiplayer-service.service';
 
 @Component({
-  selector: 'app-multiplater-game',
+  selector: 'multiplater-game',
   templateUrl: './multiplater-game.component.html',
-  styleUrl: './multiplater-game.component.css'
+  styleUrls: ['./multiplater-game.component.css']
 })
 export class MultiplaterGameComponent {
-  // const { Server } = require("socket.io");
+  message: string = '';
+  messages: string[] = [];
 
-  // constructor(server: Server){};
+  constructor(private MultiplayerServiceService: MultiplayerServiceService) {
+    this.MultiplayerServiceService.currentMessage.subscribe(msg => {
+      this.messages.push(msg);
+    });
+  }
+
+  sendMessage() {
+    this.MultiplayerServiceService.sendMessage(this.message);
+    this.message = '';
+  }
 }
