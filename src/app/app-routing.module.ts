@@ -23,6 +23,8 @@ import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 import { MusicRankingsComponent } from './pages/projects/music-rankings/music-rankings.component';
 import { BlogHomeComponent } from './pages/blog/blog-home/blog-home.component';
 import { MultiplaterGameComponent } from './pages/projects/multiplater-game/multiplater-game.component';
+import { AnIntroductionToVimComponent } from './pages/blog/posts/an-introduction-to-vim/an-introduction-to-vim.component';
+import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-experience-with-linux-and-windows/my-experience-with-linux-and-windows.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -46,7 +48,9 @@ const routes: Routes = [
   {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'},
   {path: 'projects/music-ranking', component: MusicRankingsComponent, title: 'music ranking'},
   {path: 'projects/multiplayer', component: MultiplaterGameComponent, title: 'multiplayer game'},
-  {path: 'blog', component: BlogHomeComponent, title: 'blog'}
+  {path: 'blog', component: BlogHomeComponent, title: 'blog'},
+  {path: 'blog/my-experience-with-linux-and-windows', component: MyExperienceWithLinuxAndWindowsComponent, title: 'Linux and Windows'},
+  {path: 'blog/an-introduction-to-vim', component: AnIntroductionToVimComponent, title: 'intro to vim'}
   
 ];
 

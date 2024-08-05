@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MultiplayerServiceService } from '../../../services/multiplayer-service.service';
+// import { MultiplayerServiceService } from '../../../services/multiplayer-service.service';
 
 @Component({
   selector: 'multiplater-game',
@@ -7,25 +7,25 @@ import { MultiplayerServiceService } from '../../../services/multiplayer-service
   styleUrls: ['./multiplater-game.component.css']
 })
 export class MultiplaterGameComponent {
-  message: string = '';
-  messages: string[] = [];
+  // message: string = '';
+  // messages: string[] = [];
   
-  displayQueueText: boolean = false;
+  // displayQueueText: boolean = false;
 
-  constructor(private MultiplayerServiceService: MultiplayerServiceService) {
-    this.MultiplayerServiceService.currentMessage.subscribe(msg => {
-      this.messages.push(msg);
-    });
-  }
+  // constructor(private MultiplayerServiceService: MultiplayerServiceService) {
+  //   this.MultiplayerServiceService.currentMessage.subscribe(msg => {
+  //     this.messages.push(msg);
+  //   });
+  // }
 
-  sendMessage() {
-    this.MultiplayerServiceService.sendMessage(this.message);
-    this.message = '';
-  }
+  // sendMessage() {
+  //   this.MultiplayerServiceService.sendMessage(this.message);
+  //   this.message = '';
+  // }
 
-  begin_button_clicked(){
-    this.displayQueueText = true;
-  }
+  // begin_button_clicked(){
+  //   this.displayQueueText = true;
+  // }
 
 
 

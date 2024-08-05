@@ -1,0 +1,43 @@
+body{
+    margin: 4vh 25%;
+    color: white;
+}
+.title{
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.subheader{
+    margin-bottom: 20px;
+}
+.subtitle{
+    font-size: 20px;
+}
+/* .date{
+    color: black;
+} */
+.author{
+    font-size: 23px;
+}
+/* .content{
+    font-size: 17px;
+} */
+.content p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    line-height: 30px;
+}
+.content em{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    line-height: 30px;
+}
+.content u{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    line-height: 30px;
+}
+.section-title{
+    font-size: 30px;
+    /* color: black; */
+}

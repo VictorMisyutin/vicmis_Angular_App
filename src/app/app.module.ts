@@ -30,9 +30,11 @@ import { DataVizComponent } from './pages/projects/data-viz/data-viz.component';
 import { MusicRankingsComponent } from './pages/projects/music-rankings/music-rankings.component';
 import { BlogHomeComponent } from './pages/blog/blog-home/blog-home.component';
 import { MultiplaterGameComponent } from './pages/projects/multiplater-game/multiplater-game.component';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { AnIntroductionToVimComponent } from './pages/blog/posts/an-introduction-to-vim/an-introduction-to-vim.component';
+import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-experience-with-linux-and-windows/my-experience-with-linux-and-windows.component';
+// import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
-const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
+// const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,15 +62,17 @@ const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
     DataVizComponent,
     MusicRankingsComponent,
     BlogHomeComponent,
-    MultiplaterGameComponent
+    MultiplaterGameComponent,
+    AnIntroductionToVimComponent,
+    MyExperienceWithLinuxAndWindowsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    SocketIoModule.forRoot(config)
+    HttpClientModule
+    // SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
