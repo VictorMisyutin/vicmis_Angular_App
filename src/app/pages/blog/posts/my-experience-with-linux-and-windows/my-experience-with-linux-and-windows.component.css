@@ -45,7 +45,7 @@ body{
 }
 .content .link:hover{
     cursor: pointer;
-    color: rgb(0, 0, 157);
+    color: rgb(166, 166, 232);
 }
 .section-title{
     font-size: 30px;
