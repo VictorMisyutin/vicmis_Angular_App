@@ -20,7 +20,7 @@ body{
     font-size: 23px;
 }
 /* .content{
-    font-size: 17px;
+    border: 2px red solid;
 } */
 .content p{
     font-family: 'Times New Roman', Times, serif;
@@ -50,4 +50,15 @@ body{
 .section-title{
     font-size: 30px;
     /* color: black; */
+}
+code{
+    display: block;
+    line-height: 30px;
+    width: 95.5%;
+    background-color: rgb(129, 129, 129);
+    padding: 20px 20px;
+    border-radius: 12px;
+    border: 1px black solid;
+    font-family: monospace;
+    font-size: 18px;
 }
