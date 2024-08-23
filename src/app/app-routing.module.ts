@@ -50,7 +50,7 @@ const routes: Routes = [
   {path: 'projects/multiplayer', component: MultiplaterGameComponent, title: 'multiplayer game'},
   {path: 'blog', component: BlogHomeComponent, title: 'blog'},
   {path: 'blog/my-experience-with-linux-and-windows', component: MyExperienceWithLinuxAndWindowsComponent, title: 'Linux and Windows'},
-  {path: 'blog/an-introduction-to-vim', component: AnIntroductionToVimComponent, title: 'intro to vim'}
+  {path: 'blog/an-introduction-to-vim', component: AnIntroductionToVimComponent, title: 'Introduction to Vim'}
   
 ];
 
