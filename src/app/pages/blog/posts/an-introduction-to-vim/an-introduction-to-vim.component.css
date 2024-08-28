@@ -1,0 +1,16 @@
+.vim-cheat-sheet{
+    border: 2px black solid
+}
+.vim-cheat-sheet-row{
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr 0.3fr;
+}
+.vim-cheat-sheet-row p{
+    margin: 0;
+    padding: 10px 5px;
+    background-color: rgb(110, 117, 117);
+    border: 1px black solid
+}
+.vim-cheat-sheet-row p:first-child{
+    text-align: center;
+}
