@@ -17,31 +17,217 @@
         </p>
         <p>
             However, I never wanted to use Vim because unlike Nano, it seemed far more complex and difficult to use. I remember the first
-            time I tried to use Vim instead of Nano I could not even figure out how to write to the file. For that reason I used nano for 
-            about four months.
+            time I tried to use Vim instead of Nano I could not even figure out how to write to the file.
         </p>
         <p>
-            Then I watched some random YouTube video where some guy was using Vim and was literally making magic on my screen. He knew like
+            Then I watched YouTube video where some guy was using Vim and was literally making magic on my screen. He knew
             every shortcut and command and made Vim look extremly powerful. Many of those commands and shortcuts are not even possible
-            using Nano.
+            using Nano, which is why I decided to start learning Vim.
         </p>
-        <p>
-            Then I started learning Vim and haven't looked back.
-        </p>
-        <h2 class="section-title">What is Vim</h2>
+        
+	<h2 class="section-title">What is Vim</h2>
         <p>
             Vim and Nano are both in-terminal text editors. Since they are terminal based that means that you can only interact with
             them using your keyboard, no mouse inputs. This is quite annoying but they are very useful when you SSH onto another system
-            and edit and read files on that system. 
+            and need to edit and read files on that system. 
         </p>
-        <!-- add more to 'What is Vim' section? -->
-        <h2 class="section-title">Vim Modes</h2>
-        <p>
-            When you are using Vim, there are multiple modes that you have to navigate between.
-        </p>
+      
+        <h2 class="section-title">How to Open Vim</h2>
+	<p>
+	    To open Vim on a Linux system, first check if it is already installed. To do that run this command.
+	</p>
+	<code>
+	    vim --version
+	</code>
+	<p>
+	    If you get a message saying command not found, run: 
+	</p>
+	<code>
+	    apt install vim 
+	</code>
+	<p>
+	    If it prompts you to allocate space on your disk for this install press "y"
+	</p>
+	<p>
+	    If you are on Windows or Mac you can find install directions <a class="link" target="_blank" href="https://www.vim.org/download.php"> here</a>.
+	</p>
 
+	<h2 class="section-title">Vim Modes</h2>
+	<p>
+		Vim is essentially broken into seven main modes. Normal, visual-block, select, insert, command-line, ex, and terminal mode.
+		However, I will mostly be focusing on four: normal, command, visual-block, and insert, which you will be using the most.
+	</p>
+	
+	<h2 class="section-title">Normal Mode</h2>
+	<p>
+	    Normal mod is the mode that you start in when Vim first opens. You cannot write directly to thie file in this mode
+	    because it is ment to be used for navigation and certain shortcuts. You can navigate the file in normal mode using 
+	    your arrow key.
+	</p>
 
-        
+	<p>
+	    You can always navigate back to normal mode by pressing the escape key.
+	</p>
+
+	<h2 class="section-title">Insert Mode</h2>
+	<p>
+	    Insert mode is the mode that you use to actually change the contents of the file. To enter insert mode press "i".
+	</p>
+	<p>
+	    Once you are in insert mode you can write to the file as you would in and IDE or notepad. The only difference
+	    is that you some shortcuts dont work like they do in and IDE. For example, you cannot press "ctrl" + "x" to delete
+	    a line. Instead, you would have to navigate back to normal mode (using the escape key) and press "dd" quickly on
+	    the line you want to remove.
+	</p>
+	
+	<h2 class="section-title">Visual-Block Mode</h2>
+	<p>
+		If you want to copy a few words or a phrase you will have to use the visual-block mode. To do this, navigate to where you want
+		to start copying. Then press "ctrl" + "v" to enter visual-block mode. Then, use navigate to where you want the copy to end. You should
+		see all of the text get selected. To copy that selected text press "y", which should copy the text and place you back in normal mode.
+		Then, like before, press "p" wherever you want to paste
+	</p>
+	<p>
+		You can also use the visual-block mode to delete a string. Like before, use visual-block mode to select some text andthen press "d" to cut.
+	</p>
+
+	<h2 class="section-title">Command-Line Mode</h2>
+	<p>
+	    Command mode is used to enter other commands that make Vim more powerfull. To enter command mode
+	    you first have to be in normal mode. Once in normal mode you can press ":" to enter command mode. 
+	</p>
+	<p>
+	    Once you press ":" you will notice that at the bottom left of your screen you there is a small line that contains a 
+	    ":" where you can enter your commands. 
+	</p>
+	<p>
+	    One such command is ":w" (write) which you can use to write to the file. There is also ":q" (quite) which you can used
+	    to quit vim.
+	</p>
+	<p>
+	    An important thing to note is that if you add "!" to the end of a command, it overrides any errors or warning and runs
+	    the command anyway. For example, if you make changes to a file and then try to run ":q" without first saving using ":w"
+	    you will get a warning saying that you have not saved your changes. However, you can override this warning by running
+	    ":q!".
+	<p>
+
+	
+
+	<h2 class="section-title">Other commands</h2>
+	<p>
+	    Here I am just going to list a bunch of other commands that I use commonly.
+	</p>
+	<p>
+	    As I mentioned before you can use ":w" to save the file and ":q" to quit the file. However,
+	    you can also you use
+	</p>
+	<code>
+	    :wq
+	</code>
+	<p>
+	    To simultaneously save and exit the file.
+	</p>
+	<p>
+	    You can also use 
+	</p>
+	<code>
+	    :set number	
+	</code>
+	<p>
+	    or
+	</p>
+	<code>
+	    :set nu
+	</code>
+	<p>
+	    To display the line numbers on the left side of the screen.
+	</p>
+	<p>
+		To hide the numbers again you can run
+	</p>
+	<code>
+		:set nonumber
+	</code>
+	<p>
+		or
+	</p>
+	<code>
+		:set nonu
+	</code>
+	<p>
+		To navigate to the end of the file you can run
+	</p>
+	<code>
+		:$
+	</code>
+	<p>To go to the start of a file you cand press "gg" (g two times quickly) to navigate back to the start of the file.</p>
+	<p>
+		If you want to delete a line, in normal mode navigate to that line and press "dd" (d two times quickly) to delete that line.
+	</p>
+	<p>
+		If you want to copy a line in normal mode (whithou going to visual-block mode) navigate to that line and press "yy" to copy/yank that line.
+		Then, again in normal mode navigate to where you want to paste that line and press "p" to paste.
+		If you want to copy multiple lines after your cursor you can type in a number before pressing "yy". For example,
+		entering "4yy" will copy/yank our lines.
+	</p>
+	<p>
+		In normal mode, if you want to start a new line you can press "o". Note that this will place you in a new line and move you into
+		insert mode.
+	</p>
+	<p>
+		You can search for a word or phrase in your file by running the command
+	</p>
+	<code>
+		:/&lt;string_you_want_to_search&gt; 
+	</code>
+	<p>
+		It is important to know that the string you are searching for is case sensative. That command will find the first instance of that
+		if there is one. To find the next instance of that string you can press "n".
+	</p>
+	<p>
+		If you want to undo something, you can press "u" in normal mode
+	</p>
+	<p>
+		The last two commands I want to go over are "split" and "vplit". Both of these commands are used to display two or more files on one screen. 
+		If you run
+	</p>
+	<code>
+		:split&lt;name_of_second_file&gt; 
+	</code>
+	<p>
+		It will open that second file above the file you already have open. These screens are seperate, so any input or command you do to one
+		file will not affect the other. If you want to switch between the files you have to press "ctrl" + "ww".
+	</p>
+	<p>
+		When you first open the second file, both files will take up equal amounts of space on in the terminal. If you want to resize either file
+		you can switch to that file and run
+	</p>
+	<code>
+		:resize &lt;new_size&gt;
+	</code>
+	<p>
+		Where 0 hides the file and the larger the number the bigger the file is displayed.
+	</p>
+	<p>
+		Alternatively, you can run
+	</p>
+	<code>
+		:vertical split &lt;name_of_second_file&gt;
+	</code>
+	<p>
+		This way, the files will display vertically side by side. If you prefer this, you have to resize the windows by using
+	</p>
+	<code>
+		:vertical resize &lt;new_size&gt;	
+	</code>
+	<p>
+		I know that all of those command and modes might be overwhelming and seem to complicated but I urge you to try Vim.
+		Just like anything you will eventually get used to all of those commands and shortcuts. Although you might be slower at first,
+		Vim will save you a lot of time in the long run.
+	</p>
+	<p>
+		To help you rember all of the commands and shortcuts I created this cheat sheet.
+	</p>
 
         <!-- 
         Eventually, make a 2 by X table where the left column is the command
