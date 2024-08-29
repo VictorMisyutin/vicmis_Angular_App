@@ -1,7 +1,7 @@
 <app-header></app-header>
 <body>
     <div class="subheader">
-        <p class="date">August 4th, 2024</p>
+        <p class="date">August 28th, 2024</p>
         <div class="title">An Introduction to Vim for Beginners</div>
         <p class="author">Victor Misyutin</p>
         <hr>
@@ -9,25 +9,25 @@
 
     <div class="content">
         <p>
-            My first introduction to terminal text editors was using Nano to help set up my Ubuntu EC2 intance.
-            The only reason I used Nano was because that was the text editor that the guy in the video was using.
+            My first introduction to terminal text editors was using Nano to help set up my Ubuntu EC2 instance.
+            The only reason I used Nano was because it was the text editor that the guy in the video was using.
         </p>
         <p>
-            It wasn't until about a month later that I even knew there were alternative to Nano. Mainly, Vim.
+            It wasn't until about a month later that I even knew there were alternatives to Nano, mainly Vim.
         </p>
         <p>
-            However, I never wanted to use Vim because unlike Nano, it seemed far more complex and difficult to use. I remember the first
+            However, I never wanted to use Vim because, unlike Nano, it seemed far more complex and difficult to use. I remember the first
             time I tried to use Vim instead of Nano I could not even figure out how to write to the file.
         </p>
         <p>
-            Then I watched YouTube video where some guy was using Vim and was literally making magic on my screen. He knew
-            every shortcut and command and made Vim look extremly powerful. Many of those commands and shortcuts are not even possible
-            using Nano, which is why I decided to start learning Vim.
+            Then I watched a YouTube video where some guy was using Vim and was literally making magic on my screen. He knew
+            every shortcut and command and made Vim look extremely powerful. Many of those commands and shortcuts are not even possible
+            using Nano, so I decided to start learning Vim.
         </p>
         
 		<h2 class="section-title">What is Vim</h2>
 			<p>
-				Vim and Nano are both in-terminal text editors. Since they are terminal based that means that you can only interact with
+				Vim and Nano are both in-terminal text editors. Since they are terminal-based that means that you can only interact with
 				them using your keyboard, no mouse inputs. This is quite annoying but they are very useful when you SSH onto another system
 				and need to edit and read files on that system. 
 			</p>
@@ -60,8 +60,8 @@
 		
 		<h2 class="section-title">Normal Mode</h2>
 		<p>
-			Normal mod is the mode that you start in when Vim first opens. You cannot write directly to thie file in this mode
-			because it is ment to be used for navigation and certain shortcuts. You can navigate the file in normal mode using 
+			Normal mode is the mode that you start in when Vim first opens. You cannot write directly to the file in this mode
+			because it is meant to be used for navigation and certain shortcuts. You can navigate the file in normal mode using 
 			your arrow key.
 		</p>
 
@@ -74,8 +74,8 @@
 			Insert mode is the mode that you use to actually change the contents of the file. To enter insert mode press "i".
 		</p>
 		<p>
-			Once you are in insert mode you can write to the file as you would in and IDE or notepad. The only difference
-			is that you some shortcuts dont work like they do in and IDE. For example, you cannot press "ctrl" + "x" to delete
+			Once you are in insert mode you can write to the file as you would in an IDE or notepad. The only difference
+			is that you some shortcuts don't work as they do in an IDE. For example, you cannot press "ctrl" + "x" to delete
 			a line. Instead, you would have to navigate back to normal mode (using the escape key) and press "dd" quickly on
 			the line you want to remove.
 		</p>
@@ -83,8 +83,8 @@
 		<h2 class="section-title">Visual-Block Mode</h2>
 		<p>
 			If you want to copy a few words or a phrase you will have to use the visual-block mode. To do this, navigate to where you want
-			to start copying. Then press "ctrl" + "v" to enter visual-block mode. Then, use navigate to where you want the copy to end. You should
-			see all of the text get selected. To copy that selected text press "y", which should copy the text and place you back in normal mode.
+			to start copying. Then press "ctrl" + "v" to enter visual-block mode. Then, navigate to where you want the copy to end. You should
+			see all of the text selected. To copy that selected text press "y", which should copy the text and place you back in normal mode.
 			Then, like before, press "p" wherever you want to paste
 		</p>
 		<p>
@@ -93,19 +93,19 @@
 
 		<h2 class="section-title">Command-Line Mode</h2>
 		<p>
-			Command mode is used to enter other commands that make Vim more powerfull. To enter command mode
-			you first have to be in normal mode. Once in normal mode you can press ":" to enter command mode. 
+			Command mode is used to enter other commands that make Vim more powerful. To enter command mode
+			you first have to be in normal mode. Once in normal mode, you can press ":" to enter command mode. 
 		</p>
 		<p>
-			Once you press ":" you will notice that at the bottom left of your screen you there is a small line that contains a 
+			Once you press ":" you will notice that at the bottom left of your screen there is a small line that contains a 
 			":" where you can enter your commands. 
 		</p>
 		<p>
-			One such command is ":w" (write) which you can use to write to the file. There is also ":q" (quite) which you can used
+			One such command is ":w" (write) which you can use to write to the file. There is also ":q" (quite) which you can use
 			to quit vim.
 		</p>
 		<p>
-			An important thing to note is that if you add "!" to the end of a command, it overrides any errors or warning and runs
+			An important thing to note is that if you add "!" to the end of a command, it overrides any errors or warnings and runs
 			the command anyway. For example, if you make changes to a file and then try to run ":q" without first saving using ":w"
 			you will get a warning saying that you have not saved your changes. However, you can override this warning by running
 			":q!".
@@ -119,7 +119,7 @@
 		</p>
 		<p>
 			As I mentioned before you can use ":w" to save the file and ":q" to quit the file. However,
-			you can also you use
+			you can also use
 		</p>
 		<code>
 			:wq
@@ -160,12 +160,12 @@
 		<code>
 			:$
 		</code>
-		<p>To go to the start of a file you cand press "gg" (g two times quickly) to navigate back to the start of the file.</p>
+		<p>To go to the start of a file you can press "gg" (g two times quickly) to navigate back to the start of the file.</p>
 		<p>
 			If you want to delete a line, in normal mode navigate to that line and press "dd" (d two times quickly) to delete that line.
 		</p>
 		<p>
-			If you want to copy a line in normal mode (whithou going to visual-block mode) navigate to that line and press "yy" to copy/yank that line.
+			If you want to copy a line in normal mode (without going to visual-block mode) navigate to that line and press "yy" to copy/yank that line.
 			Then, again in normal mode navigate to where you want to paste that line and press "p" to paste.
 			If you want to copy multiple lines after your cursor you can type in a number before pressing "yy". For example,
 			entering "4yy" will copy/yank our lines.
@@ -181,25 +181,25 @@
 			:/&lt;string_you_want_to_search&gt; 
 		</code>
 		<p>
-			It is important to know that the string you are searching for is case sensative. That command will find the first instance of that
+			It is important to know that the string you are searching for is case-sensative. That command will find the first instance of that
 			if there is one. To find the next instance of that string you can press "n".
 		</p>
 		<p>
 			If you want to undo something, you can press "u" in normal mode
 		</p>
 		<p>
-			The last two commands I want to go over are "split" and "vplit". Both of these commands are used to display two or more files on one screen. 
+			The last two commands I want to go over are "split" and "vsplit". Both of these commands are used to display two or more files on one screen. 
 			If you run
 		</p>
 		<code>
 			:split&lt;name_of_second_file&gt; 
 		</code>
 		<p>
-			It will open that second file above the file you already have open. These screens are seperate, so any input or command you do to one
+			It will open that second file above the file you already have open. These screens are separate, so any input or command you do to one
 			file will not affect the other. If you want to switch between the files you have to press "ctrl" + "ww".
 		</p>
 		<p>
-			When you first open the second file, both files will take up equal amounts of space on in the terminal. If you want to resize either file
+			When you first open the second file, both files will take up equal amounts of space in the terminal. If you want to resize either file
 			you can switch to that file and run
 		</p>
 		<code>
@@ -215,18 +215,24 @@
 			:vertical split &lt;name_of_second_file&gt;
 		</code>
 		<p>
+			or
+		</p>
+		<code>
+			:vsplit &lt;name_of_second_file&gt;
+		</code>
+		<p>
 			This way, the files will display vertically side by side. If you prefer this, you have to resize the windows by using
 		</p>
 		<code>
 			:vertical resize &lt;new_size&gt;	
 		</code>
 		<p>
-			I know that all of those command and modes might be overwhelming and seem to complicated but I urge you to try Vim.
+			I know that all of those commands and modes might be overwhelming and seem too complicated but I urge you to try Vim.
 			Just like anything you will eventually get used to all of those commands and shortcuts. Although you might be slower at first,
 			Vim will save you a lot of time in the long run.
 		</p>
 		<p>
-			To help you rember all of the commands and shortcuts I created this cheat sheet.
+			To help you remember all of the commands and shortcuts I created this cheat sheet.
 		</p>
 
 		<div class="vim-cheat-sheet">
@@ -311,7 +317,7 @@
 				<p>Horizontally open new file in same terminal window.</p>
 			</div>
 			<div class="vim-cheat-sheet-row">
-				<p>":vertical split &lt;file_name&gt;"</p>
+				<p>":vertical split &lt;file_name&gt;" <br>or <br>:vsplit &lt;file_name&gt;"</p>
 				<p>Vertically open new file in same terminal window.</p>
 			</div>
 			<div class="vim-cheat-sheet-row">
@@ -329,7 +335,7 @@
 		</div>
 
 		<p>
-			Thank you for reading and goodluck with Vim!
+			Thank you for reading and good luck with Vim!
 		</p>
     </div>
 
