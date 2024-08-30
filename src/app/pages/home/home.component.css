@@ -84,7 +84,7 @@ body{
     width: 760px;
     height: 435px;
     position: absolute;
-    top: 200px;
+    top: 250px;
     left: 200px;
     background-color: #D0D0D0;
     border: 2px solid white;
@@ -180,6 +180,144 @@ h2{
     letter-spacing: 2px;
 }
 
+#calculator-window {
+    width: 480px;
+    height: 580px;
+    position: absolute;
+    top: 170px;
+    left: 1150px;
+    background-color: #D0D0D0;
+    border: 2px solid white;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
+#calculator-window-header {
+    background-color: #0000a8;
+    border-bottom: 1px white solid;
+    color: white;
+    padding: 3px;
+    cursor: move;
+    user-select: none; /* Prevents text selection */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.calculator-input-output-screen{
+    display: flex;
+    margin: 20px auto;
+    width: 430px;
+    height: 50px;
+    background-color: rgb(230, 230, 230);
+    border-top: 3px black solid;
+    border-right: 3px white solid;
+    border-bottom: 3px white solid;
+    border-left: 3px black solid;
+    color: black;
+    padding: 0 7px;
+    font-family: 'pixel-arial';
+    font-size: 35px;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.top-row{
+    display: flex;
+    margin: 0 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-row .empty-spot{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(214, 214, 214);
+    border-top: 2px black solid;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+    border-left: 2px black solid;
+    margin-left: 10px;
+}
+.top-row .buttons{
+    display: flex;
+    gap: 6px;
+}
+.top-row .buttons .button{
+    background-color: rgb(214, 214, 214);
+    border-top: 2px white solid;
+    border-right: 2px black solid;
+    border-bottom: 2px black solid;
+    border-left: 2px white solid;
+    padding: 0 5px;
+    min-width: 10px;
+}
+.top-row .buttons .button:hover{
+    cursor: pointer;
+    background-color: rgb(196, 196, 196);
+    border-top: 2px black solid;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+    border-left: 2px black solid;
+}
+.button p{
+    text-align: center;
+    color:black;
+    font-family: 'pixel-arial';
+    font-size: 13px;
+}
+.bottom-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-left: 13px;
+}
+.bottom-buttons .button{
+    background-color: rgb(214, 214, 214);
+    border-top: 2px white solid;
+    border-right: 2px black solid;
+    border-bottom: 2px black solid;
+    border-left: 2px white solid;
+    padding: 0 5px;
+    width: 55px;
+    margin-bottom: 10px;
+}
+.bottom-buttons .button:hover{
+    cursor: pointer;
+    background-color: rgb(196, 196, 196);
+    border-top: 2px black solid;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+    border-left: 2px black solid;
+}
+.bottom-right-buttons .row{
+    display: flex;
+    margin-right: 15px;
+    gap: 5px;
+}
+.bottom-right-buttons .row .button{
+    width: 54px;
+    height: 45px;
+}
 
+.task-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px; 
+    background-color: #C0C0C0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; 
+  }
   
+  .left-task-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .rigth-task-bar {
+    display: flex;
+    align-items: center;
+  }

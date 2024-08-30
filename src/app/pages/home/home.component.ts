@@ -1,14 +1,18 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
-
+export class HomeComponent implements OnInit {
+  calculator_output_string: string = '0';
+  calculator_output: number = 0;
   @ViewChild('welcomeWindow', { static: true }) welcomeWindow!: ElementRef;
   @ViewChild('welcomeWindowHeader', { static: true }) welcomeWindowHeader!: ElementRef;
+
+  @ViewChild('calculatorWindow', { static: true }) calculatorWindow!: ElementRef;
+  @ViewChild('calculatorWindowHeader', { static: true }) calculatorWindowHeader!: ElementRef;
 
   private pos1 = 0;
   private pos2 = 0;
@@ -16,27 +20,25 @@ export class HomeComponent implements OnInit{
   private pos4 = 0;
 
   ngOnInit(): void {
-    this.makeDraggable();
+    this.makeDraggable(this.welcomeWindow.nativeElement, this.welcomeWindowHeader.nativeElement);
+    this.makeDraggable(this.calculatorWindow.nativeElement, this.calculatorWindowHeader.nativeElement);
   }
 
-  makeDraggable(): void {
-    const element = this.welcomeWindow.nativeElement;
-    const header = this.welcomeWindowHeader.nativeElement;
-
-    header.onmousedown = (e: MouseEvent) => this.dragMouseDown(e);
+  makeDraggable(element: HTMLElement, header: HTMLElement): void {
+    header.onmousedown = (e: MouseEvent) => this.dragMouseDown(e, element);
   }
 
-  dragMouseDown(e: MouseEvent): void {
+  dragMouseDown(e: MouseEvent, element: HTMLElement): void {
     e.preventDefault();
     // Get the mouse cursor position at startup:
     this.pos3 = e.clientX;
     this.pos4 = e.clientY;
 
     document.onmouseup = () => this.closeDragElement();
-    document.onmousemove = (event: MouseEvent) => this.elementDrag(event);
+    document.onmousemove = (event: MouseEvent) => this.elementDrag(event, element);
   }
 
-  elementDrag(e: MouseEvent): void {
+  elementDrag(e: MouseEvent, element: HTMLElement): void {
     e.preventDefault();
     // Calculate the new cursor position:
     this.pos1 = this.pos3 - e.clientX;
@@ -44,15 +46,13 @@ export class HomeComponent implements OnInit{
     this.pos3 = e.clientX;
     this.pos4 = e.clientY;
 
-    const element = this.welcomeWindow.nativeElement;
-
     // Calculate new positions
     let newTop = element.offsetTop - this.pos2;
     let newLeft = element.offsetLeft - this.pos1;
 
     // Boundary checks
     const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight
+    const windowHeight = window.innerHeight;
     const elementWidth = element.offsetWidth;
     const elementHeight = element.offsetHeight;
 

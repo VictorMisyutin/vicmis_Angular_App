@@ -1,52 +1,10 @@
-<!-- <div class="feature-upper"> -->
-  <!-- <h3>Little Bro</h3> -->
-  <!-- <h4>"JDubz", <a href="https://www.youtube.com/watch?v=IuRaP1Yf0Sg">13 years ago</a></h4> -->
-  <!-- <h4>13 years ago, <a href="https://www.youtube.com/watch?v=3Shim5Wk2mc">JDubz with backbling</a>, <a href="https://www.youtube.com/watch?v=RrSWewPFKss">W performer</a></h4> -->
-  <!-- <hr> -->
-<!-- </div> -->
-
-<!-- <app-header></app-header>
-
-<main class="main">
-    <body>
-  
-      <section class="hero">
-          <h2>Welcome to vicmis</h2>
-          <p>Explore, Learn, and Build</p>
-          <hr>
-        </section>
-      
-      <section class="features">
-      <div class="feature-upper">
-        <h3>Film of the year by Dylan Kaufmann</h3>
-        <h4>"Stay", <a href="https://www.youtube.com/watch?v=zTpTam8P8Es">Watch Now!</a></h4>
-        <hr>
-      </div>
-      
-        <div class="feature-left">
-            <h3>Discover Exciting Projects</h3>
-            <p>
-              Browse through a diverse range of projects created by our community of developers. From web development and mobile apps to machine learning and AI, 
-              there's something for everyone. Get inspired, collaborate, and contribute to open-source projects that make a difference.
-            </p>
-          </div>
-
-          <div class="feature-right">
-            <h3>Powerful APIs at Your Fingertips</h3>
-            <p>
-              Unlock the potential of your applications with our robust APIs. Seamlessly integrate powerful features and functionalities into your projects, 
-              whether you're building a website, mobile app, or software solution. Our APIs are designed to streamline development and enhance user experiences.
-            </p>
-          </div>
-      </section>
-  
-    </body>
-</main>
-
-<app-footer></app-footer> -->
 
 <body>
   <app-header></app-header>
+
+
+
+
   <div id="welcome-window" #welcomeWindow>
     <div id="welcome-window-header" #welcomeWindowHeader>
       <div class="title"><p>Welcome to vicmis.com</p></div>
@@ -86,5 +44,168 @@
     </div>
   </div>
 
+  <div id="calculator-window" #calculatorWindow>
+    <div id="calculator-window-header" #calculatorWindowHeader>
+      <div class="title"><p>Calculator</p></div>
+      <div class="close-button"><p>x</p></div>
+    </div>
+    <div id="calculator-window-content">
+      <div class="calculator-input-output-screen">
+        {{calculator_output_string}}
+      </div>
+      <div class="calculator-inputs">
+        <div class="top-row">
+          <div class="empty-spot"></div>
+          <div class="buttons">
+            <div class="button">
+              <p>Backspace</p>
+            </div>
+            <div class="button">
+              <p>CE</p>
+            </div>
+            <div class="button">
+              <p>C</p>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-buttons">
+          <div class="left-column">
+            <div class="button">
+              <p>MC</p>
+            </div>
+            <div class="button">
+              <p>MR</p>
+            </div>
+            <div class="button">
+              <p>MS</p>
+            </div>
+            <div class="button">
+              <p>M+</p>
+            </div>
+            <div class="button" style="margin-top: 23px;">
+              <p>pi</p>
+            </div>
+            <div class="button">
+              <p>e</p>
+            </div>
+          </div>
+          <div class="bottom-right-buttons">
+            <div class="row">
+              <div class="button">
+                <p>7</p>
+              </div>
+              <div class="button">
+                <p>8</p>
+              </div>
+              <div class="button">
+                <p>9</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 17px; margin-top: 10px;">/</p>
+              </div>
+              <div class="button">
+                <p>sqt</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="button">
+                <p>4</p>
+              </div>
+              <div class="button">
+                <p>5</p>
+              </div>
+              <div class="button">
+                <p>6</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 30px; font-family: 'arial'; margin-top: 14px;">*</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 17px; margin-top: 10px;">%</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="button">
+                <p>1</p>
+              </div>
+              <div class="button">
+                <p>2</p>
+              </div>
+              <div class="button">
+                <p>3</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 23px; margin-top: 2px;">-</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 15px; margin-top: 12px;">1/x</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="button">
+                <p>0</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 15px; margin-top: 12px;">+/-</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 25px; margin-top: 2px;">.</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 17px; margin-top: 10px;">+</p>
+              </div>
+              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+                <p style="font-size: 17px; margin-top: 10px;">=</p>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 13px;">
+              <div class="button">
+                <p>sin</p>
+              </div>
+              <div class="button">
+                <p>cos</p>
+              </div>
+              <div class="button">
+                <p>tan</p>
+              </div>
+              <div class="button">
+                <p>ln</p>
+              </div>
+              <div class="button">
+                <p>log</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="button">
+                <p>exp</p>
+              </div>
+              <div class="button">
+                <p>x^2</p>
+              </div>
+              <div class="button">
+                <p>x^3</p>
+              </div>
+              <div class="button">
+                <p>x^y</p>
+              </div>
+              <div class="button">
+                <p>n!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+  </div>
+  
+  <div class="task-bar">
+    <div class="left-task-bar">
+      asd
+    </div>
+    <div class="rigth-task-bar">
+      asd 
+    </div>
+  </div>
 
 </body>
