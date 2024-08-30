@@ -1,7 +1,13 @@
 /* fonts */
 @font-face {
-    font-family: 'blackitalic';
-    src: url('assets/fonts/aileron/Aileron-BlackItalic.otf') format('truetype');
+    font-family: 'pixel-arial';
+    src: url('assets/fonts/PIXEARG_.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'pixel-arial-bold';
+    src: url('assets/fonts/PIXEAB__.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,7 +23,8 @@ body{
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #474545;
-    color: #cbcbcb;
+    /* color: #cbcbcb; */
+    color: white;
     display: flex; 
     flex-direction: column; 
     min-height: 100vh;

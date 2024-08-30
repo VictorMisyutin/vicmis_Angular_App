@@ -1,4 +1,4 @@
-body{
+/* body{
     margin: 0 12%;
 }
 .hero {
@@ -76,4 +76,110 @@ hr {
     .feature-right p{
         text-align: center;
     }
+} */
+body{
+    background-color: teal;
 }
+#welcome-window {
+    width: 760px;
+    height: 435px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    background-color: #D0D0D0;
+    border: 2px solid white;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#welcome-window-header {
+    background-color: #A5A5A5;
+    border-bottom: 1px white solid;
+    color: white;
+    padding: 3px;
+    cursor: move;
+    user-select: none; /* Prevents text selection */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title p{
+    font-family: "pixel-arial";
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+}
+.close-button{
+    background-color: #D0D0D0;
+    border-top: 1px black solid;
+    border-right: 2px black solid;
+    border-bottom: 2px black solid;
+    border-left: 1px black solid;
+}
+.close-button p{
+    color: black;
+    font-family: "pixel-arial";
+    font-size: 20px;
+    margin: -5px 2px 0 5px;
+
+}    
+.top-part{
+    width: 450px;
+    text-align: right;
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+h1{
+    margin-bottom: 0;
+    font-family: "pixel-arial";
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-weight: lighter;
+}
+h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "pixel-arial";
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+.bottom-part{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+.contents-label p{
+    font-family: "pixel-arial-bold";
+    background-color: black;
+    letter-spacing: 6px;
+    padding: 2px;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+.option{
+    border-bottom: 3px #969696 solid;
+    height: 30px;
+    padding-left: 15px;
+    padding-top: 6px;
+    font-family: "pixel-arial-bold";
+    color: black;
+    letter-spacing: 1px;
+}
+.bottom-right{
+    margin-left: 50px;
+    padding-top: 10px;
+}
+.description{
+    width: 280px;
+    font-family: "pixel-arial";
+    color: black;
+    letter-spacing: 2px;
+}
+
+
+
+  

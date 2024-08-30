@@ -1,7 +1,7 @@
 /* background-color: #12372A;
 background-color: #436850;
 background-color: #2c4635; */
-.header {   
+/* .header {   
     overflow: hidden;
     padding: 10px;
 }
@@ -24,12 +24,10 @@ background-color: #2c4635; */
     color: white;
 }
 .header a:hover, a:focus {
-    /* color: black; */
     text-shadow: 0 0 15px white;
 }
 
 .header .active{
-    /* color: black; */
     text-shadow: 0 0 15px white;
 }
 
@@ -56,4 +54,93 @@ background-color: #2c4635; */
     .header-right {
         float: none;
     }
+} */
+
+/* header{
+    background-color: #006060;
+    padding: 5px 40px;
+    height: 70px;
+}
+.logo{
+    display: block;
+    margin-left: 40px;
+    font-family: "pixel-arial";
+    font-size: 25px;
+    letter-spacing: 3px;
+    color: white;
+    text-decoration: none;
+    margin-top: 15px;
+    width: 110px
+}
+.right-side{
+    float: right;
+}
+.right-side img{
+    border: 2px red solid;
+    width: 50px;
+}
+.right-side p{
+    font-family: "pixel-arial";
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+.right-side .option{
+    border: 2px red solid;
+} */
+header
+{
+    background-color: #006060;
+    padding: 5px 80px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically centers the content */
+}
+.left-side
+{
+    float: left;
+}
+.logo{
+    all: none;
+    margin-left: 20px;
+    font-family: "pixel-arial";
+    font-size: 25px;
+    letter-spacing: 3px;
+    color: white;
+    text-decoration: none;
+}
+.right-side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px
+}
+.right-side .option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60px
+}
+.option:hover{
+    cursor: pointer;
+}
+.option:hover img {
+    content: url('/assets/home-page-icons/Folder Open.ico');
+}
+.active img{
+    content: url('/assets/home-page-icons/Folder Open.ico');
+}
+.option img {
+    margin: 0;
+    padding: 0;    
+    width: 45px;
+}
+.right-side p{
+    padding: 0;
+    margin: 0;
+    font-family: "pixel-arial";
+    font-size: 13px;
+    letter-spacing: 2px;
 }

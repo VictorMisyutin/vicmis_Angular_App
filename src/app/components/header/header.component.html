@@ -1,4 +1,4 @@
-<div class="header">
+<!-- <div class="header">
     <a href="/" class="logo">vicmis</a>
     <div class="header-right">
         <a class="nav-link" [routerLink]="['/projects']" [routerLinkActive]="['active']">projects</a>
@@ -7,6 +7,30 @@
         <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="['active']">contact</a>
     </div>
 </div>
+ -->
 
 
+<header>
+    <div class="left-side">
+        <a href="/" class="logo">vicmis</a>
+    </div>
+    <div class="right-side">
+        <div class="option" [routerLink]="['/projects']" [routerLinkActive]="['active']">
+            <img src="/assets/home-page-icons/Folder Closed.ico">
+            <p>projects</p>
+        </div>
+        <div class="option" [routerLink]="['/docs']" [routerLinkActive]="['active']">
+            <img src="/assets/home-page-icons/Folder Closed.ico">
+            <p>APIs</p>
+        </div>
+        <div class="option" [routerLink]="['/blog']" [routerLinkActive]="['active']">
+            <img src="/assets/home-page-icons/Folder Closed.ico">
+            <p>blog</p>
+        </div>
+        <div class="option" [routerLink]="['/contact']" [routerLinkActive]="['active']">
+            <img src="/assets/home-page-icons/Folder Closed.ico">
+            <p>contact</p>
+        </div>
+    </div>
 
+</header>
