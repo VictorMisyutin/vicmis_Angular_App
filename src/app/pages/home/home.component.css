@@ -249,7 +249,7 @@ h2{
     border-bottom: 2px black solid;
     border-left: 2px white solid;
     padding: 0 5px;
-    min-width: 10px;
+    min-width: 102px;
 }
 .top-row .buttons .button:hover{
     cursor: pointer;
@@ -304,20 +304,49 @@ h2{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40px; 
+    height: 64px; 
     background-color: #C0C0C0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px; 
-  }
-  
-  .left-task-bar {
+    }
+
+.left-task-bar {
     display: flex;
     align-items: center;
-  }
-  
-  .rigth-task-bar {
+}
+.task{
+    display: flex;
+    height: 35px;
+    padding: 5px 10px;
+    padding-bottom: 3px;
+    background-color: rgb(226, 226, 226);
+    border: 2px #A5A5A5 solid;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 2px -2px gray;
+}
+.task-title{
+    color: black;
+    font-family: 'pixel-arial';
+}
+.task-logo p{
+    color: black;
+    font-family: 'pixel-arial';
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.left-task-bar .task .hr{
+    height: 25px;
+    border: 1px gray solid;
+    margin: 0 8px;
+}
+.right-task-bar {
     display: flex;
     align-items: center;
-  }
+    margin-right: 20px;
+}
+.right-task-bar .task{
+    padding: 5px 15px;
+}

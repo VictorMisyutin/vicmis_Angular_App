@@ -6,14 +6,21 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  calculator_output_string: string = '0';
-  calculator_output: number = 0;
+  // define calculator variables
+  calculatorDisplayString: string = '0';
+  calculatorOutput: number = 0;
+  calculatorNextOperation: string = '';
+  // define windows
   @ViewChild('welcomeWindow', { static: true }) welcomeWindow!: ElementRef;
   @ViewChild('welcomeWindowHeader', { static: true }) welcomeWindowHeader!: ElementRef;
-
+  
   @ViewChild('calculatorWindow', { static: true }) calculatorWindow!: ElementRef;
   @ViewChild('calculatorWindowHeader', { static: true }) calculatorWindowHeader!: ElementRef;
+  
+  // keep track of which index is ontop (increments each time a new window is grabbed)
+  currentZIndex: number = 11; 
 
+  // keep track of windows
   private pos1 = 0;
   private pos2 = 0;
   private pos3 = 0;
@@ -73,6 +80,10 @@ export class HomeComponent implements OnInit {
     // Set the element's new position:
     element.style.top = newTop + "px";
     element.style.left = newLeft + "px";
+    
+    // move to top of z-index
+    element.style.zIndex = this.currentZIndex.toString();
+    this.currentZIndex++;
   }
 
   closeDragElement(): void {
@@ -80,4 +91,116 @@ export class HomeComponent implements OnInit {
     document.onmouseup = null;
     document.onmousemove = null;
   }
+
+  calculatorInputNumber(c: string){
+    if (c == 'pi'){
+      this.calculatorDisplayString = '3.142';
+    }
+    else if(c == 'e'){
+      this.calculatorDisplayString = '2.718';
+    }
+    else{
+      if(this.calculatorDisplayString == "0")
+        this.calculatorDisplayString = c;
+      else
+        this.calculatorDisplayString += c;
+    }
+  }
+
+  calculatorBackspace(){
+    if(this.calculatorDisplayString.length > 0)
+      this.calculatorDisplayString = this.calculatorDisplayString.substring(0, this.calculatorDisplayString.length -1)
+    if(this.calculatorDisplayString.length <= 0)
+      this.calculatorDisplayString = "0"
+  }
+  calculatorClearEntry(){
+    this.calculatorDisplayString = "0";
+  }
+  
+  calculatorClear(){
+    this.calculatorClearEntry();
+    this.calculatorOutput = 0;
+  }
+
+  calculatorOperation(op: string){
+    if(op == 'sqt'){
+     this.calculatorDisplayString = (Math.round(Math.sqrt(Number(this.calculatorDisplayString)) * 1000)/1000).toString();
+     return;
+    }
+    else if(op == 'inverse'){
+      this.calculatorDisplayString = (Math.round(1/Number(this.calculatorDisplayString) * 1000)/1000).toString();
+      return;
+    }
+    else if(op == 'percent'){
+      this.calculatorDisplayString = (this.calculatorOutput * Number(this.calculatorDisplayString) / 100).toString();
+      return;
+    }
+    else if(op == 'sin'){
+      this.calculatorDisplayString = (Math.round(Math.sin(Number(this.calculatorDisplayString)) * 1000) / 1000).toString(); 
+      return;
+    }
+    else if(op == 'cos'){
+      this.calculatorDisplayString = (Math.round(Math.cos(Number(this.calculatorDisplayString)) * 1000) / 1000).toString(); 
+      return;
+    }
+    else if(op == 'tan'){
+      this.calculatorDisplayString = (Math.round(Math.tan(Number(this.calculatorDisplayString)) * 1000) / 1000).toString(); 
+      return;
+    }
+    else if(op == 'ln'){
+      this.calculatorDisplayString = (Math.round(Math.log(Number(this.calculatorDisplayString))/Math.log(Math.E) * 1000) / 1000).toString(); 
+      return;
+    }
+    else if(op == 'log'){
+      this.calculatorDisplayString = (Math.round(Math.log(Number(this.calculatorDisplayString))/Math.log(10) * 1000) / 1000).toString(); 
+      return;
+    }
+    else if(op == 'exp'){
+      this.calculatorDisplayString = (Math.pow(10, Number(this.calculatorDisplayString))).toString();
+      return;
+    }
+    else if(op == 'x^2'){
+      this.calculatorDisplayString = (Math.pow(Number(this.calculatorDisplayString), 2)).toString();
+      return;
+    }
+    else if(op == 'x^3'){
+      this.calculatorDisplayString = (Math.pow(Number(this.calculatorDisplayString), 3)).toString();
+      return;
+    }
+    else if(op == 'n!'){
+      this.calculatorDisplayString = (this.factorial(Number(this.calculatorDisplayString))).toString();
+      return;
+    }
+    
+   this.calculatorNextOperation = op; 
+   this.calculatorOutput = Number(this.calculatorDisplayString);   
+   this.calculatorClearEntry();
+  }
+  calculatorSubmit(){
+    if(this.calculatorNextOperation == "add"){
+      this.calculatorOutput += Number(this.calculatorDisplayString)
+    }
+    else if(this.calculatorNextOperation == "subtract"){
+      this.calculatorOutput -= Number(this.calculatorDisplayString)
+    }
+    else if(this.calculatorNextOperation == "divide"){
+      this.calculatorOutput /= Number(this.calculatorDisplayString)
+    } 
+    else if(this.calculatorNextOperation == "multiply"){
+      this.calculatorOutput *= Number(this.calculatorDisplayString)
+    }
+    else if(this.calculatorNextOperation == "x^y"){
+      this.calculatorOutput = Math.round(Math.pow(this.calculatorOutput,Number(this.calculatorDisplayString)) * 1000) /1000;
+    }
+    this.calculatorDisplayString = this.calculatorOutput.toString();
+  }
+  calculatorFlipSign(){
+    this.calculatorDisplayString = (Number(this.calculatorDisplayString) * -1).toString();
+  }
+
+  factorial(n: number): number {
+    if (n == 0) return 1;
+    return n * this.factorial(n - 1);
+  }
+
 }

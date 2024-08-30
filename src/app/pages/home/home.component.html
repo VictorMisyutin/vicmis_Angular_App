@@ -51,19 +51,19 @@
     </div>
     <div id="calculator-window-content">
       <div class="calculator-input-output-screen">
-        {{calculator_output_string}}
+        {{calculatorDisplayString}}
       </div>
       <div class="calculator-inputs">
         <div class="top-row">
           <div class="empty-spot"></div>
           <div class="buttons">
-            <div class="button">
+            <div class="button" (click)="calculatorBackspace()">
               <p>Backspace</p>
             </div>
-            <div class="button">
+            <div class="button" (click)="calculatorClearEntry()">
               <p>CE</p>
             </div>
-            <div class="button">
+            <div class="button" (click)="calculatorClear()">
               <p>C</p>
             </div>
           </div>
@@ -82,114 +82,114 @@
             <div class="button">
               <p>M+</p>
             </div>
-            <div class="button" style="margin-top: 23px;">
+            <div class="button" style="margin-top: 23px;" (click)="calculatorInputNumber('pi')">
               <p>pi</p>
             </div>
-            <div class="button">
+            <div class="button" (click)="calculatorInputNumber('e')">
               <p>e</p>
             </div>
           </div>
           <div class="bottom-right-buttons">
             <div class="row">
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('7')">
                 <p>7</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('8')">
                 <p>8</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('9')">
                 <p>9</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('divide')">
                 <p style="font-size: 17px; margin-top: 10px;">/</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('sqt')">
                 <p>sqt</p>
               </div>
             </div>
             <div class="row">
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('4')">
                 <p>4</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('5')">
                 <p>5</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('6')">
                 <p>6</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('multiply')">
                 <p style="font-size: 30px; font-family: 'arial'; margin-top: 14px;">*</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('percent')">
                 <p style="font-size: 17px; margin-top: 10px;">%</p>
               </div>
             </div>
             <div class="row">
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('1')">
                 <p>1</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('2')">
                 <p>2</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('3')">
                 <p>3</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('subtract')">
                 <p style="font-size: 23px; margin-top: 2px;">-</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('inverse')">
                 <p style="font-size: 15px; margin-top: 12px;">1/x</p>
               </div>
             </div>
             <div class="row">
-              <div class="button">
+              <div class="button" (click)="calculatorInputNumber('0')">
                 <p>0</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorFlipSign()">
                 <p style="font-size: 15px; margin-top: 12px;">+/-</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorInputNumber('.')">
                 <p style="font-size: 25px; margin-top: 2px;">.</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('add')">
                 <p style="font-size: 17px; margin-top: 10px;">+</p>
               </div>
-              <div class="button" style="padding-top: 0; padding-bottom: 0;">
+              <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorSubmit()">
                 <p style="font-size: 17px; margin-top: 10px;">=</p>
               </div>
             </div>
             <div class="row" style="margin-top: 13px;">
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('sin')">
                 <p>sin</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('cos')">
                 <p>cos</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('tan')">
                 <p>tan</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('ln')">
                 <p>ln</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('log')">
                 <p>log</p>
               </div>
             </div>
             <div class="row">
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('exp')">
                 <p>exp</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('x^2')">
                 <p>x^2</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('x^3')">
                 <p>x^3</p>
               </div>
-              <div class="button">
+              <div class="button" (click)="calculatorOperation('x^y')">
                 <p>x^y</p>
               </div>
-              <div class="button">
-                <p>n!</p>
+              <div class="button" (click)="calculatorOperation('n!')">
+                <p style="letter-spacing: 2px;">n!</p>
               </div>
             </div>
           </div>
@@ -201,10 +201,46 @@
   
   <div class="task-bar">
     <div class="left-task-bar">
-      asd
+      <div class="task">
+        <div class="task-logo">
+          <p>VM</p>
+        </div>
+        <div class="hr"></div>
+        <p class="task-title">
+          vicmis
+        </p>
+      </div>
+      <div class="task" style="padding: 0 2px; margin: 0 20px; height: 40px;"></div>
+      <div class="task">
+        <div class="task-logo">
+          <p>VM</p>
+        </div>
+        <div class="hr"></div>
+        <p class="task-title">
+          Welcome to vicmis
+        </p>
+      </div>
+      <div class="task" style="margin-left: 20px;">
+        <div class="task-logo">
+           <img src="/assets/home-page-icons/calculator 1.png" style="margin-top: 4px;">
+        </div>
+        <div class="hr"></div>
+        <p class="task-title">
+          Calculator
+        </p>
+      </div>
     </div>
-    <div class="rigth-task-bar">
-      asd 
+    <div class="right-task-bar">
+      <div class="task" style="border-right: 1px gray solid;">
+        <p class="task-title">
+          8/29/2024
+        </p>
+      </div>
+      <div class="task" style="border-left: 1px gray solid;">
+        <p class="task-title">
+          11:31 PM
+        </p>
+      </div>
     </div>
   </div>
 
