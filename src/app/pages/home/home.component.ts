@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     const elementWidth = element.offsetWidth;
-    const elementHeight = element.offsetHeight;
+    const elementHeight = element.offsetHeight + 65;
 
     // Prevent window from leaving the screen horizontally
     if (newLeft < 0) {
