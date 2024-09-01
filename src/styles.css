@@ -23,8 +23,8 @@ body{
     margin: 0;
     font-family: Arial, sans-serif;
     /* background-color: #334e4e; */
-    /* background-color: teal; */
-    background-color: #919191;
+    background-color: teal;
+    /* background-color: #919191; */
     /* color: #cbcbcb; */
     color: white;
     display: flex; 

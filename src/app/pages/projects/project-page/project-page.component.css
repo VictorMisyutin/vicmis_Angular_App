@@ -1,4 +1,4 @@
-main{
+/* main{
     margin: 0 10%;
 }
 
@@ -35,7 +35,6 @@ h2{
     display: grid;
     text-align: center;
     border: 1px solid;
-    /* background-color:#800080; */
     background-color:#0000a8;
     color: white;
     border-radius: 15px;
@@ -70,9 +69,98 @@ h2{
     .project{
         width:300px;
     }
-}
-/* @media (max-width: 1060px){
-    .project{
-        width:300px;
-    }
 } */
+
+body{
+    height: 1200px;
+}
+
+h2{
+    text-align: center;
+    font-family: 'pixel-arial';
+    letter-spacing: 4px;
+    font-size: 35px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px black solid;
+}
+
+.project-window {
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    background-color: #D0D0D0;
+    border: 2px solid white;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-description{
+    color: black;
+    font-family: 'pixel-arial';
+    font-size: 18px;
+    margin: 20px 30px;
+}
+
+.project-window-header {
+    background-color: #0000a8;
+    border-bottom: 1px white solid;
+    color: white;
+    padding: 3px;
+    cursor: move;
+    user-select: none; /* Prevents text selection */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.project-window-header a{
+    color: white;
+    font-family: 'pixel-arial';
+    text-decoration: none;
+    margin: 10px 20px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 20px;
+}
+#liftwareWindow{
+    top: 200px;
+    left: 180px;
+}
+#thirdwardarchiveWindow{
+    top: 200px;
+    left: 580px;
+}
+#typingGameWindow{
+    top: 200px;
+    left: 980px;
+}
+#sudokuWindow{
+    top: 200px;
+    left: 1380px;
+}
+#collisionResolutionWindow{
+    top: 550px;
+    left: 180px;
+}
+#spaceInvadersWindow{
+    top: 550px;
+    left: 580px;
+}
+#connectionsWindow{
+    top: 550px;
+    left: 980px;
+}
+#catalogedWindow{
+    top: 550px;
+    left: 1380px;
+}
+#dataVisualizationWindow{
+    top: 900px;
+    left: 180px;
+}
+#musicRankingWindow{
+    top: 900px;
+    left: 580px;
+}
