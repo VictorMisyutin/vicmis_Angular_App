@@ -1,154 +1,101 @@
-/* header
-{
-    background-color: #006060;
-    padding: 5px 80px;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.left-side
-{
-    float: left;
-}
-.logo{
-    all: none;
-    margin-left: 20px;
-    font-family: "pixel-arial";
-    font-size: 25px;
-    letter-spacing: 3px;
-    color: white;
-    text-decoration: none;
-}
-.middle-side{
-  margin-left: 165px;
-}
-.switch {
-  --input-focus: #2d8cf0;
-  --font-color: #323232;
-  --font-color-sub: #666;
-  --bg-color: #fff;
-  --bg-color-alt: #666;
-  --main-color: #323232;
-  position: relative;
+/* start of formal mode */
+.formal-mode {  
+  background-color: #4b4b4b;
+  overflow: hidden;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  width: 50px;
-  height: 20px;
-  margin: 7px 0;
-}
-.toggle {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  justify-content: space-between;
+  align-content: center;
 }
 
-.slider {
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: 2px solid var(--main-color);
-  box-shadow: 4px 4px var(--main-color);
-  position: absolute;
+.formal-mode a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+  color: white;
+}
+.formal-mode a.logo {
+  float: left;
+  margin-left: 3%;
+  font-size: 23px;
+  color: white;
+}
+.formal-mode .header-middle{
+  margin-left: 270px;
+  margin-top: 5px;
+
+}
+.formal-mode .header-middle button{
+  background-color: #6b6b6b;
+  padding: 10px;
+  border-radius: 20px;
+}
+.formal-mode .header-middle button:hover{
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--bg-colorcolor);
-  transition: 0.3s;
+  background-color: #838383;
 }
-
-.slider:before {
-  box-sizing: border-box;
-  position: absolute;
-  content: "";  height: 20px;
-  width: 20px;
-  border: 2px solid var(--main-color);
-  border-radius: 5px;
-  left: -2px;
-  bottom: 2px;
-  background-color: var(--bg-color);
-  box-shadow: 0 3px 0 var(--main-color);
-  transition: 0.3s;
-}
-
-.toggle:checked + .slider {
-  background-color: var(--input-focus);
-}
-
-.toggle:checked + .slider:before {
-  transform: translateX(30px);
-}
-.toggleLabel{
-  text-align: center;
-}
-.middle-side p{
+.formal-mode .header-middle button p{
   margin: 0;
-  text-align: center;
 }
-.right-side{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px
+.formal-mode a:hover, a:focus {
+  /* color: black; */
+  text-shadow: 0 0 15px white;
 }
-.right-side .option{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 60px
+.formal-mode .active{
+  /* color: black; */
+  text-shadow: 0 0 15px white;
 }
-.option:hover{
-    cursor: pointer;
+.formal-mode-right {
+  float: right;
 }
-.option:hover img {
-    content: url('/assets/home-page-icons/Folder Open.ico');
+@media screen and (max-width: 750px) {
+  .formal-mode{
+      flex-direction: column;
+      display: flex;
+  }
+  .formal-mode a {
+      display:block;
+      float: none;
+      text-align: left;
+  }
+  .formal-mode a.logo {
+      text-align: center;
+      font-size: 35px;
+      margin: 0;
+      margin-bottom: 10px;
+  }
+  .formal-mode .header-right {
+      float: none;
+  }
 }
-.active img{
-    content: url('/assets/home-page-icons/Folder Open.ico');
-}
-.option img {
-    margin: 0;
-    padding: 0;    
-    width: 45px;
-}
-.right-side p{
-    padding: 0;
-    margin: 0;
-    font-family: "pixel-arial";
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-*/
 
-/* start of desktop icons */
-header{
-  position:absolute;
+/* start of informal mode */
+.informal-mode{
+  position:fixed;
 }
-.folder-container{
+.informal-mode .folder-container{
   margin-left: 20px;
   width: 80px;
 }
-.image-container{
+.informal-mode .image-container{
   display: flex;
   justify-content: center;
 }
-.folder-image{
+.informal-mode .folder-image{
   max-width: 55px;
 }
-.folder-image:hover{
+.informal-mode .folder-image:hover{
   cursor: pointer;
   content: url('/assets/home-page-icons/Folder Open.ico');
 }
-.active img{
+.informal-mode .active img{
   content: url('/assets/home-page-icons/Folder Open.ico');
 }
-.folder-title{
+.informal-mode .folder-title{
   margin-top: 0;
   font-family: 'pixel-arial';
   text-align: center;
@@ -156,4 +103,3 @@ header{
   letter-spacing: 1px;
   margin-left: -6px;
 }
-/* end of desktop icons */

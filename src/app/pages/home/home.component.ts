@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { ModeServiceService } from '../../services/mode-service.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +9,7 @@ import { DatePipe } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private datePipe: DatePipe) { }
+  constructor(private datePipe: DatePipe, private modeService: ModeServiceService) { }
 
   // content window stuff
   
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit {
   calculatorDisplayString: string = '0';
   calculatorOutput: number = 0;
   calculatorNextOperation: string = '';
+ 
   // define windows
   @ViewChild('welcomeWindow', { static: true }) welcomeWindow!: ElementRef;
   @ViewChild('welcomeWindowHeader', { static: true }) welcomeWindowHeader!: ElementRef;
@@ -53,7 +55,10 @@ export class HomeComponent implements OnInit {
   private pos3 = 0;
   private pos4 = 0;
 
+  mode: string = "informal";
   ngOnInit(): void {
+    // this.modeService.mode$.subscribe(mode => this.mode = mode);
+    
     this.makeDraggable(this.welcomeWindow.nativeElement, this.welcomeWindowHeader.nativeElement);
     this.makeDraggable(this.calculatorWindow.nativeElement, this.calculatorWindowHeader.nativeElement);
     this.updateTime();
@@ -61,6 +66,11 @@ export class HomeComponent implements OnInit {
       this.updateTime();
     }, 1000);
     this.contentChange(0);
+  }
+  toggleMode() {
+    this.modeService.toggleMode();
+    this.makeDraggable(this.welcomeWindow.nativeElement, this.welcomeWindowHeader.nativeElement);
+    this.makeDraggable(this.calculatorWindow.nativeElement, this.calculatorWindowHeader.nativeElement);
   }
   updateTime() {
     const now = new Date();
@@ -97,7 +107,7 @@ export class HomeComponent implements OnInit {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     const elementWidth = element.offsetWidth;
-    const elementHeight = element.offsetHeight + 65;
+    const elementHeight = element.offsetHeight + 45;
 
     // Prevent window from leaving the screen horizontally
     if (newLeft < 0) {
@@ -107,8 +117,8 @@ export class HomeComponent implements OnInit {
     }
 
     // Prevent window from leaving the screen vertically
-    if (newTop < 80) {
-      newTop = 80;
+    if (newTop < 0) {
+      newTop = 0;
     } else if (newTop + elementHeight > windowHeight) {
       newTop = windowHeight - elementHeight;
     }

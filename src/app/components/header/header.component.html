@@ -1,77 +1,54 @@
-<!-- <div class="header">
-    <a href="/" class="logo">vicmis</a>
-    <div class="header-right">
-        <a class="nav-link" [routerLink]="['/projects']" [routerLinkActive]="['active']">projects</a>
-        <a class="nav-link" [routerLink]="['/docs']" [routerLinkActive]="['active']">documentation</a>
-        <a class="nav-link" [routerLink]="['/blog']" [routerLinkActive]="['active']">blog</a>
-        <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="['active']">contact</a>
-    </div>
+<div class="header">
 </div>
- -->
 
-
-<!-- <header>
-    <div class="left-side">
-        <a href="/" class="logo">vicmis</a>
-    </div>
-    <div class="middle-side">
-        <label class="switch" (click)="toggleMode()">
-            <input class="toggle" type="checkbox">
-            <span class="slider"></span>
-            <span class="card-side"></span>
-        </label>
-        <p class="toggleLabel">{{currentlyProffesional? "formal":"fun"}}</p>
-    </div>
-    <div class="right-side">
-        <div class="option" [routerLink]="['/projects']" [routerLinkActive]="['active']">
-            <img src="/assets/home-page-icons/Folder Closed.ico">
-            <p>projects</p>
-        </div>
-        <div class="option" [routerLink]="['/docs']" [routerLinkActive]="['active']">
-            <img src="/assets/home-page-icons/Folder Closed.ico">
-            <p>APIs</p>
-        </div>
-        <div class="option" [routerLink]="['/blog']" [routerLinkActive]="['active']">
-            <img src="/assets/home-page-icons/Folder Closed.ico">
-            <p>blog</p>
-        </div>
-        <div class="option" [routerLink]="['/contact']" [routerLinkActive]="['active']">
-            <img src="/assets/home-page-icons/Folder Closed.ico">
-            <p>contact</p>
-        </div>
-    </div>
-
-</header> -->
 
 <header>
-    <div class="folder-container" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" style="margin-top: 20px;">
-        <div class="image-container">
-            <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+    <div class="formal-mode" *ngIf="mode === 'formal'">
+        <a href="/" class="logo">vicmis</a>
+        <div class="header-middle">
+            <button (click)="toggleMode()">
+                <p>view this site informally</p>
+            </button>
         </div>
-        <p class="folder-title">vicmis</p>
+        <div class="header-right">
+            <a class="nav-link" [routerLink]="['/projects']" [routerLinkActive]="['active']">projects</a>
+            <a class="nav-link" [routerLink]="['/docs']" [routerLinkActive]="['active']">documentation</a>
+            <a class="nav-link" [routerLink]="['/blog']" [routerLinkActive]="['active']">blog</a>
+            <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="['active']">contact</a>
+        </div>
     </div>
-    <div class="folder-container" [routerLink]="['/projects']" [routerLinkActive]="['active']">
-        <div class="image-container">
-            <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+
+
+    <div class="informal-mode" *ngIf="mode === 'informal'">
+        <div class="folder-container" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" style="margin-top: 20px;">
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">vicmis</p>
         </div>
-        <p class="folder-title" style="font-size: 12px;">projects</p>
-    </div>
-    <div class="folder-container" [routerLink]="['/docs']" [routerLinkActive]="['active']" >
-        <div class="image-container">
-            <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+        <div class="folder-container" [routerLink]="['/projects']" [routerLinkActive]="['active']">
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title" style="font-size: 12px;">projects</p>
         </div>
-        <p class="folder-title">APIs</p>
-    </div>
-    <div class="folder-container" [routerLink]="['/blog']" [routerLinkActive]="['active']" >
-        <div class="image-container">
-            <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+        <div class="folder-container" [routerLink]="['/docs']" [routerLinkActive]="['active']" >
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">APIs</p>
         </div>
-        <p class="folder-title">blog</p>
-    </div>
-    <div class="folder-container" [routerLink]="['/contact']" [routerLinkActive]="['active']" >
-        <div class="image-container">
-            <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+        <div class="folder-container" [routerLink]="['/blog']" [routerLinkActive]="['active']" >
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">blog</p>
         </div>
-        <p class="folder-title">contact</p>
+        <div class="folder-container" [routerLink]="['/contact']" [routerLinkActive]="['active']" >
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">contact</p>
+        </div>
     </div>
 </header>

@@ -1,19 +1,101 @@
-body{
-    background-color: teal;
+/* formal CSS */
+.formal-mode{
+    background-color: #4b4b4b;
+    min-height: 95vh;
+    padding: 50px 12%;
 }
-#welcome-window {
+.formal-mode .hero {
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+.formal-mode hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #686868;
+}
+.formal-mode .feature-upper{
+    text-align: center;
+}
+.formal-mode .feature-upper h4{
+    margin-bottom: 30px;
+}
+.formal-mode .feature-upper a{
+    color: #cbcbcb;
+}
+.formal-mode .feature-left {
+    float: left;
+    margin-bottom: 50px;
+    padding: 0;
+}
+.formal-mode .feature-right {
+    float: right;
+    margin-bottom: 50px;
+    padding: 0;
+}
+.formal-mode .feature-left h3{
+    text-align: left;
+    margin-left: 80px;
+}
+.formal-mode .feature-left p{
+    text-align: left;
+    font-size: large;
+}
+.formal-mode .feature-right h3{
+    text-align: right;
+    margin-right: 80px;
+}
+.formal-mode .feature-right p{
+    text-align: right;
+    font-size: large;
+}
+.formal-mode .documentation,
+.formal-mode .pricing,
+.formal-mode .contact {
+    text-align: center;
+    padding: 50px 0;
+}
+@media screen and (max-width:750px) {
+    .formal-mode body{
+        margin: 0px 60px;
+    }
+    .formal-mode .hero{
+        margin-bottom: 30px;
+    }
+    .formal-mode .feature-left h3{
+        text-align: center;
+        margin: 0;
+    }
+    .formal-mode .feature-right h3{
+        text-align: center;
+        margin: 0;
+    }
+    .formal-mode .feature-left p{
+        text-align: center;
+    }
+    .formal-mode .feature-right p{
+        text-align: center;
+    }
+}
+
+
+
+/* start of informal CSS */
+
+ #welcome-window {
+    position: absolute;
     width: 570px;
     height: 370px;
-    position: absolute;
     top: 150px;
-    left: 400px;
+    left: 0px;
     background-color: #D0D0D0;
     border: 2px solid white;
     z-index: 10;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-#welcome-window-header {
+ #welcome-window-header {
     background-color: #A5A5A5;
     border-bottom: 1px white solid;
     color: white;
@@ -24,7 +106,7 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-.title p{
+ .title p{
     font-family: "pixel-arial";
     font-size: 14px;
     font-weight: bold;
@@ -33,35 +115,35 @@ body{
     margin-left: 20px;
     padding: 0;
 }
-.close-button{
+ .close-button{
     background-color: #D0D0D0;
     border-top: 1px black solid;
     border-right: 2px black solid;
     border-bottom: 2px black solid;
     border-left: 1px black solid;
 }
-.close-button p{
+ .close-button p{
     color: black;
     font-family: "pixel-arial";
     font-size: 20px;
     margin: -5px 2px 0 5px;
 
 }    
-.top-part{
+ .top-part{
     width: 350px;
     text-align: right;
     color: black;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-h1{
+ h1{
     margin-bottom: 0;
     font-family: "pixel-arial";
     letter-spacing: 2px;
     font-size: 22px;
     font-weight: lighter;
 }
-h2{
+ h2{
     margin-top: 0;
     margin-bottom: 0;
     font-family: "pixel-arial";
@@ -69,14 +151,14 @@ h2{
     font-size: 15px;
     font-weight: lighter;
 }
-.bottom-part{
+ .bottom-part{
     display: grid;
     grid-template-columns: 0.95fr 0.2fr;
 }
-.bottom-left{
+ .bottom-left{
     width: 300px;
 }
-.contents-label p{
+ .contents-label p{
     font-family: "pixel-arial-bold";
     background-color: black;
     letter-spacing: 4px;
@@ -84,7 +166,7 @@ h2{
     padding-left: 20px;
     margin-bottom: 0;
 }
-.option{
+ .option{
     border-bottom: 3px #969696 solid;
     height: 30px;
     padding-left: 15px;
@@ -93,18 +175,18 @@ h2{
     color: black;
     letter-spacing: 1px;
 }
-.option:hover{
+ .option:hover{
     cursor: pointer;
     background-color: #C0C0C0;
 }
-.selected{
+ .selected{
     background-color: #C0C0C0;
 }
-.bottom-right{
+ .bottom-right{
     padding-top: 0;
     margin-top: -10px;
 }
-.description{
+ .description{
     width: 220px;
     font-family: "pixel-arial";
     font-size: 14px;
@@ -113,19 +195,19 @@ h2{
     text-align: left;
 }
 
-#calculator-window {
+ #calculator-window {
     width: 380px;
     height: 520px;
     position: absolute;
     top: 170px;
-    left: 1150px;
+    left: 0px;
     background-color: #D0D0D0;
     border: 2px solid white;
     z-index: 10;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-#calculator-window-header {
+ #calculator-window-header {
     background-color: #0000a8;
     border-bottom: 1px white solid;
     color: white;
@@ -136,7 +218,7 @@ h2{
     justify-content: space-between;
     align-items: center;
 }
-.calculator-input-output-screen{
+ .calculator-input-output-screen{
     display: flex;
     margin: 20px auto;
     width: 330px;
@@ -155,14 +237,14 @@ h2{
     margin-bottom: 30px;
     overflow: hidden;
 }
-.top-row{
+ .top-row{
     display: flex;
     margin: 0 15px;
     margin-bottom: 15px;
     justify-content: space-between;
     align-items: center;
 }
-.top-row .empty-spot{
+ .top-row .empty-spot{
     width: 40px;
     height: 40px;
     background-color: rgb(214, 214, 214);
@@ -172,11 +254,11 @@ h2{
     border-left: 2px black solid;
     margin-left: 10px;
 }
-.top-row .buttons{
+ .top-row .buttons{
     display: flex;
     gap: 6px;
 }
-.top-row .buttons .button{
+ .top-row .buttons .button{
     background-color: rgb(214, 214, 214);
     border-top: 2px white solid;
     border-right: 2px black solid;
@@ -185,7 +267,7 @@ h2{
     padding: 0 5px;
     min-width: 70px;
 }
-.top-row .buttons .button:hover{
+ .top-row .buttons .button:hover{
     cursor: pointer;
     background-color: rgb(196, 196, 196);
     border-top: 2px black solid;
@@ -193,19 +275,19 @@ h2{
     border-bottom: 2px white solid;
     border-left: 2px black solid;
 }
-.button p{
+ .button p{
     text-align: center;
     color:black;
     font-family: 'pixel-arial';
     font-size: 10px;
 }
-.bottom-buttons{
+ .bottom-buttons{
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
     margin-left: 13px;
 }
-.bottom-buttons .button{
+ .bottom-buttons .button{
     background-color: rgb(214, 214, 214);
     border-top: 2px white solid;
     border-right: 2px black solid;
@@ -215,7 +297,7 @@ h2{
     width: 45px;
     margin-bottom: 10px;
 }
-.bottom-buttons .button:hover{
+ .bottom-buttons .button:hover{
     cursor: pointer;
     background-color: rgb(196, 196, 196);
     border-top: 2px black solid;
@@ -223,17 +305,17 @@ h2{
     border-bottom: 2px white solid;
     border-left: 2px black solid;
 }
-.bottom-right-buttons .row{
+ .bottom-right-buttons .row{
     display: flex;
     margin-right: 15px;
     gap: 5px;
 }
-.bottom-right-buttons .row .button{
+ .bottom-right-buttons .row .button{
     width: 35px;
     height: 36px;
 }
 
-.task-bar {
+ .task-bar {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -246,11 +328,11 @@ h2{
     padding: 0 10px; 
 }
 
-.left-task-bar {
+ .left-task-bar {
     display: flex;
     align-items: center;
 }
-.task{
+ .task{
     display: flex;
     height: 25px;
     padding: 5px 10px;
@@ -261,27 +343,27 @@ h2{
     align-items: center;
     box-shadow: 0 4px 2px -2px gray;
 }
-.task-title{
+ .task-title{
     color: black;
     font-family: 'pixel-arial';
     font-size: 15px;
 }
-.task-logo p{
+ .task-logo p{
     color: black;
     font-family: 'pixel-arial';
     font-size: 16px;
     letter-spacing: 2px;
 }
-.left-task-bar .task .hr{
+ .left-task-bar .task .hr{
     height: 25px;
     border: 1px gray solid;
     margin: 0 8px;
 }
-.right-task-bar {
+ .right-task-bar {
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
-.right-task-bar .task{
+ .right-task-bar .task{
     padding: 5px 15px;
 }
