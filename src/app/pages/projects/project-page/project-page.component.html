@@ -1,6 +1,9 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <body>
-    <h2>PROJECTS</h2>
+    <!-- <h2>PROJECTS</h2> -->
+
+    <app-header></app-header>
+
     <main>
         <section class="row">
             <div class="project-window" id='liftwareWindow' #liftwareWindow>
@@ -33,7 +36,7 @@
         <section class="row">
             <div class="project-window" id="collisionResolutionWindow" #collisionResolutionWindow>
                 <div class="project-window-header">
-                    <a href="projects/collision">Collision Resolution</a>
+                    <a href="projects/collision" style="font-size: 10.5px;">Collision Resolution</a>
                 </div>
                 <p class="project-description">Simulation for different collision resolution techniques during hashing.</p>
             </div>
@@ -46,7 +49,7 @@
         </section>
         <section class="row">
             <div class="project-window" id="connectionsWindow" #connectionsWindow>
-                <div class="project-window-header">
+                <div class="project-window-header"> 
                     <a href="projects/connections">Connections</a>
                 </div>
                 <p class="project-description">Totally uhhh original idea... <br>But with hints!</p>
@@ -61,7 +64,7 @@
         <section class="row">
             <div class="project-window" id="dataVisualizationWindow" #dataVisualizationWindow>
                 <div class="project-window-header">
-                    <a href="projects/data-viz">Data Visualization</a>
+                    <a href="projects/data-viz" style="font-size: 12px;">Data Visualization</a>
                 </div>
                 <p class="project-description">Visualization of data sets using D3.js</p>
             </div>
@@ -72,16 +75,50 @@
                 <p class="project-description">Ranking bands, albums, and more</p>
             </div>
         </section>
-        <!-- <section class="row">
-            <section class="project">
-                <a href="projects/multiplayer">multiplayer game</a>
-                <p class="project-description">A multiplayer game using socket.io</p>
-            </section>
-            <section class="project">
-                <a href="projects/music-ranking">Coming Soon...</a>
-                <p class="project-description">Coming Soon...</p>
-            </section>
-        </section> -->
     </main>
+    
+  <div class="task-bar">
+    <div class="left-task-bar">
+      <div class="task">
+        <div class="task-logo">
+          <p>VM</p>
+        </div>
+        <div class="hr"></div>
+        <p class="task-title">
+          vicmis
+        </p>
+      </div>
+      <div class="task" style="padding: 0 2px; margin: 0 20px; height: 30px;"></div>
+      <div class="task">
+        <div class="task-logo">
+          <p>VM</p>
+        </div>
+        <div class="hr"></div>
+        <p class="task-title">
+          Welcome to vicmis
+        </p>
+      </div>
+      <div class="task" style="margin-left: 20px;">
+        <div class="task-logo">
+           <img src="/assets/home-page-icons/calculator 1.png" style="margin-top: 4px;height: 25px" >
+        </div>
+        <div class="hr"></div>
+        <p class="task-title">
+          Calculator
+        </p>
+      </div>
+    </div>
+    <div class="right-task-bar">
+      <div class="task" style="border-right: 1px gray solid;">
+        <p class="task-title">
+          {{date}}
+        </p>
+      </div>
+      <div class="task" style="border-left: 1px gray solid;">
+        <p class="task-title">
+          {{time}}
+        </p>
+      </div>
+    </div>
+  </div>
 </body>
-<app-footer></app-footer>

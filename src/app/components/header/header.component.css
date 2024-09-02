@@ -1,4 +1,4 @@
-header
+/* header
 {
     background-color: #006060;
     padding: 5px 80px;
@@ -19,6 +19,75 @@ header
     letter-spacing: 3px;
     color: white;
     text-decoration: none;
+}
+.middle-side{
+  margin-left: 165px;
+}
+.switch {
+  --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --bg-color-alt: #666;
+  --main-color: #323232;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 50px;
+  height: 20px;
+  margin: 7px 0;
+}
+.toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-colorcolor);
+  transition: 0.3s;
+}
+
+.slider:before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";  height: 20px;
+  width: 20px;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  left: -2px;
+  bottom: 2px;
+  background-color: var(--bg-color);
+  box-shadow: 0 3px 0 var(--main-color);
+  transition: 0.3s;
+}
+
+.toggle:checked + .slider {
+  background-color: var(--input-focus);
+}
+
+.toggle:checked + .slider:before {
+  transform: translateX(30px);
+}
+.toggleLabel{
+  text-align: center;
+}
+.middle-side p{
+  margin: 0;
+  text-align: center;
 }
 .right-side{
     display: flex;
@@ -55,3 +124,36 @@ header
     font-size: 13px;
     letter-spacing: 2px;
 }
+*/
+
+/* start of desktop icons */
+header{
+  position:absolute;
+}
+.folder-container{
+  margin-left: 20px;
+  width: 80px;
+}
+.image-container{
+  display: flex;
+  justify-content: center;
+}
+.folder-image{
+  max-width: 55px;
+}
+.folder-image:hover{
+  cursor: pointer;
+  content: url('/assets/home-page-icons/Folder Open.ico');
+}
+.active img{
+  content: url('/assets/home-page-icons/Folder Open.ico');
+}
+.folder-title{
+  margin-top: 0;
+  font-family: 'pixel-arial';
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-left: -6px;
+}
+/* end of desktop icons */

@@ -2,11 +2,11 @@ body{
     background-color: teal;
 }
 #welcome-window {
-    width: 760px;
-    height: 435px;
+    width: 570px;
+    height: 370px;
     position: absolute;
-    top: 250px;
-    left: 200px;
+    top: 150px;
+    left: 400px;
     background-color: #D0D0D0;
     border: 2px solid white;
     z-index: 10;
@@ -19,14 +19,14 @@ body{
     color: white;
     padding: 3px;
     cursor: move;
-    user-select: none; /* Prevents text selection */
+    user-select: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .title p{
     font-family: "pixel-arial";
-    font-size: 17px;
+    font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
     margin: 0;
@@ -48,17 +48,17 @@ body{
 
 }    
 .top-part{
-    width: 450px;
+    width: 350px;
     text-align: right;
     color: black;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 h1{
     margin-bottom: 0;
     font-family: "pixel-arial";
     letter-spacing: 2px;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: lighter;
 }
 h2{
@@ -66,17 +66,20 @@ h2{
     margin-bottom: 0;
     font-family: "pixel-arial";
     letter-spacing: 1px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: lighter;
 }
 .bottom-part{
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-columns: 0.95fr 0.2fr;
+}
+.bottom-left{
+    width: 300px;
 }
 .contents-label p{
     font-family: "pixel-arial-bold";
     background-color: black;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     padding: 2px;
     padding-left: 20px;
     margin-bottom: 0;
@@ -90,20 +93,29 @@ h2{
     color: black;
     letter-spacing: 1px;
 }
+.option:hover{
+    cursor: pointer;
+    background-color: #C0C0C0;
+}
+.selected{
+    background-color: #C0C0C0;
+}
 .bottom-right{
-    margin-left: 50px;
-    padding-top: 10px;
+    padding-top: 0;
+    margin-top: -10px;
 }
 .description{
-    width: 280px;
+    width: 220px;
     font-family: "pixel-arial";
+    font-size: 14px;
     color: black;
     letter-spacing: 2px;
+    text-align: left;
 }
 
 #calculator-window {
-    width: 480px;
-    height: 580px;
+    width: 380px;
+    height: 520px;
     position: absolute;
     top: 170px;
     left: 1150px;
@@ -127,7 +139,7 @@ h2{
 .calculator-input-output-screen{
     display: flex;
     margin: 20px auto;
-    width: 430px;
+    width: 330px;
     height: 50px;
     background-color: rgb(230, 230, 230);
     border-top: 3px black solid;
@@ -141,6 +153,7 @@ h2{
     justify-content: right;
     align-items: center;
     margin-bottom: 30px;
+    overflow: hidden;
 }
 .top-row{
     display: flex;
@@ -170,7 +183,7 @@ h2{
     border-bottom: 2px black solid;
     border-left: 2px white solid;
     padding: 0 5px;
-    min-width: 102px;
+    min-width: 70px;
 }
 .top-row .buttons .button:hover{
     cursor: pointer;
@@ -184,7 +197,7 @@ h2{
     text-align: center;
     color:black;
     font-family: 'pixel-arial';
-    font-size: 13px;
+    font-size: 10px;
 }
 .bottom-buttons{
     display: flex;
@@ -199,7 +212,7 @@ h2{
     border-bottom: 2px black solid;
     border-left: 2px white solid;
     padding: 0 5px;
-    width: 55px;
+    width: 45px;
     margin-bottom: 10px;
 }
 .bottom-buttons .button:hover{
@@ -216,8 +229,8 @@ h2{
     gap: 5px;
 }
 .bottom-right-buttons .row .button{
-    width: 54px;
-    height: 45px;
+    width: 35px;
+    height: 36px;
 }
 
 .task-bar {
@@ -225,13 +238,13 @@ h2{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 64px; 
+    height: 44px; 
     background-color: #C0C0C0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px; 
-    }
+}
 
 .left-task-bar {
     display: flex;
@@ -239,7 +252,7 @@ h2{
 }
 .task{
     display: flex;
-    height: 35px;
+    height: 25px;
     padding: 5px 10px;
     padding-bottom: 3px;
     background-color: rgb(226, 226, 226);
@@ -251,11 +264,12 @@ h2{
 .task-title{
     color: black;
     font-family: 'pixel-arial';
+    font-size: 15px;
 }
 .task-logo p{
     color: black;
     font-family: 'pixel-arial';
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 2px;
 }
 .left-task-bar .task .hr{

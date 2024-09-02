@@ -72,7 +72,7 @@ import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-    // SocketIoModule.forRoot(config)
+      // SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

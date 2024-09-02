@@ -1,11 +1,38 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [DatePipe]
 })
 export class HomeComponent implements OnInit {
+
+  constructor(private datePipe: DatePipe) { }
+
+  // content window stuff
+  
+  currentDescription: string = "";
+  descriptions: string[] = [
+    "Browse through a diverse range of projects created by our community of developers. From web development and mobile apps to machine learning and AI.",
+    "Search through mostly sports-related APIs that are upadted weekly. Our documentation page should help you integrate with your applications.",
+    "I blog about any new skills or technologies that I am learning as well as random non-technical topics.",
+    "View my social media links and contact me about any questions you may have or suggestions on improving my website!"
+  ]
+  contentChange(i: number){
+    this.currentDescription = this.descriptions[i];
+    document.getElementById("option0")?.classList.remove("selected");
+    document.getElementById("option1")?.classList.remove("selected");
+    document.getElementById("option2")?.classList.remove("selected");
+    document.getElementById("option3")?.classList.remove("selected");
+    document.getElementById("option" + i)?.classList.add("selected");
+  }
+
+  // task bar stuff
+  date: any = "";
+  time: any = "";
+
+
   // define calculator variables
   calculatorDisplayString: string = '0';
   calculatorOutput: number = 0;
@@ -29,8 +56,17 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.makeDraggable(this.welcomeWindow.nativeElement, this.welcomeWindowHeader.nativeElement);
     this.makeDraggable(this.calculatorWindow.nativeElement, this.calculatorWindowHeader.nativeElement);
+    this.updateTime();
+    setInterval(() => {
+      this.updateTime();
+    }, 1000);
+    this.contentChange(0);
   }
-
+  updateTime() {
+    const now = new Date();
+    this.time = this.datePipe.transform(now, 'hh:mm a');
+    this.date = this.datePipe.transform(now, 'MM/dd/yyyy');
+  }
   makeDraggable(element: HTMLElement, header: HTMLElement): void {
     header.onmousedown = (e: MouseEvent) => this.dragMouseDown(e, element);
   }

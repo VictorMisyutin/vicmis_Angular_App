@@ -71,15 +71,11 @@ h2{
     }
 } */
 
-body{
-    height: 1200px;
-}
-
 h2{
     text-align: center;
     font-family: 'pixel-arial';
     letter-spacing: 4px;
-    font-size: 35px;
+    font-size: 315px;
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -88,8 +84,8 @@ h2{
 }
 
 .project-window {
-    width: 350px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     position: absolute;
     background-color: #D0D0D0;
     border: 2px solid white;
@@ -100,7 +96,7 @@ h2{
 .project-description{
     color: black;
     font-family: 'pixel-arial';
-    font-size: 18px;
+    font-size: 15px;
     margin: 20px 30px;
 }
 
@@ -122,45 +118,100 @@ h2{
     margin: 10px 20px;
     letter-spacing: 4px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
 }
 #liftwareWindow{
-    top: 200px;
-    left: 180px;
+    top: 100px;
+    left: 230px;
 }
 #thirdwardarchiveWindow{
-    top: 200px;
-    left: 580px;
+    top: 100px;
+    left: 530px;
 }
 #typingGameWindow{
-    top: 200px;
-    left: 980px;
+    top: 100px;
+    left: 830px;
 }
 #sudokuWindow{
-    top: 200px;
-    left: 1380px;
+    top: 100px;
+    left: 1130px;
 }
 #collisionResolutionWindow{
-    top: 550px;
-    left: 180px;
+    top: 100px;
+    left: 1430px;
 }
 #spaceInvadersWindow{
-    top: 550px;
-    left: 580px;
+    top: 450px;
+    left: 230px;
 }
 #connectionsWindow{
-    top: 550px;
-    left: 980px;
+    top: 450px;
+    left: 530px;
 }
 #catalogedWindow{
-    top: 550px;
-    left: 1380px;
+    top: 450px;
+    left: 830px;
 }
 #dataVisualizationWindow{
-    top: 900px;
-    left: 180px;
+    top: 450px;
+    left: 1130px;
 }
 #musicRankingWindow{
-    top: 900px;
-    left: 580px;
+    top: 450px;
+    left: 1430px;
+}
+
+
+
+.task-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 44px; 
+    background-color: #C0C0C0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; 
+}
+
+.left-task-bar {
+    display: flex;
+    align-items: center;
+}
+.task{
+    display: flex;
+    height: 25px;
+    padding: 5px 10px;
+    padding-bottom: 3px;
+    background-color: rgb(226, 226, 226);
+    border: 2px #A5A5A5 solid;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 2px -2px gray;
+}
+.task-title{
+    color: black;
+    font-family: 'pixel-arial';
+    font-size: 15px;
+}
+.task-logo p{
+    color: black;
+    font-family: 'pixel-arial';
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.left-task-bar .task .hr{
+    height: 25px;
+    border: 1px gray solid;
+    margin: 0 8px;
+}
+.right-task-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.right-task-bar .task{
+    padding: 5px 15px;
 }
