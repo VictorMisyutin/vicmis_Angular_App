@@ -32,6 +32,7 @@ import { BlogHomeComponent } from './pages/blog/blog-home/blog-home.component';
 import { MultiplaterGameComponent } from './pages/projects/multiplater-game/multiplater-game.component';
 import { AnIntroductionToVimComponent } from './pages/blog/posts/an-introduction-to-vim/an-introduction-to-vim.component';
 import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-experience-with-linux-and-windows/my-experience-with-linux-and-windows.component';
+import { RetroUiComponent } from './components/informal/retro-ui/retro-ui.component';
 // import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 // const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
@@ -64,7 +65,8 @@ import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-
     BlogHomeComponent,
     MultiplaterGameComponent,
     AnIntroductionToVimComponent,
-    MyExperienceWithLinuxAndWindowsComponent
+    MyExperienceWithLinuxAndWindowsComponent,
+    RetroUiComponent
   ],
   imports: [
     BrowserModule,

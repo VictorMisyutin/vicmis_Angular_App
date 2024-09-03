@@ -1,7 +1,3 @@
-<div class="header">
-</div>
-
-
 <header>
     <div class="formal-mode" *ngIf="mode === 'formal'">
         <a href="/" class="logo">vicmis</a>
@@ -19,36 +15,4 @@
     </div>
 
 
-    <div class="informal-mode" *ngIf="mode === 'informal'">
-        <div class="folder-container" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" style="margin-top: 20px;">
-            <div class="image-container">
-                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
-            </div>
-            <p class="folder-title">vicmis</p>
-        </div>
-        <div class="folder-container" [routerLink]="['/projects']" [routerLinkActive]="['active']">
-            <div class="image-container">
-                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
-            </div>
-            <p class="folder-title" style="font-size: 12px;">projects</p>
-        </div>
-        <div class="folder-container" [routerLink]="['/docs']" [routerLinkActive]="['active']" >
-            <div class="image-container">
-                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
-            </div>
-            <p class="folder-title">APIs</p>
-        </div>
-        <div class="folder-container" [routerLink]="['/blog']" [routerLinkActive]="['active']" >
-            <div class="image-container">
-                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
-            </div>
-            <p class="folder-title">blog</p>
-        </div>
-        <div class="folder-container" [routerLink]="['/contact']" [routerLinkActive]="['active']" >
-            <div class="image-container">
-                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
-            </div>
-            <p class="folder-title">contact</p>
-        </div>
-    </div>
 </header>

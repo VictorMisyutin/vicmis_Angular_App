@@ -72,34 +72,3 @@
       float: none;
   }
 }
-
-/* start of informal mode */
-.informal-mode{
-  position:fixed;
-}
-.informal-mode .folder-container{
-  margin-left: 20px;
-  width: 80px;
-}
-.informal-mode .image-container{
-  display: flex;
-  justify-content: center;
-}
-.informal-mode .folder-image{
-  max-width: 55px;
-}
-.informal-mode .folder-image:hover{
-  cursor: pointer;
-  content: url('/assets/home-page-icons/Folder Open.ico');
-}
-.informal-mode .active img{
-  content: url('/assets/home-page-icons/Folder Open.ico');
-}
-.informal-mode .folder-title{
-  margin-top: 0;
-  font-family: 'pixel-arial';
-  text-align: center;
-  font-size: 14px;
-  letter-spacing: 1px;
-  margin-left: -6px;
-}

@@ -1,0 +1,429 @@
+
+.informal-mode{
+    position:fixed;
+    width: 100%;
+  }
+  .informal-mode .folder-container{
+    margin-left: 20px;
+    width: 80px;
+  }
+  .informal-mode .image-container{
+    display: flex;
+    justify-content: center;
+  }
+  .informal-mode .folder-image{
+    max-width: 55px;
+  }
+  .informal-mode .task-image{
+    max-width: 55px;
+  }
+  .informal-mode .task-image{
+    cursor: pointer;
+  }
+  .informal-mode .folder-image:hover{
+    cursor: pointer;
+    content: url('/assets/home-page-icons/Folder Open.ico');
+  }
+  .informal-mode .active img{
+    content: url('/assets/home-page-icons/Folder Open.ico');
+  }
+  .informal-mode .folder-title{
+    margin-top: 0;
+    font-family: 'pixel-arial';
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: -6px;
+  }
+  
+  
+  /* start of informal CSS */
+  .informal-mode{
+    background-color: teal;
+    min-height: 100vh;
+  }
+  .informal-mode #welcome-window {
+    position: absolute;
+    width: 570px;
+    height: 370px;
+    top: 150px;
+    left: 350px;
+    background-color: #D0D0D0;
+    border: 2px solid white;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .informal-mode #welcome-window-header {
+    background-color: #A5A5A5;
+    border-bottom: 1px white solid;
+    color: white;
+    padding: 3px;
+    cursor: move;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .informal-mode .title p{
+    font-family: "pixel-arial";
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+  }
+  .informal-mode .close-button{
+    background-color: #D0D0D0;
+    border-top: 1px black solid;
+    border-right: 2px black solid;
+    border-bottom: 2px black solid;
+    border-left: 1px black solid;
+  }
+  .informal-mode .close-button:hover{
+    cursor:default;
+  }
+  .informal-mode .close-button p{
+    color: black;
+    font-family: "pixel-arial";
+    font-size: 20px;
+    margin: -5px 2px 0 5px;
+  
+  }    
+  .informal-mode .top-part{
+    width: 350px;
+    text-align: right;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .informal-mode h1{
+    margin-bottom: 0;
+    font-family: "pixel-arial";
+    letter-spacing: 2px;
+    font-size: 22px;
+    font-weight: lighter;
+  }
+  .informal-mode h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "pixel-arial";
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: lighter;
+  }
+  .informal-mode .bottom-part{
+    display: grid;
+    grid-template-columns: 0.95fr 0.2fr;
+  }
+  .informal-mode .bottom-left{
+    width: 300px;
+  }
+  .informal-mode .contents-label p{
+    font-family: "pixel-arial-bold";
+    background-color: black;
+    letter-spacing: 4px;
+    padding: 2px;
+    padding-left: 20px;
+    margin-bottom: 0;
+  }
+  .informal-mode .option{
+    border-bottom: 3px #969696 solid;
+    height: 30px;
+    padding-left: 15px;
+    padding-top: 6px;
+    font-family: "pixel-arial-bold";
+    color: black;
+    letter-spacing: 1px;
+  }
+  .informal-mode .option:hover{
+    cursor: pointer;
+    background-color: #C0C0C0;
+  }
+  .informal-mode .selected{
+    background-color: #C0C0C0;
+  }
+  .informal-mode .bottom-right{
+    padding-top: 0;
+    margin-top: -10px;
+  }
+  .informal-mode .description{
+    width: 220px;
+    font-family: "pixel-arial";
+    font-size: 14px;
+    color: black;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  .informal-mode #calculator-window {
+    width: 380px;
+    height: 520px;
+    position: absolute;
+    top: 170px;
+    left: 1150px;
+    background-color: #D0D0D0;
+    border: 2px solid white;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .informal-mode #calculator-window-header {
+    background-color: #0000a8;
+    border-bottom: 1px white solid;
+    color: white;
+    padding: 3px;
+    cursor: move;
+    user-select: none; /* Prevents text selection */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .informal-mode .calculator-input-output-screen{
+    display: flex;
+    margin: 20px auto;
+    width: 330px;
+    height: 50px;
+    background-color: rgb(230, 230, 230);
+    border-top: 3px black solid;
+    border-right: 3px white solid;
+    border-bottom: 3px white solid;
+    border-left: 3px black solid;
+    color: black;
+    padding: 0 7px;
+    font-family: 'pixel-arial';
+    font-size: 35px;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  .informal-mode .top-row{
+    display: flex;
+    margin: 0 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .informal-mode .top-row .empty-spot{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(214, 214, 214);
+    border-top: 2px black solid;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+    border-left: 2px black solid;
+    margin-left: 10px;
+  }
+  .informal-mode .top-row .buttons{
+    display: flex;
+    gap: 6px;
+  }
+  .informal-mode .top-row .buttons .button{
+    background-color: rgb(214, 214, 214);
+    border-top: 2px white solid;
+    border-right: 2px black solid;
+    border-bottom: 2px black solid;
+    border-left: 2px white solid;
+    padding: 0 5px;
+    min-width: 70px;
+  }
+  .informal-mode .top-row .buttons .button:hover{
+    cursor: pointer;
+    background-color: rgb(196, 196, 196);
+    border-top: 2px black solid;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+    border-left: 2px black solid;
+  }
+  .informal-mode .button p{
+    text-align: center;
+    color:black;
+    font-family: 'pixel-arial';
+    font-size: 10px;
+  }
+  .informal-mode .bottom-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-left: 13px;
+  }
+  .informal-mode .bottom-buttons .button{
+    background-color: rgb(214, 214, 214);
+    border-top: 2px white solid;
+    border-right: 2px black solid;
+    border-bottom: 2px black solid;
+    border-left: 2px white solid;
+    padding: 0 5px;
+    width: 45px;
+    margin-bottom: 10px;
+  }
+  .informal-mode .bottom-buttons .button:hover{
+    cursor: pointer;
+    background-color: rgb(196, 196, 196);
+    border-top: 2px black solid;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+    border-left: 2px black solid;
+  }
+  .informal-mode .bottom-right-buttons .row{
+    display: flex;
+    margin-right: 15px;
+    gap: 5px;
+  }
+  .informal-mode .bottom-right-buttons .row .button{
+    width: 35px;
+    height: 36px;
+  }
+  
+  .informal-mode .task-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 44px; 
+    background-color: #C0C0C0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; 
+  }
+  
+  .informal-mode .left-task-bar {
+    display: flex;
+    align-items: center;
+  }
+  .informal-mode .window-tasks{
+    display: flex;
+    gap: 20px;
+  }
+  .informal-mode .task{
+    display: flex;
+    height: 25px;
+    padding: 5px 10px;
+    padding-bottom: 3px;
+    background-color: rgb(226, 226, 226);
+    border: 2px #A5A5A5 solid;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 2px -2px gray;
+  }
+  .informal-mode .task-title{
+    color: black;
+    font-family: 'pixel-arial';
+    font-size: 15px;
+  }
+  .informal-mode .task-logo p{
+    color: black;
+    font-family: 'pixel-arial';
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .informal-mode .left-task-bar .task .hr{
+    height: 25px;
+    border: 1px gray solid;
+    margin: 0 8px;
+  }
+  .informal-mode .right-task-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .informal-mode .right-task-bar .task{
+    padding: 5px 15px;
+  }
+  .hide{
+    display: none;
+  }
+  .project-windows h2{
+    text-align: center;
+    font-family: 'pixel-arial';
+    letter-spacing: 4px;
+    font-size: 315px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px black solid;
+}
+
+.project-window {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    background-color: #D0D0D0;
+    border: 2px solid white;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-description{
+    color: black;
+    font-family: 'pixel-arial';
+    font-size: 15px;
+    margin: 20px 30px;
+}
+
+.project-window-header {
+    background-color: #0000a8;
+    border-bottom: 1px white solid;
+    color: white;
+    padding: 3px;
+    cursor: move;
+    user-select: none; /* Prevents text selection */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.project-window-header a{
+    color: white;
+    font-family: 'pixel-arial';
+    text-decoration: none;
+    margin: 5px 15px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 11px;
+}
+#liftwareWindow{
+    top: 100px;
+    left: 230px;
+}
+#thirdwardarchiveWindow{
+    top: 100px;
+    left: 530px;
+}
+#typingGameWindow{
+    top: 100px;
+    left: 830px;
+}
+#sudokuWindow{
+    top: 100px;
+    left: 1130px;
+}
+#collisionResolutionWindow{
+    top: 100px;
+    left: 1430px;
+}
+#spaceInvadersWindow{
+    top: 450px;
+    left: 230px;
+}
+#connectionsWindow{
+    top: 450px;
+    left: 530px;
+}
+#catalogedWindow{
+    top: 450px;
+    left: 830px;
+}
+#dataVisualizationWindow{
+    top: 450px;
+    left: 1130px;
+}
+#musicRankingWindow{
+    top: 450px;
+    left: 1430px;
+}
+.hide{
+    display: none;
+}

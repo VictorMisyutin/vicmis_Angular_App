@@ -1,0 +1,380 @@
+<div class="informal-mode" *ngIf="mode === 'informal'">
+    <div class="home-icons">
+        
+        <div class="folder-container" style="margin-top: 20px;" (click)="toggleMode()">
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">formal</p>
+        </div>
+        <div class="folder-container" (click)="closeWindow(2);">
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">vicmis</p>
+        </div>
+        <div class="folder-container" (click)="openWindow(2)" >
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title" style="font-size: 12px;">projects</p>
+        </div>
+        <div class="folder-container" [routerLink]="['/docs']" [routerLinkActive]="['active']" >
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">APIs</p>
+        </div>
+        <div class="folder-container" [routerLink]="['/blog']" [routerLinkActive]="['active']" >
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">blog</p>
+        </div>
+        <div class="folder-container" [routerLink]="['/contact']" [routerLinkActive]="['active']" >
+            <div class="image-container">
+                <img src="/assets/home-page-icons/Folder Closed.ico" class="folder-image">
+            </div>
+            <p class="folder-title">contact</p>
+        </div>
+        <div class="folder-container">
+            <div class="image-container" style="margin-left: -10px;margin-bottom: 2px;" (click)="openWindow(0)">
+                <img src="/assets/home-page-icons/User's Computer.ico" class="task-image">
+            </div>
+            <p class="folder-title" style="font-size: 12px;">welcome</p>
+        </div>
+        <div class="folder-container">
+            <div class="image-container" style="margin-left: -10px; margin-bottom: 5px;" (click)="openWindow(1)">
+                <img src="/assets/home-page-icons/calculator_icon.png" class="task-image">
+            </div>
+            <p class="folder-title" style="font-size: 12px;">calculator</p>
+        </div>
+    </div>
+
+
+    <div id="welcome-window" #welcomeWindow>
+        <div id="welcome-window-header" #welcomeWindowHeader>
+          <div class="title"><p>Welcome to vicmis.com</p></div>
+          <div class="close-button" (click)="closeWindow(0)"><p>x</p></div>
+        </div>
+        <div id="window-content">
+          <div class="top-part">
+            <h1>Welcome to vicmis{{currentRoute}}</h1>
+            <h2>By Victor Misyutin</h2>
+          </div>
+          <div class="bottom-part">
+            <div class="bottom-left">
+              <div class="contents-label">
+                <p>Contents</p>
+              </div>
+              <div class="option" style="border-left: 5px red solid" (click)="contentChange(0)" id="option0">
+                Discover Projects
+              </div>
+              <div class="option" style="border-left: 5px #014df3  solid" (click)="contentChange(1)" id="option1">
+                Use Free APIs
+              </div>
+              <div class="option" style="border-left: 5px yellow solid" (click)="contentChange(2)" id="option2">
+                Read my Blog
+              </div>
+              <div class="option" style="border-left: 5px rgb(1, 180, 1) solid" (click)="contentChange(3)" id="option3">
+                Contact Me
+              </div>
+            </div>
+            <div class="bottom-right">
+              <p class="description">
+                {{currentDescription}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div id="calculator-window" #calculatorWindow>
+        <div id="calculator-window-header" #calculatorWindowHeader>
+          <div class="title"><p>Calculator</p></div>
+          <div class="close-button" (click)="closeWindow(1)"><p>x</p></div>
+        </div>
+        <div id="calculator-window-content">
+          <div class="calculator-input-output-screen">
+            {{calculatorDisplayString}}
+          </div>
+          <div class="calculator-inputs">
+            <div class="top-row">
+              <div class="empty-spot"></div>
+              <div class="buttons">
+                <div class="button" (click)="calculatorBackspace()">
+                  <p>Backspace</p>
+                </div>
+                <div class="button" (click)="calculatorClearEntry()">
+                  <p>CE</p>
+                </div>
+                <div class="button" (click)="calculatorClear()">
+                  <p>C</p>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-buttons">
+              <div class="left-column">
+                <div class="button">
+                  <p>MC</p>
+                </div>
+                <div class="button">
+                  <p>MR</p>
+                </div>
+                <div class="button">
+                  <p>MS</p>
+                </div>
+                <div class="button">
+                  <p>M+</p>
+                </div>
+                <div class="button" style="margin-top: 23px;" (click)="calculatorInputNumber('pi')">
+                  <p>pi</p>
+                </div>
+                <div class="button" (click)="calculatorInputNumber('e')">
+                  <p>e</p>
+                </div>
+              </div>
+              <div class="bottom-right-buttons">
+                <div class="row">
+                  <div class="button" (click)="calculatorInputNumber('7')">
+                    <p>7</p>
+                  </div>
+                  <div class="button" (click)="calculatorInputNumber('8')">
+                    <p>8</p>
+                  </div>
+                  <div class="button" (click)="calculatorInputNumber('9')">
+                    <p>9</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('divide')">
+                    <p style="font-size: 15px; margin-top: 7px;">/</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('sqt')">
+                    <p>sqt</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="button" (click)="calculatorInputNumber('4')">
+                    <p>4</p>
+                  </div>
+                  <div class="button" (click)="calculatorInputNumber('5')">
+                    <p>5</p>
+                  </div>
+                  <div class="button" (click)="calculatorInputNumber('6')">
+                    <p>6</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('multiply')">
+                    <p style="font-size: 25px; font-family: 'arial'; margin-top: 10px;">*</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('percent')">
+                    <p style="font-size: 13px; margin-top: 9px;">%</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="button" (click)="calculatorInputNumber('1')">
+                    <p>1</p>
+                  </div>
+                  <div class="button" (click)="calculatorInputNumber('2')">
+                    <p>2</p>
+                  </div>
+                  <div class="button" (click)="calculatorInputNumber('3')">
+                    <p>3</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('subtract')">
+                    <p style="font-size: 19px; margin-top: 1px;">-</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('inverse')">
+                    <p style="font-size: 13px; margin-top: 9px;">1/x</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="button" (click)="calculatorInputNumber('0')">
+                    <p>0</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorFlipSign()">
+                    <p style="font-size: 13px; margin-top: 9px;">+/-</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorInputNumber('.')">
+                    <p style="font-size: 22px; margin-top: -2px;">.</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorOperation('add')">
+                    <p style="font-size: 15px; margin-top: 7px;">+</p>
+                  </div>
+                  <div class="button" style="padding-top: 0; padding-bottom: 0;" (click)="calculatorSubmit()">
+                    <p style="font-size: 16px; margin-top: 6px;">=</p>
+                  </div>
+                </div>
+                <div class="row" style="margin-top: 13px;">
+                  <div class="button" (click)="calculatorOperation('sin')">
+                    <p>sin</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('cos')">
+                    <p>cos</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('tan')">
+                    <p>tan</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('ln')">
+                    <p>ln</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('log')">
+                    <p>log</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="button" (click)="calculatorOperation('exp')">
+                    <p>exp</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('x^2')">
+                    <p>x^2</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('x^3')">
+                    <p>x^3</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('x^y')">
+                    <p>x^y</p>
+                  </div>
+                  <div class="button" (click)="calculatorOperation('n!')">
+                    <p style="letter-spacing: 2px;">n!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+    
+
+      </div>
+      
+      <div class="hide" id="project-windows" #projectWindows>
+            <section class="row">
+                <div class="project-window" id='liftwareWindow' #liftwareWindow>
+                    <div class="project-window-header" id="liftwareWindow" #liftwareWindowHeader>
+                        <a href="liftware">LiftWare</a>
+                    </div>
+                    <p class="project-description">Personalized AI workouts.</p>
+                </div>
+                <div class="project-window" id="thirdwardarchiveWindow" #thirdwardarchiveWindow>
+                    <div class="project-window-header" id="thirdwardarchiveWindowHeader" #thirdwardarchiveWindowHeader>
+                        <a href="https://thirdwardarchive.com">thirdwardarchive</a>
+                    </div>
+                    <p class="project-description">thirdwardarchive</p>
+                </div>
+            </section>
+            <section class="row">
+                <div class="project-window" id="typingGameWindow" #typingGameWindow>
+                    <div class="project-window-header" id="typingGameWindowHeader" #typingGameWindowHeader>
+                        <a href="projects/typing">Typing Game</a>
+                    </div>
+                    <p class="project-description">Words will attack you and you must type them to survive!</p>
+                </div>
+                <div class="project-window" id="sudokuWindow" #sudokuWindow>
+                    <div class="project-window-header" id="sudokuWindowHeader" #sudokuWindowHeader>
+                        <a href="projects/sudoku">Sudoku</a>
+                    </div>
+                    <p class="project-description">Create, play, and solve games of Sudoku.</p>
+                </div>
+            </section>
+            <section class="row">
+                <div class="project-window" id="collisionResolutionWindow" #collisionResolutionWindow>
+                    <div class="project-window-header" id="collisionResolutionWindow" #collisionResolutionWindowHeader>
+                        <a href="projects/collision" style="font-size: 10.5px;">Collision Resolution</a>
+                    </div>
+                    <p class="project-description">Simulation for different collision resolution techniques during hashing.</p>
+                </div>
+                <div class="project-window" id="spaceInvadersWindow" #spaceInvadersWindow>
+                    <div class="project-window-header" id="spaceInvadersWindowHeader" #spaceInvadersWindowHeader>
+                        <a href="projects/space-invaders">Space Invaders</a>
+                    </div>
+                    <p class="project-description">Rudimentary Space Invaders game. Still somewhat working on it so expect changes.</p>
+                </div>
+            </section>
+            <section class="row">
+                <div class="project-window" id="connectionsWindow" #connectionsWindow>
+                    <div class="project-window-header" id="connectionsWindowHeader" #connectionsWindowHeader> 
+                        <a href="projects/connections">Connections</a>
+                    </div>
+                    <p class="project-description">Totally uhhh original idea... <br>But with hints!</p>
+                </div>
+                <div class="project-window" id="catalogedWindow" #catalogedWindow>
+                    <div class="project-window-header" id="catalogedWindowHeader" #catalogedWindowHeader>
+                        <a href="projects/cataloged">Cataloged</a>
+                    </div>
+                    <p class="project-description">Game Directory</p>
+                </div>
+            </section>
+            <section class="row">
+                <div class="project-window" id="dataVisualizationWindow" #dataVisualizationWindow>
+                    <div class="project-window-header" id="dataVisualizationWindow" #dataVisualizationWindowHeader>
+                        <a href="projects/data-viz">Data Visualization</a>
+                    </div>
+                    <p class="project-description">Visualization of data sets using D3.js</p>
+                </div>
+                <div class="project-window" id="musicRankingWindow" #musicRankingWindow>
+                    <div class="project-window-header"  id="musicRankingWindow" #musicRankingWindowHeader>
+                        <a href="projects/music-ranking">music ranking</a>
+                    </div>
+                    <p class="project-description">Ranking bands, albums, and more</p>
+                </div>
+            </section>
+      </div>
+
+
+
+    <div class="task-bar">
+    <div class="left-task-bar">
+        <div class="task">
+        <div class="task-logo">
+            <p>VM</p>
+        </div>
+        <div class="hr"></div>
+        <p class="task-title">
+            vicmis
+        </p>
+        </div>
+        <div class="task" style="padding: 0 2px; margin: 0 20px; height: 30px;"></div>
+        <div class="window-tasks">
+        <div class="task" id="welcome-window-task" #welcomeWindowTask>
+            <div class="task-logo">
+            <p>VM</p>
+            </div>
+            <div class="hr"></div>
+            <p class="task-title">
+            Welcome to vicmis
+            </p>
+        </div>
+        <div class="task" id="calculator-window-task" #calculatorWindowTask>
+            <div class="task-logo">
+                <img src="/assets/home-page-icons/calculator 1.png" style="margin-top: 4px;height: 25px" >
+            </div>
+            <div class="hr"></div>
+            <p class="task-title">
+            Calculator
+            </p>
+        </div>
+        <div class="task" id="projects-window-task" #projectsWindowTask  >
+            <div class="task-logo">
+                <p>VM</p>
+            </div>
+            <div class="hr"></div>
+            <p class="task-title">
+                Projects
+            </p>
+        </div>
+
+        </div>
+    </div>
+    <div class="right-task-bar">
+        <div class="task" style="border-right: 1px gray solid;">
+        <p class="task-title">
+            {{date}}
+        </p>
+        </div>
+        <div class="task" style="border-left: 1px gray solid;">
+        <p class="task-title">
+            {{time}}
+        </p>
+        </div>
+    </div>
+    </div>
+
+</div>
