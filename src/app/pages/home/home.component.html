@@ -1,7 +1,7 @@
-<body>
+<body *ngIf="mode === 'formal'">
   
   <app-header></app-header>
-  <div class="formal-mode" *ngIf="mode === 'formal'">
+  <div class="formal-mode">
     <section class="hero">
       <h2>Welcome to vicmis</h2>
       <p>Explore, Learn, and Build</p>
@@ -31,8 +31,10 @@
       </div>
     </section>
   </div>
-  <div *ngIf="mode === 'informal'">
+</body>
+<body *ngIf="mode === 'informal'">
+  <div>
     <app-retro-ui></app-retro-ui>
   </div>
+
 </body>
-    

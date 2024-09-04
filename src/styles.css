@@ -23,6 +23,7 @@ body{
     margin: 0;
     font-family: Arial, sans-serif;
     color: white;
+    background-color: #4b4b4b;
     display: flex; 
     flex-direction: column; 
     min-height: 95vh;

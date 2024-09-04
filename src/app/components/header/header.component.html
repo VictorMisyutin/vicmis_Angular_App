@@ -1,8 +1,8 @@
 <header>
-    <div class="formal-mode" *ngIf="mode === 'formal'">
+    <div class="formal-mode">
         <a href="/" class="logo">vicmis</a>
         <div class="header-middle">
-            <button (click)="toggleMode()">
+            <button (click)="toggleMode()" [routerLink]="['/']">
                 <p>view this site informally</p>
             </button>
         </div>

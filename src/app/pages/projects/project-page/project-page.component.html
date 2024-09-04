@@ -1,124 +1,68 @@
-<!-- <app-header></app-header> -->
+<app-header></app-header>
 <body>
-    <!-- <h2>PROJECTS</h2> -->
-
-    <app-header></app-header>
-
+    <h2>PROJECTS</h2>
     <main>
         <section class="row">
-            <div class="project-window" id='liftwareWindow' #liftwareWindow>
-                <div class="project-window-header" id="liftwareWindow" #liftwareWindowHeader>
-                    <a href="liftware">LiftWare</a>
-                </div>
-                <p class="project-description">Personalized AI workouts.</p>
-            </div>
-            <div class="project-window" id="thirdwardarchiveWindow" #thirdwardarchiveWindow>
-                <div class="project-window-header" id="thirdwardarchiveWindowHeader" #thirdwardarchiveWindowHeader>
-                    <a href="https://thirdwardarchive.com">thirdwardarchive</a>
-                </div>
+            <section class="project">
+                <a href="liftware">LiftWare</a>
+                <p class="project-description">Personalized AI workouts</p>
+            </section>
+            <section class="project">
+                <a href="https://thirdwardarchive.com">thirdwardarchive</a>
                 <p class="project-description">thirdwardarchive</p>
-            </div>
+            </section>
         </section>
         <section class="row">
-            <div class="project-window" id="typingGameWindow" #typingGameWindow>
-                <div class="project-window-header" id="typingGameWindowHeader" #typingGameWindowHeader>
-                    <a href="projects/typing">Typing Game</a>
-                </div>
+            <section class="project">
+                <a href="projects/typing">Typing Game</a>
                 <p class="project-description">Words will attack you and you must type them to survive!</p>
-            </div>
-            <div class="project-window" id="sudokuWindow" #sudokuWindow>
-                <div class="project-window-header" id="sudokuWindowHeader" #sudokuWindowHeader>
-                    <a href="projects/sudoku">Sudoku</a>
-                </div>
+            </section>
+            <section class="project">
+                <a href="projects/sudoku">Sudoku</a>
                 <p class="project-description">Create, play, and solve games of Sudoku.</p>
-            </div>
+            </section>
         </section>
         <section class="row">
-            <div class="project-window" id="collisionResolutionWindow" #collisionResolutionWindow>
-                <div class="project-window-header" id="collisionResolutionWindow" #collisionResolutionWindowHeader>
-                    <a href="projects/collision" style="font-size: 10.5px;">Collision Resolution</a>
-                </div>
+            <section class="project">
+                <a href="projects/collision">Collision Resolution</a>
                 <p class="project-description">Simulation for different collision resolution techniques during hashing.</p>
-            </div>
-            <div class="project-window" id="spaceInvadersWindow" #spaceInvadersWindow>
-                <div class="project-window-header" id="spaceInvadersWindowHeader" #spaceInvadersWindowHeader>
-                    <a href="projects/space-invaders">Space Invaders</a>
-                </div>
+            </section>
+            <section class="project">
+                <a href="projects/space-invaders">Space Invaders</a>
                 <p class="project-description">Rudimentary Space Invaders game. Still somewhat working on it so expect changes.</p>
-            </div>
+            </section>
         </section>
         <section class="row">
-            <div class="project-window" id="connectionsWindow" #connectionsWindow>
-                <div class="project-window-header" id="connectionsWindowHeader" #connectionsWindowHeader> 
-                    <a href="projects/connections">Connections</a>
-                </div>
+            <section class="project">
+                <a href="projects/connections">Connections</a>
                 <p class="project-description">Totally uhhh original idea... <br>But with hints!</p>
-            </div>
-            <div class="project-window" id="catalogedWindow" #catalogedWindow>
-                <div class="project-window-header" id="catalogedWindowHeader" #catalogedWindowHeader>
-                    <a href="projects/cataloged">Cataloged</a>
-                </div>
+            </section>
+            <section class="project">
+                <a href="projects/cataloged">Cataloged</a>
                 <p class="project-description">Game Directory</p>
-            </div>
+            </section>
         </section>
         <section class="row">
-            <div class="project-window" id="dataVisualizationWindow" #dataVisualizationWindow>
-                <div class="project-window-header" id="dataVisualizationWindow" #dataVisualizationWindowHeader>
-                    <a href="projects/data-viz">Data Visualization</a>
-                </div>
+            <section class="project">
+                <a href="projects/data-viz">Data Visualization</a>
                 <p class="project-description">Visualization of data sets using D3.js</p>
-            </div>
-            <div class="project-window" id="musicRankingWindow" #musicRankingWindow>
-                <div class="project-window-header"  id="musicRankingWindow" #musicRankingWindowHeader>
-                    <a href="projects/music-ranking">music ranking</a>
-                </div>
+            </section>
+            <section class="project">
+                <a href="projects/music-ranking">music ranking</a>
                 <p class="project-description">Ranking bands, albums, and more</p>
-            </div>
+            </section>
         </section>
+        <!-- <section class="row">
+            <section class="project">
+                <a href="projects/multiplayer">multiplayer game</a>
+                <p class="project-description">A multiplayer game using socket.io</p>
+            </section>
+            <section class="project">
+                <a href="projects/music-ranking">Coming Soon...</a>
+                <p class="project-description">Coming Soon...</p>
+            </section>
+        </section>
+        </section> -->
     </main>
-    
-  <div class="task-bar">
-    <div class="left-task-bar">
-      <div class="task">
-        <div class="task-logo">
-          <p>VM</p>
-        </div>
-        <div class="hr"></div>
-        <p class="task-title">
-          vicmis
-        </p>
-      </div>
-      <div class="task" style="padding: 0 2px; margin: 0 20px; height: 30px;"></div>
-      <div class="task">
-        <div class="task-logo">
-          <p>VM</p>
-        </div>
-        <div class="hr"></div>
-        <p class="task-title">
-          Welcome to vicmis
-        </p>
-      </div>
-      <div class="task" style="margin-left: 20px;">
-        <div class="task-logo">
-           <img src="/assets/home-page-icons/calculator 1.png" style="margin-top: 4px;height: 25px" >
-        </div>
-        <div class="hr"></div>
-        <p class="task-title">
-          Calculator
-        </p>
-      </div>
-    </div>
-    <div class="right-task-bar">
-      <div class="task" style="border-right: 1px gray solid;">
-        <p class="task-title">
-          {{date}}
-        </p>
-      </div>
-      <div class="task" style="border-left: 1px gray solid;">
-        <p class="task-title">
-          {{time}}
-        </p>
-      </div>
-    </div>
-  </div>
 </body>
+<app-footer></app-footer>

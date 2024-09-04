@@ -6,6 +6,7 @@
   .informal-mode .folder-container{
     margin-left: 20px;
     width: 80px;
+    cursor: pointer;
   }
   .informal-mode .image-container{
     display: flex;
@@ -17,8 +18,10 @@
   .informal-mode .task-image{
     max-width: 55px;
   }
-  .informal-mode .task-image{
+  .informal-mode .task-image:hover{
     cursor: pointer;
+    /* FOR SOME REASON IF THIS IS NOT HERE THE CURSOR DOES NOT BECOME A POINTER???? */
+    border: 0px red solid; 
   }
   .informal-mode .folder-image:hover{
     cursor: pointer;
@@ -424,6 +427,30 @@
     top: 450px;
     left: 1430px;
 }
+#contact-window {
+  position: absolute;
+  width: 570px;
+  height: 370px;
+  top: 150px;
+  left: 350px;
+  background-color: #D0D0D0;
+  border: 2px solid white;
+  z-index: 10;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#contact-window-header {
+  background-color: #A5A5A5;
+  border-bottom: 1px white solid;
+  color: white;
+  padding: 3px;
+  cursor: move;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 .hide{
     display: none;
 }

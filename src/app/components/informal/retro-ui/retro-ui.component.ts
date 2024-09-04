@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { ModeServiceService } from '../../../services/mode-service.service';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './retro-ui.component.html',
   styleUrl: './retro-ui.component.css'
 })
-export class RetroUiComponent implements OnInit, AfterViewInit {
+export class RetroUiComponent implements OnInit {
   @ViewChild('welcomeWindow', { static: false }) welcomeWindow!: ElementRef;
   @ViewChild('welcomeWindowHeader', { static: false }) welcomeWindowHeader!: ElementRef;
   @ViewChild('welcomeWindowTask', { static: false }) welcomeWindowTask!: ElementRef;
@@ -16,6 +16,7 @@ export class RetroUiComponent implements OnInit, AfterViewInit {
   @ViewChild('calculatorWindowHeader', { static: false }) calculatorWindowHeader!: ElementRef;
   @ViewChild('calculatorWindowTask', { static: false }) calculatorWindowTask!: ElementRef;
 
+  // start of project windows
   @ViewChild('projectsWindowTask', { static: false }) projectsWindowTask!: ElementRef;
 
   @ViewChild('liftwareWindow', { static: false }) liftwareWindow!: ElementRef;
@@ -47,11 +48,15 @@ export class RetroUiComponent implements OnInit, AfterViewInit {
   
   @ViewChild('musicRankingWindow', { static: false }) musicRankingWindow!: ElementRef;
   @ViewChild('musicRankingWindowHeader', { static: false }) musicRankingWindowHeader!: ElementRef;
+
+  // Contact me windows 
+  @ViewChild('contactWindow', { static: false }) contactWindow!: ElementRef;
+  @ViewChild('contactWindowHeader', { static: false }) contactWindowHeader!: ElementRef;
+  @ViewChild('contactWindowTask', { static: false }) contactWindowTask!: ElementRef;
+
   constructor(
     private modeService: ModeServiceService,
-    private datePipe: DatePipe,
-    private router: Router,
-    private cdr: ChangeDetectorRef 
+    private datePipe: DatePipe
   ) {}
 
   mode: string = "";
@@ -93,17 +98,8 @@ export class RetroUiComponent implements OnInit, AfterViewInit {
     setInterval(() => {
       this.updateTime();
     }, 1000);
-
-    this.contentChange(0);
-    // document.getElementById('project-windows')?.classList.add('hide');
-    this.openDefaultWindows();
-    this.closeWindow(2);
   }
 
-  ngAfterViewInit(): void {
-    // Call setupDraggableWindows here if the mode is informal
-    this.setupDraggableWindows();
-  }
 
   setupDraggableWindows(): void {
     this.makeDraggable(this.welcomeWindow.nativeElement, this.welcomeWindowHeader.nativeElement);
@@ -118,6 +114,7 @@ export class RetroUiComponent implements OnInit, AfterViewInit {
     this.makeDraggable(this.catalogedWindow.nativeElement, this.catalogedWindowHeader.nativeElement);
     this.makeDraggable(this.dataVisualizationWindow.nativeElement, this.dataVisualizationWindowHeader.nativeElement);
     this.makeDraggable(this.musicRankingWindow.nativeElement, this.musicRankingWindowHeader.nativeElement);
+    this.makeDraggable(this.contactWindow.nativeElement, this.contactWindowHeader.nativeElement);
   }
 
   toggleMode(): void {
@@ -183,13 +180,27 @@ export class RetroUiComponent implements OnInit, AfterViewInit {
     if (n === 0) {
       this.welcomeWindow.nativeElement.setAttribute('style', 'display:block');
       this.welcomeWindowTask.nativeElement.setAttribute('style', 'display:flex');
+      this.welcomeWindow.nativeElement.style.zIndex = this.currentZIndex;
+      
     } else if (n === 1) {
       this.calculatorWindow.nativeElement.setAttribute('style', 'display:block');
       this.calculatorWindowTask.nativeElement.setAttribute('style', 'display:flex');
+      this.calculatorWindow.nativeElement.style.zIndex = this.currentZIndex;
     }
     else if (n === 2){
+      this.closeAllWindows();
       document.getElementById('project-windows')?.classList.remove('hide')
-      this.projectsWindowTask.nativeElement.setAttribute('style', 'display:flex')
+      document.getElementById('projects-window-task')?.classList.add('task');
+      document.getElementById('projects-window-task')?.classList.remove('hide');
+      document.getElementById('projects-folder')?.classList.add('active');
+    }
+    else if (n === 5){
+      this.closeAllWindows();
+      this.contactWindow.nativeElement.setAttribute('style', 'display:block');
+      // this.contactWindowTask.nativeElement.setAttribute('style', 'display:flex');
+      document.getElementById('contact-window-task')?.classList.remove('hide');
+      document.getElementById('contact-window-task')?.classList.add('task');
+      this.contactWindow.nativeElement.style.zIndex = this.currentZIndex;
     }
     this.currentZIndex++;
   }
@@ -198,21 +209,30 @@ export class RetroUiComponent implements OnInit, AfterViewInit {
     this.closeWindow(0);
     this.closeWindow(1);
     this.closeWindow(2);
+    this.closeWindow(3);
+    this.closeWindow(4);
+    this.closeWindow(5);
   }
 
   closeWindow(n: number): void {
     if (n === 0) {
       this.welcomeWindow.nativeElement.setAttribute('style', 'display:none');
       this.welcomeWindowTask.nativeElement.setAttribute('style', 'display:none');
-
     } else if (n === 1) {
       this.calculatorWindow.nativeElement.setAttribute('style', 'display:none');
       this.calculatorWindowTask.nativeElement.setAttribute('style', 'display:none');
 
-    }
-    else if (n === 2){
+    } else if (n === 2){
       document.getElementById('project-windows')?.classList.add('hide')
-      this.projectsWindowTask.nativeElement.setAttribute('style', 'display:none')
+      // this.projectsWindowTask.nativeElement.setAttribute('style', 'display:none')
+      document.getElementById('projects-window-task')?.classList.remove('task');
+      document.getElementById('projects-window-task')?.classList.add('hide');
+      document.getElementById('projects-folder')?.classList.remove('active');
+    } else if(n === 5){
+      this.contactWindow.nativeElement.setAttribute('style', 'display:none')
+      document.getElementById('contact-window-task')?.classList.remove('task');
+      document.getElementById('contact-window-task')?.classList.add('hide');
+      document.getElementById('contact-folder')?.classList.remove('active');
     }
   }
 
