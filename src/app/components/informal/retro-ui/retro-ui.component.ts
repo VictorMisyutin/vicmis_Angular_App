@@ -98,6 +98,7 @@ export class RetroUiComponent implements OnInit {
     setInterval(() => {
       this.updateTime();
     }, 1000);
+    this.contentChange(0);
   }
 
 
