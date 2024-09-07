@@ -449,7 +449,30 @@
   justify-content: space-between;
   align-items: center;
 }
+#contact-window .top-part{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#contact-window .content-title{
+  color: black;
+  font-size: 22px;
+  font-family: 'pixel-arial';
+}
+#contact-window .links-row{
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 
+}
+#contact-window .social-media-link{
+  color: black;
+  font-size: 16px;
+  font-family: 'pixel-arial';
+
+}
 
 .hide{
     display: none;
