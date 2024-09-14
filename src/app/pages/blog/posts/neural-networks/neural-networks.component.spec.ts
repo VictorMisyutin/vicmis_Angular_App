@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NueralNetworkComponent } from './nueral-network.component';
+import { NeuralNetworksComponent } from './neural-networks.component';
 
-describe('NueralNetworkComponent', () => {
-  let component: NueralNetworkComponent;
-  let fixture: ComponentFixture<NueralNetworkComponent>;
+describe('NeuralNetworksComponent', () => {
+  let component: NeuralNetworksComponent;
+  let fixture: ComponentFixture<NeuralNetworksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NueralNetworkComponent]
+      declarations: [NeuralNetworksComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NueralNetworkComponent);
+    fixture = TestBed.createComponent(NeuralNetworksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

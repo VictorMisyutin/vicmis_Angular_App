@@ -33,7 +33,7 @@ import { MultiplaterGameComponent } from './pages/projects/multiplater-game/mult
 import { AnIntroductionToVimComponent } from './pages/blog/posts/an-introduction-to-vim/an-introduction-to-vim.component';
 import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-experience-with-linux-and-windows/my-experience-with-linux-and-windows.component';
 import { RetroUiComponent } from './components/informal/retro-ui/retro-ui.component';
-import { NueralNetworkComponent } from './pages/blog/posts/nueral-network/nueral-network.component';
+import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neural-networks.component';
 // import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 // const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
@@ -68,7 +68,7 @@ import { NueralNetworkComponent } from './pages/blog/posts/nueral-network/nueral
     AnIntroductionToVimComponent,
     MyExperienceWithLinuxAndWindowsComponent,
     RetroUiComponent,
-    NueralNetworkComponent
+    NeuralNetworksComponent
   ],
   imports: [
     BrowserModule,
