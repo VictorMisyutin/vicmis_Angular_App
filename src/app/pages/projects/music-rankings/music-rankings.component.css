@@ -28,7 +28,8 @@
     cursor: pointer;
 }
 .selected{
-    color: white;
+    /* color: red; */
+    text-decoration: underline;
 }
 .current-artist{
     font-size: 24px;
