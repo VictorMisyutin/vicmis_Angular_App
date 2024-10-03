@@ -25,6 +25,7 @@ import { BlogHomeComponent } from './pages/blog/blog-home/blog-home.component';
 import { MultiplaterGameComponent } from './pages/projects/multiplater-game/multiplater-game.component';
 import { AnIntroductionToVimComponent } from './pages/blog/posts/an-introduction-to-vim/an-introduction-to-vim.component';
 import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-experience-with-linux-and-windows/my-experience-with-linux-and-windows.component';
+import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neural-networks.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -50,8 +51,8 @@ const routes: Routes = [
   {path: 'projects/multiplayer', component: MultiplaterGameComponent, title: 'multiplayer game'},
   {path: 'blog', component: BlogHomeComponent, title: 'blog'},
   {path: 'blog/my-experience-with-linux-and-windows', component: MyExperienceWithLinuxAndWindowsComponent, title: 'Linux and Windows'},
-  {path: 'blog/an-introduction-to-vim', component: AnIntroductionToVimComponent, title: 'Introduction to Vim'}
-  
+  {path: 'blog/an-introduction-to-vim', component: AnIntroductionToVimComponent, title: 'Introduction to Vim'},
+  {path: 'blog/neural-network', component: NeuralNetworksComponent, title: 'neural network'}
 ];
 
 @NgModule({
