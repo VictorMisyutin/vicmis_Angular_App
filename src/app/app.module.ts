@@ -34,6 +34,7 @@ import { AnIntroductionToVimComponent } from './pages/blog/posts/an-introduction
 import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-experience-with-linux-and-windows/my-experience-with-linux-and-windows.component';
 import { RetroUiComponent } from './components/informal/retro-ui/retro-ui.component';
 import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neural-networks.component';
+import { CS409Component } from './pages/projects/cs-409/cs-409.component';
 // import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 // const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
@@ -68,7 +69,8 @@ import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neur
     AnIntroductionToVimComponent,
     MyExperienceWithLinuxAndWindowsComponent,
     RetroUiComponent,
-    NeuralNetworksComponent
+    NeuralNetworksComponent,
+    CS409Component
   ],
   imports: [
     BrowserModule,

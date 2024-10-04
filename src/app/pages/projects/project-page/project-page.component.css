@@ -27,7 +27,6 @@ h2{
     flex-direction: column;
 }
 .project a{
-    text-decoration: none;
     width: 60%;
     display: grid;
     text-align: center;
