@@ -341,7 +341,7 @@ export class MusicRankingsComponent implements OnInit {
       this.placedAlready = true;
     }
     else if(this.placedAlready)
-      alert('Please roll another name')
+      alert('Please roll again')
     else
       alert('This spot is already taken, pick another')
   }

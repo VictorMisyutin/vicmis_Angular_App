@@ -17,7 +17,7 @@
     </div>
 
     <input type="button" value="Roll" class="roll-button" (click)="rollNewArtist()">
-    <!-- <input type="button" value="Reset" class="reset-button" (click)="resetRankings()"> -->
+
     <h2 class="current-artist">{{currentArtist}}</h2>
 
     <div class="rankings">
@@ -27,5 +27,7 @@
             <div class="empty-artist" *ngIf="artist == ''"></div>
         </div>
     </div>
+    <input type="button" value="Reset" class="reset-button" (click)="resetRankings()">
+
 </body>
 <app-footer></app-footer>
