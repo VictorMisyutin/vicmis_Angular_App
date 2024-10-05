@@ -75,11 +75,11 @@
     display: none;
 }
 .letter {
-    color: #757575;
+    color: #949393;
 }
 
 .letter-correct{
-    color: #cacaca;
+    color: white;
 }
 
 .letter-incorrect{

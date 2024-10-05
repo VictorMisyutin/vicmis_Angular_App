@@ -25,6 +25,9 @@ export class TypingComponent implements OnInit {
   currentText: { character: string, status: number }[] = [];
   isCapsLockOn: boolean = false;
   activeGameType:string = "";
+  //   ||
+  //   ||
+  //   \/
   // game options:
   // timed
   // words
