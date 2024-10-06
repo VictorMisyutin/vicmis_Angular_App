@@ -27,6 +27,8 @@ import { AnIntroductionToVimComponent } from './pages/blog/posts/an-introduction
 import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-experience-with-linux-and-windows/my-experience-with-linux-and-windows.component';
 import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neural-networks.component';
 import { CS409Component } from './pages/projects/cs-409/cs-409.component';
+import { DegreeAuditComponent } from './pages/projects/degree-audit/degree-audit.component';
+
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
   {path: 'docs', component: DocsPageComponent, title: 'Documentation'},
@@ -53,7 +55,8 @@ const routes: Routes = [
   {path: 'blog/my-experience-with-linux-and-windows', component: MyExperienceWithLinuxAndWindowsComponent, title: 'Linux and Windows'},
   {path: 'blog/an-introduction-to-vim', component: AnIntroductionToVimComponent, title: 'Introduction to Vim'},
   {path: 'blog/neural-network', component: NeuralNetworksComponent, title: 'neural network'},
-  {path: 'projects/cs409', component: CS409Component, title: 'The Art of Web Dev'}
+  {path: 'projects/cs409', component: CS409Component, title: 'The Art of Web Dev'},
+  {path: 'projects/degree-audit', component: DegreeAuditComponent, title: 'UIUC Degree Audit'}
 
 ];
 

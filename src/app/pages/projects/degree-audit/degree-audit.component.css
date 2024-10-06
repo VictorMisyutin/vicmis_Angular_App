@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(180,180,180);
+    min-height: 100vh;
+    color: black;
+}
+.page-header{
+    text-align: center;
+    font-size: 50px;
+}

@@ -35,6 +35,7 @@ import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-
 import { RetroUiComponent } from './components/informal/retro-ui/retro-ui.component';
 import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neural-networks.component';
 import { CS409Component } from './pages/projects/cs-409/cs-409.component';
+import { DegreeAuditComponent } from './pages/projects/degree-audit/degree-audit.component';
 // import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 // const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
@@ -70,7 +71,8 @@ import { CS409Component } from './pages/projects/cs-409/cs-409.component';
     MyExperienceWithLinuxAndWindowsComponent,
     RetroUiComponent,
     NeuralNetworksComponent,
-    CS409Component
+    CS409Component,
+    DegreeAuditComponent
   ],
   imports: [
     BrowserModule,
