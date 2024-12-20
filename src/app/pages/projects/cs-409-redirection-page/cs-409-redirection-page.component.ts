@@ -11,9 +11,8 @@ export class Cs409RedirectionPageComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("here")
-    window.location.href = 'https://a864-66-253-130-240.ngrok-free.app/';
-    this.router.navigateByUrl('https://a864-66-253-130-240.ngrok-free.app/');
-
+    window.location.href = 'https://3ae2-2601-246-5482-2040-7073-db8e-a63b-80af.ngrok-free.app/';
+    this.router.navigateByUrl('https://3ae2-2601-246-5482-2040-7073-db8e-a63b-80af.ngrok-free.app/');
   }
   
 
