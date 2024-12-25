@@ -28,6 +28,8 @@ import { MyExperienceWithLinuxAndWindowsComponent } from './pages/blog/posts/my-
 import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neural-networks.component';
 import { CS409Component } from './pages/projects/cs-409/cs-409.component';
 import { Cs409RedirectionPageComponent } from './pages/projects/cs-409-redirection-page/cs-409-redirection-page.component';
+import { DynastyLandingPageComponent } from './pages/projects/shirt-dynasty/dynasty-landing-page/dynasty-landing-page.component';
+
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
   {path: 'docs', component: DocsPageComponent, title: 'Documentation'},
@@ -46,10 +48,11 @@ const routes: Routes = [
   {path: 'projects/cataloged', component: CatalogedComponent, title: 'cataloged'},
   {path: 'projects/connections/create', component: CreateConnectionsComponent, title: 'create connections'},
   {path: 'projects/data-viz', component: DataVizComponent, title: 'Data Visualization'},
-  {path: 'liftware', component: LandingPageComponent, title: 'liftware'},
-  {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'},
   {path: 'projects/music-ranking', component: MusicRankingsComponent, title: 'music ranking'},
   {path: 'projects/multiplayer', component: MultiplaterGameComponent, title: 'multiplayer game'},
+  {path: 'projects/shirt-dynasty', component: DynastyLandingPageComponent, title: 'Shirt Dynasty'},
+  {path: 'liftware', component: LandingPageComponent, title: 'liftware'},
+  {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'},
   {path: 'blog', component: BlogHomeComponent, title: 'blog'},
   {path: 'blog/my-experience-with-linux-and-windows', component: MyExperienceWithLinuxAndWindowsComponent, title: 'Linux and Windows'},
   {path: 'blog/an-introduction-to-vim', component: AnIntroductionToVimComponent, title: 'Introduction to Vim'},

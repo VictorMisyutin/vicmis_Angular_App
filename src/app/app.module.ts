@@ -36,6 +36,7 @@ import { RetroUiComponent } from './components/informal/retro-ui/retro-ui.compon
 import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neural-networks.component';
 import { CS409Component } from './pages/projects/cs-409/cs-409.component';
 import { Cs409RedirectionPageComponent } from './pages/projects/cs-409-redirection-page/cs-409-redirection-page.component';
+import { DynastyLandingPageComponent } from './pages/projects/shirt-dynasty/dynasty-landing-page/dynasty-landing-page.component';
 // import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 // const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
@@ -72,7 +73,8 @@ import { Cs409RedirectionPageComponent } from './pages/projects/cs-409-redirecti
     RetroUiComponent,
     NeuralNetworksComponent,
     CS409Component,
-    Cs409RedirectionPageComponent
+    Cs409RedirectionPageComponent,
+    DynastyLandingPageComponent
   ],
   imports: [
     BrowserModule,

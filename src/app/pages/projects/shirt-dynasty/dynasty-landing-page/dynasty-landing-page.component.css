@@ -1,0 +1,45 @@
+body{
+    background-color: #181818;
+    height: 101vh;
+}
+header{
+    background-color: #2D2D2D;
+    padding: 0 3% 0 6%;
+}
+header *{
+    font-family: "creepster", cursive;
+    display: inline-flex;
+    font-size: 18px;
+}
+header > ul{
+    list-style-type: none;
+    float: right;
+    gap: 25px;
+}
+header > ul > li:hover{
+    color: #E60000;
+    cursor: pointer;
+}
+.hero{
+    display: flex;
+    padding: 7vh 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "creepster", cursive;
+}
+.hero *{
+    font-family: "creepster", cursive;
+}
+.hero .logo{
+    color: #E60000;
+    font-size: 64px;
+}   
+.hero .slogan{
+    margin-top: 0;
+    font-weight: 100;
+    letter-spacing: 2px;
+    width: 500px;
+    text-align: center;
+    font-size: 25px;
+}
