@@ -14,7 +14,8 @@ body {
   
   .container {
     min-width: 300px;
-    width: 30%;
+    width: 40%;
+    max-width: 600px;
     margin: 50px auto 100px;
     padding: 20px;
     background-color: #fff;
