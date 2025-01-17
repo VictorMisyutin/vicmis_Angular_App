@@ -29,6 +29,7 @@ import { NeuralNetworksComponent } from './pages/blog/posts/neural-networks/neur
 import { CS409Component } from './pages/projects/cs-409/cs-409.component';
 import { Cs409RedirectionPageComponent } from './pages/projects/cs-409-redirection-page/cs-409-redirection-page.component';
 import { DynastyLandingPageComponent } from './pages/projects/shirt-dynasty/dynasty-landing-page/dynasty-landing-page.component';
+import { MovieGeneratorComponent } from './pages/projects/movie-generator/movie-generator.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path: 'projects/data-viz', component: DataVizComponent, title: 'Data Visualization'},
   {path: 'projects/music-ranking', component: MusicRankingsComponent, title: 'music ranking'},
   {path: 'projects/multiplayer', component: MultiplaterGameComponent, title: 'multiplayer game'},
+  {path: 'projects/movies', component: MovieGeneratorComponent, title: 'Movie Generator'},
   {path: 'projects/shirt-dynasty', component: DynastyLandingPageComponent, title: 'Shirt Dynasty'},
   {path: 'liftware', component: LandingPageComponent, title: 'liftware'},
   {path: 'liftware/results', component: ResultsPageComponent, title: 'liftware'},

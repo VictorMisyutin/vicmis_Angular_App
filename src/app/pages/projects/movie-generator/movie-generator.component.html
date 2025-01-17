@@ -1,0 +1,87 @@
+<app-header></app-header>
+<body>
+  <div class="container">
+    <h1>Movie Query Generator</h1>
+    <form (submit)="handleSubmit($event)">
+      
+      <!-- Query Parameters for 'Search by Title' -->
+      <div *ngIf="queryType === 'searchMovie'" class="form-group">
+        <label for="query">Movie Title:</label>
+        <input id="query" [(ngModel)]="query" name="query" placeholder="Enter movie title" />
+      </div>
+
+      <!-- Query Parameters for 'Discover Movies' -->
+      <div *ngIf="queryType === 'discoverMovie'" class="form-group">
+        <label for="genre">Genre(s):</label>
+        <select id="genre" [(ngModel)]="genre" name="genre" multiple>
+          <option value="">Any</option>
+          <option value="28">Action</option>
+          <option value="35">Comedy</option>
+          <option value="18">Drama</option>
+          <option value="27">Horror</option>
+          <option value="10749">Romance</option>
+          <option value="53">Thriller</option>
+          <option value="12">Adventure</option>
+          <option value="16">Animation</option>
+          <option value="80">Crime</option>
+          <option value="99">Documentary</option>
+          <option value="36">History</option>
+          <option value="10402">Music</option>
+          <option value="9648">Mystery</option>
+          <option value="10752">War</option>
+          <option value="37">Western</option>
+        </select>
+
+        <label for="genre">Exclude Genre:</label>
+        <select id="genre" [(ngModel)]="without_genres" name="genre" multiple>
+          <option value="28">Action</option>
+          <option value="35">Comedy</option>
+          <option value="18">Drama</option>
+          <option value="27">Horror</option>
+          <option value="10749">Romance</option>
+          <option value="53">Thriller</option>
+          <option value="12">Adventure</option>
+          <option value="16">Animation</option>
+          <option value="80">Crime</option>
+          <option value="99">Documentary</option>
+          <option value="36">History</option>
+          <option value="10402">Music</option>
+          <option value="9648">Mystery</option>
+          <option value="10752">War</option>
+          <option value="37">Western</option>
+        </select>
+
+        <label for="startYear">*Start Year:</label>
+        <select id="startYear" [(ngModel)]="startYear" name="startYear">
+          <option *ngFor="let year of yearRange" [value]="year">{{ year }}</option>
+        </select>
+
+        <label for="endYear">*End Year:</label>
+        <select id="endYear" [(ngModel)]="endYear" name="endYear">
+          <option *ngFor="let year of yearRange" [value]="year">{{ year }}</option>
+        </select>
+
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn-submit">Fetch Movie</button>
+      </div>
+    </form>
+
+    <!-- Display Results -->
+    <div *ngIf="movies.length > 0" class="results">
+        <h2>{{ movie_title }}</h2> 
+        <br>
+        <p class="overview">
+            {{ movie_overview }}
+        </p>
+        <p>Original Language: {{movie_original_language}}</p>
+        <p>Movie Release Date: {{movie_release_date}}</p>
+        <br>
+        <div class="img-container">
+            <img src="{{movie_image_path}}">
+        </div>
+    </div>
+  </div>
+</body>
+<app-footer></app-footer>
