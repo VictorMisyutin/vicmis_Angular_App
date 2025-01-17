@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// https://www.omdbapi.com/
+
 
 @Component({
   selector: 'app-movie-generator',
@@ -48,13 +50,11 @@ export class MovieGeneratorComponent {
         return;
       }
   
-      // Generate random date range within the valid period
       const randomStartDate = new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime() - 13 * 24 * 60 * 60 * 1000));
       const randomEndDate = new Date(randomStartDate.getTime() + 13 * 24 * 60 * 60 * 1000);
       const startDateFormatted = randomStartDate.toISOString().split('T')[0];
       const endDateFormatted = randomEndDate.toISOString().split('T')[0];
   
-      // Prepare parameters for the API request
       const params = new URLSearchParams({
         with_genres: this.genre || '', // Set the genre ID here
         primary_release_date_gte: startDateFormatted,
@@ -63,9 +63,7 @@ export class MovieGeneratorComponent {
         page: '1', // Fetch movies from page 1
         api_key: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZWZlMTNiMGJiMGI0N2Q3YTI5ZmU0MTEwMTU1NWQ1MiIsIm5iZiI6MTczNzA4NjE5OC4yNTcsInN1YiI6IjY3ODlkNGY2OTNmNzQyY2MyOWFkMDFiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OrDkQX2XVuVtd9Kk5H4JfVxEYSE1w0-YfjOq2xee5n4', // Use your actual API key here
       });
-  
       url = `https://api.themoviedb.org/3/discover/movie?api_key=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZWZlMTNiMGJiMGI0N2Q3YTI5ZmU0MTEwMTU1NWQ1MiIsIm5iZiI6MTczNzA4NjE5OC4yNTcsInN1YiI6IjY3ODlkNGY2OTNmNzQyY2MyOWFkMDFiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OrDkQX2XVuVtd9Kk5H4JfVxEYSE1w0-YfjOq2xee5n4&language=en-US&sort_by=${this.sortBy}&include_adult=true&page=1&primary_release_date.gte=${startDateFormatted}&primary_release_date.lte=${endDateFormatted}&with_genres=${this.genre}&without_genres=${this.without_genres}`;
-      // https://image.tmdb.org/t/p/w500/dWfpvRi0xEWxup6B3lha5HzGAc9.jpg
     }
   
     const options = {
@@ -96,7 +94,6 @@ export class MovieGeneratorComponent {
         this.movie_release_date= movie.release_date
 
         this.movie_image_path = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-        // console.log(movie)
       } else {
         this.movies = [];
       }
@@ -104,4 +101,25 @@ export class MovieGeneratorComponent {
       console.error('Error fetching movies:', error.message);
     }
   }
+
+  async fetchRatingsFromOMDB(movieTitle: string, movieYear: string) {
+    const omdbApiKey = 'your_omdb_api_key';  // Replace this with your OMDB API key
+    const omdbUrl = `http://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&y=${movieYear}&apikey=${omdbApiKey}`;
+    
+    try {
+      const response = await fetch(omdbUrl);
+      const data = await response.json();
+      
+      if (data.Response === 'True') {
+        return data.Ratings;  // Will contain an array of ratings like: [{Source: 'Rotten Tomatoes', Value: '94%'}, ...]
+      } else {
+        console.error('OMDB API Error:', data.Error);
+        return [];
+      }
+    } catch (error: any) {
+      console.error('Error fetching ratings:', error.message);
+      return [];
+    }
+  }
+  
 }
