@@ -25,7 +25,7 @@
   color: white;
 }
 .formal-mode .header-middle{
-  margin-left: 222px;
+  margin-left: 280px;
   margin-top: 5px;
 }
 .formal-mode .header-middle button{
@@ -51,7 +51,7 @@
 .formal-mode-right {
   float: right;
 }
-@media screen and (max-width: 750px) {
+@media (max-width: 1050px) {
   .formal-mode{
       flex-direction: column;
       display: flex;
@@ -59,7 +59,7 @@
   .formal-mode a {
       display:block;
       float: none;
-      text-align: left;
+      text-align: center;
   }
   .formal-mode a.logo {
       text-align: center;
@@ -67,7 +67,10 @@
       margin: 0;
       margin-bottom: 10px;
   }
+  .formal-mode .header-middle{
+    margin: 0 auto;
+  }
   .formal-mode .header-right {
-      float: none;
+    float: none;
   }
 }
