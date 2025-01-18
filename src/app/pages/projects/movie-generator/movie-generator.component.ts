@@ -87,7 +87,6 @@ export class MovieGeneratorComponent {
         const randomIndex = Math.floor(Math.random() * data.results.length);
         this.movies = [data.results[randomIndex]];  
         const movie = this.movies[0]; 
-        console.log(movie)
         this.movie_title = movie.title;
         this.movie_release_date = movie.release_date
         this.fetchMovieDetails(event)
@@ -145,12 +144,10 @@ export class MovieGeneratorComponent {
       let IMDBrating = data.imdbRating;
 
       if( IMDBrating < this.min_rating || Number(this.movie_IMDB_votes) < this.min_votes){
-        console.log("here")
         this.handleSubmit(event)
         return
       }
 
-      console.log(data)
     } catch (error: any) {
       if (error.message === 'Timeout') {
         console.warn('FetchMovieDetails timed out. Retrying...');
