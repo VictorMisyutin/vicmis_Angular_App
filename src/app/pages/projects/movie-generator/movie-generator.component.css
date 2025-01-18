@@ -39,6 +39,7 @@ body {
   }
   
   input, select, button {
+    box-sizing: border-box;
     width: 100%;
     padding: 10px;
     font-size: 1rem;

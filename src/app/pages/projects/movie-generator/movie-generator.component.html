@@ -3,7 +3,6 @@
   <div class="container">
     <h1>Movie Query Generator</h1>
     <form (submit)="handleSubmit($event)">
-      
       <!-- Query Parameters for 'Search by Title' -->
       <div *ngIf="queryType === 'searchMovie'" class="form-group">
         <label for="query">Movie Title:</label>
@@ -17,13 +16,13 @@
           <option value="">Any</option>
           <option value="28">Action</option>
           <option value="35">Comedy</option>
+          <option value="80">Crime</option>
           <option value="18">Drama</option>
           <option value="27">Horror</option>
           <option value="10749">Romance</option>
           <option value="53">Thriller</option>
           <option value="12">Adventure</option>
           <option value="16">Animation</option>
-          <option value="80">Crime</option>
           <option value="99">Documentary</option>
           <option value="36">History</option>
           <option value="10402">Music</option>
@@ -36,13 +35,13 @@
         <select id="genre" [(ngModel)]="without_genres" name="genre" multiple>
           <option value="28">Action</option>
           <option value="35">Comedy</option>
+          <option value="80">Crime</option>
           <option value="18">Drama</option>
           <option value="27">Horror</option>
           <option value="10749">Romance</option>
           <option value="53">Thriller</option>
           <option value="12">Adventure</option>
           <option value="16">Animation</option>
-          <option value="80">Crime</option>
           <option value="99">Documentary</option>
           <option value="36">History</option>
           <option value="10402">Music</option>
@@ -68,19 +67,28 @@
       </div>
     </form>
 
-    <!-- Display Results -->
-    <div *ngIf="movies.length > 0" class="results">
+    <div *ngIf="movies.length > 0 && !loading" class="results">
         <h2>{{ movie_title }}</h2> 
         <br>
         <p class="overview">
             {{ movie_overview }}
         </p>
-        <p>Original Language: {{movie_original_language}}</p>
-        <p>Movie Release Date: {{movie_release_date}}</p>
+        <p><strong>Language:</strong> {{movie_languages}}</p>
+        <p><strong>Director:</strong> {{movie_director}}</p>
+        <p><strong>Actors:</strong> {{movie_actors}}</p>
+        <p><strong>Genre:</strong> {{movie_genres}}</p>
+        <p><strong>Awards:</strong> {{movie_awards}}</p>
+        <p><strong>BoxOffice:</strong> {{movie_boxoffice}}</p>
+        <p><strong>Release Date:</strong> {{movie_release_date}}</p>
+        <p *ngFor="let rating of movie_ratings"><strong>{{rating.Source}}:</strong> {{rating.Value}}</p>
+        <p><strong>IMDB Votes:</strong> {{movie_IMDB_votes}}</p>
         <br>
         <div class="img-container">
-            <img src="{{movie_image_path}}">
+            <img src="{{movie_poster_link}}">
         </div>
+    </div>
+    <div class="results" *ngIf="loading">
+      <p>Loading...</p>
     </div>
   </div>
 </body>
