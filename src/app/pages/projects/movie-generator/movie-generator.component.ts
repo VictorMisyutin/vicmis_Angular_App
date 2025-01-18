@@ -132,15 +132,15 @@ export class MovieGeneratorComponent {
       this.movie_poster_link = data.Poster;
       this.movie_overview = data.Plot;
       this.movie_IMDB_votes = data.imdbVotes;
-      
+      console.log(data)
     } catch (error: any) {
       if (error.message === 'Timeout') {
         console.warn('FetchMovieDetails timed out. Retrying...');
-        this.handleSubmit(event)
-        return
       } else {
         console.error('Error fetching movie details:', error.message);
       }
+      this.handleSubmit(event)
+      return
     }
     this.loading = false;
 
