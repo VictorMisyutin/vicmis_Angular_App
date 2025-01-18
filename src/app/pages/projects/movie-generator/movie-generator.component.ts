@@ -19,7 +19,10 @@ export class MovieGeneratorComponent {
   startYear: number = 2000;
   endYear: number = 2025;
 
-  loading: boolean = false
+  loading: boolean = false;
+
+  min_rating: number = 7;
+  min_votes: number = 10000;
 
   movie_title: string = ''
   movie_release_date: string = ''
@@ -69,7 +72,6 @@ export class MovieGeneratorComponent {
       headers: {
         accept: 'application/json',
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZWZlMTNiMGJiMGI0N2Q3YTI5ZmU0MTEwMTU1NWQ1MiIsIm5iZiI6MTczNzA4NjE5OC4yNTcsInN1YiI6IjY3ODlkNGY2OTNmNzQyY2MyOWFkMDFiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OrDkQX2XVuVtd9Kk5H4JfVxEYSE1w0-YfjOq2xee5n4'
-
       }
     };
   
@@ -85,6 +87,7 @@ export class MovieGeneratorComponent {
         const randomIndex = Math.floor(Math.random() * data.results.length);
         this.movies = [data.results[randomIndex]];  
         const movie = this.movies[0]; 
+        console.log(movie)
         this.movie_title = movie.title;
         this.movie_release_date = movie.release_date
         this.fetchMovieDetails(event)
@@ -114,12 +117,18 @@ export class MovieGeneratorComponent {
     };
   
     try {
-      const response: any = await fetchWithTimeout(omdbUrl, 1000); // 1-second timeout
+      const response: any = await fetchWithTimeout(omdbUrl, 3000); // 1-second timeout
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
   
       const data = await response.json();
+
+      if(data.Response == "False"){
+        this.handleSubmit(event);
+        return
+      }
+
       this.movie_release_date = data.Released;
       this.movie_actors = data.Actors;
       this.movie_awards = data.Awards;
@@ -132,6 +141,15 @@ export class MovieGeneratorComponent {
       this.movie_poster_link = data.Poster;
       this.movie_overview = data.Plot;
       this.movie_IMDB_votes = data.imdbVotes;
+
+      let IMDBrating = data.imdbRating;
+
+      if( IMDBrating < this.min_rating || Number(this.movie_IMDB_votes) < this.min_votes){
+        console.log("here")
+        this.handleSubmit(event)
+        return
+      }
+
       console.log(data)
     } catch (error: any) {
       if (error.message === 'Timeout') {

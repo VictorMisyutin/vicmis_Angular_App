@@ -59,8 +59,12 @@
         <select id="endYear" [(ngModel)]="endYear" name="endYear">
           <option *ngFor="let year of yearRange" [value]="year">{{ year }}</option>
         </select>
+        
+        <label for="min-rating">Minimum IMDB Rating:</label>
+        <input type="number" name="min_rating" id="min_rating" [(ngModel)]="min_rating">
 
-          <!-- add filters for minimum rating, number of votes -->
+        <label for="min-votes">Minimum # of Votes:</label>
+        <input type="number" name="min_votes" id="min_votes" [(ngModel)]="min_votes">
 
       </div>
 
