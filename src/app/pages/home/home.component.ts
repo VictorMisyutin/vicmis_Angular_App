@@ -21,8 +21,5 @@ export class HomeComponent implements OnInit {
     
   }
   
-  toggleMode() {
-    this.modeService.toggleMode();
-  }
 
 }

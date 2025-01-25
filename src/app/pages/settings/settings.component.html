@@ -1,0 +1,30 @@
+<app-header></app-header>
+<body>
+  <div class="section-nav">
+    <ul>
+      <li *ngFor="let item of navItems" [class.active]="activeSection === item.section"
+          (click)="setActiveSection(item.section)">
+        {{ item.label }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="section-content">
+    <div *ngIf="activeSection === 'mode'" id="mode" class="content-section">
+      <h2 class="section-title">Mode</h2>
+      <form (submit)="toggleMode()">
+        <input type="radio" id="classical" name="theme" value="classical">
+        <label for="classical">Classical</label>
+        <br>
+        <input type="radio" id="windows-xp" name="theme" value="windows-xp">
+        <label for="windows-xp">Windows XP</label>
+        <br>
+        <input type="submit" value="Save Changes">
+      </form>
+    </div>
+    <div *ngIf="activeSection === 'Theme'" id="display" class="content-section">
+      <h2 class="section-title">Theme</h2>
+    </div>
+  </div>
+</body>
+<app-footer></app-footer>

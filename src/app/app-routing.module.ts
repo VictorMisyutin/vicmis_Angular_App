@@ -30,9 +30,11 @@ import { CS409Component } from './pages/projects/cs-409/cs-409.component';
 import { Cs409RedirectionPageComponent } from './pages/projects/cs-409-redirection-page/cs-409-redirection-page.component';
 import { DynastyLandingPageComponent } from './pages/projects/shirt-dynasty/dynasty-landing-page/dynasty-landing-page.component';
 import { MovieGeneratorComponent } from './pages/projects/movie-generator/movie-generator.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, title: 'vicmis'},
+  {path: 'settings', component: SettingsComponent, title: 'Settings'},
   {path: 'docs', component: DocsPageComponent, title: 'Documentation'},
   {path: 'contact', component: ContactComponent, title: 'Contact Us'},
   {path: 'docs/nba', component: DocsNbaComponent, title: 'NBA Documentation'},

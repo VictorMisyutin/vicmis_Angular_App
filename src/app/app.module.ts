@@ -38,6 +38,7 @@ import { CS409Component } from './pages/projects/cs-409/cs-409.component';
 import { Cs409RedirectionPageComponent } from './pages/projects/cs-409-redirection-page/cs-409-redirection-page.component';
 import { DynastyLandingPageComponent } from './pages/projects/shirt-dynasty/dynasty-landing-page/dynasty-landing-page.component';
 import { MovieGeneratorComponent } from './pages/projects/movie-generator/movie-generator.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 // import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 // const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
@@ -76,7 +77,8 @@ import { MovieGeneratorComponent } from './pages/projects/movie-generator/movie-
     CS409Component,
     Cs409RedirectionPageComponent,
     DynastyLandingPageComponent,
-    MovieGeneratorComponent
+    MovieGeneratorComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

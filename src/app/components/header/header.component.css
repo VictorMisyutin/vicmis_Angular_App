@@ -24,7 +24,7 @@
   font-size: 23px;
   color: white;
 }
-.formal-mode .header-middle{
+/* .formal-mode .header-middle{
   margin-left: 280px;
   margin-top: 5px;
 }
@@ -39,7 +39,7 @@
 }
 .formal-mode .header-middle button p{
   margin: 0;
-}
+} */
 .formal-mode a:hover, a:focus {
   /* color: black; */
   text-shadow: 0 0 15px white;
@@ -67,9 +67,9 @@
       margin: 0;
       margin-bottom: 10px;
   }
-  .formal-mode .header-middle{
+  /* .formal-mode .header-middle{
     margin: 0 auto;
-  }
+  } */
   .formal-mode .header-right {
     float: none;
   }

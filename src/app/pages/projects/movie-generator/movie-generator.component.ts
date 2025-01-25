@@ -116,7 +116,7 @@ export class MovieGeneratorComponent {
     };
   
     try {
-      const response: any = await fetchWithTimeout(omdbUrl, 3000); // 1-second timeout
+      const response: any = await fetchWithTimeout(omdbUrl, 3000); // 3-second timeout
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

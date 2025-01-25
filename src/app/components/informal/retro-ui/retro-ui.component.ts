@@ -88,7 +88,9 @@ export class RetroUiComponent implements OnInit {
   ngOnInit(): void {
     this.modeService.mode$.subscribe((mode: string) => {
       this.mode = mode;
-      if (this.mode === 'informal') {
+      console.log(mode);
+      if (this.mode === 'windows-xp') {
+        console.log(mode)
         setTimeout(() => {
           this.setupDraggableWindows();
         });
@@ -119,7 +121,7 @@ export class RetroUiComponent implements OnInit {
   }
 
   toggleMode(): void {
-    this.modeService.toggleMode();
+    this.modeService.toggleMode("formal");
     setTimeout(() => this.setupDraggableWindows(), 0); // Ensure the DOM is updated
   }
 

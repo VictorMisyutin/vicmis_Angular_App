@@ -19,8 +19,5 @@ export class HeaderComponent implements OnInit{
     });
   }
 
-  toggleMode(): void {
-    this.modeService.toggleMode();
-  }
 
 }

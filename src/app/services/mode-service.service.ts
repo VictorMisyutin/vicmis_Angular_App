@@ -14,8 +14,8 @@ export class ModeServiceService {
     this.modeSubject.next(storedMode);
   }
 
-  toggleMode() {
-    const newMode = this.modeSubject.value === 'formal' ? 'informal' : 'formal';
+  toggleMode(mode: string) {
+    const newMode = mode;
     this.modeSubject.next(newMode);
     localStorage.setItem("mode", newMode);
   }
