@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ModeServiceService } from '../../services/mode-service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-settings',
@@ -12,7 +14,7 @@ export class SettingsComponent {
     { label: 'Theme', section: 'theme ' }
   ];
 
-  constructor(private modeService: ModeServiceService) {}
+  constructor(private modeService: ModeServiceService, private router: Router) {}
 
   activeSection = 'mode';
 
@@ -25,6 +27,7 @@ export class SettingsComponent {
     if (selectedMode) {
       this.modeService.toggleMode(selectedMode);
     }
+    this.router.navigateByUrl('')
   }
   
 
