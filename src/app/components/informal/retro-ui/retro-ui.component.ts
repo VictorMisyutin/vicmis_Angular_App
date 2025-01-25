@@ -121,7 +121,7 @@ export class RetroUiComponent implements OnInit {
   }
 
   toggleMode(): void {
-    this.modeService.toggleMode("formal");
+    this.modeService.toggleMode("classical");
     setTimeout(() => this.setupDraggableWindows(), 0); // Ensure the DOM is updated
   }
 
