@@ -36,5 +36,16 @@
   <div>
     <app-retro-ui></app-retro-ui>
   </div>
-
+</body>
+<body class="fnaf" *ngIf="mode === 'fnaf'">
+  <div class="static">
+    <canvas class="noise"></canvas>
+    <div class="camera-buttons-container">
+      <button class="camera-button" [routerLink]="">Home</button>
+      <button class="camera-button" [routerLink]="['/projects']">Projects</button>
+      <button class="camera-button" [routerLink]="['/docs']">Documentation</button>
+      <button class="camera-button" [routerLink]="['/contact']">Contact</button>
+      <button class="camera-button" [routerLink]="['/settings']">Settings</button>
+    </div>
+  </div>
 </body>

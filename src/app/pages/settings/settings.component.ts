@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class SettingsComponent {
   navItems = [
     { label: 'Mode', section: 'mode' },
-    { label: 'Theme', section: 'theme ' }
+    { label: 'Theme', section: 'theme' }
   ];
 
   constructor(private modeService: ModeServiceService, private router: Router) {}
