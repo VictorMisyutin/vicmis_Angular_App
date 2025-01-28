@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, HostListener} from '@angular/core';
+import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ModeServiceService } from '../../services/mode-service.service';
 @Component({
@@ -50,9 +50,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modeService.mode$.subscribe((mode: string) => {
       this.mode = mode;
     });
-    
+
   }
-  
+
   onCameraClick(cameraNumber: number): void {
     console.log(`Camera ${cameraNumber} clicked`);
     // Add any other functionality you want to handle here

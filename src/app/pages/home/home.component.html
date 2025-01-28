@@ -1,6 +1,6 @@
 <body *ngIf="mode === 'classical' || mode === 'formal'">
   <app-header></app-header>
-  
+
   <div class="formal-mode">
     <section class="hero">
       <h2>Welcome to vicmis</h2>
@@ -9,37 +9,49 @@
     </section>
 
     <section class="features">
-    <div class="feature-upper">
-      <h3>Film of the year by Dylan Kaufmann</h3>
-      <h4>"Colorblind", <a href="https://www.youtube.com/watch?v=lkGHt7Ucsk8">Watch Now!</a></h4>
-      <h4>"Stay", <a href="https://www.youtube.com/watch?v=zTpTam8P8Es">Watch Now!</a></h4>
-    <hr>
-    </div>
-    <div class="feature-left">
+      <div class="feature-upper">
+        <h3>Film of the year by Dylan Kaufmann</h3>
+        <h4>"Colorblind", <a href="https://www.youtube.com/watch?v=lkGHt7Ucsk8">Watch Now!</a></h4>
+        <h4>"Stay", <a href="https://www.youtube.com/watch?v=zTpTam8P8Es">Watch Now!</a></h4>
+        <hr>
+      </div>
+      <div class="feature-left">
         <h3>Discover Exciting Projects</h3>
         <p>
-          Browse through a diverse range of projects created by our community of developers. From web development and mobile apps to machine learning and AI, 
-          there's something for everyone. Get inspired, collaborate, and contribute to open-source projects that make a difference.
+          Browse through a diverse range of projects created by our community of developers. From web development and
+          mobile apps to machine learning and AI,
+          there's something for everyone. Get inspired, collaborate, and contribute to open-source projects that make a
+          difference.
         </p>
       </div>
       <div class="feature-right">
         <h3>Powerful APIs at Your Fingertips</h3>
         <p>
-          Unlock the potential of your applications with our robust APIs. Seamlessly integrate powerful features and functionalities into your projects, 
-          whether you're building a website, mobile app, or software solution. Our APIs are designed to streamline development and enhance user experiences.
+          Unlock the potential of your applications with our robust APIs. Seamlessly integrate powerful features and
+          functionalities into your projects,
+          whether you're building a website, mobile app, or software solution. Our APIs are designed to streamline
+          development and enhance user experiences.
         </p>
       </div>
     </section>
   </div>
 </body>
+
 <body *ngIf="mode === 'windows-xp'">
   <div>
     <app-retro-ui></app-retro-ui>
   </div>
 </body>
+
 <body class="fnaf" *ngIf="mode === 'fnaf'">
   <div class="static">
     <canvas class="noise"></canvas>
+    <div class="camera-container">
+      <div class="ui-overlay">
+        <p class="camera-title">CAM 01</p>
+        <p class="camera-status">LIVE</p>
+      </div>
+    </div>
     <div class="camera-buttons-container">
       <button class="camera-button" [routerLink]="">Home</button>
       <button class="camera-button" [routerLink]="['/projects']">Projects</button>
@@ -48,4 +60,5 @@
       <button class="camera-button" [routerLink]="['/settings']">Settings</button>
     </div>
   </div>
+
 </body>
