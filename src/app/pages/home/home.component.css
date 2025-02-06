@@ -5,7 +5,7 @@ body {
     color: #e2e8f0;
     font-family: sans-serif;
     padding: 1% 18% 0%;
-    background-image: linear-gradient(-45deg, #390020, #553f88);
+    background-image: linear-gradient(-45deg, #270217, #2f1f53);
     
 }
 .first-section{
@@ -100,7 +100,7 @@ body {
     .skill{
         padding: 5px 10px;
         background-color: #004968;
-        color: aqua;
+        color: #00EEEE;
         border-radius: 13px;
         font-size: 15px;
     }
@@ -145,7 +145,7 @@ body {
     .skill{
         padding: 5px 10px;
         background-color: #004968;
-        color: aqua;
+        color: #00EEEE;
         border-radius: 13px;
         font-size: 15px;
     }
