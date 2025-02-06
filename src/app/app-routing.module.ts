@@ -62,7 +62,7 @@ const routes: Routes = [
   {path: 'blog/an-introduction-to-vim', component: AnIntroductionToVimComponent, title: 'Introduction to Vim'},
   {path: 'blog/neural-network', component: NeuralNetworksComponent, title: 'neural network'},
   // {path: 'projects/cs409', component: CS409Component, title: 'The Art of Web Dev'},
-  {path: 'projects/cs409', component: Cs409RedirectionPageComponent, title: 'The Art of Web Dev'},
+  {path: 'projects/cs409', component: CS409Component, title: 'The Art of Web Dev'},
   {path: 'projects/cs409/final-project', component: Cs409RedirectionPageComponent, title: 'Redirecting'}
 
 ];
