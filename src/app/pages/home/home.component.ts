@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ModeServiceService } from '../../services/mode-service.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
