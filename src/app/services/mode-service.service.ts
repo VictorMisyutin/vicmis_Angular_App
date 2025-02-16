@@ -10,7 +10,7 @@ export class ModeServiceService {
   mode$ = this.modeSubject.asObservable();
 
   constructor() {
-    const storedMode = localStorage.getItem("mode") || 'formal';
+    const storedMode = localStorage.getItem("mode") || 'professional';
     this.modeSubject.next(storedMode);
   }
 

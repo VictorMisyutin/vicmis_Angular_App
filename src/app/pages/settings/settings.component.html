@@ -13,6 +13,9 @@
     <div *ngIf="activeSection === 'mode'" id="mode" class="content-section">
       <h2 class="section-title">Mode</h2>
       <form (submit)="toggleMode()">
+        <input type="radio" id="professional" name="theme" value="professional">
+        <label for="professional">Professional</label>
+        <br>
         <input type="radio" id="classical" name="theme" value="classical">
         <label for="classical">Classical</label>
         <br>

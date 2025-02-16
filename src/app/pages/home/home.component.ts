@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.modeService.mode$.subscribe((mode: string) => {
       this.mode = mode;
     });
-
+    console.log(this.mode);
   }
 
   onCameraClick(cameraNumber: number): void {

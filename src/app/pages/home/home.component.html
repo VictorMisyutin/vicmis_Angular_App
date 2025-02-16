@@ -1,4 +1,4 @@
-<body>
+<body *ngIf="mode === 'professional' || mode === ''" id="professional">
   <div class="first-section">
 
     <div class="hero">
@@ -228,7 +228,7 @@
 
 
 
-<!-- <body *ngIf="mode === 'classical' || mode === 'formal'">
+<body *ngIf="mode === 'classical' || mode === 'formal'">
   <app-header></app-header>
 
   <div class="formal-mode">
@@ -286,7 +286,7 @@
     </div>
   </div>
   
-</body> -->
+</body>
 
 <body *ngIf="mode === 'windows-xp'">
   <div>
