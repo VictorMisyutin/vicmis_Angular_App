@@ -1,4 +1,51 @@
 #professional {
+    .header{
+        padding: 0;
+        a {
+            float: left;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 4px;
+            color: white;
+          }
+          a.logo {
+            float: left;
+            font-size: 23px;
+            color: white;
+          }
+          a:hover, a:focus {
+            /* color: black; */
+            text-shadow: 0 0 15px white;
+          }
+          .header-right{
+            float: right;
+          }
+          .header-right a{
+            padding-left: 20px;
+          }
+        }
+        @media (max-width: 1050px) {
+          .header{
+              flex-direction: column;
+              display: flex;
+              a {
+                 display:block;
+                 float: none;
+                 text-align: center;
+             }
+             a.logo {
+                 text-align: center;
+                 font-size: 35px;
+                 margin: 0;
+                 margin-bottom: 10px;
+             }
+             .header-right {
+               float: none;
+             }
+          }
+        }
     /* background-color: #0f172a; */
     /* background-color: #373F47; */
     min-height: 101vh;

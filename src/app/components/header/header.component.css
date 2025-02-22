@@ -24,22 +24,6 @@
   font-size: 23px;
   color: white;
 }
-/* .formal-mode .header-middle{
-  margin-left: 280px;
-  margin-top: 5px;
-}
-.formal-mode .header-middle button{
-  background-color: #6b6b6b;
-  padding: 10px;
-  border-radius: 20px;
-}
-.formal-mode .header-middle button:hover{
-  cursor: pointer;
-  background-color: #838383;
-}
-.formal-mode .header-middle button p{
-  margin: 0;
-} */
 .formal-mode a:hover, a:focus {
   /* color: black; */
   text-shadow: 0 0 15px white;
